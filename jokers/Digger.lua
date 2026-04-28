@@ -8,7 +8,7 @@ SMODS.Atlas {
 SMODS.Joker {
     key = 'Digger',
     loc_txt = {
-        name = 'Digger Of The Golden Sands', --boblins effect: if small blind is skipped, create a random tag
+        name = 'Digger Of The Golden Sands',
         text = {
             '{C:mult}+#1#{} Mult',
             'Lose {C:gold}$#2#{} Gold at the end of the round',
