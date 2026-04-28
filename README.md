@@ -9,3 +9,5 @@ Art for the Jokers can be found at
 
 
 https://game-icons.net/
+
+Special thanks to the Balatro subreddit, and the Cryptid mod for implementation ideas/inspiration!
