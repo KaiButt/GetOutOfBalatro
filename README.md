@@ -5,7 +5,7 @@ GOOT is made by Kyrsaku and can be found in Tabletop Simulator workshop
 
 Link: https://steamcommunity.com/sharedfiles/filedetails/?id=2012201900
 
-Art for the Jokers can be found
+Art for the Jokers can be found at
 
 
 https://game-icons.net/
