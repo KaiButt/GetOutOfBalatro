@@ -11,7 +11,7 @@ SMODS.Joker {
         name = 'Boblin',
         text = {
             'When {C:attention}Small Blind{} is skipped, cause a {C:green}Goblin Party!{}',
-            'All your {C:attention}Jokers{} are considered {X:black,C:edition,E:1}Mercenaries{}',
+            'All your Jokers are considered {X:black,C:edition,E:1}Mercenaries{}',
         }
     },
     name = 'Boblin',
