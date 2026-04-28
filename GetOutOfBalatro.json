@@ -1,0 +1,15 @@
+{
+  "id": "GetOutOfBalatro",
+  "name": "Get Out Of Balatro!",
+  "display_name": "Get Out Of Balatro!",
+  "author": ["Kai"],
+  "description": "Adds Mercenaries from Get Out Of Town to Balatro! Get Out Of Town (or GOOT) was made by Kyrsaku and can be found on Tabletop Simulator. Mercenary images can be found on https://game-icons.net/",
+  "prefix": "goob",
+  "prefixcomment":"ABOVE PREFIX IS ADDED TO E.G. LOCALIZATION!",
+  "main_file": "GetOutOfBalatro.lua",
+  "priority": 67,
+  "badge_colour": "800080",
+  "badge_text_colour": "",
+  "version": "0.9.0",
+  "dependencies": ["Steamodded (>=1.0.0~BETA-0614a)"]
+}
