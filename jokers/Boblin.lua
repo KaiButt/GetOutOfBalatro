@@ -8,7 +8,7 @@ SMODS.Atlas {
 SMODS.Joker {
     key = 'Boblin',
     loc_txt = {
-        name = 'Boblin', --boblins effect: if small blind is skipped, create a random tag
+        name = 'Boblin',
         text = {
             'When {C:attention}Small Blind{} is skipped, cause a {C:green}Goblin Party!{}',
             'All your {C:attention}Jokers{} are considered {X:black,C:edition,E:1}Mercenaries{}',

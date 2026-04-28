@@ -1,4 +1,4 @@
-Get Out Of Balatro currently introduces 16 "Get Out Of Town" Mercenaries as Jokers and includes a special Tag!
+Get Out Of Balatro currently introduces 18 "Get Out Of Town" Mercenaries as Jokers and includes a special Tag!
 
 GOOT is made by Kyrsaku and can be found in Tabletop Simulator workshop
 
@@ -11,3 +11,6 @@ Art for the Jokers can be found at
 https://game-icons.net/
 
 Special thanks to the Balatro subreddit, and the Cryptid mod for implementation ideas/inspiration!
+
+Installation
+Throw GetOutOfBalatro folder in balatro Mods folder
