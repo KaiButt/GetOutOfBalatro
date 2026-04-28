@@ -24,12 +24,12 @@ SMODS.Joker {
     blueprint_compat = true,
     eternal_compat = false, -- sounds unfun
     perishable_compat = true,
-    pools = { ["goob"] = true},
+    pools = { ["goob"] = true },
     loc_vars = function(self, info_queue, center)
         return { vars = { center.ability.extra.x_mult } }
     end,
     weight = 10,
-     get_weight = function(self)
+    get_weight = function(self)
         if next(SMODS.find_card("j_goob_Boblin")) then
             return self.weight * 10000
         elseif not next(SMODS.find_card("j_goob_Boblin")) then
@@ -46,13 +46,13 @@ SMODS.Joker {
                     delay = 1.2,
                 }
             end
-            if context.joker_main and context.cardarea == G.jokers and context.scoring_name then --give chips, blueprint copies this part
+        end
+        if context.joker_main and context.cardarea == G.jokers and context.scoring_name then
             return {
                 x_mult = card.ability.extra.x_mult,
                 colour = G.C.RED,
                 card = card
             }
-    end
         end
     end
 }
