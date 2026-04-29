@@ -13,6 +13,7 @@ SMODS.Joker {
 			'Adds #1# card',
 			'with an {X:grey,C:edition}edition{} to deck when',
 			'{C:attention}Blind{} is selected',
+			'Last card added: {C:attention}#4#{} of {C:attention}#5#{}',
 			'{C:inactive}(Max {C:attention}#2#{C:inactive} cards)',
 			'played cards with an {X:grey,C:edition}edition{} each give',
 			'{X:mult,C:white}X#3#{} Mult when scored'
@@ -25,7 +26,9 @@ SMODS.Joker {
 		extra = {
 			amount = 1,
 			x_mult = 2,
-			kai_gift = true
+			kai_gift = true,
+			last_rank = 'King',
+			last_suit = 'Peach',
 		},
 		immutable = {
 			cacap = 40,
@@ -38,7 +41,7 @@ SMODS.Joker {
 	perishable_compat = true,
 	pools = { ["goob"] = true},
 	loc_vars = function(self, info_queue, center)
-		return { vars = { center.ability.extra.amount, center.ability.immutable.cacap, center.ability.extra.x_mult } }
+		return { vars = { center.ability.extra.amount, center.ability.immutable.cacap, center.ability.extra.x_mult, center.ability.extra.last_rank, center.ability.extra.last_suit } }
 	end,
 	calculate = function(self, card, context)
 		-- when blind is selected, add a random card with an edition to deck
@@ -47,13 +50,17 @@ SMODS.Joker {
 				.immutable.cacap end
 			for i = 1, card.ability.extra.amount, 1 do -- loop card generation
 				if card.ability.extra.kai_gift == true then
-					SMODS.add_card { set = "Playing Card", key_append = "goob_append", edition = 'e_negative', area = G.deck }
+					local _card = SMODS.add_card { set = "Playing Card", key_append = "goob_append", edition = 'e_negative', area = G.deck }
 					card.ability.extra.kai_gift = false
 					card:juice_up()
+					card.ability.extra.last_rank = _card.base.value
+					card.ability.extra.last_suit = _card.base.suit
+					SMODS.calculate_context({ playing_card_added = true, cards = { _card }})
 				else
 					local random_edition = SMODS.poll_edition { key = "goob_seed", guaranteed = true, no_negative = true }
-					SMODS.add_card { set = "Playing Card", key_append = "goob_append", edition = random_edition, area = G.deck }
+					local _card = SMODS.add_card { set = "Playing Card", key_append = "goob_append", edition = random_edition, area = G.deck }
 					card:juice_up()
+					SMODS.calculate_context({ playing_card_added = true, cards = { _card }})
 				end
 			end
 		elseif context.individual and context.cardarea == G.play then -- when you play a edition'd card, x2 mult
