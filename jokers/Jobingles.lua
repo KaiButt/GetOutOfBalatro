@@ -39,7 +39,7 @@ SMODS.Joker {
 	blueprint_compat = true,
 	eternal_compat = true,
 	perishable_compat = true,
-	pools = { ["goob"] = true},
+	pools = { ["goob"] = true },
 	loc_vars = function(self, info_queue, center)
 		return { vars = { center.ability.extra.amount, center.ability.immutable.cacap, center.ability.extra.x_mult, center.ability.extra.last_rank, center.ability.extra.last_suit } }
 	end,
@@ -50,20 +50,23 @@ SMODS.Joker {
 				.immutable.cacap end
 			for i = 1, card.ability.extra.amount, 1 do -- loop card generation
 				if card.ability.extra.kai_gift == true then
-					local _card = SMODS.add_card { set = "Playing Card", key_append = "goob_append", edition = 'e_negative', area = G.deck }
+					local _card = SMODS.add_card { set = "Playing Card", key_append = "goob_append", edition = 'e_negative', area = G.deck, enhanced_poll = 1 }
 					card.ability.extra.kai_gift = false
 					card:juice_up()
 					card.ability.extra.last_rank = _card.base.value
 					card.ability.extra.last_suit = _card.base.suit
-					SMODS.calculate_context({ playing_card_added = true, cards = { _card }})
+					SMODS.calculate_context({ playing_card_added = true, cards = { _card } })
 				else
 					local random_edition = SMODS.poll_edition { key = "goob_seed", guaranteed = true, no_negative = true }
-					local _card = SMODS.add_card { set = "Playing Card", key_append = "goob_append", edition = random_edition, area = G.deck }
+					local _card = SMODS.add_card { set = "Playing Card", key_append = "goob_append", edition = random_edition, area = G.deck, enhanced_poll = 1 }
 					card:juice_up()
-					SMODS.calculate_context({ playing_card_added = true, cards = { _card }})
+					card.ability.extra.last_rank = _card.base.value
+					card.ability.extra.last_suit = _card.base.suit
+					SMODS.calculate_context({ playing_card_added = true, cards = { _card } })
 				end
 			end
-		elseif context.individual and context.cardarea == G.play then -- when you play a edition'd card, x2 mult
+		end
+		if context.individual and context.cardarea == G.play then -- when you play a edition'd card, x2 mult
 			if context.other_card.edition then
 				return {
 					x_mult = card.ability.extra.x_mult,
