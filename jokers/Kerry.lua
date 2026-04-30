@@ -64,12 +64,11 @@ SMODS.Joker {
 local card_remove_from_deck_ref = Card.remove_from_deck
 function Card:remove_from_deck(from_debuff)
     local ret = card_remove_from_deck_ref(self, from_debuff)
-    if self.ability.name == 'Kerry' and from_debuff and not context.blueprint then
+    if self.ability.name == 'Kerry' and from_debuff then
         local editionType = nil
         if self.edition ~= nil then
             editionType = "e_" .. self.edition.type
         end
-        SMODS.destroy_cards(self)
         if editionType ~= nil then
             SMODS.add_card { key = "j_goob_Kerry_rage", edition = editionType }
         else
