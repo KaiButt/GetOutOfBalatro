@@ -29,14 +29,6 @@ SMODS.Joker {
     loc_vars = function(self, info_queue, center)
         return { vars = { center.ability.extra.diceToRoll, center.ability.extra.sidesOfDice } }
     end,
-    weight = 10,
-     get_weight = function(self)
-        if next(SMODS.find_card("j_goob_Boblin")) then
-            return self.weight * 10000
-        elseif not next(SMODS.find_card("j_goob_Boblin")) then
-            return self.weight
-        end
-    end,
     calculate = function(self, card, context)
        if context.joker_main and context.cardarea == G.jokers and context.scoring_name then
         local multGain = 0
