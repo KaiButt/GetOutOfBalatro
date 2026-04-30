@@ -69,6 +69,9 @@ function Card:remove_from_deck(from_debuff)
         if self.edition ~= nil then
             editionType = "e_" .. self.edition.type
         end
+        if from_debuff then
+            SMODS.destroy_cards(card)
+        end
         if editionType ~= nil then
             SMODS.add_card { key = "j_goob_Kerry_rage", edition = editionType }
         else
