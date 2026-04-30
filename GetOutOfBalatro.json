@@ -5,7 +5,6 @@
   "author": ["Kai"],
   "description": "Adds Mercenaries from Get Out Of Town to Balatro! Get Out Of Town (or GOOT) was made by Kyrsaku and can be found on Tabletop Simulator. Mercenary images can be found on https://game-icons.net/",
   "prefix": "goob",
-  "prefixcomment":"ABOVE PREFIX IS ADDED TO E.G. LOCALIZATION!",
   "main_file": "GetOutOfBalatro.lua",
   "priority": 67,
   "badge_colour": "800080",
