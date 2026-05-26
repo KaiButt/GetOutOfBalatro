@@ -24,7 +24,7 @@ SMODS.Joker {
         },
     },
     rarity = 1,
-    cost = 3,
+    cost = 4,
     blueprint_compat = true,
     pools = { ["goob"] = true},
     loc_vars = function(self, info_queue, center)
