@@ -12,7 +12,7 @@ SMODS.Joker {
         text = {
             'When a card is scored,',
             '{C:attention}increases{} its rank, up to {C:attention}King{}',
-            'Gains {C:gold}$#1#{} for each King in deck',
+            'Gains {C:gold}$#1#{} for each {C:attention}King{} in deck',
             '{C:inactive}(Currently: {}{C:gold}$#2#{}{C:inactive}){}',
         },
     },
