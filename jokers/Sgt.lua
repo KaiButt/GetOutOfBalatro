@@ -19,7 +19,7 @@ SMODS.Joker {
     config = { extra = { negative_rate = 50, x_mult = 1.5} },
     rarity = 2,
     cost = 5,
-    blueprint_compat = false,
+    blueprint_compat = true,
     eternal_compat = true,
     perishable_compat = true,
     loc_vars = function(self, info_queue, center)
