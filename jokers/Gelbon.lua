@@ -25,7 +25,7 @@ SMODS.Joker {
             scalingMult = 4
         }
     },
-    rarity = 2,
+    rarity = 1,
      loc_vars = function(self, info_queue, center)
         return { vars = { center.ability.extra.mult, center.ability.extra.scalingMult } }
     end,
