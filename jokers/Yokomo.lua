@@ -37,7 +37,7 @@ SMODS.Joker {
                     local _card = context.other_card
                     if _card.facing ~= 'back' then
                         _card:flip()
-                        play_sound('card1', 0.6)
+                        play_sound('card1', 0.5)
                         card.ability.extra.jokerFlipped = true
                     end
                     local random_enhancement = SMODS.poll_enhancement { key = "modprefix_seed", guaranteed = true }
@@ -45,13 +45,14 @@ SMODS.Joker {
                     if _card.facing == 'back' and card.ability.extra.jokerFlipped == true then
                         G.E_MANAGER:add_event(Event({
                             trigger = 'after',
-                            delay = 0.2,
+                            delay = 0.15,
                             func = function()
                                 _card:flip()
-                                play_sound('card1', 0.6)
+                                play_sound('card1', 0.5)
                                 return true
                             end
                         }))
+                        card.ability.extra.jokerFlipped = false
                     end
                 elseif context.other_card.ability.name == "Stone Card" then -- stone cards give 50
                     context.other_card.ability.perma_bonus = (context.other_card.ability.perma_bonus or 0) + 50
