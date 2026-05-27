@@ -32,23 +32,23 @@ SMODS.Joker {
     pools = { ["goob"] = true },
     calculate = function(self, card, context)
         if context.individual and context.cardarea == G.play then
-            if SMODS.pseudorandom_probability(card, 'j_goob_Sohikosa', card.ability.extra.numerator, card.ability.extra.denominator) then
+            if SMODS.pseudorandom_probability(card, 'j_goob_Yokomo', card.ability.extra.numerator, card.ability.extra.denominator) then
                 if context.other_card.ability.name == "Default Base" then
                     local _card = context.other_card
                     if _card.facing ~= 'back' then
                         _card:flip()
-                        play_sound('card1', 0.5)
+                        play_sound('card1', 0.4)
                         card.ability.extra.jokerFlipped = true
                     end
-                    local random_enhancement = SMODS.poll_enhancement { key = "modprefix_seed", guaranteed = true }
+                    local random_enhancement = SMODS.poll_enhancement { key = 'j_goob_Yokomo', guaranteed = true }
                     _card:set_ability(random_enhancement)
                     if _card.facing == 'back' and card.ability.extra.jokerFlipped == true then
                         G.E_MANAGER:add_event(Event({
                             trigger = 'after',
-                            delay = 0.15,
+                            delay = 0.12,
                             func = function()
                                 _card:flip()
-                                play_sound('card1', 0.5)
+                                play_sound('card1', 0.4)
                                 return true
                             end
                         }))

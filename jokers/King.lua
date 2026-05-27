@@ -43,17 +43,17 @@ SMODS.Joker {
             local _card = context.other_card
             if _card.facing ~= 'back' then
                 _card:flip()
-                play_sound('card1', 0.6)
+                play_sound('card1', 0.4)
                 card.ability.extra.jokerFlipped = true
             end
             assert(SMODS.modify_rank(_card, 1))
             if _card.facing == 'back' and card.ability.extra.jokerFlipped == true then
                 G.E_MANAGER:add_event(Event({
                     trigger = 'after',
-                    delay = 0.15,
+                    delay = 0.12,
                     func = function()
                         _card:flip()
-                        play_sound('card1', 0.5)
+                        play_sound('card1', 0.4)
                         return true
                     end
                 }))
