@@ -10,7 +10,7 @@ SMODS.Joker {
     loc_txt = {
         name = 'Gelbon The Nerd',
         text = {
-            'Gains {C:mult}+#1#{} Mult',
+            'Gains {C:mult}+#2#{} Mult',
             'if played hand',
             'contains a {C:attention}Straight{}',
             '{C:inactive}(Currently {C:mult}+#1#{C:inactive} Mult)',
