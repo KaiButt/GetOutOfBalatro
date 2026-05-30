@@ -7,6 +7,7 @@ SMODS.Atlas {
 
 SMODS.Joker {
     key = 'Gelbon',
+    unlocked = false,
     loc_txt = {
         name = 'Gelbon The Nerd',
         text = {
@@ -14,6 +15,9 @@ SMODS.Joker {
             'if played hand',
             'contains a {C:attention}Straight{}',
             '{C:inactive}(Currently {C:mult}+#1#{C:inactive} Mult)',
+        },
+        unlock = {
+            'Win a run with a {C:attention}Straight{}'
         }
     },
     name = 'Gelbon',
@@ -47,5 +51,11 @@ SMODS.Joker {
                 mult = card.ability.extra.mult
             }
         end
+    end,
+    check_for_unlock = function(self, args)
+        if args.type == 'round_win' then
+            return (G.GAME.last_hand_played == 'Straight' or G.GAME.last_hand_played == 'Straight Flush') and G.GAME.blind.boss
+        end
+        return false
     end
 }
