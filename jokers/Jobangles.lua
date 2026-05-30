@@ -42,6 +42,7 @@ SMODS.Joker{
         if context.setting_blind then --destroy card
             if not context.blueprint then --blueprint doesn't destroy one
             local chosenCard = pseudorandom_element(G.playing_cards, pseudoseed('seed'))
+            if chosenCard.base.id ~= nil then
             card.ability.extra.destroyed_rank = chosenCard.base.value
             card.ability.extra.destroyed_suit = chosenCard.base.suit
             if chosenCard.ability.name ~= 'Stone Card' then --stone cards don't have ranks
@@ -72,6 +73,7 @@ SMODS.Joker{
             card:juice_up()
             return true
         end
+    end
     end
         if context.joker_main and context.cardarea == G.jokers and context.scoring_name then --give chips, blueprint copies this part
             return {

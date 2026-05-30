@@ -41,7 +41,7 @@ SMODS.Joker {
         }, true)
     end,
     calculate = function(self, card, context)
-        if context.other_joker and card ~= context.other_joker and context.other_joker.edition.type == 'negative' then
+        if context.other_joker and context.other_joker.edition and card ~= context.other_joker and context.other_joker.edition.negative then
             return {
                 x_mult = card.ability.extra.x_mult,
                 colour = G.C.RED,
