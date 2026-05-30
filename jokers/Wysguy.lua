@@ -7,7 +7,7 @@ SMODS.Atlas {
 
 SMODS.Joker {
     key = 'Wysguy',
-    Unlocked = false,
+    unlocked = false,
     loc_txt = {
         name = 'Wysguy',
         text = {
