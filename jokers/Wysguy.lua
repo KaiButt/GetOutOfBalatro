@@ -181,7 +181,7 @@ SMODS.Joker {
         end
         if context.ending_shop then
             if deck == 'b_nebula' and G.GAME.dollars > 1 then
-                ease_dollars(-2)
+                ease_dollars(-3+card.ability.extra.strength, true)
                 local hand = GET_mostplayed_hand()
                 local planet
                 for _, center in pairs(G.P_CENTER_POOLS.Planet) do
@@ -194,7 +194,7 @@ SMODS.Joker {
                     edition = 'e_negative'
                 }
             elseif deck == 'b_ghost' and G.GAME.dollars > 2 then
-                ease_dollars(-3)
+                ease_dollars(-4+card.ability.extra.strength, true)
                 SMODS.add_card {
                     set = "Spectral",
                     edition = 'e_negative'
