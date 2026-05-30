@@ -7,12 +7,17 @@ SMODS.Atlas {
 
 SMODS.Joker {
     key = 'Skull',
+    unlocked = false,
     loc_txt = {
         name = 'Menacing Skull',
         text = {
             'This Joker gains {C:mult}+#2#{} Mult when a Joker is {C:attention}sold{}',
             '{C:inactive}(Currently{} {C:mult}+#1#{} {C:inactive}Mult)'
         },
+        unlock = {
+            'Sell a total of {C:attention}30{} Joker cards',
+            '{C:inactive}(#1#)'
+        }
     },
     name = "Skull",
     atlas = "Skull",
@@ -46,5 +51,14 @@ SMODS.Joker {
                 card = card,
             }
         end
+    end,
+    locked_loc_vars = function(self, info_queue, card)
+        return { vars = { G.PROFILES[G.SETTINGS.profile].career_stats.c_jokers_sold } }
+    end,
+    check_for_unlock = function(self, args)
+        if args.type == 'career_stat' and args.statname == 'c_jokers_sold' then
+            return G.PROFILES[G.SETTINGS.profile].career_stats[args.statname] >= 30
+        end
+        return false
     end
 }
