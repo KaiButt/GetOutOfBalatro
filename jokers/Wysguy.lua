@@ -7,12 +7,18 @@ SMODS.Atlas {
 
 SMODS.Joker {
     key = 'Wysguy',
+    Unlocked = false,
     loc_txt = {
         name = 'Wysguy',
         text = {
             'Has a {C:dark_edition}Unique{} effect for each deck',
             '{C:inactive}(Are you wise enough to figure it out?){}'
         },
+        unlock = {
+             "Win a run with any",
+             "deck on",
+             "{V:1}Gold Stake{} difficulty",
+        }
     },
     name = "Wysguy",
     atlas = "Wysguy",
@@ -228,6 +234,9 @@ SMODS.Joker {
             moneyGiven = moneyGiven + card.ability.extra.strength
         end
         return moneyGiven
+    end,
+    check_for_unlock = function(self, args)
+        return args.type == 'win_stake' and get_deck_win_stake() == 8
     end
 }
 function GET_selected_deck()
