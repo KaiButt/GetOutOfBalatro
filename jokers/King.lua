@@ -7,6 +7,7 @@ SMODS.Atlas {
 
 SMODS.Joker {
     key = 'King',
+    unlocked = false,
     loc_txt = {
         name = 'The King',
         text = {
@@ -15,6 +16,9 @@ SMODS.Joker {
             'Gains {C:gold}$#1#{} for each {C:attention}King{} in deck',
             '{C:inactive}(Currently: {}{C:gold}$#2#{}{C:inactive}){}',
         },
+        unlock = {
+            'Have a deck that consists of only {C:attention}Kings{}',
+        }
     },
     name = "King",
     atlas = "King",
@@ -67,5 +71,18 @@ SMODS.Joker {
             if playing_card:get_id() == 13 then kings_crowned = kings_crowned + 1 end
         end
         return kings_crowned > 0 and card.ability.extra.dollar * kings_crowned or nil
-    end
+    end,
+    check_for_unlock = function(self, args)
+        if args.type == 'modify_deck' then
+            local kingMe
+            for _, playing_card in ipairs(G.playing_cards or {}) do
+                if playing_card:get_id() ~= 13 then
+                    kingMe = false
+                    break
+                end
+                kingMe = true
+            end
+            return kingMe
+        end
+    end,
 }
