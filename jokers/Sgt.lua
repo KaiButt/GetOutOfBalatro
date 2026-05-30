@@ -16,14 +16,13 @@ SMODS.Joker {
     name = 'Sgt',
     atlas = 'Sgt',
     pos = { x = 0, y = 0 },
-    config = { 
-        config = {
+    config = {
         extra = {
             x_mult = 1.5
         },
         immutable = {
             negative_rate = 50
-        }
+        },
     },
     rarity = 2,
     cost = 5,

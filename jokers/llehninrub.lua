@@ -68,7 +68,7 @@ SMODS.Joker {
             return {
                 message = '!!!NURB NURB NURB',
                 colour = G.C.RED,
-                delay = 1.0,
+                delay = 0.75,
             }
         end
          if context.joker_main and context.cardarea == G.jokers and context.scoring_name then
