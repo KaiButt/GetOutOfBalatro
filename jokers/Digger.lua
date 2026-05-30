@@ -21,7 +21,7 @@ SMODS.Joker {
     config = {
         extra = {
             multGain = 20,
-            costOfBusiness = 2
+            costOfBusiness = 2,
         }
     },
     rarity = 2,
@@ -53,7 +53,7 @@ SMODS.Joker {
             elseif G.GAME.dollars >= card.ability.extra.costOfBusiness  then
             return {
                 message = "Pay Up!",
-                ease_dollars(-card.ability.extra.costOfBusiness),
+                ease_dollars(-card.ability.extra.costOfBusiness, true),
                 colour = G.C.MONEY,
                 card = card,
             }

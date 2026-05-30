@@ -33,7 +33,7 @@ SMODS.Joker {
             if G.GAME.dollars > 0 then
                 return {
                     message = 'DEATHKILL ONLINE',
-                    ease_dollars(-G.GAME.dollars),
+                    ease_dollars(-G.GAME.dollars, true),
                     colour = G.C.MONEY,
                     delay = 1.2,
                 }
