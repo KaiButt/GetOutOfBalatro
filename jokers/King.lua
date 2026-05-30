@@ -17,7 +17,7 @@ SMODS.Joker {
             '{C:inactive}(Currently: {}{C:gold}$#2#{}{C:inactive}){}',
         },
         unlock = {
-            'Have a deck that consists of only {C:attention}Kings{}',
+            'Have only {C:attention}Kings{} in your deck',
         }
     },
     name = "King",
