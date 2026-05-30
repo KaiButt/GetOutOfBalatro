@@ -22,7 +22,7 @@ SMODS.Joker {
 	config = { extra = { amountToBack = 1, phoenixBonus = 1} },
 	cost = 20,
 	in_pool = function() 
-        if G.GAME.crownos_used == false or G.Game.crownos_used == nil then
+        if G.GAME.crownos_used == false or G.GAME.crownos_used == nil then
             return true
         else
             return false
