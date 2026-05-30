@@ -16,27 +16,35 @@ SMODS.Joker {
     name = 'Sgt',
     atlas = 'Sgt',
     pos = { x = 0, y = 0 },
-    config = { extra = { negative_rate = 50, x_mult = 1.5} },
+    config = { 
+        config = {
+        extra = {
+            x_mult = 1.5
+        },
+        immutable = {
+            negative_rate = 50
+        }
+    },
     rarity = 2,
     cost = 5,
     blueprint_compat = true,
     eternal_compat = true,
     perishable_compat = true,
     loc_vars = function(self, info_queue, center)
-       return { vars = { center.ability.extra.negative_rate, center.ability.extra.x_mult } }
+       return { vars = { center.ability.immutable.negative_rate, center.ability.extra.x_mult } }
     end,
     pools = { ["goob"] = true },
     add_to_deck = function(self, card, from_debuff)
         SMODS.Edition:take_ownership("negative", {
             get_weight = function(self)
-                return self.weight * (card.ability.extra.negative_rate)
+                return self.weight * (card.ability.immutable.negative_rate)
             end,
         }, true)
     end,
     remove_from_deck = function(self, card, from_debuff)
         SMODS.Edition:take_ownership("negative", {
             get_weight = function(self)
-                return self.weight / (card.ability.extra.negative_rate)
+                return self.weight / (card.ability.immutable.negative_rate)
             end,
         }, true)
     end,
