@@ -22,7 +22,7 @@ SMODS.Joker {
     blueprint_compat = false,
     pools = { ["goob"] = true},
     calculate = function(self, card, context)
-        if context.stay_flipped and context.from_area == G.play then
+        if context.stay_flipped and context.from_area == G.play and (context.other_card.ability.set=="Default" or context.other_card.ability.set=="Enhanced") then
             return {
                 modify = {to_area = G.deck}
             }
