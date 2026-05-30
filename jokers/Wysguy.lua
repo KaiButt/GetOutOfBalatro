@@ -17,7 +17,7 @@ SMODS.Joker {
         unlock = {
              "Win a run with any",
              "deck on",
-             "{V:1}Gold Stake{} difficulty",
+             "{C:attention}Gold Stake{} difficulty",
         }
     },
     name = "Wysguy",
