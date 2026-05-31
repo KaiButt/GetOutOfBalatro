@@ -16,7 +16,7 @@ SMODS.Joker {
 			'and {C:red,E:2}self destructs{}'
 		},
 		unlock = {
-			'Beat ante {C:attention}-1{} or ante {C:attention}16{}'
+			'Beat ante {C:attention}-1{}'
 		}
 	},
 	name = 'Crownos',
@@ -51,7 +51,7 @@ SMODS.Joker {
 	end,
 	check_for_unlock = function(self, args) 
         if args.type == 'round_win' then
-            return (G.GAME.round_resets.blind_ante == -1 and G.GAME.blind.boss) or (G.GAME.round_resets.blind_ante == 16 and G.GAME.blind.boss)
+            return (G.GAME.round_resets.blind_ante == -1 and G.GAME.blind.boss)
         end
     end
 }
