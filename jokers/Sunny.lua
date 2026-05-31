@@ -7,12 +7,16 @@ SMODS.Atlas {
 
 SMODS.Joker {
     key = 'Sunny',
+    unlocked = false,
     loc_txt = {
         name = 'Loyal Guardian Sunny',
         text = {
             'When this Joker, or an adjacent Joker would be debuffed',
             '{C:green}prevents it{}. Adjacent Jokers give {X:mult,C:white}X#1#{} Mult',
             'G.O.O.B Jokers give {X:mult,C:white}X#2#{} Mult instead',
+        },
+        unlock = {
+            'Lose a run'
         }
     },
     name = 'Sunny',
@@ -88,6 +92,12 @@ SMODS.Joker {
                     }
                 end
             end
+        end,
+        check_for_unlock = function(self, args)
+        if args.type == 'career_stat' and args.statname == 'c_losses' then
+            return G.PROFILES[G.SETTINGS.profile].career_stats[args.statname] >= 1
         end
+        return false
+    end
     end
 }
