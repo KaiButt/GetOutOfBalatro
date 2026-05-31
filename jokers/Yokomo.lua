@@ -10,7 +10,7 @@ SMODS.Joker {
     loc_txt = {
         name = 'Yokomo',
         text = {
-            'When a card is Scored, {C:green}#1# in #2#{} chance to give it',
+            'When a card is scored, {C:green}#1# in #2#{} chance to give it',
             'a random {C:attention}Enhancement{}. If it already has one,',
             'it gains permanent Chips equal to its base Chip amount instead.'
         }
