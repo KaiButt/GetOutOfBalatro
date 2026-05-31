@@ -39,7 +39,7 @@ SMODS.Joker {
     blueprint_compat = true,
     eternal_compat = true, -- still debating on these stickers
     perishable_compat = true,
-    pools = { ["goob"] = true},
+    pools = { ["goob"] = true },
     calculate = function(self, card, context)
         if (context.joker_type_destroyed and context.card == card) and not context.blueprint then
             local editionType = nil
@@ -69,9 +69,7 @@ function Card:remove_from_deck(from_debuff)
         if self.edition ~= nil then
             editionType = "e_" .. self.edition.type
         end
-        if from_debuff then
-            SMODS.destroy_cards(self)
-        end
+        SMODS.destroy_cards(self)
         if editionType ~= nil then
             SMODS.add_card { key = "j_goob_Kerry_rage", edition = editionType }
         else

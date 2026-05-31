@@ -8,13 +8,6 @@ SMODS.Atlas({
 	px = 32,
 	py = 32,
 })
-SMODS.ObjectType({
-	object_type = "ObjectType",
-	key = "goob",
-	weight = 10,
-	default = "j_goob_Petyr",
-	cards = {}
-})
 for _, file in ipairs(joker_src) do
     assert(SMODS.load_file("jokers/" .. file))()
 end
