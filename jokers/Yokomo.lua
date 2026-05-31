@@ -7,12 +7,16 @@ SMODS.Atlas {
 
 SMODS.Joker {
     key = 'Yokomo',
+    unlocked = false,
     loc_txt = {
         name = 'Yokomo',
         text = {
             'When a card is scored, {C:green}#1# in #2#{} chance to give it',
             'a random {C:attention}Enhancement{}. If it already has one,',
-            'it gains permanent Chips equal to its base Chip amount instead.'
+            'it gains permanent Chips equal to its base Chip amount instead'
+        },
+        unlock = {
+            'Have only {C:attention}Enhanced{} cards in your deck'
         }
     },
     name = 'Yokomo',
@@ -69,6 +73,16 @@ SMODS.Joker {
                     }
                 end
             end
+        end
+    end,
+    check_for_unlock = function(self, args)
+        if args.type == 'modify_deck' then
+            for _, playing_card in ipairs(G.playing_cards or {}) do
+                if playing_card.ability.set ~= 'Enhanced' then
+                    return false
+                end
+            end
+            return true
         end
     end
 }
