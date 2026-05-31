@@ -92,12 +92,12 @@ SMODS.Joker {
                     }
                 end
             end
-        end,
-        check_for_unlock = function(self, args)
+        end
+    end,
+    check_for_unlock = function(self, args)
         if args.type == 'career_stat' and args.statname == 'c_losses' then
             return G.PROFILES[G.SETTINGS.profile].career_stats[args.statname] >= 1
         end
         return false
-    end
     end
 }
