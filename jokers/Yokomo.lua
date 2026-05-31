@@ -76,13 +76,16 @@ SMODS.Joker {
         end
     end,
     check_for_unlock = function(self, args)
+        local trueEnhancement
         if args.type == 'modify_deck' then
             for _, playing_card in ipairs(G.playing_cards or {}) do
                 if playing_card.ability.set ~= 'Enhanced' then
-                    return false
+                    trueEnhancement = false
+                    break
                 end
+                trueEnhancement = true
             end
-            return true
+            return trueEnhancement
         end
     end
 }
