@@ -7,6 +7,7 @@ SMODS.Atlas {
 
 SMODS.Joker {
 	key = 'Crownos',
+	unlocked = false,
 	loc_txt = {
 		name = 'Crownos',
 		text = {
@@ -14,6 +15,9 @@ SMODS.Joker {
 			'{C:attention}-#1#{} ante, {C:dark_edition}+#2#{} Joker Slot,',
 			'and {C:red,E:2}self destructs{}'
 		},
+		unlock = {
+			'Beat ante {C:attention}-1{} or ante {C:attention}16{}'
+		}
 	},
 	name = 'Crownos',
 	atlas = 'Crownos',
@@ -44,5 +48,10 @@ SMODS.Joker {
             G.jokers.config.card_limit = G.jokers.config.card_limit + card.ability.extra.phoenixBonus
             SMODS.destroy_cards(card, nil, true)
         end
-	end
+	end,
+	check_for_unlock = function(self, args) 
+        if args.type == 'round_win' then
+            return (G.GAME.round_resets.blind_ante == -1 and G.GAME.blind.boss) or (G.GAME.round_resets.blind_ante == 16 and G.GAME.blind.boss)
+        end
+    end
 }
