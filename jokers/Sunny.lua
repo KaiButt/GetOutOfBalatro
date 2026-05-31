@@ -16,7 +16,7 @@ SMODS.Joker {
             'G.O.O.B Jokers give {X:mult,C:white}X#2#{} Mult instead',
         },
         unlock = {
-            'Lose a run'
+            'Lose {C:attention}1{} run'
         }
     },
     name = 'Sunny',
