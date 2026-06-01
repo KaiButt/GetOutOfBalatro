@@ -7,11 +7,15 @@ SMODS.Atlas {
 
 SMODS.Joker {
     key = 'Fox',
+    unlocked = false,
     loc_txt = {
         name = 'Blessed Fox',
         text = {
             'When gained, creates a random {X:grey,C:edition}negative{} G.O.O.B Joker',
             'Other G.O.O.B Jokers each give {X:mult,C:white}X#1#{} Mult',
+        },
+        unlock = {
+            'Win a run with only G.O.O.B Jokers'
         }
     },
     name = 'Fox',
@@ -42,5 +46,19 @@ SMODS.Joker {
                 card = card
             }
         end
+    end,
+    check_for_unlock = function(self, args)
+        return args.type == 'win' and goobExclusive()
     end
 }
+function goobExclusive()
+    exclusive = false
+    for _, joker in ipairs(G.jokers.cards or {}) do
+        if (string.find(joker.config.center.key, "j_goob") == nil) then
+            exclusive = false
+            break
+        end
+        exclusive = true
+    end
+    return exclusive
+end
