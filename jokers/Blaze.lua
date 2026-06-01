@@ -15,7 +15,7 @@ SMODS.Joker {
             'Will be {C:attention}shuffled back{} into your {C:attention}deck{}',
         },
         unlock = {
-            'Beat a {C:attention}Boss Blind{} with {C:attention}1{} card in your deck'
+            'Beat a {C:attention}Boss Blind{} with at most {C:attention}5{} cards in your deck'
         }
     },
     name = "Blaze",
@@ -33,6 +33,6 @@ SMODS.Joker {
         end
     end,
     check_for_unlock = function(self, args)
-        return args.type == 'ante_up' and #G.playing_cards == 1
+        return args.type == 'ante_up' and #G.playing_cards <= 5
     end,
 }
