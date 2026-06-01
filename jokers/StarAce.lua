@@ -7,12 +7,16 @@ SMODS.Atlas {
 
 SMODS.Joker {
     key = 'StarAce',
+    unlocked = false,
     loc_txt = {
         name = 'Star Ace',
         text = {
             '{C:mult}+#1#d#2#{} Mult',
             'When any G.O.O.B die is rolled, it is rolled with {C:attention}advantage{}',
         },
+        unlock = {
+            'Unlocked with {C:attention}Luck{}'
+        }
     },
     name = "StarAce",
     atlas = "StarAce",
@@ -48,6 +52,16 @@ SMODS.Joker {
                 colour = G.C.RED,
                 card = card,
             }
+        end
+    end,
+    check_for_unlock = function(self, args)
+        if args.type == 'round_win' then
+            local luckyNumber = pseudorandom("goob_seed", 1, 12)
+            if luckyNumber == 12 then
+                return true
+            else
+                return false
+            end
         end
     end
 }
