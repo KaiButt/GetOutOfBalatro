@@ -7,6 +7,7 @@ SMODS.Atlas {
 
 SMODS.Joker {
     key = 'Charles',
+    unlocked = false,
     loc_txt = {
         name = 'Charles',
         text = {
@@ -15,6 +16,9 @@ SMODS.Joker {
             'gain {C:gold}$#2#{} at the end of the round', -- base money condition if you get unlucky and no legendaries show up
             'for each {E:1,C:red}Rare{} and {E:1,C:purple}Legendary{} Joker owned',
             '{C:inactive}(Including this one){}'
+        },
+        unlock = {
+            'Win a run with a {E:1,C:purple}Legendary{}'
         }
     },
     name = 'Charles',
@@ -56,8 +60,19 @@ SMODS.Joker {
                 ownedCheck = ownedCheck + 1 end
         end
         return card.ability.extra.moneyGenerated * ownedCheck
+    end,
+    check_for_unlock = function(self, args)
+        return args.type == 'win' and legendaryCheck()
     end
 }
+function legendaryCheck()
+    for i = 1, #G.jokers.cards do
+        if G.jokers.cards[i]:is_rarity("Legendary") then
+            return true
+        end
+    end
+    return false
+end
 -- modify pool for Charles
 local oldgetcurrentpool = get_current_pool
 function get_current_pool(_type, _rarity, _legendary, _append)

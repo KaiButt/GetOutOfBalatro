@@ -7,11 +7,17 @@ SMODS.Atlas {
 
 SMODS.Joker {
     key = 'Inversi',
+    unlocked = false,
     loc_txt = {
         name = 'Inversi',
         text = {
             string.reverse('Chips')..' {C:chips}#2#d#1#+{}'
         },
+        unlock = {
+            'Win a run with',
+            '{C:attention}Erratic Deck{}',
+            'on any difficulty'
+        }
     },
     name = "Inversi",
     atlas = "Inversi",
@@ -48,5 +54,8 @@ SMODS.Joker {
                 card = card,
             }
         end
+    end,
+    check_for_unlock = function(self, args)
+        return args.type == 'win_deck' and GET_selected_deck() == 'b_erratic'
     end
 }
