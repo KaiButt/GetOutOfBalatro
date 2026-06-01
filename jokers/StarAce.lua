@@ -15,7 +15,8 @@ SMODS.Joker {
             'When any G.O.O.B die is rolled, it is rolled with {C:attention}advantage{}',
         },
         unlock = {
-            'Unlocked with {C:attention}Luck{}'
+            'Unlocked with {C:attention}Luck{}',
+            '{C:inactive}(1 in 12 chance to unlock when you win a blind){}'
         }
     },
     name = "StarAce",
