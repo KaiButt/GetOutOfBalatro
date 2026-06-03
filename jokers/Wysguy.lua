@@ -144,7 +144,7 @@ SMODS.Joker {
             elseif deck == 'b_abandoned' then -- x3 mult if deck doesnt contain face cards
                 local faceless = true
                 for _, playing_card in ipairs(G.playing_cards) do
-                    if playing_card:get_id() == 13 or playing_card:get_id() == 12 or playing_card:get_id() == 11 then
+                    if playing_card:is_face() then
                         faceless = false
                         break
                     end
