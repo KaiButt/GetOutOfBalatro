@@ -50,11 +50,14 @@ SMODS.Joker {
             G.hand:change_size(card.ability.extra.strength)
             G.consumeables.config.card_limit = G.consumeables.config.card_limit - card.ability.extra.strength
         elseif deck == 'b_plasma' then
+            
             G.jokers.oldLimit = G.jokers.config.card_limit
             G.consumeables.oldLimit = G.consumeables.config.card_limit
             local totalLimit = G.jokers.config.card_limit + G.consumeables.config.card_limit
             if totalLimit % 2 ~= 0 then
-                totalLimit = totalLimit + 1
+                totalLimit = totalLimit + 3
+            else
+                totalLimit = totalLimit + 2
             end
             G.jokers.config.card_limit = totalLimit / 2
             G.consumeables.config.card_limit = totalLimit / 2
