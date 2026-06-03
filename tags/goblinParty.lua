@@ -21,7 +21,7 @@ SMODS.Tag {
     config = { type = "store_joker_create"},
     apply = function(self, tag, context)
         if context.type == "store_joker_create" then
-            local card = create_card("goob", context.area, nil, nil, nil, nil, nil, "goob_goblinParty")
+            local card = SMODS.create_card ({set = 'goob', legendary = false, area = context.area, key_append = "goob_goblinParty" })
             create_shop_card_ui(card, "Joker", context.area)
             card.states.visible = false
             tag:yep("+", G.C.GREEN, function()

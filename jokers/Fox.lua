@@ -32,11 +32,12 @@ SMODS.Joker {
         return { vars = { center.ability.extra.x_mult } }
     end,
     add_to_deck = function(self, card, from_debuff)
-        SMODS.add_card {
+        SMODS.add_card ({
             set = 'goob',
+            legendary = false,
             key_append = "bff",
             edition = "e_negative"
-        }
+        })
     end,
     calculate = function(self, card, context)
         if context.other_joker and card ~= context.other_joker and string.find(context.other_joker.config.center.key, "j_goob") ~= nil then
