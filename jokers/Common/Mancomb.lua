@@ -13,7 +13,7 @@ SMODS.Joker {
     pos = { x = 0, y = 0 },
     config = {
         extra = {
-            rerollBonus = 5,
+            rerollBonus = 10,
             totalChips = 0
         },
     },
