@@ -38,19 +38,8 @@ SMODS.Joker {
             G.hand:change_size(card.ability.extra.strength)
             G.consumeables.config.card_limit = G.consumeables.config.card_limit - card.ability.extra.strength
         elseif deck == 'b_plasma' then
-            
-            G.jokers.oldLimit = G.jokers.config.card_limit
-            G.consumeables.oldLimit = G.consumeables.config.card_limit
-            local totalLimit = G.jokers.config.card_limit + G.consumeables.config.card_limit
-            if totalLimit % 2 ~= 0 then
-                totalLimit = totalLimit + 3
-            else
-                totalLimit = totalLimit + 2
-            end
-            G.jokers.config.card_limit = totalLimit / 2
-            G.consumeables.config.card_limit = totalLimit / 2
-            G.jokers.newLimit = G.jokers.config.card_limit
-            G.consumeables.newLimit = G.consumeables.config.card_limit
+            G.jokers.config.card_limit = G.jokers.config.card_limit - card.ability.extra.strength
+            G.consumeables.config.card_limit = G.consumeables.config.card_limit + 2*card.ability.extra.strength
         elseif deck == 'b_erratic' then
             for i = 1, 5 * card.ability.extra.strength, 1 do
                 local _card = pseudorandom_element(G.playing_cards, pseudoseed('seed'))
@@ -79,9 +68,8 @@ SMODS.Joker {
             G.hand:change_size(-card.ability.extra.strength)
             G.consumeables.config.card_limit = G.consumeables.config.card_limit + card.ability.extra.strength
         elseif deck == 'b_plasma' then
-            G.jokers.config.card_limit = G.jokers.oldLimit + (G.jokers.config.card_limit - G.jokers.newLimit)
-            G.consumeables.config.card_limit = G.consumeables.oldLimit +
-                (G.jokers.config.card_limit - G.consumeables.newLimit)
+           G.jokers.config.card_limit = G.jokers.config.card_limit + card.ability.extra.strength
+           G.consumeables.config.card_limit = G.consumeables.config.card_limit - 2*card.ability.extra.strength
         elseif deck == 'b_erratic' and not from_debuff then
             for i = 1, 5 * card.ability.extra.strength, 1 do
                 local _card = pseudorandom_element(G.playing_cards, pseudoseed('seed'))
