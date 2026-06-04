@@ -37,6 +37,7 @@ SMODS.Joker {
         if context.discard then
             context.other_card.ability.perma_bonus = (context.other_card.ability.perma_bonus or 0) +
             card.ability.extra.chips
+            print(G.PROFILES[G.SETTINGS.profile].career_stats['c_reroll'])
             return {
                 message = localize('k_upgrade_ex'),
                 colour = G.C.CHIPS
@@ -46,6 +47,7 @@ SMODS.Joker {
     check_for_unlock = function(self, args)
         if args.type == 'discard_custom' then
             local eval = evaluate_poker_hand(args.cards)
+            
             if next(eval['Flush Five']) then
                     return true
             end
