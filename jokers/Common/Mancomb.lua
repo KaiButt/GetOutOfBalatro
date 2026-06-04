@@ -9,7 +9,7 @@ SMODS.Joker {
     key = 'Mancomb',
     unlocked = false,
     name = 'Mancomb',
-    atlas = 'Boblin',
+    atlas = 'Mancomb',
     pos = { x = 0, y = 0 },
     config = {
         extra = {
