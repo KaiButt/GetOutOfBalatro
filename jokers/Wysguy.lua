@@ -8,18 +8,6 @@ SMODS.Atlas {
 SMODS.Joker {
     key = 'Wysguy',
     unlocked = false,
-    loc_txt = {
-        name = 'Wysguy',
-        text = {
-            'Has a {C:dark_edition}Unique{} effect for each deck',
-            '{C:inactive}(Are you wise enough to figure it out?){}'
-        },
-        unlock = {
-             "Win a run with any",
-             "deck on",
-             "{C:attention}Gold Stake{} difficulty",
-        }
-    },
     name = "Wysguy",
     atlas = "Wysguy",
     pos = { x = 0, y = 0 },

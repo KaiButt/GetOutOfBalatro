@@ -6,13 +6,6 @@ SMODS.Atlas {
 }
 SMODS.Joker {
     key = 'Sgt',
-    loc_txt = {
-        name = 'Sgt',
-        text = {
-            '{X:grey,C:edition}Negative{} Jokers are {C:attention}#1#X{} more likely to show up',
-            'Other {X:grey,C:edition}Negative{} Jokers gives {X:mult,C:white}X#2#{} Mult',
-        }
-    },
     name = 'Sgt',
     atlas = 'Sgt',
     pos = { x = 0, y = 0 },

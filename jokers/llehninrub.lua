@@ -8,17 +8,6 @@ SMODS.Atlas {
 SMODS.Joker {
     key = 'LLEHNINRUB',
     unlocked = false,
-    loc_txt = {
-        name = 'LLEHNINRUB',
-        text = {
-            '{X:mult,C:white}X#1#{} Mult',
-            'When {C:attention}Blind{} is selected',
-            'Flips and shuffles {C:attention}ALL{} Jokers'
-        },
-        unlock = {
-            'Defeat {C:attention}Amber Acorn{}'
-        },
-    },
     name = 'LLEHNINRUB',
     atlas = 'LLEHNINRUB',
     pos = { x = 0, y = 0 },

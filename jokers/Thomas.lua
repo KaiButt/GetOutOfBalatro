@@ -8,18 +8,6 @@ SMODS.Atlas {
 SMODS.Joker {
     key = 'Thomas',
     unlocked = false,
-    loc_txt = {
-        name = 'Thomas',
-        text = {
-            'Every discarded {C:attention}card{}',
-            'permanently gains',
-            '{C:chips}+#1#{} Chips when scored'
-        },
-        unlock = {
-            "Discard a",
-            "{E:1,C:attention}Flush Five",
-        }
-    },
     name = 'Thomas',
     atlas = 'Thomas',
     config = { extra = { chips = 4 } },

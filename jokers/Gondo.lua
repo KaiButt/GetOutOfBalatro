@@ -7,13 +7,6 @@ SMODS.Atlas {
 
 SMODS.Joker {
     key = 'Gondo',
-    loc_txt = {
-        name = 'Gondo',
-        text = {
-            "{C:attention}+#1#{} card slot",
-            "available in shop",
-        },
-    },
     name = "Gondo",
     atlas = "Gondo",
     pos = { x = 0, y = 0 },

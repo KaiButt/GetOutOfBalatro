@@ -8,16 +8,6 @@ SMODS.Atlas {
 SMODS.Joker {
     key = 'Fox',
     unlocked = false,
-    loc_txt = {
-        name = 'Blessed Fox',
-        text = {
-            'When gained, creates a random {X:grey,C:edition}negative{} G.O.O.B Joker',
-            'Other G.O.O.B Jokers each give {X:mult,C:white}X#1#{} Mult',
-        },
-        unlock = {
-            'Win a run with only G.O.O.B Jokers'
-        }
-    },
     name = 'Fox',
     atlas = 'Fox',
     pos = { x = 0, y = 0 },

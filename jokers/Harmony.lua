@@ -7,13 +7,6 @@ SMODS.Atlas {
 
 SMODS.Joker {
     key = 'Harmony',
-    loc_txt = {
-        name = 'Harmony',
-        text = {
-            '{C:attention}+#1#{} hand size',
-            '{C:green}#2# in #3#{} chance this card is destroyed at end of round',
-        }
-    },
     name = 'Harmony',
     atlas = 'Harmony',
     pos = { x = 0, y = 0 },

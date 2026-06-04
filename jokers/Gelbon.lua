@@ -8,18 +8,6 @@ SMODS.Atlas {
 SMODS.Joker {
     key = 'Gelbon',
     unlocked = false,
-    loc_txt = {
-        name = 'Gelbon The Nerd',
-        text = {
-            'Gains {C:mult}+#2#{} Mult',
-            'if played hand',
-            'contains a {C:attention}Straight{}',
-            '{C:inactive}(Currently {C:mult}+#1#{C:inactive} Mult)',
-        },
-        unlock = {
-            'Win a run with a {C:attention}Straight{}'
-        }
-    },
     name = 'Gelbon',
     atlas = 'Gelbon',
     pos = { x = 0, y = 0 },

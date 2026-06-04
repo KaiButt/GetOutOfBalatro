@@ -7,13 +7,6 @@ SMODS.Atlas {
 
 SMODS.Joker {
     key = 'Boblin',
-    loc_txt = {
-        name = 'Boblin',
-        text = {
-            'When {C:attention}Small Blind{} is skipped, cause a {C:green}Goblin Party!{}',
-            'All your Jokers are considered {X:black,C:edition,E:1}Mercenaries{}',
-        }
-    },
     name = 'Boblin',
     atlas = 'Boblin',
     pos = { x = 0, y = 0 },

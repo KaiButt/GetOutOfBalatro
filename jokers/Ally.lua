@@ -7,16 +7,6 @@ SMODS.Atlas {
 
 SMODS.Joker {
     key = 'Ally',
-    loc_txt = {
-        name = 'Gamblin\' Sage',
-        text = {
-            'When {C:attention}Blind{} is selected',
-            'Rolls {C:attention}#1#d#2#{}',
-            'On a #2#, gains {C:gold}#3#{} Gold',
-            'and disables the current or next {C:attention}Boss Blind{}',
-            '{C:inactive}(Increases the{} {C:attention}minimum roll{} {C:inactive}on failure until success){}'
-        },
-    },
     name = "Ally",
     atlas = "Ally",
     pos = { x = 0, y = 0 },

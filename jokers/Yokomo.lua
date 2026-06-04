@@ -8,17 +8,6 @@ SMODS.Atlas {
 SMODS.Joker {
     key = 'Yokomo',
     unlocked = false,
-    loc_txt = {
-        name = 'Yokomo',
-        text = {
-            'When a card is scored, {C:green}#1# in #2#{} chance to give it',
-            'a random {C:attention}Enhancement{}. If it already has one,',
-            'it gains permanent Chips equal to its base Chip amount instead'
-        },
-        unlock = {
-            'Have only {C:attention}Enhanced{} cards in your deck'
-        }
-    },
     name = 'Yokomo',
     atlas = 'Yokomo',
     pos = { x = 0, y = 0 },

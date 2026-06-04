@@ -7,12 +7,6 @@ SMODS.Atlas {
 
 SMODS.Tag {
     key = 'goblinParty',
-    loc_txt = {
-        name = 'Goblin Party!',
-        text = {
-            'Shop has a free {C:attention}G.O.O.B{} joker'
-        }
-    },
     in_pool = function()
         return false
     end,

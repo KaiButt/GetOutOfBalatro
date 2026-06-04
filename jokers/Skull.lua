@@ -8,17 +8,6 @@ SMODS.Atlas {
 SMODS.Joker {
     key = 'Skull',
     unlocked = false,
-    loc_txt = {
-        name = 'Menacing Skull',
-        text = {
-            'This Joker gains {C:mult}+#2#{} Mult when a Joker is {C:attention}sold{}',
-            '{C:inactive}(Currently{} {C:mult}+#1#{} {C:inactive}Mult)'
-        },
-        unlock = {
-            'Sell a total of {C:attention}30{} Joker cards',
-            '{C:inactive}(#1#)'
-        }
-    },
     name = "Skull",
     atlas = "Skull",
     pos = { x = 0, y = 0 },

@@ -8,17 +8,6 @@ SMODS.Atlas {
 SMODS.Joker {
 	key = 'Crownos',
 	unlocked = false,
-	loc_txt = {
-		name = 'Crownos',
-		text = {
-			'After completing the next {C:attention}Blind{}',
-			'{C:attention}-#1#{} ante, {C:dark_edition}+#2#{} Joker Slot,',
-			'and {C:red,E:2}self destructs{}'
-		},
-		unlock = {
-			'Beat ante {C:attention}-1{}'
-		}
-	},
 	name = 'Crownos',
 	atlas = 'Crownos',
 	pos = { x = 0, y = 0 },

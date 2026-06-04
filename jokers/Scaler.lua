@@ -7,13 +7,6 @@ SMODS.Atlas {
 
 SMODS.Joker {
     key = 'Scaler',
-    loc_txt = {
-        name = 'Scaler',
-        text = {
-            '{C:mult}+#1#{} Mult',
-            'Gains {C:mult}+#2#{} Mult after every {C:attention}Boss Blind{}',
-        },
-    },
     name = "Scaler",
     atlas = "Scaler",
     pos = { x = 0, y = 0 },

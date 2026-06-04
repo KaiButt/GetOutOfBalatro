@@ -8,17 +8,6 @@ SMODS.Atlas {
 SMODS.Joker {
     key = 'Digger',
     unlocked = false,
-    loc_txt = {
-        name = 'Digger Of The Golden Sands',
-        text = {
-            '{C:mult}+#1#{} Mult',
-            'Lose {C:gold}$#2#{} Gold at the end of the round',
-            'If you can not pay, {C:red,E:2}self destructs{}'
-        },
-        unlock = {
-            'Have at least {C:gold}$200{}'
-        }
-    },
     name = 'Digger',
     atlas = 'Digger',
     pos = { x = 0, y = 0 },

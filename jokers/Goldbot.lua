@@ -7,13 +7,6 @@ SMODS.Atlas {
 
 SMODS.Joker{
     key = 'Gold_Bot',
-    loc_txt = {
-        name = 'Gold Bot',
-        text = {
-            'When {C:attention}Blind{} is skipped',
-            'Gain {C:gold}$#1#d#2#{} Gold',
-        }
-    },
     name = 'Gold_Bot',
     atlas = 'GoldBot',
     pos = { x = 0, y = 0 },

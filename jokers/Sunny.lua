@@ -8,17 +8,6 @@ SMODS.Atlas {
 SMODS.Joker {
     key = 'Sunny',
     unlocked = false,
-    loc_txt = {
-        name = 'Loyal Guardian Sunny',
-        text = {
-            'When this Joker, or an adjacent Joker would be debuffed',
-            '{C:green}prevents it{}. Adjacent Jokers give {X:mult,C:white}X#1#{} Mult',
-            'G.O.O.B Jokers give {X:mult,C:white}X#2#{} Mult instead',
-        },
-        unlock = {
-            'Lose {C:attention}1{} run'
-        }
-    },
     name = 'Sunny',
     atlas = 'Sunny',
     pos = { x = 0, y = 0 },

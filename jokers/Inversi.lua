@@ -8,17 +8,6 @@ SMODS.Atlas {
 SMODS.Joker {
     key = 'Inversi',
     unlocked = false,
-    loc_txt = {
-        name = 'Inversi',
-        text = {
-            string.reverse('Chips')..' {C:chips}#2#d#1#+{}'
-        },
-        unlock = {
-            'Win a run with',
-            '{C:attention}Erratic Deck{}',
-            'on any difficulty'
-        }
-    },
     name = "Inversi",
     atlas = "Inversi",
     pos = { x = 0, y = 0 },

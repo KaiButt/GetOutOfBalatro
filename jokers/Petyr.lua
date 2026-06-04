@@ -7,16 +7,6 @@ SMODS.Atlas {
 
 SMODS.Joker{
     key = 'Petyr',
-    loc_txt = {
-        name = 'Yapping Petyr',
-        text = {
-            '{E:1}Talks a lot{}',
-            'When {C:attention}Blind{} is selected lose {C:chips}1{} hand',
-            'Sell this joker during a {C:attention}Blind{} to get all lost hands back',
-            'with an additional {C:chips}#1#{}',
-            '{C:inactive}(Currently would grant {C:chips}#2#{}{C:inactive} hands){}'
-        }
-    },
     name = 'Petyr',
     atlas = 'Petyr',
     pos = { x = 0, y = 0 },

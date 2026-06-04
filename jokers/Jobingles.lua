@@ -7,18 +7,6 @@ SMODS.Atlas {
 
 SMODS.Joker {
 	key = 'Jobingles',
-	loc_txt = {
-		name = 'Jobingles',
-		text = {
-			'Adds #1# card',
-			'with an {X:grey,C:edition}edition{} to deck when',
-			'{C:attention}Blind{} is selected',
-			'Last card added: {C:attention}#4#{} of {C:attention}#5#{}',
-			'{C:inactive}(Max {C:attention}#2#{C:inactive} cards)',
-			'played cards with an {X:grey,C:edition}edition{} each give',
-			'{X:mult,C:white}X#3#{} Mult when scored'
-		},
-	},
 	name = 'Jobingles',
 	atlas = 'Jobingles',
 	pos = { x = 0, y = 0 },

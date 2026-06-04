@@ -7,12 +7,6 @@ SMODS.Atlas {
 
 SMODS.Joker {
     key = 'Greg',
-    loc_txt = {
-        name = 'Greg',
-        text = {
-            '{C:attention}+#1#{} hand size',
-        }
-    },
     name = 'Greg',
     atlas = 'Greg',
     pos = { x = 0, y = 0 },

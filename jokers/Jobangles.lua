@@ -7,17 +7,6 @@ SMODS.Atlas {
 
 SMODS.Joker{
     key = 'Jobangles',
-    loc_txt = {
-        name = 'Jobangles',
-        text = {
-            'When {C:attention}Blind{} is selected a random card in deck',
-            'gets {C:attention}destroyed{} and this joker',
-            'gains Chips equal to {C:chips}X#2#{} the rank destroyed',
-            'extra Chips granted to the card are also given to this joker',
-            'Last card destroyed: {C:attention}#3#{} of {C:attention}#4#{}',
-            '{C:inactive}(Current chip bonus:{C:chips} +#1#{}{C:inactive})'
-        },
-    },
     name = 'Jobangles',
     atlas = 'Jobangles',
 	pos = { x = 0, y = 0 },

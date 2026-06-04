@@ -13,15 +13,6 @@ SMODS.Atlas {
 }
 SMODS.Joker {
     key = 'Kerry',
-    loc_txt = {
-        name = 'Kerry',
-        text = {
-            '{C:mult}+#1#{} Mult',
-            'When debuffed or destroyed,',
-            'becomes {C:attention}enraged{} instead',
-            '{C:inactive}({}{C:attention}Stickers{} {C:inactive}will be removed){}'
-        }
-    },
     name = 'Kerry',
     atlas = 'Kerry',
     pos = { x = 0, y = 0 },
@@ -81,14 +72,6 @@ end
 
 SMODS.Joker {
     key = 'Kerry_rage',
-    loc_txt = {
-        name = 'Enraged Kerry',
-        text = {
-            '{X:mult,C:white}X#1#{} Mult',
-            'Can\'t be {C:attention}debuffed{} or {C:attention}destroyed{}',
-            '{C:inactive}(Will still trigger on destroy effects as if it was destroyed){}'
-        }
-    },
     name = 'Kerry_rage',
     atlas = 'Kerry_rage',
     pos = { x = 0, y = 0 },

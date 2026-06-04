@@ -8,19 +8,6 @@ SMODS.Atlas {
 SMODS.Joker {
     key = 'Charles',
     unlocked = false,
-    loc_txt = {
-        name = 'Charles',
-        text = {
-            '{E:1,C:purple}Legendaries{} appear in the shop',
-            '{E:1,C:purple}Legendaries{} get {C:attention}#1#%{} off',
-            'gain {C:gold}$#2#{} at the end of the round', -- base money condition if you get unlucky and no legendaries show up
-            'for each {E:1,C:red}Rare{} and {E:1,C:purple}Legendary{} Joker owned',
-            '{C:inactive}(Including this one){}'
-        },
-        unlock = {
-            'Win a run with a {E:1,C:purple}Legendary{}'
-        }
-    },
     name = 'Charles',
     atlas = 'Charles',
     pos = { x = 0, y = 0 },

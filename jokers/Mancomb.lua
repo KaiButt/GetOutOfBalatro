@@ -8,17 +8,6 @@ SMODS.Atlas {
 SMODS.Joker {
     key = 'Mancomb',
     unlocked = false,
-    loc_txt = {
-        name = 'Mancomb',
-        text = {
-              "This Joker gains {C:chips}+#1#{} Chips",
-              "per {C:attention}reroll{} in the shop",
-              "{C:inactive}(Currently {C:chips}+#2#{C:inactive} Chips)",
-        },
-        unlock = {
-            'Redeem both {C:attention}reroll surplus{} and {C:attention}reroll glut{}'
-        }
-    },
     name = 'Mancomb',
     atlas = 'Boblin',
     pos = { x = 0, y = 0 },

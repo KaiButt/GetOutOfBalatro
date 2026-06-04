@@ -7,12 +7,6 @@ SMODS.Atlas {
 
 SMODS.Joker {
     key = 'Ante',
-    loc_txt = {
-        name = 'Ante',
-        text = {
-            '{X:mult,C:white}X#1#d#2#{} Mult',
-        },
-    },
     name = "Ante",
     atlas = "Ante",
     pos = { x = 0, y = 0 },

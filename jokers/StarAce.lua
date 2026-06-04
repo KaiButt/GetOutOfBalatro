@@ -8,17 +8,6 @@ SMODS.Atlas {
 SMODS.Joker {
     key = 'StarAce',
     unlocked = false,
-    loc_txt = {
-        name = 'Star Ace',
-        text = {
-            '{C:mult}+#1#d#2#{} Mult',
-            'When any G.O.O.B die is rolled, it is rolled with {C:attention}advantage{}',
-        },
-        unlock = {
-            'Unlocked with {C:attention}Luck{}',
-            '{C:inactive}(1 in 12 chance to unlock when you win a blind){}'
-        }
-    },
     name = "StarAce",
     atlas = "StarAce",
     pos = { x = 0, y = 0 },

@@ -8,18 +8,6 @@ SMODS.Atlas {
 SMODS.Joker {
     key = 'King',
     unlocked = false,
-    loc_txt = {
-        name = 'The King',
-        text = {
-            'When a card is scored,',
-            '{C:attention}increases{} its rank, up to {C:attention}King{}',
-            'Gains {C:gold}$#1#{} for each {C:attention}King{} in deck',
-            '{C:inactive}(Currently: {}{C:gold}$#2#{}{C:inactive}){}',
-        },
-        unlock = {
-            'Have only {C:attention}Kings{} in your deck',
-        }
-    },
     name = "King",
     atlas = "King",
     pos = { x = 0, y = 0 },

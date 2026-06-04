@@ -8,17 +8,6 @@ SMODS.Atlas {
 SMODS.Joker {
     key = 'Deathkill',
     unlocked = false,
-    loc_txt = {
-        name = 'Deathkill 4.0',
-        text = {
-            '{X:mult,C:white}X#1#{} Mult',
-            'When {C:attention}Blind{} is selected',
-            '{C:attention}Lose all {C:gold}Gold{}'
-        },
-        unlock = {
-            'Win a run with {C:attention}0{} {C:gold}Gold{}'
-        }
-    },
     name = 'Deathkill',
     atlas = 'Deathkill',
     pos = { x = 0, y = 0 },

@@ -8,17 +8,6 @@ SMODS.Atlas {
 SMODS.Joker {
     key = 'Blaze',
     unlocked = false,
-    loc_txt = {
-        name = 'Blaze',
-        text = {
-            '{C:blue}+#1#{} hand per round',
-            'Every card you {C:attention}play{}',
-            'Will be {C:attention}shuffled back{} into your {C:attention}deck{}',
-        },
-        unlock = {
-            'Beat a {C:attention}Boss Blind{} with at most {C:attention}5{} cards in your deck'
-        }
-    },
     name = "Blaze",
     atlas = "Blaze",
     config = {
