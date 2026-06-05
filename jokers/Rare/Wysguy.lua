@@ -39,7 +39,7 @@ SMODS.Joker {
             G.consumeables.config.card_limit = G.consumeables.config.card_limit - card.ability.extra.strength
         elseif deck == 'b_plasma' then
             G.jokers.config.card_limit = G.jokers.config.card_limit - card.ability.extra.strength
-            G.consumeables.config.card_limit = G.consumeables.config.card_limit + 2*card.ability.extra.strength
+            G.consumeables.config.card_limit = G.consumeables.config.card_limit + 2 * card.ability.extra.strength
         elseif deck == 'b_erratic' then
             for i = 1, 5 * card.ability.extra.strength, 1 do
                 local _card = pseudorandom_element(G.playing_cards, pseudoseed('seed'))
@@ -68,8 +68,8 @@ SMODS.Joker {
             G.hand:change_size(-card.ability.extra.strength)
             G.consumeables.config.card_limit = G.consumeables.config.card_limit + card.ability.extra.strength
         elseif deck == 'b_plasma' then
-           G.jokers.config.card_limit = G.jokers.config.card_limit + card.ability.extra.strength
-           G.consumeables.config.card_limit = G.consumeables.config.card_limit - 2*card.ability.extra.strength
+            G.jokers.config.card_limit = G.jokers.config.card_limit + card.ability.extra.strength
+            G.consumeables.config.card_limit = G.consumeables.config.card_limit - 2 * card.ability.extra.strength
         elseif deck == 'b_erratic' and not from_debuff then
             for i = 1, 5 * card.ability.extra.strength, 1 do
                 local _card = pseudorandom_element(G.playing_cards, pseudoseed('seed'))
@@ -132,6 +132,21 @@ SMODS.Joker {
                         card = card,
                     }
                 end
+            elseif deck == "b_goob_sohikosa" then -- x3 mult if deck only contains face cards
+                local crowned = true
+                for _, playing_card in ipairs(G.playing_cards) do
+                    if not playing_card:is_face() then
+                        crowned = false
+                        break
+                    end
+                end
+                if crowned then
+                    return {
+                        x_mult = 2 + card.ability.extra.strength,
+                        colour = G.C.RED,
+                        card = card,
+                    }
+                end
             elseif deck == 'b_checkered' then -- x3 mult if spades and hearts are equal
                 local spadeTally, heartTally = 0, 0
                 local isEqual = true
@@ -166,7 +181,7 @@ SMODS.Joker {
         end
         if context.ending_shop then
             if deck == 'b_nebula' and G.GAME.dollars > 1 then
-                ease_dollars(-3+card.ability.extra.strength, true)
+                ease_dollars(-3 + card.ability.extra.strength, true)
                 local hand = GET_mostplayed_hand()
                 local planet
                 for _, center in pairs(G.P_CENTER_POOLS.Planet) do
@@ -179,7 +194,7 @@ SMODS.Joker {
                     edition = 'e_negative'
                 }
             elseif deck == 'b_ghost' and G.GAME.dollars > 2 then
-                ease_dollars(-4+card.ability.extra.strength, true)
+                ease_dollars(-4 + card.ability.extra.strength, true)
                 SMODS.add_card {
                     set = "Spectral",
                     edition = 'e_negative'

@@ -1,5 +1,32 @@
 return {
 	["descriptions"] = {
+		["Back"] = {
+			["b_goob_sohikosa"] = {
+				["name"] = "Sohikosa's Royal Deck",
+				["text"] = {
+					"Replaces the lowest",
+					"{C:attention}three{} ranks with",
+					"a {C:attention}copy{} of each face card"
+				}
+			}
+		},
+		["Sleeve"] = {
+			["sleeve_goob_sohiSleeve"] = {
+				["name"] = "Sohikosa's Royal Sleeve",
+				["text"] = {
+					"Replaces the lowest",
+					"{C:attention}three{} ranks with",
+					"a {C:attention}copy{} of each face card"
+				}
+			},
+			["sleeve_goob_sohiSleeve_alt"] = {
+				["name"] = "Sohikosa's Royal Sleeve",
+				["text"] = {
+					"Removes the lowest",
+					"{C:attention}fourth{} rank",
+				}
+			}
+		},
 		["Tag"] = {
 			["tag_goob_goblinParty"] = {
 				["name"] = "Goblin Party!",

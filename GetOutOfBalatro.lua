@@ -4,6 +4,7 @@ local joker_common_src = NFS.getDirectoryItems(SMODS.current_mod.path .. "jokers
 local joker_uncommon_src = NFS.getDirectoryItems(SMODS.current_mod.path .. "jokers/Uncommon/")
 local joker_rare_src = NFS.getDirectoryItems(SMODS.current_mod.path .. "jokers/Rare/")
 local joker_legendary_src = NFS.getDirectoryItems(SMODS.current_mod.path .. "jokers/Legendary/")
+local decks_src = NFS.getDirectoryItems(SMODS.current_mod.path .. "decks/")
 local tag_src = NFS.getDirectoryItems(SMODS.current_mod.path .. "tags/")
 SMODS.Atlas({
 	key = "modicon",
@@ -32,4 +33,8 @@ for _, file in ipairs(joker_legendary_src) do
 end
 for _, file in ipairs(tag_src) do
 	assert(SMODS.load_file("tags/" .. file))()
+end
+
+for _, file in ipairs(decks_src) do
+	assert(SMODS.load_file("decks/" .. file))()
 end
