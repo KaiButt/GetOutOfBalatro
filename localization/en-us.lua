@@ -3,6 +3,10 @@ return {
 		["Back"] = {
 			["b_goob_sohikosa"] = {
 				["name"] = "Sohikosa's Royal Deck",
+				["unlock"] = {
+					"Beat the game with",
+					"{C:attention}abandoned deck{} on any difficulty"
+				},
 				["text"] = {
 					"Replaces the lowest",
 					"{C:attention}three{} ranks with",
@@ -13,6 +17,10 @@ return {
 		["Sleeve"] = {
 			["sleeve_goob_sohiSleeve"] = {
 				["name"] = "Sohikosa's Royal Sleeve",
+				["unlock"] = {
+					"Beat the game with {C:attention}Sohikosa's Royal Deck{}",
+					"on any difficulty"
+				},
 				["text"] = {
 					"Replaces the lowest",
 					"{C:attention}three{} ranks with",
@@ -21,6 +29,9 @@ return {
 			},
 			["sleeve_goob_sohiSleeve_alt"] = {
 				["name"] = "Sohikosa's Royal Sleeve",
+				["unlock"] = {
+					"Beat the game on {C:attention}Shoikosa's Royal Deck{} on any difficulty ",
+				},
 				["text"] = {
 					"Removes the lowest",
 					"{C:attention}fourth{} rank",
