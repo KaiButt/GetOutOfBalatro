@@ -35,7 +35,8 @@ SMODS.Joker {
     calculate = function(self, card, context)
         if context.stay_flipped and context.from_area == G.play then
             return {
-                modify = {to_area = G.deck}
+                modify = {to_area = G.deck},
+                G.deck:shuffle("goob_blaze")
             }
         end
     end,

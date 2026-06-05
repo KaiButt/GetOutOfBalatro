@@ -44,6 +44,7 @@ SMODS.Joker {
 					card.ability.extra.last_rank = _card.base.value
 					card.ability.extra.last_suit = _card.base.suit
 					SMODS.calculate_context({ playing_card_added = true, cards = { _card } })
+					G.deck:shuffle("goob_bingles")
 				else
 					local random_edition = SMODS.poll_edition { key = "goob_seed", guaranteed = true, no_negative = true }
 					local _card = SMODS.add_card { set = "Playing Card", key_append = "goob_append", edition = random_edition, area = G.deck, enhanced_poll = 1 }
@@ -51,6 +52,7 @@ SMODS.Joker {
 					card.ability.extra.last_rank = _card.base.value
 					card.ability.extra.last_suit = _card.base.suit
 					SMODS.calculate_context({ playing_card_added = true, cards = { _card } })
+					G.deck:shuffle("goob_bingles")
 				end
 			end
 		end
