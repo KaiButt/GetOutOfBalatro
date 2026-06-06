@@ -19,6 +19,15 @@ SMODS.ObjectType({
 	default = "j_goob_Petyr",
 	cards = {}
 })
+
+SMODS.Achievement({
+	key = "jobros",
+	unlock_condition = function(self, args)
+        if args.type == 'win' then
+            return next(SMODS.find_card('j_goob_Jobingles')) and next(SMODS.find_card('j_goob_Jobangles'))
+        end
+    end
+})
 for _, file in ipairs(joker_common_src) do
     assert(SMODS.load_file("jokers/Common/" .. file))()
 end
