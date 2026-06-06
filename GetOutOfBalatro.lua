@@ -6,6 +6,7 @@ local joker_rare_src = NFS.getDirectoryItems(SMODS.current_mod.path .. "jokers/R
 local joker_legendary_src = NFS.getDirectoryItems(SMODS.current_mod.path .. "jokers/Legendary/")
 local decks_src = NFS.getDirectoryItems(SMODS.current_mod.path .. "decks/")
 local tag_src = NFS.getDirectoryItems(SMODS.current_mod.path .. "tags/")
+local ach_src = NFS.getDirectoryItems(SMODS.current_mod.path .. "achievements/")
 SMODS.Atlas({
 	key = "modicon",
 	path = "goob_icon.png",
@@ -20,14 +21,6 @@ SMODS.ObjectType({
 	cards = {}
 })
 
-SMODS.Achievement({
-	key = "jobros",
-	unlock_condition = function(self, args)
-        if args.type == 'win' then
-            return next(SMODS.find_card('j_goob_Jobingles')) and next(SMODS.find_card('j_goob_Jobangles'))
-        end
-    end
-})
 for _, file in ipairs(joker_common_src) do
     assert(SMODS.load_file("jokers/Common/" .. file))()
 end
@@ -43,7 +36,9 @@ end
 for _, file in ipairs(tag_src) do
 	assert(SMODS.load_file("tags/" .. file))()
 end
-
 for _, file in ipairs(decks_src) do
 	assert(SMODS.load_file("decks/" .. file))()
+end
+for _, file in ipairs(ach_src) do
+	assert(SMODS.load_file("achievements/" .. file))()
 end

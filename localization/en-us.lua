@@ -1,13 +1,13 @@
 return {
-	["descriptions"] = {
-		["misc"] = {
+	["misc"] = {
 			["achievement_names"] = {
 				["ach_goob_jobros"] = "Clown Show",
 			},
 			["achievement_descriptions"] = {
-				["ach_goob_jobros"] = "Win a run with Jobingles and Jobangles",
+				["ach_goob_jobros"] = "Win a run with both Jobangles and Jobingles",
 			},
-		},
+	},
+	["descriptions"] = {
 		["Back"] = {
 			["b_goob_sohikosa"] = {
 				["name"] = "Sohikosa's Royal Deck",
