@@ -165,7 +165,7 @@ function perform_wondrous_magic(card, num, bonus)
 
                 G.E_MANAGER:add_event(Event({
                     trigger = 'after',
-                    delay = 0.5,
+                    delay = 0.6,
                     func = function()
                         voucher_card:start_dissolve()
                         return true
