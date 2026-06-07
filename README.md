@@ -1,7 +1,8 @@
 Get Out Of Balatro currently introduces: 
-- 30 "Get Out Of Town" Mercenaries as Jokers
+- 32 "Get Out Of Town" Mercenaries as Jokers
 - a deck with deck sleeve mod compatibility! 
 - a special Tag!
+- a wonderful seal!
 
 GOOT is made by Kyrsaku and can be found in Tabletop Simulator workshop
 
@@ -12,6 +13,12 @@ Art for the Jokers can be found at
 
 
 https://game-icons.net/
+
+Seal Icon for wild seal:
+
+https://freesvg.org/36-circle-swirl-12-color
+
+(Thank you!)
 
 Special thanks to the Balatro subreddit, and the Cryptid mod for implementation ideas/inspiration!
 

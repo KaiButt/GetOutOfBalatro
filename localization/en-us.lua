@@ -1,13 +1,33 @@
 return {
 	["misc"] = {
-			["achievement_names"] = {
-				["ach_goob_jobros"] = "Clown Show",
+		["achievement_names"] = {
+			["ach_goob_jobros"] = "Clown Show",
+		},
+		["achievement_descriptions"] = {
+			["ach_goob_jobros"] = "Win a run with both Jobangles and Jobingles",
+		},
+		["labels"] = {
+			["goob_wondrousmagic_seal"] = {
+				"Wondrous",
 			},
-			["achievement_descriptions"] = {
-				["ach_goob_jobros"] = "Win a run with both Jobangles and Jobingles",
-			},
+		}
 	},
 	["descriptions"] = {
+		["Other"] = {
+			["goob_wondrousmagic_seal"] = {
+				["label"] = {
+					"Wondrous",
+				},
+				["name"] = {
+					"Wondrous",
+				},
+				["text"] = {
+					"Card {C:attention}always scores{}",
+					"Does a random {C:dark_edition}Wondrous{} effect",
+					"when scored."
+				},
+			},
+		},
 		["Back"] = {
 			["b_goob_sohikosa"] = {
 				["name"] = "Sohikosa's Royal Deck",
@@ -56,6 +76,22 @@ return {
 			},
 		},
 		["Joker"] = {
+			["j_goob_Presto"] = {
+				["name"] = "Presto",
+				["text"] = {
+					"When gained add a random card with a {C:dark_edition}Wondrous{} seal to deck",
+					"Playing a {C:dark_edition}Wondrous{} seal gives {C:mult}+#2#{} Mult",
+					"{C:inactive}(Currently {C:mult}+#1#{C:inactive} Mult)"
+				}
+			},
+			["j_goob_Kai"] = {
+				["name"] = "Kai Master Wizard Of The Wonder Arts",
+				["text"] = {
+					"When gained and after drawing your first hand each blind, places a {C:dark_edition}Wondrous{} seal to the top card of deck",
+					"{C:inactive}(if one exists, and{} {C:attention}overrides{} {C:inactive}other seals){}",
+					"{C:dark_edition}Wondrous{} seals are more {C:dark_edition}Wonderful{}"
+				}
+			},
 			["j_goob_Crownos"] = {
 				["unlock"] = {
 					"Beat ante {C:attention}-1{}",
