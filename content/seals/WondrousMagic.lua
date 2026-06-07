@@ -183,10 +183,10 @@ function perform_wondrous_magic(card, num, bonus)
                 }
             end
         elseif num2 == 10 then -- permanent +1/2 discards
-            G.GAME.round_resets.discards = G.GAME.round_resets.discards + card.ability.extra.d_size
+            G.GAME.round_resets.discards = G.GAME.round_resets.discards + bonus
             ease_discard(bonus)
         elseif num2 == 11 then -- permanent +1/2 hands
-            G.GAME.round_resets.hands = G.GAME.round_resets.hands + card.ability.extra.hands
+            G.GAME.round_resets.hands = G.GAME.round_resets.hands + bonus
             ease_hands_played(bonus)
         elseif num2 == 12 then -- permanent +1/2 hand size
             G.hand:change_size(bonus)
