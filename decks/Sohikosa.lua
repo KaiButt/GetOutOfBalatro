@@ -168,6 +168,7 @@ if CardSleeves then
                                 SMODS.destroy_cards(playing_card)
                             end
                         end
+                        SMODS.add_card{key = "j_pareidolia", edition = "e_negative"}
                         G.GAME.starting_deck_size = 48
                         return true
                     end

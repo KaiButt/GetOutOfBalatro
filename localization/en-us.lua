@@ -41,8 +41,9 @@ return {
 					"Beat the game on {C:attention}Shoikosa's Royal Deck{} on any difficulty ",
 				},
 				["text"] = {
-					"Removes the lowest",
-					"{C:attention}fourth{} rank",
+					"also removes the lowest",
+					"{C:attention}fourth{} rank and start the run",
+					"with a {X:grey,C:edition}negative{} {C:attention}pareidolia{} Joker"
 				}
 			}
 		},
