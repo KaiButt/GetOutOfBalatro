@@ -13,8 +13,7 @@ SMODS.Joker {
     rarity = 1,
     config = {
         extra = {
-            Mult = 0,
-            scalingMult = 1,
+            Mult = 1,
         },
     },
     cost = 4,
@@ -22,7 +21,7 @@ SMODS.Joker {
     eternal_compat = true,
     perishable_compat = true,
     loc_vars = function(self, info_queue, center)
-        return { vars = { center.ability.extra.Mult, center.ability.extra.scalingMult } }
+        return { vars = { center.ability.extra.Mult } }
     end,
     add_to_deck = function(self, card, from_debuff)
         if not from_debuff then
@@ -37,18 +36,14 @@ SMODS.Joker {
     end,
     pools = { ["goob"] = true },
     calculate = function(self, card, context)
-        if context.individual and context.cardarea == G.play and not context.blueprint then
+        if context.individual and context.cardarea == G.play then
             if context.other_card:get_seal() == "goob_WondrousMagic" then
-                card.ability.extra.Mult = card.ability.extra.Mult + card.ability.extra.scalingMult
-                card:juice_up()
+                context.other_card.ability.perma_mult = context.other_card.ability.perma_mult + card.ability.extra.Mult
+                return {
+                    message = localize('k_upgrade_ex'),
+                    colour = G.C.RED
+                }
             end
-        end
-        if context.joker_main and context.cardarea == G.jokers and context.scoring_name then
-            return {
-                mult = card.ability.extra.Mult,
-                colour = G.C.RED,
-                card = card,
-            }
         end
     end
 }

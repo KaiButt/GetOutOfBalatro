@@ -80,8 +80,8 @@ return {
 				["name"] = "Presto",
 				["text"] = {
 					"When gained add a random card with a {C:dark_edition}Wondrous{} seal to deck",
-					"Playing a {C:dark_edition}Wondrous{} seal gives {C:mult}+#2#{} Mult",
-					"{C:inactive}(Currently {C:mult}+#1#{C:inactive} Mult)"
+					"Playing a {C:dark_edition}Wondrous{} seal permanently gives it",
+					"{C:mult}+#1#{} Mult",
 				}
 			},
 			["j_goob_Kai"] = {
