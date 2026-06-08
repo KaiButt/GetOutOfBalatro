@@ -63,7 +63,7 @@ return {
 				["text"] = {
 					"also removes the lowest",
 					"{C:attention}fourth{} rank and start the run",
-					"with a {X:grey,C:edition}negative{} {C:attention}pareidolia{} Joker"
+					"with a {C:dark_edition}negative{} {C:attention}pareidolia{} Joker"
 				}
 			}
 		},
@@ -79,9 +79,10 @@ return {
 			["j_goob_Presto"] = {
 				["name"] = "Presto",
 				["text"] = {
-					"When gained add a random card with a {C:dark_edition}Wondrous{} seal to deck",
-					"Playing a {C:dark_edition}Wondrous{} seal permanently gives it",
-					"{C:mult}+#1#{} Mult",
+					"When gained add {C:attention}Card{} with a {C:dark_edition}Wondrous{} seal",
+					"Every played {C:attention}Card{} with a {C:dark_edition}Wondrous{} seal",
+					'permanently gains',
+					"{C:mult}+#1#{} Mult when scored",
 				}
 			},
 			["j_goob_Kai"] = {
