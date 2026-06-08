@@ -13,7 +13,7 @@ SMODS.Joker {
     rarity = 1,
     config = {
         extra = {
-            Mult = 1,
+            Mult = 2,
         },
     },
     cost = 4,
