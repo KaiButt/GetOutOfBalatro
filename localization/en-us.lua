@@ -79,7 +79,7 @@ return {
 			["j_goob_Presto"] = {
 				["name"] = "Presto",
 				["text"] = {
-					"When gained add {C:attention}Card{} with a {C:dark_edition}Wondrous{} seal",
+					"When gained add a {C:attention}Card{} with a {C:dark_edition}Wondrous{} seal",
 					"Every played {C:attention}Card{} with a {C:dark_edition}Wondrous{} seal",
 					'permanently gains',
 					"{C:mult}+#1#{} Mult when scored",
