@@ -88,8 +88,8 @@ return {
 			["j_goob_Kai"] = {
 				["name"] = "Kai Master Wizard Of The Wonder Arts",
 				["text"] = {
-					"When gained and after drawing your first hand each blind, places a",
-					"{C:dark_edition}Wondrous{} seal to the top card of deck",
+					"When gained and after drawing your first hand each blind,",
+					"places a {C:dark_edition}Wondrous{} seal to the top card of deck",
 					"{C:inactive}(if one exists, and{} {C:attention}overrides{} {C:inactive}other seals){}",
 					"{C:dark_edition}Wondrous{} seals are even more {C:dark_edition}Wonderful{}"
 				}
