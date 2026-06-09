@@ -21,7 +21,9 @@ SMODS.ObjectType({
 	default = "j_goob_Petyr",
 	cards = {}
 })
-
+for _, file in ipairs(seal_src) do
+	assert(SMODS.load_file("content/seals/" .. file))()
+end
 for _, file in ipairs(joker_common_src) do
     assert(SMODS.load_file("content/jokers/Common/" .. file))()
 end
@@ -42,7 +44,4 @@ for _, file in ipairs(decks_src) do
 end
 for _, file in ipairs(ach_src) do
 	assert(SMODS.load_file("content/achievements/" .. file))()
-end
-for _, file in ipairs(seal_src) do
-	assert(SMODS.load_file("content/seals/" .. file))()
 end
