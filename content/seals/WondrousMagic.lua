@@ -12,12 +12,12 @@ SMODS.Seal {
     calculate = function(self, card, context)
         if context.cardarea == G.play and context.main_scoring then
             local num = pseudorandom("goob_WonderousMagic_seal", 1, 12)
-            local bonus = next(SMODS.find_card("j_goob_Kai")) and 2 or 1
-            return perform_wondrous_magic(card, num, bonus)
+            return perform_wondrous_magic(card, num)
         end
     end,
 }
-function perform_wondrous_magic(card, num, bonus)
+function perform_wondrous_magic(card, num)
+    local bonus = next(SMODS.find_card("j_goob_Kai")) and 2 or 1
     if num == 1 then -- 31 chips (62 if kai'd)
         return {
             chips = 31 * bonus
