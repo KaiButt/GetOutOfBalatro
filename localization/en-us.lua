@@ -76,6 +76,14 @@ return {
 			},
 		},
 		["Joker"] = {
+			["j_goob_Seaglass"] = {
+				["name"] = "Seaglass the Valuable but Friendly",
+				["text"] = {
+					"Earn {C:gold}$#1#{} at end of round",
+					"Valuable, but if removed lose your {C:mult,E:1}soul{}",
+					"{C:inactive}(Son Of A--){}"
+				}
+			},
 			["j_goob_Dupla"] = {
 				["unlock"] = {
 					"Redeem both {C:attention}Magic Trick{} and {C:attention}Illusion{}",
