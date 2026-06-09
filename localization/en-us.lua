@@ -76,6 +76,18 @@ return {
 			},
 		},
 		["Joker"] = {
+			["j_goob_Dupla"] = {
+				["unlock"] = {
+					"Redeem both {C:attention}Magic Trick{} and {C:attention}Illusion{}",
+				},
+				["name"] = "Dupla",
+				["text"] = {
+					"{C:attention}Playing Cards{} and Playing Card {C:attention}boosters{} in the",
+					"shop are {C:attention}free{}. When a",
+					"{C:attention}playing card{} is created, it comes with {C:attention}#1#{} additional copy.",
+					"{C:inactive}(the additional copy goes to your deck){}"
+				},
+			},
 			["j_goob_Presto"] = {
 				["name"] = "Presto",
 				["text"] = {
