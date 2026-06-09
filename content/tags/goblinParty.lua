@@ -12,20 +12,34 @@ SMODS.Tag {
     end,
     atlas = 'goblinParty',
     name = 'goob-goblinParty',
-    config = { type = "store_joker_create"},
+    config = { type = "store_joker_create" },
     apply = function(self, tag, context)
         if context.type == "store_joker_create" then
-            local card = SMODS.create_card ({set = 'goob', legendary = false, area = context.area, key_append = "goob_goblinParty" })
-            create_shop_card_ui(card, "Joker", context.area)
-            card.states.visible = false
+            local _card
+            if not next(SMODS.find_card("j_goob_Charles")) then
+                while _card == nil or _card:is_rarity("Legendary") do
+                    _card = SMODS.create_card({
+                        set = 'goob',
+                        legendary = false,
+                        key_append = "goob_goblinParty",
+                    })
+                end
+            else
+                _card = SMODS.create_card({
+                    set = 'goob',
+                    key_append = "goob_goblinParty",
+                })
+            end
+            create_shop_card_ui(_card, "Joker", context.area)
+            _card.states.visible = false
             tag:yep("+", G.C.GREEN, function()
-				card:start_materialize()
-				card.ability.couponed = true
-				card:set_cost()
-				return true
-			end)
+                _card:start_materialize()
+                _card.ability.couponed = true
+                _card:set_cost()
+                return true
+            end)
             tag.triggered = true
-            return card
+            return _card
         end
     end,
 }
