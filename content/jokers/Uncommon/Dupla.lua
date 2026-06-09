@@ -12,7 +12,7 @@ SMODS.Joker {
     unlocked = false,
     pos = { x = 0, y = 0 },
     rarity = 2,
-    config = { --default config: 2 on selection, x2 on play, 40 cap
+    config = { 
 		extra = {
 			dup = 1
 		},
