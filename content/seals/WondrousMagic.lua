@@ -48,6 +48,7 @@ function perform_wondrous_magic(card, num)
         G.GAME.dollar_buffer = (G.GAME.dollar_buffer or 0) + 3 * bonus
         return {
             dollars = 3 * bonus,
+            message = "MONEY TALKS!",
             func = function()
                 G.E_MANAGER:add_event(Event({
                     func = function()
