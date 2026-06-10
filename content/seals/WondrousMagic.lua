@@ -230,9 +230,10 @@ function perform_wondrous_magic(card, num)
                 local wonderful_bonus = (bonus == 2) and true or false
                 for i = 1, G.GAME.starting_deck_size, 1 do
                     if wonderful or wonderful_bonus then
-                        wonderful = false
                         if not wonderful then
                             wonderful_bonus = false
+                        else
+                            wonderful = false
                         end
                         local _card = SMODS.add_card { set = "Enhanced", area = G.deck }
                         _card:set_seal("goob_WondrousMagic")
