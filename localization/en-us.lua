@@ -76,6 +76,17 @@ return {
 			},
 		},
 		["Joker"] = {
+			["j_goob_Kabi"] = {
+				["unlock"] = {
+					"Beat ante {C:attention}9{}",
+				},
+				["name"] = "Kabi",
+				["text"] = {
+					"{X:mult,C:white}X#1#{} Mult",
+					"{C:attention}+#2#{} {C:red,E:2}Ante{} required to win",
+					"{C:inactive}(even if this joker is removed){}"
+				}
+			},
 			["j_goob_Seaglass"] = {
 				["name"] = "Seaglass the Valuable but Friendly",
 				["text"] = {

@@ -22,6 +22,7 @@ SMODS.Joker {
         return { vars = { center.ability.extra.x_mult } }
     end,
     add_to_deck = function(self, card, from_debuff)
+        if not from_debuff then
         local _card
         while _card == nil or _card:is_rarity("Legendary") do
             _card = SMODS.create_card({
@@ -32,6 +33,7 @@ SMODS.Joker {
             })
         end
         G.jokers:emplace(_card)
+    end
     end,
     calculate = function(self, card, context)
         if context.other_joker and card ~= context.other_joker and string.find(context.other_joker.config.center.key, "j_goob") ~= nil then
