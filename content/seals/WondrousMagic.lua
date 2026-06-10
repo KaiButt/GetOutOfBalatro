@@ -230,7 +230,7 @@ function perform_wondrous_magic(card, num)
                 local wonderful_bonus = (bonus == 2) and true or false
                 for i = 1, G.GAME.starting_deck_size, 1 do
                     if wonderful or wonderful_bonus then
-                        if not wonderful then
+                        if not wonderful and wonderful_bonus then
                             wonderful_bonus = false
                         else
                             wonderful = false
