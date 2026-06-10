@@ -28,7 +28,7 @@ SMODS.Joker {
             return true
         end
     end,
-    pools = { ["goob"] = true },
+    pools = { ["goob"] = true, ["goobNL"] = true},
     add_to_deck = function(self, card, from_debuff)
         G.hand:change_size(card.ability.extra.handSize)
     end,

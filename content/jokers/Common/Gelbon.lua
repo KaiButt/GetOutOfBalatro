@@ -25,7 +25,7 @@ SMODS.Joker {
     blueprint_compat = true,
     eternal_compat = true,
     perishable_compat = true,
-    pools = { ["goob"] = true },
+    pools = { ["goob"] = true, ["goobNL"] = true},
     calculate = function(self, card, context)
        if context.before and not context.blueprint and next(context.poker_hands['Straight']) then
             card.ability.extra.mult = card.ability.extra.mult + card.ability.extra.scalingMult

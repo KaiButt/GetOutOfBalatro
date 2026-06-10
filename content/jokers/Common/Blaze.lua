@@ -30,7 +30,7 @@ SMODS.Joker {
         ease_hands_played(-card.ability.extra.handPerRound)
     end,
     blueprint_compat = false,
-    pools = { ["goob"] = true},
+    pools = { ["goob"] = true, ["goobNL"] = true},
 
     calculate = function(self, card, context)
         if context.stay_flipped and context.from_area == G.play then

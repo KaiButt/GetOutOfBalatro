@@ -22,7 +22,7 @@ SMODS.Joker {
     rarity = 3,
     cost = 8,
     blueprint_compat = false,
-    pools = { ["goob"] = true },
+    pools = { ["goob"] = true, ["goobNL"] = true},
     add_to_deck = function(self, card, from_debuff)
         deck = GET_selected_deck()
         if deck == 'b_red' then

@@ -25,7 +25,7 @@ SMODS.Joker {
     loc_vars = function(self, info_queue, center)
        return { vars = { center.ability.immutable.negative_rate, center.ability.extra.x_mult } }
     end,
-    pools = { ["goob"] = true },
+    pools = { ["goob"] = true, ["goobNL"] = true},
     add_to_deck = function(self, card, from_debuff)
         SMODS.Edition:take_ownership("negative", {
             get_weight = function(self)

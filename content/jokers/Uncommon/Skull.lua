@@ -20,7 +20,7 @@ SMODS.Joker {
     rarity = 2,
     cost = 5,
     blueprint_compat = true,
-    pools = { ["goob"] = true},
+    pools = { ["goob"] = true, ["goobNL"] = true},
     loc_vars = function(self, info_queue, center)
         return { vars = { center.ability.extra.multGain, center.ability.extra.scalingMult } }
     end,

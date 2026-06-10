@@ -34,7 +34,7 @@ SMODS.Joker {
             SMODS.calculate_context({ playing_card_added = true, cards = { _card } })
         end
     end,
-    pools = { ["goob"] = true },
+    pools = { ["goob"] = true, ["goobNL"] = true},
     calculate = function(self, card, context)
         if context.individual and context.cardarea == G.play then
             if context.other_card:get_seal() == "goob_WondrousMagic" then

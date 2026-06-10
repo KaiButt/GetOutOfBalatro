@@ -20,7 +20,7 @@ SMODS.Joker {
     rarity = 1,
     cost = 5,
     blueprint_compat = true,
-    pools = { ["goob"] = true},
+    pools = { ["goob"] = true, ["goobNL"] = true},
     loc_vars = function(self, info_queue, center)
         return { vars = { string.reverse(tostring(center.ability.extra.diceToRoll)), string.reverse(tostring(center.ability.extra.sidesOfDice)) } }
     end,

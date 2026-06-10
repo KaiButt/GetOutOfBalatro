@@ -14,13 +14,21 @@ SMODS.Atlas({
 	px = 32,
 	py = 32,
 })
-SMODS.ObjectType({
+SMODS.ObjectType({ -- goob pool, contains ALL of them
 	object_type = "ObjectType",
 	key = "goob",
 	weight = 10,
 	default = "j_goob_Petyr",
 	cards = {}
 })
+SMODS.ObjectType({ -- goob pool, contains all non-legendaries.
+	object_type = "ObjectType",
+	key = "goobNL",
+	weight = 10,
+	default = "j_goob_Kai",
+	cards = {}
+})
+--these two are mainly used to prevent fox and goblin party tag from generating legendaries, unless you have Charles then the tag can
 for _, file in ipairs(seal_src) do
 	assert(SMODS.load_file("content/seals/" .. file))()
 end

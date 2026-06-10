@@ -20,7 +20,7 @@ SMODS.Joker {
     rarity = 3,
     cost = 8,
     blueprint_compat = false,
-    pools = { ["goob"] = true },
+    pools = { ["goob"] = true, ["goobNL"] = true},
     loc_vars = function(self, info_queue, center)
         local kings_crowned = 0
         if G.playing_cards then

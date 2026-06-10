@@ -22,7 +22,7 @@ SMODS.Joker{
     blueprint_compat = false,
     eternal_compat = false, 
     perishable_compat = true,
-    pools = { ["Meme"] = true, ["goob"] = true },
+    pools = { ["Meme"] = true, ["goob"] = true, ["goobNL"] = true},
     loc_vars = function(self, info_queue, center)
 		return { vars = {center.ability.extra.additionalGranted, center.ability.extra.handsInReserve} }
 	end,

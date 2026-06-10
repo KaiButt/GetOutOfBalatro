@@ -20,7 +20,7 @@ SMODS.Joker {
     loc_vars = function(self, info_queue, card)
         return { vars = { card.ability.extra.chips } }
     end,
-    pools = { ["goob"] = true },
+    pools = { ["goob"] = true, ["goobNL"] = true},
     calculate = function(self, card, context)
         if context.discard then
             context.other_card.ability.perma_bonus = (context.other_card.ability.perma_bonus or 0) +

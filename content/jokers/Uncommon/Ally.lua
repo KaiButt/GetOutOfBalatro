@@ -23,7 +23,7 @@ SMODS.Joker {
     rarity = 2,
     cost = 7,
     blueprint_compat = false,
-    pools = { ["goob"] = true},
+    pools = { ["goob"] = true, ["goobNL"] = true},
     loc_vars = function(self, info_queue, center)
         return { vars = { center.ability.extra.diceToRoll, center.ability.extra.sidesOfDice, center.ability.extra.goldAward } }
     end,

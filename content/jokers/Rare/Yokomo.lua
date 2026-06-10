@@ -22,7 +22,7 @@ SMODS.Joker {
     blueprint_compat = true,
     eternal_compat = true,
     perishable_compat = true,
-    pools = { ["goob"] = true },
+    pools = { ["goob"] = true, ["goobNL"] = true},
     calculate = function(self, card, context)
         if context.individual and context.cardarea == G.play then
             if SMODS.pseudorandom_probability(card, 'j_goob_Yokomo', card.ability.extra.numerator, card.ability.extra.denominator) then

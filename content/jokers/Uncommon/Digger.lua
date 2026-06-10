@@ -25,7 +25,7 @@ SMODS.Joker {
     blueprint_compat = true,
     eternal_compat = false,
     perishable_compat = true,
-    pools = { ["goob"] = true },
+    pools = { ["goob"] = true, ["goobNL"] = true},
     calculate = function(self, card, context)
         if context.joker_main and context.cardarea == G.jokers and context.scoring_name then
             return {

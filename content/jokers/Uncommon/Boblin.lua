@@ -15,7 +15,7 @@ SMODS.Joker {
     blueprint_compat = false,
     eternal_compat = true,
     perishable_compat = true,
-    pools = { ["Meme"] = true, ["goob"] = true },
+    pools = { ["Meme"] = true, ["goob"] = true, ["goobNL"] = true},
     calculate = function(self, card, context)
         if context.skip_blind and G.GAME.blind_on_deck == "Big" then
             local tag = Tag("tag_goob_goblinParty")
