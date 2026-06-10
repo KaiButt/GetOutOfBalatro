@@ -191,21 +191,21 @@ function perform_wondrous_magic(card, num)
         elseif num2 == 12 then -- permanent +1/2 hand size
             G.hand:change_size(bonus)
         elseif num2 == 13 then -- small bonus to the card to everything good
-            card.ability.perma_bonus = playing_card.ability.perma_bonus + 5 * bonus
-            card.ability.perma_mult = playing_card.ability.perma_mult + 2 * bonus
-            card.ability.perma_x_chips = playing_card.ability.perma_x_chips + 1.05 * bonus
-            card.ability.perma_x_mult = playing_card.ability.perma_x_mult + 1.1 * bonus
-            card.ability.perma_h_chips = playing_card.ability.perma_h_chips + 3 * bonus
-            card.ability.perma_h_mult = playing_card.ability.perma_h_mult + 1 * bonus
-            card.ability.perma_h_x_chips = playing_card.ability.perma_h_x_chips + 1.03 * bonus
-            card.ability.perma_h_x_mult = playing_card.ability.perma_h_x_mult + 1.07 * bonus
-            card.ability.perma_p_dollars = playing_card.ability.perma_p_dollars + 2 * bonus
-            card.ability.perma_h_dollars = playing_card.ability.perma_h_dollars + 1 * bonus
-            card.ability.perma_score = playing_card.ability.perma_score + 6 * bonus
-            card.ability.perma_x_score = playing_card.ability.perma_x_score + 1.02 * bonus
-            card.ability.perma_h_score = playing_card.ability.perma_h_score + 3 * bonus
-            card.ability.perma_h_x_score = playing_card.ability.perma_h_x_score + 1.01 * bonus
-            card.ability.perma_repetitions = playing_card.ability.perma_repetitions + 1 * bonus
+            card.ability.perma_bonus = card.ability.perma_bonus + 5 * bonus
+            card.ability.perma_mult = card.ability.perma_mult + 2 * bonus
+            card.ability.perma_x_chips = card.ability.perma_x_chips + 1.05 * bonus
+            card.ability.perma_x_mult = card.ability.perma_x_mult + 1.1 * bonus
+            card.ability.perma_h_chips = card.ability.perma_h_chips + 3 * bonus
+            card.ability.perma_h_mult = card.ability.perma_h_mult + 1 * bonus
+            card.ability.perma_h_x_chips = card.ability.perma_h_x_chips + 1.03 * bonus
+            card.ability.perma_h_x_mult = card.ability.perma_h_x_mult + 1.07 * bonus
+            card.ability.perma_p_dollars = card.ability.perma_p_dollars + 2 * bonus
+            card.ability.perma_h_dollars = card.ability.perma_h_dollars + 1 * bonus
+            card.ability.perma_score = card.ability.perma_score + 6 * bonus
+            card.ability.perma_x_score = card.ability.perma_x_score + 1.02 * bonus
+            card.ability.perma_h_score = card.ability.perma_h_score + 3 * bonus
+            card.ability.perma_h_x_score = card.ability.perma_h_x_score + 1.01 * bonus
+            card.ability.perma_repetitions = card.ability.perma_repetitions + 1 * bonus
             return {
                 message = localize('k_upgrade_ex'),
                 colour = G.C.GREEN
