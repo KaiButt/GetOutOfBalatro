@@ -17,12 +17,15 @@ SMODS.Tag {
         if context.type == "store_joker_create" then
             local _card
             if not next(SMODS.find_card("j_goob_Charles")) then
-                while _card == nil or _card:is_rarity("Legendary") do
+                while _card == nil do
                     _card = SMODS.create_card({
                         set = 'goob',
-                        legendary = false,
                         key_append = "goob_goblinParty",
                     })
+                    if _card:is_rarity("Legendary") then
+                        SMODS.destroy_cards(_card, true, true)
+                        _card = nil
+                    end
                 end
             else
                 _card = SMODS.create_card({

@@ -31,6 +31,10 @@ SMODS.Joker {
                 key_append = "bff",
                 edition = "e_negative"
             })
+            if _card:is_rarity("Legendary") then
+                SMODS.destroy_cards(_card, true, true)
+                _card = nil
+            end
         end
         G.jokers:emplace(_card)
     end
