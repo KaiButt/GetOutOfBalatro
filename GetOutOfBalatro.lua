@@ -25,7 +25,7 @@ SMODS.ObjectType({ -- goob pool, contains all non-legendaries.
 	object_type = "ObjectType",
 	key = "goobNL",
 	weight = 10,
-	default = "j_goob_Kai",
+	default = "j_goob_Digger",
 	cards = {}
 })
 --these two are mainly used to prevent fox and goblin party tag from generating legendaries, unless you have Charles then the tag can
