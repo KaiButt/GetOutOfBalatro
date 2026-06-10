@@ -238,7 +238,7 @@ function perform_wondrous_magic(card, num)
                         local _card = SMODS.add_card { set = "Enhanced", area = G.deck }
                         _card:set_seal("goob_WondrousMagic")
                     else
-                        SMODS.add_card { set = "Enhanced" }
+                        SMODS.add_card { set = "Enhanced", area = G.deck  }
                     end
                 end
             elseif num3 == 4 then -- give every card in your deck a small bonus of everything good
