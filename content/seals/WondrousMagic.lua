@@ -11,13 +11,13 @@ SMODS.Seal {
     always_scores = true,
     calculate = function(self, card, context)
         if context.cardarea == G.play and context.main_scoring then
-            local num = pseudorandom("goob_WonderousMagic_seal", 1, 12)
-            return perform_wondrous_magic(card, num)
+            return perform_wondrous_magic(card, context.scoring_name)
         end
     end,
 }
-function perform_wondrous_magic(card, num)
+function perform_wondrous_magic(card, hand)
     local bonus = next(SMODS.find_card("j_goob_Kai")) and 2 or 1
+    local num = pseudorandom("goob_WonderousMagic_seal", 1, 13)
     if num == 1 then -- 31 chips (62 if kai'd)
         return {
             chips = 31 * bonus
@@ -85,8 +85,10 @@ function perform_wondrous_magic(card, num)
         ease_discard(bonus)
     elseif num == 11 then -- +1/2 hand for the round
         ease_hands_played(bonus)
+    elseif num == 12 then -- level up (this gives you the bonus for future hands)
+        SMODS.upgrade_poker_hands({ hands = { hand }, level_up = bonus, from = card })
     else
-        local num2 = pseudorandom("goob_WonderousMagic_seal", 1, 14)
+        local num2 = pseudorandom("goob_WonderousMagic_seal", 1, 15)
         if num2 == 1 then -- duplicate the card to hand (+1 card)
             for i = 1, bonus, 1 do
                 local card_copied = copy_card(card, nil, nil, G.playing_card)
@@ -211,6 +213,8 @@ function perform_wondrous_magic(card, num)
                 message = localize('k_upgrade_ex'),
                 colour = G.C.GREEN
             }
+        elseif num2 == 14 then -- upgrades ALL hands 1/2 times this may take ages to resolve with anims
+            SMODS.upgrade_poker_hands({level_up = bonus})
         else -- Dimensional break
             local num3 = pseudorandom("goob_WonderousMagic_seal", 1, 10)
             if num3 == 1 then
@@ -239,7 +243,7 @@ function perform_wondrous_magic(card, num)
                         local _card = SMODS.add_card { set = "Enhanced", area = G.deck }
                         _card:set_seal("goob_WondrousMagic")
                     else
-                        SMODS.add_card { set = "Enhanced", area = G.deck  }
+                        SMODS.add_card { set = "Enhanced", area = G.deck }
                     end
                 end
             elseif num3 == 4 then -- give every card in your deck a small bonus of everything good
