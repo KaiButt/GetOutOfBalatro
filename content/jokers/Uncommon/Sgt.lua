@@ -23,21 +23,29 @@ SMODS.Joker {
     eternal_compat = true,
     perishable_compat = true,
     loc_vars = function(self, info_queue, center)
-       return { vars = { center.ability.immutable.negative_rate, center.ability.extra.x_mult } }
+        return { vars = { center.ability.immutable.negative_rate, center.ability.extra.x_mult } }
     end,
-    pools = { ["goob"] = true, ["goobNL"] = true},
+    pools = { ["goob"] = true, ["goobNL"] = true },
     add_to_deck = function(self, card, from_debuff)
-        SMODS.Edition:take_ownership("negative", {
+        local oldenegativegetweight = G.P_CENTERS.e_negative.get_weight
+        SMODS.Edition:take_ownership('e_negative', {
             get_weight = function(self)
-                return self.weight * (card.ability.immutable.negative_rate)
-            end,
+                local weight = oldenegativegetweight(self)
+                for k, v in pairs(SMODS.find_card('j_goob_Sgt')) do
+                    weight = weight * card.ability.immutable.negative_rate
+                end
+                return weight
+            end
         }, true)
     end,
     remove_from_deck = function(self, card, from_debuff)
-        SMODS.Edition:take_ownership("negative", {
+        SMODS.Edition:take_ownership('e_negative', {
             get_weight = function(self)
-                return self.weight / (card.ability.immutable.negative_rate)
-            end,
+                for k, v in pairs(SMODS.find_card('j_goob_Sgt')) do
+                    weight = weight / card.ability.immutable.negative_rate
+                end
+                return weight
+            end
         }, true)
     end,
     calculate = function(self, card, context)
