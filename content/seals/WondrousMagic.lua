@@ -194,19 +194,19 @@ function perform_wondrous_magic(card, hand)
         elseif num2 == 12 then -- permanent +1/2 hand size
             G.hand:change_size(bonus)
         elseif num2 == 13 then -- small bonus to the card to everything good
-            card.ability.perma_bonus = card.ability.perma_bonus + 5 * bonus
-            card.ability.perma_mult = card.ability.perma_mult + 2 * bonus
-            card.ability.perma_x_chips = card.ability.perma_x_chips + 1.05 * bonus
-            card.ability.perma_x_mult = card.ability.perma_x_mult + 1.1 * bonus
-            card.ability.perma_h_chips = card.ability.perma_h_chips + 3 * bonus
+            card.ability.perma_bonus = card.ability.perma_bonus + 3 * bonus
+            card.ability.perma_mult = card.ability.perma_mult + 1 * bonus
+            card.ability.perma_x_chips = card.ability.perma_x_chips + 1.02 * bonus
+            card.ability.perma_x_mult = card.ability.perma_x_mult + 1.05 * bonus
+            card.ability.perma_h_chips = card.ability.perma_h_chips + 2 * bonus
             card.ability.perma_h_mult = card.ability.perma_h_mult + 1 * bonus
-            card.ability.perma_h_x_chips = card.ability.perma_h_x_chips + 1.03 * bonus
-            card.ability.perma_h_x_mult = card.ability.perma_h_x_mult + 1.07 * bonus
-            card.ability.perma_p_dollars = card.ability.perma_p_dollars + 2 * bonus
+            card.ability.perma_h_x_chips = card.ability.perma_h_x_chips + 1.02 * bonus
+            card.ability.perma_h_x_mult = card.ability.perma_h_x_mult + 1.05 * bonus
+            card.ability.perma_p_dollars = card.ability.perma_p_dollars + 1 * bonus
             card.ability.perma_h_dollars = card.ability.perma_h_dollars + 1 * bonus
-            card.ability.perma_score = card.ability.perma_score + 6 * bonus
-            card.ability.perma_x_score = card.ability.perma_x_score + 1.02 * bonus
-            card.ability.perma_h_score = card.ability.perma_h_score + 3 * bonus
+            card.ability.perma_score = card.ability.perma_score + 3 * bonus
+            card.ability.perma_x_score = card.ability.perma_x_score + 1.01 * bonus
+            card.ability.perma_h_score = card.ability.perma_h_score + 2 * bonus
             card.ability.perma_h_x_score = card.ability.perma_h_x_score + 1.01 * bonus
             card.ability.perma_repetitions = card.ability.perma_repetitions + 1 * bonus
             return {
@@ -214,8 +214,8 @@ function perform_wondrous_magic(card, hand)
                 colour = G.C.GREEN
             }
         elseif num2 == 14 then -- upgrades ALL hands 1/2 times
-            SMODS.upgrade_poker_hands({level_up = bonus, instant = true})
-        else -- Dimensional break
+            SMODS.upgrade_poker_hands({ level_up = bonus, instant = true })
+        else                   -- Dimensional break
             local num3 = pseudorandom("goob_WonderousMagic_seal", 1, 10)
             if num3 == 1 then
                 for _, playing_card in ipairs(G.playing_cards) do -- add random seals to all cards, removes enhancements
@@ -248,19 +248,19 @@ function perform_wondrous_magic(card, hand)
                 end
             elseif num3 == 4 then -- give every card in your deck a small bonus of everything good
                 for _, playing_card in ipairs(G.playing_cards) do
-                    playing_card.ability.perma_bonus = playing_card.ability.perma_bonus + 5 * bonus
-                    playing_card.ability.perma_mult = playing_card.ability.perma_mult + 2 * bonus
-                    playing_card.ability.perma_x_chips = playing_card.ability.perma_x_chips + 1.05 * bonus
-                    playing_card.ability.perma_x_mult = playing_card.ability.perma_x_mult + 1.1 * bonus
-                    playing_card.ability.perma_h_chips = playing_card.ability.perma_h_chips + 3 * bonus
+                    playing_card.ability.perma_bonus = playing_card.ability.perma_bonus + 3 * bonus
+                    playing_card.ability.perma_mult = playing_card.ability.perma_mult + 1 * bonus
+                    playing_card.ability.perma_x_chips = playing_card.ability.perma_x_chips + 1.02 * bonus
+                    playing_card.ability.perma_x_mult = playing_card.ability.perma_x_mult + 1.05 * bonus
+                    playing_card.ability.perma_h_chips = playing_card.ability.perma_h_chips + 2 * bonus
                     playing_card.ability.perma_h_mult = playing_card.ability.perma_h_mult + 1 * bonus
-                    playing_card.ability.perma_h_x_chips = playing_card.ability.perma_h_x_chips + 1.03 * bonus
-                    playing_card.ability.perma_h_x_mult = playing_card.ability.perma_h_x_mult + 1.07 * bonus
-                    playing_card.ability.perma_p_dollars = playing_card.ability.perma_p_dollars + 2 * bonus
+                    playing_card.ability.perma_h_x_chips = playing_card.ability.perma_h_x_chips + 1.02 * bonus
+                    playing_card.ability.perma_h_x_mult = playing_card.ability.perma_h_x_mult + 1.05 * bonus
+                    playing_card.ability.perma_p_dollars = playing_card.ability.perma_p_dollars + 1 * bonus
                     playing_card.ability.perma_h_dollars = playing_card.ability.perma_h_dollars + 1 * bonus
-                    playing_card.ability.perma_score = playing_card.ability.perma_score + 6 * bonus
-                    playing_card.ability.perma_x_score = playing_card.ability.perma_x_score + 1.02 * bonus
-                    playing_card.ability.perma_h_score = playing_card.ability.perma_h_score + 3 * bonus
+                    playing_card.ability.perma_score = playing_card.ability.perma_score + 3 * bonus
+                    playing_card.ability.perma_x_score = playing_card.ability.perma_x_score + 1.01 * bonus
+                    playing_card.ability.perma_h_score = playing_card.ability.perma_h_score + 2 * bonus
                     playing_card.ability.perma_h_x_score = playing_card.ability.perma_h_x_score + 1.01 * bonus
                     playing_card.ability.perma_repetitions = playing_card.ability.perma_repetitions + 1 * bonus
                 end
