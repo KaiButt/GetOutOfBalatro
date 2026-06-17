@@ -213,8 +213,8 @@ function perform_wondrous_magic(card, hand)
                 message = localize('k_upgrade_ex'),
                 colour = G.C.GREEN
             }
-        elseif num2 == 14 then -- upgrades ALL hands 1/2 times this may take ages to resolve with anims
-            SMODS.upgrade_poker_hands({level_up = bonus})
+        elseif num2 == 14 then -- upgrades ALL hands 1/2 times
+            SMODS.upgrade_poker_hands({level_up = bonus, instant = true})
         else -- Dimensional break
             local num3 = pseudorandom("goob_WonderousMagic_seal", 1, 10)
             if num3 == 1 then
