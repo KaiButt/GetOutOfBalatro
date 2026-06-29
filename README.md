@@ -1,6 +1,6 @@
 Get Out Of Balatro currently introduces: 
 - 35 "Get Out Of Town" Mercenaries as Jokers
-- a deck with deck sleeve mod compatibility! 
+- 2 decks with deck sleeve mod compatibility! 
 - a special Tag!
 - a wonderful seal!
 

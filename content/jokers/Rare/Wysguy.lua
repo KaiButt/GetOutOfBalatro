@@ -22,7 +22,7 @@ SMODS.Joker {
     rarity = 3,
     cost = 8,
     blueprint_compat = false,
-    pools = { ["goob"] = true, ["goobNL"] = true},
+    pools = { ["goob"] = true, ["goobNL"] = true },
     add_to_deck = function(self, card, from_debuff)
         deck = GET_selected_deck()
         if deck == 'b_red' then
@@ -168,6 +168,16 @@ SMODS.Joker {
             elseif deck == 'b_anaglyph' then --xX mult, X gained once per ante by skipping
                 return {
                     x_mult = card.ability.extra.skipMult,
+                    colour = G.C.RED,
+                    card = card,
+                }
+            elseif deck == 'b_goob_chronomancer' then -- ante amount is x mult (minimum is x2 mult)
+                multBonus = G.GAME.round_resets.ante
+                if (multBonus < 2) then
+                    multBonus = 2
+                end
+                return {
+                    x_mult = multBonus,
                     colour = G.C.RED,
                     card = card,
                 }

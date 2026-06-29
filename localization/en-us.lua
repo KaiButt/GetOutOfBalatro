@@ -40,6 +40,16 @@ return {
 					"{C:attention}three{} ranks with",
 					"a {C:attention}copy{} of each face card"
 				}
+			},
+			["b_goob_chronomancer"] = {
+				["name"] = "Chronomancer's Lost Deck",
+				["unlock"] = {
+					"Beat Ante {C:attention}9{} on any difficulty"
+				},
+				["text"] = {
+					"Start the game on Ante {C:attention}0{}",
+					"Win Ante is {C:attention}9{}"
+				}
 			}
 		},
 		["Sleeve"] = {
@@ -58,14 +68,33 @@ return {
 			["sleeve_goob_sohiSleeve_alt"] = {
 				["name"] = "Sohikosa's Royal Sleeve",
 				["unlock"] = {
-					"Beat the game on {C:attention}Shoikosa's Royal Deck{} on any difficulty ",
+					"Beat the game on {C:attention}Sohikosa's Royal Deck{} on any difficulty ",
 				},
 				["text"] = {
 					"also removes the lowest",
 					"{C:attention}fourth{} rank and start the run",
 					"with a {C:dark_edition}negative{} {C:attention}pareidolia{} Joker"
 				}
-			}
+			},
+			["sleeve_goob_chronoSleeve"] = {
+				["name"] = "Chronomancer's Lost Sleeve",
+				["unlock"] = {
+					"Beat the game on {C:attention}Chronomancer's Lost Deck{} on any difficulty ",
+				},
+				["text"] = {
+					"Start the game on Ante {C:attention}0{}",
+					"Win ante is {C:attention}9{}"
+				}
+			},
+			["sleeve_goob_chronoSleeve_alt"] = {
+				["name"] = "Chronomancer's Lost Sleeve",
+				["unlock"] = {
+					"Beat the game on {C:attention}Chronomancer's Lost Deck{} on any difficulty ",
+				},
+				["text"] = {
+					"{C:blue}+1{} Hand, {C:blue}+1{} Hand-Size, {C:red}+1{} Discard, {C:attention}+1{} Win Ante"
+				}
+			},
 		},
 		["Tag"] = {
 			["tag_goob_goblinParty"] = {
