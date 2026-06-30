@@ -33,7 +33,7 @@ SMODS.Joker {
                 colour = G.C.PURPLE,
             })
             return {
-                play_sound('gong', 0.4, 0.7),
+                play_sound('goob_clockTick', 1, 1.2)
             }
         end
     end,

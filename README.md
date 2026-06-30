@@ -18,6 +18,8 @@ Seal Icon for wild seal:
 
 https://freesvg.org/36-circle-swirl-12-color
 
+Clock sounds are from Limbus Company by Project Moon (specifically, Dante's "voicelines")
+
 (Thank you!)
 
 Special thanks to the Balatro subreddit, and the Cryptid mod for implementation ideas/inspiration!

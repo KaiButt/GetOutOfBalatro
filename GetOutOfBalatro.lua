@@ -29,6 +29,14 @@ SMODS.ObjectType({ -- goob pool, contains all non-legendaries.
 	cards = {}
 })
 --these two are mainly used to prevent fox and goblin party tag from generating legendaries, unless you have Charles then the tag can
+SMODS.Sound({
+    key = "clockTick",
+    path = "clockTick.wav"
+})
+SMODS.Sound({
+    key = "clockOut",
+    path = "clockOut.wav"
+})
 for _, file in ipairs(seal_src) do
 	assert(SMODS.load_file("content/seals/" .. file))()
 end
