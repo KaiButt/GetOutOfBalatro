@@ -92,7 +92,7 @@ return {
 					"Beat the game on {C:attention}Chronomancer's Lost Deck{} on any difficulty ",
 				},
 				["text"] = {
-					"{C:blue}+1{} Hand, {C:blue}+1{} Hand-Size, {C:red}+1{} Discard, {C:attention}+1{} Win Ante"
+					"{C:blue}+1{} Hand-Size, {C:red}+1{} Discard, {C:attention}+1{} Win Ante"
 				}
 			},
 		},

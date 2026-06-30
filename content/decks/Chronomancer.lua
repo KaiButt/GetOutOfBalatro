@@ -47,7 +47,6 @@ if CardSleeves then
             if self.get_current_deck_key() == "b_goob_chronomancer" then
                 G.GAME.win_ante = G.GAME.win_ante + 1
                 G.GAME.starting_params.hand_size = G.GAME.starting_params.hand_size + 1
-                G.GAME.starting_params.hands = G.GAME.starting_params.hands + 1
                 G.GAME.starting_params.discards = G.GAME.starting_params.discards + 1
                 CardSleeves.Sleeve.apply(self, sleeve)
             else
