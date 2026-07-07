@@ -15,7 +15,7 @@ SMODS.Joker {
     cost = 7,
     config = {
         extra = {
-            discount = 25,
+            discount = 30,
             moneyGenerated = 2,
         },
         immutable = {
