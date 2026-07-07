@@ -11,7 +11,7 @@ SMODS.Joker {
     name = 'Deathkill',
     atlas = 'Deathkill',
     pos = { x = 0, y = 0 },
-    config = { extra = { x_mult = 3 } },
+    config = { extra = { x_mult = 2.5 } },
     rarity = 2,
     cost = 6,
     blueprint_compat = true,
