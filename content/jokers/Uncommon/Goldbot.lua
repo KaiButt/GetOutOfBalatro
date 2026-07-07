@@ -13,7 +13,7 @@ SMODS.Joker{
     config = {
         extra = {
             diceToRoll = 1,
-            sidesOfDice = 6,
+            sidesOfDice = 8,
             moneyEarned = 0
         }
     },
