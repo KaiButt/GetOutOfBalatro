@@ -19,7 +19,7 @@ SMODS.Joker {
             moneyGenerated = 2,
         },
         immutable = {
-            appearanceRate = 0.05 -- 5 percent chance, same odds as rares
+            appearanceRate = 0.08 -- 8 percent chance, same odds as rares
         }
     },
     loc_vars = function(self, info_queue, center)
