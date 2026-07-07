@@ -48,11 +48,11 @@ SMODS.Joker{
                 card.ability.extra.chipAmount = card.ability.extra.chipAmount + 50
             end
         end
-            if chosenCard.ability.name == 'Gold Card' then --Easter egg gag clause, get a dollar if it destroys a gold card
+            if chosenCard.ability.name == 'Gold Card' then --Easter egg gag clause, get 2 dollars if it destroys a gold card
                 card:juice_up()
                 return {
-                    message = localize('$')..1,
-                    ease_dollars(1),
+                    message = localize('$')..2,
+                    ease_dollars(2),
                     colour = G.C.MONEY,
                     delay = 0.45, 
                     SMODS.destroy_cards(chosenCard)
