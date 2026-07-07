@@ -31,7 +31,7 @@ SMODS.Joker {
         return { vars = { center.ability.extra.dollar, center.ability.extra.dollar * kings_crowned } }
     end,
     calculate = function(self, card, context)
-        if context.individual and context.cardarea == G.play and context.other_card:get_id() ~= 13 then
+        if context.individual and context.cardarea == G.play and context.other_card:get_id() ~= 13 and context.other_card.ability.name ~= 'Stone Card' then
             local _card = context.other_card
             if _card.facing ~= 'back' then
                 _card:flip()
