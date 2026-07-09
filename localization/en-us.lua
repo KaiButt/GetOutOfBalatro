@@ -105,6 +105,15 @@ return {
 			},
 		},
 		["Joker"] = {
+			["j_goob_broBingles"] = {
+				["name"] = "Brobingles",
+				["text"] = {
+					"Can not be debuffed",
+					"When a playing card is added to your deck,",
+					"it gains {C:dark_edition}Wondrous{} seal",
+					"{C:dark_edition}Wondrous{} effects at minimum are {C:dark_edition}Extra Wondrous{}"
+				}
+			},
 			["j_goob_Kabi"] = {
 				["unlock"] = {
 					"Beat ante {C:attention}9{}",
@@ -151,7 +160,7 @@ return {
 					"When gained and after drawing your first hand each blind,",
 					"places a {C:dark_edition}Wondrous{} seal to the top card of deck",
 					"{C:inactive}(if one exists, and{} {C:attention}overrides{} {C:inactive}other seals){}",
-					"{C:dark_edition}Wondrous{} seals are even more {C:dark_edition}Wonderful{}"
+					"Increases potency of {C:dark_edition}Wondrous{} seal effects"
 				}
 			},
 			["j_goob_Crownos"] = {

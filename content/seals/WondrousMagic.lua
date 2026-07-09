@@ -18,6 +18,9 @@ SMODS.Seal {
 function perform_wondrous_magic(card, hand)
     local bonus = next(SMODS.find_card("j_goob_Kai")) and 2 or 1
     local num = pseudorandom("goob_WonderousMagic_seal", 1, 13)
+    if next(SMODS.find_card("j_goob_broBingles")) then
+        num = 13
+    end
     if num == 1 then -- 31 chips (62 if kai'd)
         return {
             chips = 31 * bonus
@@ -108,8 +111,16 @@ function perform_wondrous_magic(card, hand)
             end
         elseif num2 == 2 then -- increase joker slots by 1/2
             G.jokers.config.card_limit = G.jokers.config.card_limit + bonus
+            return {
+                message = localize('k_upgrade_ex'),
+                colour = G.C.GREEN
+            }
         elseif num2 == 3 then -- same but for consumables
             G.consumeables.config.card_limit = G.consumeables.config.card_limit + bonus
+            return {
+                message = localize('k_upgrade_ex'),
+                colour = G.C.GREEN
+            }
         elseif num2 == 4 then -- negative planet of most played hand
             for i = 1, bonus, 1 do
                 local hand = GET_mostplayed_hand()
@@ -188,11 +199,23 @@ function perform_wondrous_magic(card, hand)
         elseif num2 == 10 then -- permanent +1/2 discards
             G.GAME.round_resets.discards = G.GAME.round_resets.discards + bonus
             ease_discard(bonus)
+            return {
+                message = localize('k_upgrade_ex'),
+                colour = G.C.GREEN
+            }
         elseif num2 == 11 then -- permanent +1/2 hands
             G.GAME.round_resets.hands = G.GAME.round_resets.hands + bonus
             ease_hands_played(bonus)
+            return {
+                message = localize('k_upgrade_ex'),
+                colour = G.C.GREEN
+            }
         elseif num2 == 12 then -- permanent +1/2 hand size
             G.hand:change_size(bonus)
+            return {
+                message = localize('k_upgrade_ex'),
+                colour = G.C.GREEN
+            }
         elseif num2 == 13 then -- small bonus to the card to everything good
             card.ability.perma_bonus = card.ability.perma_bonus + 3 * bonus
             card.ability.perma_mult = card.ability.perma_mult + 1 * bonus
