@@ -19,47 +19,40 @@ SMODS.Joker {
             center.ability.extra.denominator)
         return { vars = { num, denom } }
     end,
-    blueprint_compat = true,
+    blueprint_compat = false,
     eternal_compat = true,
     perishable_compat = true,
-    pools = { ["goob"] = true, ["goobNL"] = true},
+    pools = { ["goob"] = true, ["goobNL"] = true },
     calculate = function(self, card, context)
-        if context.individual and context.cardarea == G.play then
-            if SMODS.pseudorandom_probability(card, 'j_goob_Yokomo', card.ability.extra.numerator, card.ability.extra.denominator) then
-                if context.other_card.ability.name == "Default Base" then
-                    local _card = context.other_card
-                    if _card.facing ~= 'back' then
-                        _card:flip()
-                        play_sound('card1', 0.4)
-                        card.ability.extra.jokerFlipped = true
+        if context.before then
+            for _, scored_card in ipairs(context.scoring_hand) do
+                if SMODS.pseudorandom_probability(card, 'j_goob_Yokomo', card.ability.extra.numerator, card.ability.extra.denominator) then
+                    if scored_card.ability.name == "Default Base" then
+                        local _card = scored_card
+                        if _card.facing ~= 'back' then
+                            _card:flip()
+                            play_sound('card1', 0.4)
+                            card.ability.extra.jokerFlipped = true
+                        end
+                        local random_enhancement = SMODS.poll_enhancement { key = 'j_goob_Yokomo', guaranteed = true }
+                        _card:set_ability(random_enhancement)
+                        if _card.facing == 'back' and card.ability.extra.jokerFlipped == true then
+                            G.E_MANAGER:add_event(Event({
+                                trigger = 'after',
+                                delay = 0.25,
+                                func = function()
+                                    _card:flip()
+                                    play_sound('card1', 0.4)
+                                    return true
+                                end
+                            }))
+                            card.ability.extra.jokerFlipped = false
+                        end
+                    elseif scored_card.ability.name == "Stone Card" then -- stone cards give 50
+                        context.other_card.ability.perma_bonus = (scored_card.ability.perma_bonus or 0) + 50
+                    else
+                        scored_card.ability.perma_bonus = (scored_card.ability.perma_bonus or 0) + context.other_card.base.id
                     end
-                    local random_enhancement = SMODS.poll_enhancement { key = 'j_goob_Yokomo', guaranteed = true }
-                    _card:set_ability(random_enhancement)
-                    if _card.facing == 'back' and card.ability.extra.jokerFlipped == true then
-                        G.E_MANAGER:add_event(Event({
-                            trigger = 'after',
-                            delay = 0.12,
-                            func = function()
-                                _card:flip()
-                                play_sound('card1', 0.4)
-                                return true
-                            end
-                        }))
-                        card.ability.extra.jokerFlipped = false
-                    end
-                elseif context.other_card.ability.name == "Stone Card" then -- stone cards give 50
-                    context.other_card.ability.perma_bonus = (context.other_card.ability.perma_bonus or 0) + 50
-                    return {
-                        message = 'Upgrade!',
-                        colour = G.C.CHIPS
-                    }
-                else
-                    context.other_card.ability.perma_bonus = (context.other_card.ability.perma_bonus or 0) +
-                        context.other_card.base.id
-                    return {
-                        message = 'Upgrade!',
-                        colour = G.C.CHIPS
-                    }
                 end
             end
         end

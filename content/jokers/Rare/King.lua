@@ -20,7 +20,7 @@ SMODS.Joker {
     rarity = 3,
     cost = 8,
     blueprint_compat = false,
-    pools = { ["goob"] = true, ["goobNL"] = true},
+    pools = { ["goob"] = true, ["goobNL"] = true },
     loc_vars = function(self, info_queue, center)
         local kings_crowned = 0
         if G.playing_cards then
@@ -31,26 +31,30 @@ SMODS.Joker {
         return { vars = { center.ability.extra.dollar, center.ability.extra.dollar * kings_crowned } }
     end,
     calculate = function(self, card, context)
-        if context.individual and context.cardarea == G.play and context.other_card:get_id() ~= 13 and context.other_card.ability.name ~= 'Stone Card' then
-            local _card = context.other_card
-            if _card.facing ~= 'back' then
-                _card:flip()
-                play_sound('card1', 0.4)
-                card.ability.extra.jokerFlipped = true
+        if context.before then
+            for _, scored_card in ipairs(context.scoring_hand) do
+                local _card = scored_card
+                if _card:get_id() ~= 13 and _card.ability.name ~= 'Stone Card' then
+                if _card.facing ~= 'back' then
+                    _card:flip()
+                    play_sound('card1', 0.4)
+                    card.ability.extra.jokerFlipped = true
+                end
+                assert(SMODS.modify_rank(_card, 1))
+                if _card.facing == 'back' and card.ability.extra.jokerFlipped == true then
+                    G.E_MANAGER:add_event(Event({
+                        trigger = 'after',
+                        delay = 0.25,
+                        func = function()
+                            _card:flip()
+                            play_sound('card1', 0.4)
+                            return true
+                        end
+                    }))
+                    card.ability.extra.jokerFlipped = false
+                end
             end
-            assert(SMODS.modify_rank(_card, 1))
-            if _card.facing == 'back' and card.ability.extra.jokerFlipped == true then
-                G.E_MANAGER:add_event(Event({
-                    trigger = 'after',
-                    delay = 0.12,
-                    func = function()
-                        _card:flip()
-                        play_sound('card1', 0.4)
-                        return true
-                    end
-                }))
-                card.ability.extra.jokerFlipped = false
-            end
+        end
         end
     end,
     calc_dollar_bonus = function(self, card)
