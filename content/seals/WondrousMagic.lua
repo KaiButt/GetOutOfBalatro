@@ -20,7 +20,7 @@ function perform_wondrous_magic(card, hand)
     local num = pseudorandom("goob_WonderousMagic_seal", 1, 13)
     if next(SMODS.find_card("j_goob_broBingles")) then
         local num2Bro = pseudorandom("goob_WonderousMagic_seal", 1, 13)
-        if num2 > num then
+        if num2Bro > num then
             num = num2Bro
         end
     end
