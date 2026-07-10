@@ -17,7 +17,7 @@ SMODS.Joker {
     perishable_compat = false,
     pools = { ["Meme"] = true, ["goob"] = true, ["goobNL"] = true},
     calculate = function(self, card, context)
-        if context.debuff_card and context.debuff_card == card and not context.blueprint then
+        if context.debuff_card and context.debuff_card == card then
             return { prevent_debuff = true }
         end
         if context.playing_card_added then
