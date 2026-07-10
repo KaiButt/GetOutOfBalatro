@@ -14,7 +14,7 @@ SMODS.Joker {
             x_mult = 1.5
         },
         immutable = {
-            negative_rate = 50
+            negative_rate = 2.5
         },
     },
     rarity = 2,
