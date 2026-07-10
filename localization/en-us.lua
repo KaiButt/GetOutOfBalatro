@@ -111,7 +111,7 @@ return {
 					"Can not be debuffed",
 					"When a playing card is added to your deck,",
 					"it gains {C:dark_edition}Wondrous{} seal",
-					"{C:dark_edition}Wondrous{} effects at minimum are {C:dark_edition}Extra Wondrous{}"
+					"{C:dark_edition}Wondrous{} effects are more likely to be {C:dark_edition}Extra Wondrous{}"
 				}
 			},
 			["j_goob_Kabi"] = {

@@ -19,7 +19,10 @@ function perform_wondrous_magic(card, hand)
     local bonus = next(SMODS.find_card("j_goob_Kai")) and 2 or 1
     local num = pseudorandom("goob_WonderousMagic_seal", 1, 13)
     if next(SMODS.find_card("j_goob_broBingles")) then
-        num = 13
+        local num2Bro = pseudorandom("goob_WonderousMagic_seal", 1, 13)
+        if num2 > num then
+            num = num2Bro
+        end
     end
     if num == 1 then -- 31 chips (62 if kai'd)
         return {
@@ -112,13 +115,13 @@ function perform_wondrous_magic(card, hand)
         elseif num2 == 2 then -- increase joker slots by 1/2
             G.jokers.config.card_limit = G.jokers.config.card_limit + bonus
             return {
-                message = localize('k_upgrade_ex'),
+                message = 'More Jokers!',
                 colour = G.C.GREEN
             }
         elseif num2 == 3 then -- same but for consumables
             G.consumeables.config.card_limit = G.consumeables.config.card_limit + bonus
             return {
-                message = localize('k_upgrade_ex'),
+                message = 'Consume!',
                 colour = G.C.GREEN
             }
         elseif num2 == 4 then -- negative planet of most played hand
@@ -200,40 +203,40 @@ function perform_wondrous_magic(card, hand)
             G.GAME.round_resets.discards = G.GAME.round_resets.discards + bonus
             ease_discard(bonus)
             return {
-                message = localize('k_upgrade_ex'),
+                message = 'Discard Up!',
                 colour = G.C.GREEN
             }
         elseif num2 == 11 then -- permanent +1/2 hands
             G.GAME.round_resets.hands = G.GAME.round_resets.hands + bonus
             ease_hands_played(bonus)
             return {
-                message = localize('k_upgrade_ex'),
+                message = 'Hand Up!',
                 colour = G.C.GREEN
             }
         elseif num2 == 12 then -- permanent +1/2 hand size
             G.hand:change_size(bonus)
             return {
-                message = localize('k_upgrade_ex'),
+                message = 'Hand Size Up!',
                 colour = G.C.GREEN
             }
         elseif num2 == 13 then -- small bonus to the card to everything good
-            card.ability.perma_bonus = card.ability.perma_bonus + 3 * bonus
+            card.ability.perma_bonus = card.ability.perma_bonus + 1 * bonus
             card.ability.perma_mult = card.ability.perma_mult + 1 * bonus
-            card.ability.perma_x_chips = card.ability.perma_x_chips + 1.02 * bonus
-            card.ability.perma_x_mult = card.ability.perma_x_mult + 1.05 * bonus
-            card.ability.perma_h_chips = card.ability.perma_h_chips + 2 * bonus
-            card.ability.perma_h_mult = card.ability.perma_h_mult + 1 * bonus
+            card.ability.perma_x_chips = card.ability.perma_x_chips + 1.01 * bonus
+            card.ability.perma_x_mult = card.ability.perma_x_mult + 1.02 * bonus
+            card.ability.perma_h_chips = card.ability.perma_h_chips + 1.02 * bonus
+            card.ability.perma_h_mult = card.ability.perma_h_mult + 1.02 * bonus
             card.ability.perma_h_x_chips = card.ability.perma_h_x_chips + 1.02 * bonus
             card.ability.perma_h_x_mult = card.ability.perma_h_x_mult + 1.05 * bonus
             card.ability.perma_p_dollars = card.ability.perma_p_dollars + 1 * bonus
             card.ability.perma_h_dollars = card.ability.perma_h_dollars + 1 * bonus
-            card.ability.perma_score = card.ability.perma_score + 3 * bonus
+            card.ability.perma_score = card.ability.perma_score + 2 * bonus
             card.ability.perma_x_score = card.ability.perma_x_score + 1.01 * bonus
-            card.ability.perma_h_score = card.ability.perma_h_score + 2 * bonus
+            card.ability.perma_h_score = card.ability.perma_h_score + 1.01 * bonus
             card.ability.perma_h_x_score = card.ability.perma_h_x_score + 1.01 * bonus
             card.ability.perma_repetitions = card.ability.perma_repetitions + 1 * bonus
             return {
-                message = localize('k_upgrade_ex'),
+                message = 'Ultima Card!',
                 colour = G.C.GREEN
             }
         elseif num2 == 14 then -- upgrades ALL hands 1/2 times
