@@ -47,8 +47,8 @@ return {
 					"Beat Ante {C:attention}9{} on any difficulty"
 				},
 				["text"] = {
-					"Start the game on Ante {C:attention}0{}",
-					"Win Ante is {C:attention}9{}"
+					"{C:attention}-1{} Starting Ante",
+					"{C:attention}+1{} Ante required to win"
 				}
 			}
 		},
@@ -82,8 +82,8 @@ return {
 					"Beat the game on {C:attention}Chronomancer's Lost Deck{} on any difficulty ",
 				},
 				["text"] = {
-					"Start the game on Ante {C:attention}0{}",
-					"Win ante is {C:attention}9{}"
+					"{C:attention}-1{} Starting Ante",
+					"{C:attention}+1{} Ante required to win"
 				}
 			},
 			["sleeve_goob_chronoSleeve_alt"] = {
