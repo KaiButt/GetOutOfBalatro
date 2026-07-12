@@ -51,7 +51,7 @@ SMODS.Joker {
                     elseif scored_card.ability.name == "Stone Card" then -- stone cards give 50
                         context.other_card.ability.perma_bonus = (scored_card.ability.perma_bonus or 0) + 50
                     else
-                        scored_card.ability.perma_bonus = (scored_card.ability.perma_bonus or 0) + context.other_card.base.id
+                        scored_card.ability.perma_bonus = (scored_card.ability.perma_bonus or 0) + scored_card.base.id
                     end
                 end
             end
