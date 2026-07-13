@@ -39,10 +39,14 @@ SMODS.Joker {
         }, true)
     end,
     remove_from_deck = function(self, card, from_debuff)
+        local oldenegativegetweight = G.P_CENTERS.e_negative.get_weight
         SMODS.Edition:take_ownership('e_negative', {
             get_weight = function(self)
+                local weight = oldenegativegetweight(self)
                 for k, v in pairs(SMODS.find_card('j_goob_Sgt')) do
-                    weight = weight / card.ability.immutable.negative_rate
+                    if weight ~= nil then
+                        weight = weight / card.ability.immutable.negative_rate
+                    end
                 end
                 return weight
             end
