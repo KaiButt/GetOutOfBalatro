@@ -18,6 +18,7 @@ SMODS.Back {
     apply = function(self, back)
         play_sound('goob_clockTick', 1, 1.2)
         G.GAME.round_resets.ante = G.GAME.round_resets.ante - 1
+        ease_ante(G.GAME.round_resets.ante)
         G.GAME.round_resets.blind_ante = G.GAME.round_resets.blind_ante or G.GAME.round_resets.ante
         G.GAME.round_resets.blind_ante = G.GAME.round_resets.blind_ante - 1
         G.GAME.win_ante = G.GAME.win_ante + 1
@@ -68,7 +69,8 @@ if CardSleeves then
                 CardSleeves.Sleeve.apply(self, sleeve)
             else
                 play_sound('goob_clockTick', 1, 1.2)
-                G.GAME.round_resets.ante = G.GAME.round_resets.ante - 1 
+                G.GAME.round_resets.ante = G.GAME.round_resets.ante - 1
+                ease_ante(G.GAME.round_resets.ante)
                 G.GAME.round_resets.blind_ante = G.GAME.round_resets.blind_ante or G.GAME.round_resets.ante
                 G.GAME.round_resets.blind_ante = G.GAME.round_resets.blind_ante - 1
                 G.GAME.win_ante = G.GAME.win_ante + 1
