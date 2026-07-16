@@ -15,6 +15,17 @@ SMODS.Seal {
         end
     end,
 }
+-- debuff immunity
+local _set_debuff = Card.set_debuff
+function Card:set_debuff(background)
+    if self:get_seal() == "goob_WondrousMagic" then
+        self.debuff = false
+        return 'prevent_debuff'
+    else
+        return _set_debuff(self, background)
+    end
+end
+
 function perform_wondrous_magic(card, hand)
     local bonus = next(SMODS.find_card("j_goob_Kai")) and 2 or 1
     local num = pseudorandom("goob_WonderousMagic_seal", 1, 13)

@@ -13,7 +13,7 @@ SMODS.Joker {
     rarity = 1,
     config = {
         extra = {
-            Mult = 2,
+            repetitions = 1,
         },
     },
     cost = 4,
@@ -21,7 +21,7 @@ SMODS.Joker {
     eternal_compat = true,
     perishable_compat = true,
     loc_vars = function(self, info_queue, center)
-        return { vars = { center.ability.extra.Mult } }
+        return { vars = { center.ability.extra.repetitions } }
     end,
     add_to_deck = function(self, card, from_debuff)
         if not from_debuff then
@@ -36,14 +36,10 @@ SMODS.Joker {
     end,
     pools = { ["goob"] = true, ["goobNL"] = true},
     calculate = function(self, card, context)
-        if context.individual and context.cardarea == G.play then
-            if context.other_card:get_seal() == "goob_WondrousMagic" then
-                context.other_card.ability.perma_mult = context.other_card.ability.perma_mult + card.ability.extra.Mult
-                return {
-                    message = localize('k_upgrade_ex'),
-                    colour = G.C.RED
-                }
-            end
+        if context.repetition and context.cardarea == G.play and context.other_card:get_seal() == "goob_WondrousMagic" then
+            return {
+                repetitions = card.ability.extra.repetitions
+            }
         end
     end
 }

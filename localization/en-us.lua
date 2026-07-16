@@ -22,7 +22,7 @@ return {
 					"Wondrous",
 				},
 				["text"] = {
-					"Card {C:attention}always scores{}",
+					"Card {C:attention}always scores{} and is {C:attention}Debuff immune{}",
 					"Does a random {C:dark_edition}Wondrous{} effect",
 					"when scored."
 				},
@@ -149,9 +149,8 @@ return {
 				["name"] = "Presto",
 				["text"] = {
 					"When gained add a {C:attention}Card{} with a {C:dark_edition}Wondrous{} seal",
-					"Every played {C:attention}Card{} with a {C:dark_edition}Wondrous{} seal",
-					'permanently gains',
-					"{C:mult}+#1#{} Mult when scored",
+					"to your deck. Cards with a {C:dark_edition}Wondrous{} seal",
+					'are played {C:attention}#1#{} additional time',
 				}
 			},
 			["j_goob_Kai"] = {
