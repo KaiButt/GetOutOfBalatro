@@ -22,7 +22,7 @@ Clock sounds are from Limbus Company by Project Moon (specifically, Dante's "voi
 
 (Thank you!)
 
-Special thanks to the Balatro subreddit, and the Cryptid mod for implementation ideas/inspiration!
+Special thanks to the Balatro subreddit, the Cryptid mod for ideas/implementation, and the Lost mod for it's "improvements" window.
 
 Installation
 

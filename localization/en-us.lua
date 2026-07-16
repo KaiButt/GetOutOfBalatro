@@ -12,6 +12,16 @@ return {
 			},
 		}
 	},
+	["Other"] = {
+		["goob_improvements_of_card"] = {
+                ["name"] = '{C:dark_edition}Improvements{}',
+                ["text"] = {
+                    'Are special attributes',
+                    'that modify a card:',
+                    '{C:dark_edition}Enhancement{}, {C:dark_edition}Seal{} and {C:dark_edition}Edition{}.',
+                }
+            },
+	},
 	["descriptions"] = {
 		["Other"] = {
 			["goob_wondrousmagic_seal"] = {
@@ -110,8 +120,8 @@ return {
 				["text"] = {
 					"Earn {C:money}$#1#{} at",
 					"end of round",
-					"increase this bonus by {C:money}X#2#{} if",
-					"you don't score a card with an {C:dark_edition}improvement{} during the round"
+					"increase this bonus by {C:money}X#2#{} if you don't score",
+					"a card with an {C:dark_edition}improvement{} during the round"
 				}
 			},
 			["j_goob_broBingles"] = {

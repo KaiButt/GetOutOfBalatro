@@ -23,6 +23,7 @@ SMODS.Joker {
     eternal_compat = true,
     perishable_compat = true,
     loc_vars = function(self, info_queue, center)
+        info_queue[#info_queue+1] = {key = "improvements_of_card", set = "Other"}
         return { vars = { center.ability.extra.moneyBase, center.ability.extra.noEnhanceBonus } }
     end,
     pools = { ["goob"] = true, ["goobNL"] = true},
