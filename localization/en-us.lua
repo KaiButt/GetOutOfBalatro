@@ -115,6 +115,15 @@ return {
 			},
 		},
 		["Joker"] = {
+			["j_goob_Clarence"] = {
+				["name"] = "Cheating Clarence",
+				["text"] = {
+					"During {C:attention}First Hand{}",
+					"of each round all {C:attention}listed{} {C:green,E:1,S:1.1}probabilities{}",
+					"are {C:green,E:1,S:1.1}guarenteed{}",
+					"{C:inactive}(ex: {C:green}1 in 3{C:inactive} -> {C:green}3 in 3{C:inactive})",
+				}
+			},
 			["j_goob_Nobingles"] = {
 				["name"] = "Nobingles",
 				["text"] = {
