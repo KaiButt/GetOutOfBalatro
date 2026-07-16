@@ -105,6 +105,15 @@ return {
 			},
 		},
 		["Joker"] = {
+			["j_goob_Nobingles"] = {
+				["name"] = "Nobingles",
+				["text"] = {
+					"Earn {C:money}$#1#{} at",
+					"end of round",
+					"increase this bonus by {C:money}X#2#{} if",
+					"you don't score a card with an {C:dark_edition}improvement{} during the round"
+				}
+			},
 			["j_goob_broBingles"] = {
 				["name"] = "Brobingles",
 				["text"] = {
