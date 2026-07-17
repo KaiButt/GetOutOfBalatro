@@ -139,7 +139,7 @@ return {
 					"Can not be {C:attention}debuffed{}",
 					"When a {C:attention}playing card{} is added to your deck,",
 					"it gains {C:dark_edition}Wondrous{} seal",
-					"{C:inactive}{C:attention}overrides{} {C:inactive}other seals){}",
+					"{C:inactive}({C:attention}overrides{} {C:inactive}other seals){}",
 					"{C:dark_edition}Wondrous{} effects are more likely to be {C:dark_edition}Extra Wondrous{}"
 				}
 			},
