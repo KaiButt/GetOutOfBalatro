@@ -237,6 +237,7 @@ return {
 				["text"] = {
 					"{C:attention}+#1#{} card slot",
 					"available in shop",
+					"{C:inactive}(Also refreshes the shop on gain/loss){}"
 				},
 			},
 			["j_goob_Thomas"] = {

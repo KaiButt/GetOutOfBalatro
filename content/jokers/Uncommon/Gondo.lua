@@ -17,7 +17,7 @@ SMODS.Joker {
     },
     rarity = 2,
     cost = 6,
-    blueprint_compat = true,
+    blueprint_compat = false,
     pools = { ["goob"] = true, ["goobNL"] = true},
     loc_vars = function(self, info_queue, center)
         return { vars = { center.ability.extra.shopToAdd} }
@@ -38,7 +38,4 @@ SMODS.Joker {
             end
         }))
     end,
-    calculate = function(self, card, context)
-
-    end
 }
