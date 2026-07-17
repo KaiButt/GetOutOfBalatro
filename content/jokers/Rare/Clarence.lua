@@ -11,7 +11,7 @@ SMODS.Joker {
     atlas = "Clarence",
     pos = { x = 0, y = 0 },
     rarity = 3,
-    cost = 10,
+    cost = 8,
     blueprint_compat = false,
     pools = { ["goob"] = true, ["goobNL"] = true},
     calculate = function(self, card, context)
