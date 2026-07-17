@@ -20,11 +20,7 @@ SMODS.Joker {
         return { vars = { center.ability.extra.handSize } }
     end,
     in_pool = function() 
-        if G.GAME.harmony_destroyed then
-            return true
-        else
-            return false
-        end
+        return G.GAME.pool_flags.goob_harmony_dead
     end,
     pools = { ["goob"] = true, ["goobNL"] = true},
     add_to_deck = function(self, card, from_debuff)

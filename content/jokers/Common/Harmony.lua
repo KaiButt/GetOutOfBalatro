@@ -22,11 +22,7 @@ SMODS.Joker {
         return { vars = { center.ability.extra.handSize, num, denom} }
     end,
     in_pool = function()
-        if G.GAME.harmony_destroyed then
-            return false
-        elseif G.GAME.harmony_destroyed == false then
-            return true
-        end
+        return not G.GAME.pool_flags.goob_harmony_dead
     end,
     pools = { ["goob"] = true, ["goobNL"] = true},
     add_to_deck = function(self, card, from_debuff)
@@ -38,7 +34,7 @@ SMODS.Joker {
     calculate = function(self, card, context)
         if context.end_of_round and context.main_eval and context.game_over == false then
             if SMODS.pseudorandom_probability(card, 'j_goob_Harmony', card.ability.extra.numerator, card.ability.extra.denominator) then
-                G.GAME.harmony_destroyed = true
+                G.GAME.pool_flags.goob_harmony_dead = true
                 return {
                     message = 'Goodbye!',
                     delay = 1.2,
