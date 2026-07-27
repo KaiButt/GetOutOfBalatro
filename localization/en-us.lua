@@ -12,16 +12,6 @@ return {
 			},
 		}
 	},
-	["Other"] = {
-		["goob_improvements_of_card"] = {
-                ["name"] = '{C:dark_edition}Improvements{}',
-                ["text"] = {
-                    'Are special attributes',
-                    'that modify a card:',
-                    '{C:dark_edition}Enhancement{}, {C:dark_edition}Seal{} and {C:dark_edition}Edition{}.',
-                }
-            },
-	},
 	["descriptions"] = {
 		["Other"] = {
 			["goob_wondrousmagic_seal"] = {
@@ -36,6 +26,14 @@ return {
 					"Does a random {C:dark_edition}Wondrous{} effect",
 					"when scored."
 				},
+			},
+			["goob_improvements"] = {
+				["name"] = '{C:dark_edition}Improvements{}',
+				["text"] = {
+					'Are special attributes',
+					'that modify a card:',
+					'{C:dark_edition}Enhancement{}, {C:dark_edition}Seal{} and {C:dark_edition}Edition{}.',
+				}
 			},
 		},
 		["Back"] = {
