@@ -25,16 +25,11 @@ SMODS.Joker {
     end,
     add_to_deck = function(self, card, from_debuff)
         if not from_debuff then
-            local _card = SMODS.add_card {
-                set = "Base",
-                seal = "goob_WondrousMagic",
-                key_append = "goob_Presto",
-                area = G.deck
-            }
-            SMODS.calculate_context({ playing_card_added = true, cards = { _card } })
+            local _card = G.deck.cards[#G.deck.cards]
+            _card:set_seal("goob_WondrousMagic")
         end
     end,
-    pools = { ["goob"] = true, ["goobNL"] = true},
+    pools = { ["goob"] = true, ["goobNL"] = true },
     calculate = function(self, card, context)
         if context.repetition and context.cardarea == G.play and context.other_card:get_seal() == "goob_WondrousMagic" then
             return {

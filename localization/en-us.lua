@@ -175,8 +175,8 @@ return {
 			["j_goob_Presto"] = {
 				["name"] = "Presto",
 				["text"] = {
-					"When gained add a {C:attention}Card{} with a {C:dark_edition}Wondrous{} seal",
-					"to your deck. Cards with a {C:dark_edition}Wondrous{} seal",
+					"When gained add a {C:dark_edition}Wondrous{} seal to the top card",
+					"of your deck. Cards with a {C:dark_edition}Wondrous{} seal",
 					'are played {C:attention}#1#{} additional time',
 				}
 			},

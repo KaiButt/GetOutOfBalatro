@@ -24,8 +24,10 @@ SMODS.Joker {
         return { vars = { center.ability.extra.Mult, center.ability.extra.scalingMult } }
     end,
     add_to_deck = function(self, card, from_debuff)
+        if not from_debuff then
         local _card = G.deck.cards[#G.deck.cards]
         _card:set_seal("goob_WondrousMagic")
+        end
     end,
     pools = { ["goob"] = true },
     calculate = function(self, card, context)
