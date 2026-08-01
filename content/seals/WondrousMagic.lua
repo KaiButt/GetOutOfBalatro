@@ -231,20 +231,10 @@ function perform_wondrous_magic(card, hand)
                 colour = G.C.GREEN
             }
         elseif num2 == 13 then
-            card.ability.perma_bonus = card.ability.perma_bonus + 1 * bonus
-            card.ability.perma_mult = card.ability.perma_mult + 1 * bonus
-            card.ability.perma_x_chips = card.ability.perma_x_chips + 1.01 * bonus
-            card.ability.perma_x_mult = card.ability.perma_x_mult + 1.02 * bonus
-            card.ability.perma_h_chips = card.ability.perma_h_chips + 1.02 * bonus
-            card.ability.perma_h_mult = card.ability.perma_h_mult + 1.02 * bonus
-            card.ability.perma_h_x_chips = card.ability.perma_h_x_chips + 1.02 * bonus
-            card.ability.perma_h_x_mult = card.ability.perma_h_x_mult + 1.05 * bonus
-            card.ability.perma_p_dollars = card.ability.perma_p_dollars + 1 * bonus
-            card.ability.perma_h_dollars = card.ability.perma_h_dollars + 1 * bonus
-            card.ability.perma_score = card.ability.perma_score + 1.25 * bonus
-            card.ability.perma_x_score = card.ability.perma_x_score + 1.01 * bonus
-            card.ability.perma_h_score = card.ability.perma_h_score + 1.01 * bonus
-            card.ability.perma_h_x_score = card.ability.perma_h_x_score + 1.01 * bonus
+            card.ability.perma_repetitions = (card.ability.perma_repetitions or 0) + bonus
+            card.ability.perma_p_dollars = (card.ability.perma_p_dollars or 0) + bonus
+            card.ability.perma_mult = (card.ability.perma_mult or 0) + 2 * bonus
+            card.ability.perma_bonus = (card.ability.perma_bonus or 0) + 5 * bonus
             return {
                 message = 'Ultima Card!',
                 colour = G.C.GREEN
@@ -285,20 +275,10 @@ function perform_wondrous_magic(card, hand)
                 end
             elseif num3 == 4 then
                 for _, playing_card in ipairs(G.playing_cards) do
-                    playing_card.ability.perma_bonus = playing_card.ability.perma_bonus + 1 * bonus
-                    playing_card.ability.perma_mult = playing_card.ability.perma_mult + 1 * bonus
-                    playing_card.ability.perma_x_chips = playing_card.ability.perma_x_chips + 1.02 * bonus
-                    playing_card.ability.perma_x_mult = playing_card.ability.perma_x_mult + 1.05 * bonus
-                    playing_card.ability.perma_h_chips = playing_card.ability.perma_h_chips + 1 * bonus
-                    playing_card.ability.perma_h_mult = playing_card.ability.perma_h_mult + 1 * bonus
-                    playing_card.ability.perma_h_x_chips = playing_card.ability.perma_h_x_chips + 1.02 * bonus
-                    playing_card.ability.perma_h_x_mult = playing_card.ability.perma_h_x_mult + 1.05 * bonus
-                    playing_card.ability.perma_p_dollars = playing_card.ability.perma_p_dollars + 1 * bonus
-                    playing_card.ability.perma_h_dollars = playing_card.ability.perma_h_dollars + 1 * bonus
-                    playing_card.ability.perma_score = playing_card.ability.perma_score + 1.25 * bonus
-                    playing_card.ability.perma_x_score = playing_card.ability.perma_x_score + 1.01 * bonus
-                    playing_card.ability.perma_h_score = playing_card.ability.perma_h_score + 1 * bonus
-                    playing_card.ability.perma_h_x_score = playing_card.ability.perma_h_x_score + 1.01 * bonus
+                    playing_card.ability.perma_repetitions = (playing_card.ability.perma_repetitions or 0) + bonus
+                    playing_card.ability.perma_p_dollars = (playing_card.ability.perma_p_dollars or 0) + bonus
+                    playing_card.ability.perma_mult = (playing_card.ability.perma_mult or 0) + 2 * bonus
+                    playing_card.ability.perma_bonus = (playing_card.ability.perma_bonus or 0) + 5 * bonus
                 end
                 return {
                     message = 'Ultima Deck!',
