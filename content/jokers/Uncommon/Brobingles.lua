@@ -21,8 +21,10 @@ SMODS.Joker {
             return { prevent_debuff = true }
         end
         if context.playing_card_added then
-            for k, v in ipairs(context.cards) do
-                v:set_seal("goob_WondrousMagic")
+            for _, _card in ipairs(context.cards) do
+              if type(_card) ~= "boolean" then
+                _card:set_seal("goob_WondrousMagic")
+              end
             end
         end
     end
