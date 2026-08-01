@@ -281,6 +281,7 @@ function perform_wondrous_magic(card, hand)
                     else
                         SMODS.add_card { set = "Enhanced", area = G.deck }
                     end
+                    SMODS.calculate_context({ playing_card_added = true, cards = { _card } })
                 end
             elseif num3 == 4 then
                 for _, playing_card in ipairs(G.playing_cards) do
