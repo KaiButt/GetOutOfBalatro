@@ -22,7 +22,7 @@ SMODS.Joker {
         end
         if context.playing_card_added then
             for value, _card in ipairs(context.cards) do
-              if type(_card) ~= "boolean" then
+              if type(_card) ~= "boolean" then -- Cryptid mod makes a list of booleans instead of cards and im too lazy to fix
                 _card:set_seal("goob_WondrousMagic")
               end
             end
