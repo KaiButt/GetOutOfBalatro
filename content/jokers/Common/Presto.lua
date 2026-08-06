@@ -24,7 +24,7 @@ SMODS.Joker {
         return { vars = { center.ability.extra.repetitions } }
     end,
     add_to_deck = function(self, card, from_debuff)
-        if not from_debuff then
+        if not from_debuff and #G.deck.cards ~= 0 then
             local _card = G.deck.cards[#G.deck.cards]
             _card:set_seal("goob_WondrousMagic")
         end
