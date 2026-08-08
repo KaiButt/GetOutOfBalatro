@@ -15,7 +15,7 @@ SMODS.Joker {
 	config = { extra = { amountToBack = 1, phoenixBonus = 1} },
 	cost = 20,
 	in_pool = function() 
-        if G.GAME.crownos_used == false or G.GAME.crownos_used == nil then
+        if G.GAME.crownos_used == false or G.GAME.crownos_used == nil or next(SMODS.find_card('j_vremade_ring_master')) then --showmen will let him reappear
             return true
         else
             return false
@@ -29,13 +29,12 @@ SMODS.Joker {
 	perishable_compat = true,
 	pools = { ["goob"] = true },
 	calculate = function(self, card, context)
-		if context.end_of_round and context.main_eval and context.game_over == false then
+		if context.selling_self then
 			G.GAME.crownos_used = true
             ease_ante(-card.ability.extra.amountToBack)
             G.GAME.round_resets.blind_ante = G.GAME.round_resets.blind_ante or G.GAME.round_resets.ante
             G.GAME.round_resets.blind_ante = G.GAME.round_resets.blind_ante - card.ability.extra.amountToBack
             G.jokers.config.card_limit = G.jokers.config.card_limit + card.ability.extra.phoenixBonus
-            SMODS.destroy_cards(card, nil, true)
         end
 	end,
 	check_for_unlock = function(self, args) 

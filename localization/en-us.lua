@@ -195,9 +195,8 @@ return {
 				},
 				["name"] = "Crownos",
 				["text"] = {
-					"After completing the next {C:attention}Blind{}",
-					"{C:attention}-#1#{} ante, {C:dark_edition}+#2#{} Joker Slot,",
-					"and {C:red,E:2}self destructs{}",
+					"When {C:attention}Sold{}:",
+					"{C:attention}-#1#{} ante and {C:dark_edition}+#2#{} Joker Slot",
 				},
 			},
 			["j_goob_King"] = {
