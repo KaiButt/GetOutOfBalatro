@@ -38,7 +38,7 @@ return {
 		},
 		["Back"] = {
 			["b_goob_sohikosa"] = {
-				["name"] = "Sohikosa's Royal Deck",
+				["name"] = "Royal Deck",
 				["unlock"] = {
 					"Beat the game with",
 					"{C:attention}abandoned deck{} on any difficulty"
@@ -50,7 +50,7 @@ return {
 				}
 			},
 			["b_goob_chronomancer"] = {
-				["name"] = "Chronomancer's Lost Deck",
+				["name"] = "Lost Deck",
 				["unlock"] = {
 					"Beat Ante {C:attention}9{} on any difficulty"
 				},
@@ -62,7 +62,7 @@ return {
 		},
 		["Sleeve"] = {
 			["sleeve_goob_sohiSleeve"] = {
-				["name"] = "Sohikosa's Royal Sleeve",
+				["name"] = "Royal Sleeve",
 				["unlock"] = {
 					"Beat the game with {C:attention}Sohikosa's Royal Deck{}",
 					"on any difficulty"
@@ -74,7 +74,7 @@ return {
 				}
 			},
 			["sleeve_goob_sohiSleeve_alt"] = {
-				["name"] = "Sohikosa's Royal Sleeve",
+				["name"] = "Royal Sleeve",
 				["unlock"] = {
 					"Beat the game on {C:attention}Sohikosa's Royal Deck{} on any difficulty ",
 				},
@@ -85,7 +85,7 @@ return {
 				}
 			},
 			["sleeve_goob_chronoSleeve"] = {
-				["name"] = "Chronomancer's Lost Sleeve",
+				["name"] = "Lost Sleeve",
 				["unlock"] = {
 					"Beat the game on {C:attention}Chronomancer's Lost Deck{} on any difficulty ",
 				},
@@ -95,7 +95,7 @@ return {
 				}
 			},
 			["sleeve_goob_chronoSleeve_alt"] = {
-				["name"] = "Chronomancer's Lost Sleeve",
+				["name"] = "Lost Sleeve",
 				["unlock"] = {
 					"Beat the game on {C:attention}Chronomancer's Lost Deck{} on any difficulty ",
 				},
