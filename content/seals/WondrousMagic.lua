@@ -286,7 +286,7 @@ function perform_wondrous_magic(card, hand)
                 }
             elseif num3 == 10 then
                 local winner = pseudorandom("goob_WonderousMagic_seal", 1, 10)
-                if winner < 11 - bonus or G.Game.won then
+                if winner < 11 - bonus or G.GAME.won then
                     G.E_MANAGER:add_event(Event({
                         blocking = false,
                         func = function()
