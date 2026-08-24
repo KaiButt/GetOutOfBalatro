@@ -8,7 +8,7 @@ return {
 		},
 		["labels"] = {
 			["goob_wondrousmagic_seal"] = {
-				"Wondrous",
+				"Wondrous Seal",
 			},
 		}
 	},
@@ -16,10 +16,10 @@ return {
 		["Other"] = {
 			["goob_wondrousmagic_seal"] = {
 				["label"] = {
-					"Wondrous",
+					"Wondrous Seal",
 				},
 				["name"] = {
-					"Wondrous",
+					"Wondrous Seal",
 				},
 				["text"] = {
 					"Card {C:attention}always scores{} and is {C:attention}Debuff immune{}",
@@ -136,7 +136,7 @@ return {
 				["text"] = {
 					"Can not be {C:attention}debuffed{}",
 					"When a {C:attention}playing card{} is added to your deck,",
-					"it gains {C:dark_edition}Wondrous{} seal",
+					"it gains {C:dark_edition}Wondrous Seal{}",
 					"{C:inactive}({C:attention}overrides{} {C:inactive}other seals){}",
 					"{C:dark_edition}Wondrous{} effects are more likely to be {C:dark_edition}Extra Wondrous{}"
 				}
@@ -175,8 +175,8 @@ return {
 			["j_goob_Presto"] = {
 				["name"] = "Presto",
 				["text"] = {
-					"When gained add a {C:dark_edition}Wondrous{} seal to the top card",
-					"of your deck. Cards with a {C:dark_edition}Wondrous{} seal",
+					"When gained add a {C:dark_edition}Wondrous Seal{} to the top card",
+					"of your deck. Cards with a {C:dark_edition}Wondrous Seal{}",
 					'are played {C:attention}#1#{} additional time',
 				}
 			},
@@ -184,9 +184,9 @@ return {
 				["name"] = "Kai Master Wizard Of The Wonder Arts",
 				["text"] = {
 					"When gained and after drawing your first hand each blind,",
-					"places a {C:dark_edition}Wondrous{} seal to the top card of deck",
+					"places a {C:dark_edition}Wondrous Seal{} to the top card of deck",
 					"{C:inactive}(if one exists, and{} {C:attention}overrides{} {C:inactive}other seals){}",
-					"Increases potency of {C:dark_edition}Wondrous{} seal effects"
+					"Increases potency of {C:dark_edition}Wondrous Seal{} effects"
 				}
 			},
 			["j_goob_Crownos"] = {
