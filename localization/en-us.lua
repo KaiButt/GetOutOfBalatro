@@ -13,6 +13,26 @@ return {
 		}
 	},
 	["descriptions"] = {
+		["Tarot"] = {
+			["c_goob_wands"] = {
+				["label"] = "4 Of Wands",
+				["name"] = "4 Of Wands",
+				["text"] = {
+					"Enhances {C:attention}#1#{} selected",
+					"cards into",
+					"{C:attention}Flower Cards{}"
+				},
+			}
+		},
+		["Enhanced"] = {
+			["m_goob_flower"] = {
+				["name"] = "Flower Card",
+				["text"] = {
+					"{C:chips}+#1#{} Extra Chips",
+					"{C:mult}+#2#{} Mult"
+				},
+			},
+		},
 		["Other"] = {
 			["goob_wondrousmagic_seal"] = {
 				["label"] = {
@@ -113,6 +133,18 @@ return {
 			},
 		},
 		["Joker"] = {
+			["j_goob_MrFlowers"] = {
+				["unlock"] = {
+					"Have a deck that consists of only {C:attention}Flower Cards{}"
+				},
+				["name"] = "Mr.Flowers",
+				["text"] = {
+					"When Blind is {C:attention}Skipped{}",
+					"Adds {C:attention}#1#{} {C:inactive}(identical){} {C:attention}Flower Cards{} to deck",
+					"Played {C:attention}Flower Cards{} give",
+					"{C:money}$#3#{} when scored"
+				}
+			},
 			["j_goob_Clarence"] = {
 				["name"] = "Cheating Clarence",
 				["text"] = {
@@ -265,7 +297,6 @@ return {
 					"with an {X:grey,C:edition}edition{} to deck when",
 					"{C:attention}Blind{} is selected",
 					"Last card added: {C:attention}#4#{} of {C:attention}#5#{}",
-					"{C:inactive}(Max {C:attention}#2#{C:inactive} cards)",
 					"played cards with an {X:grey,C:edition}edition{} each give",
 					"{X:mult,C:white}X#3#{} Mult when scored",
 				},
