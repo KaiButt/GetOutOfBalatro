@@ -17,7 +17,7 @@ SMODS.Back {
     apply = function(self, back)
         for k, v in pairs(G.P_CENTERS) do
             if v.set == 'Joker' then
-                if (string.find(k, "j_goob") == nil) then
+                if not v.key:find('j_goob') then
                     G.GAME.banned_keys[k] = true
                 end
             end
@@ -48,7 +48,7 @@ if CardSleeves then
             else
                 for k, v in pairs(G.P_CENTERS) do
                     if v.set == 'Joker' then
-                        if (string.find(k, "j_goob") == nil) then
+                        if not v.key:find('j_goob') then
                             G.GAME.banned_keys[k] = true
                         end
                     end
