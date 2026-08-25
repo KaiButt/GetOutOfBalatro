@@ -26,6 +26,11 @@ SMODS.Joker {
             card:set_cost()
         end
     end,
+    calculate = function(self, card, context)
+		if context.selling_self then
+			G.GAME.soulless = true
+        end
+	end,
     calc_dollar_bonus = function(self, card)
         return card.ability.extra.dollars
     end

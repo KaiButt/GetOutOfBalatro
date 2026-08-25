@@ -158,6 +158,23 @@ return {
 			},
 		},
 		["Joker"] = {
+			["j_goob_Henry"] = {
+				["name"] = "Heroic Henry",
+				["text"] = {
+					"{C:mult}#1#{} Mult during played hands of",
+					"{C:attention}Small{} and {C:attention}Medium{} Blinds",
+					"Gain the total {C:mult}Mult{} lost during played hands of {C:attention}Boss Blinds{}",
+					"{C:inactive}(Current Bonus:{}{C:mult} +#2#{}{C:inactive}){}"
+				}
+			},
+			["j_goob_Tommy"] = {
+				["name"] = "Big Tommy",
+				["text"] = {
+					"{C:chips}+#1#{} Chips,",
+					"{C:attention}#2#{} Joker Slots,",
+					"{C:attention}#3#{} Consumable Slots"
+				}
+			},
 			["j_goob_Astroheim"] = {
 				["name"] = "Astroheim",
 				["text"] = {

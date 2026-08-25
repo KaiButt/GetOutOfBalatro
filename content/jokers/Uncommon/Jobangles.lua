@@ -19,7 +19,7 @@ SMODS.Joker{
         }
     },
     rarity = 2,
-    cost = 6,
+    cost = 7,
     blueprint_compat = true,
     eternal_compat = false,
     perishable_compat = true,
@@ -64,7 +64,7 @@ SMODS.Joker{
         end
     end
     end
-        if context.joker_main and context.cardarea == G.jokers and context.scoring_name then --give chips, blueprint copies this part
+        if context.joker_main and context.cardarea == G.jokers and context.scoring_name then
             return {
                 chips = card.ability.extra.chipAmount,
                 colour = G.C.CHIPS,

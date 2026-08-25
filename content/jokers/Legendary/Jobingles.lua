@@ -10,10 +10,10 @@ SMODS.Joker {
 	name = 'Jobingles',
 	atlas = 'Jobingles',
 	pos = { x = 0, y = 0 },
-	config = { --default config: 2 on selection, x2 on play, 40 cap
+	config = { 
 		extra = {
 			amount = 1,
-			x_mult = 2,
+			x_mult = 3,
 			kai_gift = true,
 			last_rank = 'King',
 			last_suit = 'Peach',
