@@ -35,6 +35,7 @@ SMODS.Joker {
         end
         if context.end_of_round and context.main_eval and context.game_over == false and context.beat_boss then
             SMODS.upgrade_poker_hands({instant = true, level_up = card.ability.extra.amountToLevel, from = card})
+            card:juice_up()
         end
     end
 }
