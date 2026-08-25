@@ -12,7 +12,7 @@ SMODS.Joker {
     pos = { x = 0, y = 0 },
     rarity = 3,
     cost = 7,
-    config = { extra = { chips = 250, joker_slot = -1, consume_slot = -1 } },
+    config = { extra = { chips = 200, joker_slot = -1, consume_slot = -1 } },
     blueprint_compat = true,
     eternal_compat = true,
     perishable_compat = true,
