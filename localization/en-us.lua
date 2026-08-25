@@ -158,6 +158,14 @@ return {
 			},
 		},
 		["Joker"] = {
+			["j_goob_Astroheim"] = {
+				["name"] = "Astroheim",
+				["text"] = {
+					"On gain and after defeating a {C:attention}Boss Blind{},",
+					"{C:attention}Levels Up{} all Poker Hands {C:attention}#1#{} time",
+					"{C:mult}+X{} Mult, where {C:mult}X{} is the {C:attention}Level{} of the played hand"
+				}
+			},
 			["j_goob_MrFlowers"] = {
 				["unlock"] = {
 					"Have a deck that consists of only {C:attention}Flower Cards{}"
