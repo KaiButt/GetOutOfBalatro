@@ -24,9 +24,10 @@ SMODS.Joker {
         return { vars = { center.ability.extra.repetitions } }
     end,
     add_to_deck = function(self, card, from_debuff)
-        if not from_debuff and #G.deck.cards ~= 0 then
-            local _card = G.deck.cards[#G.deck.cards]
-            _card:set_seal("goob_WondrousMagic")
+        if G.consumeables.config.card_limit > #G.consumeables.cards then
+            local _card = SMODS.add_card { key = "c_goob_Vortex" }
+            _card.cost = 0
+            _card.sell_cost = 0
         end
     end,
     pools = { ["goob"] = true, ["goobNL"] = true },

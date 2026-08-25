@@ -24,6 +24,17 @@ return {
 				},
 			}
 		},
+		["Spectral"] = {
+			["c_goob_Vortex"] = {
+				["label"] = "Vortex",
+				["name"] = "Vortex",
+				["text"] = {
+					"Add a {C:attention}Wondrous Seal{}",
+                    "to {C:attention}#1#{} selected",
+                    "card in your hand",
+				}
+			}
+		},
 		["Enhanced"] = {
 			["m_goob_flower"] = {
 				["name"] = "Flower Card",
@@ -257,17 +268,18 @@ return {
 			["j_goob_Presto"] = {
 				["name"] = "Presto",
 				["text"] = {
-					"When gained add a {C:dark_edition}Wondrous Seal{} to the top card",
-					"of your deck. Cards with a {C:dark_edition}Wondrous Seal{}",
+					"When gained, creates a {C:dark_edition}Vortex{} Spectral Card",
+					"{C:inactive}(must have room, has zero sell value){}",
+					"Cards with a {C:dark_edition}Wondrous Seal{}",
 					'are played {C:attention}#1#{} additional time',
 				}
 			},
 			["j_goob_Kai"] = {
 				["name"] = "Kai Master Wizard Of The Wonder Arts",
 				["text"] = {
-					"When gained and after drawing your first hand each blind,",
-					"places a {C:dark_edition}Wondrous Seal{} to the top card of deck",
-					"{C:inactive}(if one exists, and{} {C:attention}overrides{} {C:inactive}other seals){}",
+					"Creates a {C:dark_edition}Negative Vortex{} Spectral card",
+					"at the end of the {C:attention}shop{}",
+					"{C:inactive}(has zero sell value){}",
 					"{C:dark_edition}Wondrous{} effects are more likely to be {C:dark_edition}Extra Wondrous{}"
 				}
 			},
