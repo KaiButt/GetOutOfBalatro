@@ -78,13 +78,38 @@ return {
 					"{C:attention}-1{} Starting Ante",
 					"{C:attention}+1{} Ante required to win"
 				}
+			},
+			["b_goob_MainDeck"] = {
+				["name"] = "Main Deck",
+				["text"] = {
+					"Only G.O.O.B Jokers will appear"
+				}
 			}
 		},
 		["Sleeve"] = {
+			["sleeve_goob_MainSleeve"] = {
+				["name"] = "Main Sleeve",
+				["unlock"] = {
+					"Beat the game with {C:attention}Main Deck{}",
+					"on any difficulty"
+				},
+				["text"] = {
+					"Only G.O.O.B Jokers will appear"
+				}
+			},
+			["sleeve_goob_MainSleeve_alt"] = {
+				["name"] = "Main Sleeve",
+				["unlock"] = {
+					"Beat the game on {C:attention}Main Deck{} on any difficulty ",
+				},
+				["text"] = {
+					"{C:attention}+1{} Joker slot"
+				}
+			},
 			["sleeve_goob_sohiSleeve"] = {
 				["name"] = "Royal Sleeve",
 				["unlock"] = {
-					"Beat the game with {C:attention}Sohikosa's Royal Deck{}",
+					"Beat the game with {C:attention}Royal Deck{}",
 					"on any difficulty"
 				},
 				["text"] = {
@@ -96,7 +121,7 @@ return {
 			["sleeve_goob_sohiSleeve_alt"] = {
 				["name"] = "Royal Sleeve",
 				["unlock"] = {
-					"Beat the game on {C:attention}Sohikosa's Royal Deck{} on any difficulty ",
+					"Beat the game on {C:attention}Royal Deck{} on any difficulty ",
 				},
 				["text"] = {
 					"also removes the lowest",
@@ -107,7 +132,7 @@ return {
 			["sleeve_goob_chronoSleeve"] = {
 				["name"] = "Lost Sleeve",
 				["unlock"] = {
-					"Beat the game on {C:attention}Chronomancer's Lost Deck{} on any difficulty ",
+					"Beat the game on {C:attention}Lost Deck{} on any difficulty ",
 				},
 				["text"] = {
 					"{C:attention}-1{} Starting Ante",
@@ -117,7 +142,7 @@ return {
 			["sleeve_goob_chronoSleeve_alt"] = {
 				["name"] = "Lost Sleeve",
 				["unlock"] = {
-					"Beat the game on {C:attention}Chronomancer's Lost Deck{} on any difficulty ",
+					"Beat the game on {C:attention}Lost Deck{} on any difficulty ",
 				},
 				["text"] = {
 					"{C:blue}+1{} Hand-Size, {C:red}+1{} Discard, {C:attention}+1{} Win Ante"

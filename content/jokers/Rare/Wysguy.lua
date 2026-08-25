@@ -181,7 +181,7 @@ SMODS.Joker {
                     colour = G.C.RED,
                     card = card,
                 }
-            elseif deck ~= 'b_red' and deck ~= 'b_blue' and deck ~= 'b_green' and deck ~= 'b_black' and deck ~= 'b_nebula' and deck ~= 'b_ghost' and deck ~= 'b_zodiac' and deck ~= 'b_painted' and deck ~= 'b_plasma' and deck ~= 'b_erratic' then
+            elseif deck ~= 'b_red' and deck ~= 'b_goob_MainDeck' and deck ~= 'b_blue' and deck ~= 'b_green' and deck ~= 'b_black' and deck ~= 'b_nebula' and deck ~= 'b_ghost' and deck ~= 'b_zodiac' and deck ~= 'b_painted' and deck ~= 'b_plasma' and deck ~= 'b_erratic' then
                 return { --base condition for modded decks, x2 mult for free
                     x_mult = 1 + card.ability.extra.strength,
                     colour = G.C.RED,
@@ -214,6 +214,17 @@ SMODS.Joker {
         if context.end_of_round and context.main_eval and context.beat_boss and context.game_over == false then
             if card.ability.extra.skippedThisAnte and deck == 'b_anaglyph' then
                 card.ability.extra.skippedThisAnte = false
+            elseif deck == 'b_goob_MainDeck' then
+                local tag = Tag("tag_goob_goblinParty")
+                add_tag(tag)
+                return {
+                    message = 'More Goblins!',
+                    colour = G.C.GREEN,
+                    delay = 1.2,
+                    sound = 'voice' .. math.random(1, 11),
+                    G.SPEEDFACTOR * (math.random() * 0.2 + 1),
+                    0.5
+                }
             elseif deck == 'b_erratic' then
                 for i = 1, 5 * card.ability.extra.strength, 1 do
                     local _card = pseudorandom_element(G.playing_cards, pseudoseed('seed'))
