@@ -203,7 +203,7 @@ return {
 					"When a {C:attention}playing card{} is added to your deck,",
 					"it gains {C:dark_edition}Wondrous Seal{}",
 					"{C:inactive}({C:attention}overrides{} {C:inactive}other seals){}",
-					"{C:dark_edition}Wondrous{} effects are more likely to be {C:dark_edition}Extra Wondrous{}"
+					"Increases potency of {C:dark_edition}Wondrous Seal{} effects"
 				}
 			},
 			["j_goob_Kabi"] = {
@@ -251,7 +251,7 @@ return {
 					"When gained and after drawing your first hand each blind,",
 					"places a {C:dark_edition}Wondrous Seal{} to the top card of deck",
 					"{C:inactive}(if one exists, and{} {C:attention}overrides{} {C:inactive}other seals){}",
-					"Increases potency of {C:dark_edition}Wondrous Seal{} effects"
+					"{C:dark_edition}Wondrous{} effects are more likely to be {C:dark_edition}Extra Wondrous{}"
 				}
 			},
 			["j_goob_Crownos"] = {

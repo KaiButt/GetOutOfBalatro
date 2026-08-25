@@ -27,9 +27,9 @@ function Card:set_debuff(background)
 end
 
 function perform_wondrous_magic(card, hand)
-    local bonus = next(SMODS.find_card("j_goob_Kai")) and 2 or 1
+    local bonus = next(SMODS.find_card("j_goob_broBingles")) and 2 or 1
     local num = pseudorandom("goob_WonderousMagic_seal", 1, 13)
-    if next(SMODS.find_card("j_goob_broBingles")) then
+    if next(SMODS.find_card("j_goob_Kai")) then
         local num2Bro = pseudorandom("goob_WonderousMagic_seal", 1, 13)
         if num2Bro > num then
             num = num2Bro
