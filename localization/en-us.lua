@@ -174,7 +174,7 @@ return {
 				["name"] = "Heroic Henry",
 				["text"] = {
 					"{C:mult}#1#{} Mult during played hands of",
-					"{C:attention}Small{} and {C:attention}Medium{} Blinds",
+					"{C:attention}Small{} and {C:attention}Big{} Blinds",
 					"Gain the total {C:mult}Mult{} lost during played hands of {C:attention}Boss Blinds{}",
 					"{C:inactive}(Current Bonus:{}{C:mult} +#2#{}{C:inactive}){}"
 				}
