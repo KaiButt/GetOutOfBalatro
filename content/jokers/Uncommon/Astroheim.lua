@@ -9,7 +9,7 @@ SMODS.Joker {
     name = 'Astroheim',
     atlas = 'Astroheim',
     pos = { x = 0, y = 0 },
-    config = {extra = { amountToLevel = 1 }},
+    config = {extra = { amountToLevel = 2 }},
     rarity = 2,
     cost = 7,
     blueprint_compat = false,
@@ -21,7 +21,7 @@ SMODS.Joker {
     end,
     add_to_deck = function(self, card, from_debuff)
         if not from_debuff then
-           SMODS.upgrade_poker_hands({level_up = card.ability.extra.amountToLevel, from = card})
+           SMODS.upgrade_poker_hands({hands = GET_mostplayed_hand(), level_up = card.ability.extra.amountToLevel, from = card})
         end
     end,
     calculate = function(self, card, context)
@@ -34,7 +34,7 @@ SMODS.Joker {
             }
         end
         if context.end_of_round and context.main_eval and context.game_over == false and context.beat_boss then
-            SMODS.upgrade_poker_hands({instant = true, level_up = card.ability.extra.amountToLevel, from = card})
+            SMODS.upgrade_poker_hands({hands = GET_mostplayed_hand(), level_up = card.ability.extra.amountToLevel, from = card})
             card:juice_up()
         end
     end

@@ -191,7 +191,7 @@ return {
 				["name"] = "Astroheim",
 				["text"] = {
 					"On gain and after defeating a {C:attention}Boss Blind{},",
-					"{C:attention}Levels Up{} all Poker Hands {C:attention}#1#{} time",
+					"{C:attention}Levels Up{} the most played poker hand {C:attention}#1#{} time",
 					"{C:mult}+X{} Mult, where {C:mult}X{} is the {C:attention}Level{} of the played hand"
 				}
 			},
