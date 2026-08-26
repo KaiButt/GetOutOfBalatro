@@ -29,7 +29,7 @@ return {
 				["label"] = "Vortex",
 				["name"] = "Vortex",
 				["text"] = {
-					"Add a {C:attention}Wondrous Seal{}",
+					"Add a {C:dark_edition}Wondrous Seal{}",
                     "to {C:attention}#1#{} selected",
                     "card in your hand",
 					"{C:inactive}(this will un-debuff the card immediately){}"
