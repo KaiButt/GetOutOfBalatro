@@ -13,9 +13,17 @@ SMODS.Seal {
         if context.cardarea == G.play and context.main_scoring then
             return perform_wondrous_magic(card, context.scoring_name)
         end
+        if context.debuff_card == card then
+            if card:get_seal(true) == "goob_WondrousMagic" then
+                card.debuff = false
+                return {
+                    prevent_debuff = true
+                }
+            end
+        end
     end,
 }
--- debuff immunity
+--debuff immunity
 local _set_debuff = Card.set_debuff
 function Card:set_debuff(background)
     if self:get_seal() == "goob_WondrousMagic" then

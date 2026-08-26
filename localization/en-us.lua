@@ -32,6 +32,7 @@ return {
 					"Add a {C:attention}Wondrous Seal{}",
                     "to {C:attention}#1#{} selected",
                     "card in your hand",
+					"{C:inactive}(this will un-debuff the card immediately){}"
 				}
 			}
 		},

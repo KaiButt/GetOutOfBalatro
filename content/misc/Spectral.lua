@@ -30,6 +30,9 @@ SMODS.Consumable {
             delay = 0.1,
             func = function()
                 conv_card:set_seal(card.ability.extra.seal, nil, true)
+                if conv_card.debuff == true then
+                    conv_card.debuff = false
+                end
                 return true
             end
         }))
