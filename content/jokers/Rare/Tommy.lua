@@ -16,7 +16,7 @@ SMODS.Joker {
     blueprint_compat = true,
     eternal_compat = true,
     perishable_compat = true,
-    display_size = {w = 71 * 1.3, h = 95 * 1.3},
+    display_size = {w = 71 * 1.4, h = 95 * 1.4},
     pools = { ["Meme"] = true, ["goob"] = true, ["goobNL"] = true },
     loc_vars = function(self, info_queue, center)
 		return { vars = {center.ability.extra.chips, center.ability.extra.joker_slot, center.ability.extra.consume_slot} }
