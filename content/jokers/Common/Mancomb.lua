@@ -30,7 +30,7 @@ SMODS.Joker {
         if context.reroll_shop and not context.blueprint then
             card.ability.extra.totalChips = card.ability.extra.totalChips + card.ability.extra.rerollBonus
             return {
-                message = localize { type = 'variable', key = 'a_chips', vars = { card.ability.extra.totalChips } },
+                message = localize { type = 'variable', key = 'a_chips', vars = { card.ability.extra.rerollBonus } }.." Chips",
                 colour = G.C.CHIPS,
             }
         end
