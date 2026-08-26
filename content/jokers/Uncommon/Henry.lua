@@ -15,7 +15,7 @@ SMODS.Joker {
     config = {
         extra = {
             multPool = 0,
-            multLoss = -4,
+            multLoss = -3,
         }
     },
     blueprint_compat = true,
