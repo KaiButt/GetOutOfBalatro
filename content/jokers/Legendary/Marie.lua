@@ -34,6 +34,15 @@ SMODS.Joker {
             return false
         end
     end,
+    add_to_deck = function(self, card, from_debuff)
+        G.GAME.marieAmount = (G.GAME.marieAmount or -1) + 1
+    end,
+    remove_from_deck = function(self, card, from_debuff)
+        G.GAME.marieAmount = (G.GAME.marieAmount or -1) - 1
+        if G.GAME.marieAmount <= 0 then
+            G.GAME.marieAmount = nil
+        end
+    end,
     pools = { ["goob"] = true, ["goobL"] = true },
     calculate = function(self, card, context)
         if context.setting_blind then
@@ -98,7 +107,7 @@ SMODS.Joker {
                 message = 'au revoir, mon amour',
                 delay = 3.5,
                 sound = 'voice' .. math.random(1, 11),
-                    G.SPEEDFACTOR * (math.random() * 0.3 + 1),
+                G.SPEEDFACTOR * (math.random() * 0.3 + 1),
                 saved = 'Marie gave her life for you!',
                 colour = G.C.RED
             }

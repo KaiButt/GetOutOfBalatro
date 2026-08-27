@@ -23,15 +23,15 @@ SMODS.Joker {
     end,
     add_to_deck = function(self, card, from_debuff)
 
-        if not next(SMODS.find_card("j_goob_Marie")) then
-            G.consumeables.config.card_limit = G.consumeables.config.card_limit + card.ability.extra.consume_slot
-            G.jokers.config.card_limit = G.jokers.config.card_limit + card.ability.extra.joker_slot
+        if not next(SMODS.find_card("j_goob_Marie"))then
+            G.consumeables:change_size(card.ability.extra.consume_slot)
+            G.jokers:change_size(card.ability.extra.joker_slot)
         end
     end,
     remove_from_deck = function(self, card, from_debuff)
         if not next(SMODS.find_card("j_goob_Marie")) then
-            G.consumeables.config.card_limit = G.consumeables.config.card_limit - card.ability.extra.consume_slot
-            G.jokers.config.card_limit = G.jokers.config.card_limit - card.ability.extra.joker_slot
+            G.consumeables:change_size(-card.ability.extra.consume_slot)
+            G.jokers:change_size(-card.ability.extra.joker_slot)
         end
     end,
     calculate = function(self, card, context)
@@ -44,13 +44,16 @@ SMODS.Joker {
         end
 
         --todo, this does not play nice if you have multiple big tommies or Maries, w/e ankh op
-        if context.card_added and context.card.ability.name == "Marie" then
-            G.consumeables.config.card_limit = G.consumeables.config.card_limit - card.ability.extra.consume_slot
-            G.jokers.config.card_limit = G.jokers.config.card_limit - card.ability.extra.joker_slot
+        if context.card_added and context.card.ability.name == "Marie" and not next(SMODS.find_card("j_goob_Marie")) then
+            G.consumeables:change_size(-card.ability.extra.consume_slot)
+            G.jokers:change_size(-card.ability.extra.joker_slot)
         end
-        if context.selling_card and context.card.ability.name == "Marie" then
-            G.consumeables.config.card_limit = G.consumeables.config.card_limit + card.ability.extra.consume_slot
-            G.jokers.config.card_limit = G.jokers.config.card_limit + card.ability.extra.joker_slot
+        if context.selling_card and context.card.ability.name == "Marie" and (G.GAME.marieAmount == nil or G.GAME.marieAmount == 0) then
+            if(G.GAME.marieAmount ~= nil and G.GAME.marieAmount <= 0) then
+                G.GAME.marieAmount = nil
+            end
+            G.consumeables:change_size(card.ability.extra.consume_slot)
+            G.jokers:change_size(card.ability.extra.joker_slot)
         end
     end
 }
