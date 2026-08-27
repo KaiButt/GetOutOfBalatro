@@ -14,7 +14,7 @@ SMODS.Joker {
     blueprint_compat = true,
     eternal_compat = true,
     perishable_compat = true,
-    pools = { ["goob"] = true },
+    pools = { ["goob"] = true, ["goobL"] = true},
     calculate = function(self, card, context)
         if context.ending_shop then
             G.E_MANAGER:add_event(Event({

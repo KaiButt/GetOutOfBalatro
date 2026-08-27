@@ -29,6 +29,13 @@ SMODS.ObjectType({ -- goob pool, contains all non-legendaries.
 	default = "j_goob_Digger",
 	cards = {}
 })
+SMODS.ObjectType({ -- goob pool, contains all legendaries. For the menu.
+	object_type = "ObjectType",
+	key = "goobL",
+	weight = 10,
+	default = "j_goob_Kai",
+	cards = {}
+})
 --these two are mainly used to prevent fox and goblin party tag from generating legendaries, unless you have Charles then the tag can
 SMODS.Sound({
     key = "clockTick",
@@ -64,4 +71,10 @@ for _, file in ipairs(ach_src) do
 end
 for _, file in ipairs(misc_src) do
 	assert(SMODS.load_file("content/misc/" .. file))()
+end
+-- menu card
+SMODS.current_mod.menu_cards = function()
+	return {
+		{set = "goobL"},
+	}
 end

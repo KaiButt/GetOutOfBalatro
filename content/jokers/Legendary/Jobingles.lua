@@ -27,7 +27,7 @@ SMODS.Joker {
 	blueprint_compat = true,
 	eternal_compat = true,
 	perishable_compat = true,
-	pools = { ["goob"] = true },
+	pools = { ["goob"] = true, ["goobL"] = true},
 	loc_vars = function(self, info_queue, center)
 		return { vars = { center.ability.extra.amount, center.ability.immutable.cacap, center.ability.extra.x_mult, center.ability.extra.last_rank, center.ability.extra.last_suit } }
 	end,

@@ -27,7 +27,7 @@ SMODS.Joker {
 	blueprint_compat = false,
 	eternal_compat = false,
 	perishable_compat = true,
-	pools = { ["goob"] = true },
+	pools = { ["goob"] = true, ["goobL"] = true},
 	calculate = function(self, card, context)
 		if context.selling_self then
 			G.GAME.crownos_used = true
