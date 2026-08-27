@@ -4,7 +4,7 @@ return {
 			["ach_goob_jobros"] = "Clown Show",
 		},
 		["achievement_descriptions"] = {
-			["ach_goob_jobros"] = "Win a run with both Jobangles and Jobingles",
+			["ach_goob_jobros"] = "Win a run with both Jobangles and Jobingles.",
 		},
 		["labels"] = {
 			["goob_wondrousmagic_seal"] = {
@@ -20,7 +20,7 @@ return {
 				["text"] = {
 					"Enhances {C:attention}#1#{} selected",
 					"cards into",
-					"{C:attention}Flower Cards{}"
+					"{C:attention}Flower Cards{}."
 				},
 			}
 		},
@@ -31,7 +31,7 @@ return {
 				["text"] = {
 					"Add a {C:dark_edition}Wondrous Seal{}",
                     "to {C:attention}#1#{} selected",
-                    "card in your hand",
+                    "card in your hand.",
 					"{C:inactive}(this will un-debuff the card immediately){}"
 				}
 			}
@@ -40,7 +40,7 @@ return {
 			["m_goob_flower"] = {
 				["name"] = "Flower Card",
 				["text"] = {
-					"{C:chips}+#1#{} Extra Chips",
+					"{C:chips}+#1#{} Extra Chips,",
 					"{C:mult}+#2#{} Mult"
 				},
 			},
@@ -54,8 +54,8 @@ return {
 					"Wondrous Seal",
 				},
 				["text"] = {
-					"Card {C:attention}always scores{} and is {C:attention}Debuff immune{}",
-					"Does a random {C:dark_edition}Wondrous{} effect",
+					"Card {C:attention}always scores{} and is {C:attention}Debuff immune{}.",
+					"Also does a random {C:dark_edition}Wondrous{} effect",
 					"when scored."
 				},
 			},
@@ -73,12 +73,12 @@ return {
 				["name"] = "Royal Deck",
 				["unlock"] = {
 					"Beat the game with",
-					"{C:attention}abandoned deck{} on any difficulty"
+					"{C:attention}abandoned deck{} on any difficulty."
 				},
 				["text"] = {
 					"Replaces the lowest",
 					"{C:attention}three{} ranks with",
-					"a {C:attention}copy{} of each face card"
+					"a {C:attention}copy{} of each face card."
 				}
 			},
 			["b_goob_chronomancer"] = {
@@ -87,14 +87,14 @@ return {
 					"Beat Ante {C:attention}9{} on any difficulty"
 				},
 				["text"] = {
-					"{C:attention}-1{} Starting Ante",
+					"{C:attention}-1{} Starting Ante,",
 					"{C:attention}+1{} Ante required to win"
 				}
 			},
 			["b_goob_MainDeck"] = {
 				["name"] = "Main Deck",
 				["text"] = {
-					"Only G.O.O.B Jokers will appear"
+					"Only G.O.O.B Jokers will appear."
 				}
 			}
 		},
@@ -103,31 +103,31 @@ return {
 				["name"] = "Main Sleeve",
 				["unlock"] = {
 					"Beat the game with {C:attention}Main Deck{}",
-					"on any difficulty"
+					"on any difficulty."
 				},
 				["text"] = {
-					"Only G.O.O.B Jokers will appear"
+					"Only G.O.O.B Jokers will appear."
 				}
 			},
 			["sleeve_goob_MainSleeve_alt"] = {
 				["name"] = "Main Sleeve",
 				["unlock"] = {
-					"Beat the game on {C:attention}Main Deck{} on any difficulty ",
+					"Beat the game on {C:attention}Main Deck{} on any difficulty.",
 				},
 				["text"] = {
-					"{C:attention}+1{} Joker slot"
+					"{C:attention}+1{} Joker slot."
 				}
 			},
 			["sleeve_goob_sohiSleeve"] = {
 				["name"] = "Royal Sleeve",
 				["unlock"] = {
 					"Beat the game with {C:attention}Royal Deck{}",
-					"on any difficulty"
+					"on any difficulty."
 				},
 				["text"] = {
 					"Replaces the lowest",
 					"{C:attention}three{} ranks with",
-					"a {C:attention}copy{} of each face card"
+					"a {C:attention}copy{} of each face card."
 				}
 			},
 			["sleeve_goob_sohiSleeve_alt"] = {
@@ -137,27 +137,27 @@ return {
 				},
 				["text"] = {
 					"also removes the lowest",
-					"{C:attention}fourth{} rank and start the run",
-					"with a {C:dark_edition}negative{} {C:attention}pareidolia{} Joker"
+					"{C:attention}fourth{} rank. Start the run",
+					"with a {C:dark_edition}negative{} {C:attention}pareidolia{} Joker."
 				}
 			},
 			["sleeve_goob_chronoSleeve"] = {
 				["name"] = "Lost Sleeve",
 				["unlock"] = {
-					"Beat the game on {C:attention}Lost Deck{} on any difficulty ",
+					"Beat the game on {C:attention}Lost Deck{} on any difficulty.",
 				},
 				["text"] = {
-					"{C:attention}-1{} Starting Ante",
+					"{C:attention}-1{} Starting Ante,",
 					"{C:attention}+1{} Ante required to win"
 				}
 			},
 			["sleeve_goob_chronoSleeve_alt"] = {
 				["name"] = "Lost Sleeve",
 				["unlock"] = {
-					"Beat the game on {C:attention}Lost Deck{} on any difficulty ",
+					"Beat the game on {C:attention}Lost Deck{} on any difficulty.",
 				},
 				["text"] = {
-					"{C:blue}+1{} Hand-Size, {C:red}+1{} Discard, {C:attention}+1{} Win Ante"
+					"{C:blue}+1{} Hand-Size, {C:red}+1{} Discard, {C:attention}+1{} Win Ante."
 				}
 			},
 		},
@@ -165,7 +165,7 @@ return {
 			["tag_goob_goblinParty"] = {
 				["name"] = "Goblin Party!",
 				["text"] = {
-					"Shop has a free {C:attention}G.O.O.B{} joker",
+					"Shop has a free {C:attention}G.O.O.B{} joker.",
 				},
 			},
 		},
@@ -173,21 +173,18 @@ return {
 			["j_goob_Marie"] = {
 				["name"] = "Marie",
 				["text"] = {
-					'{C:red,E:1}sometimes speaks French{}',
-					'{C:green,E:1}Removes{} {C:red}negative{} G.O.O.B Joker effects',
+					'{C:red,E:1}sometimes speaks French{}.',
+					'{C:green,E:1}Removes{} {C:red}negative{} G.O.O.B Joker effects.',
 					'{C:inactive}(For positive effects, they will still have been considered to have occurred)',
-					'When Blind is {C:attention}selected{} she performs a sacred ritual of Sol and Lua, reducing {C:attention}Blind{} {C:purple}requirement{} by {C:purple}#1#{}%',
-					'then enters a cooldown period of {C:attention}#2#d#3# Blinds{}',
-					'{C:inactive}(Cooldown: #4#){}',
-					'Prevents death once, then {C:red,E:2}self destructs{}'
+					'When Blind is {C:attention}selected{} reduces {C:attention}Blind{} {C:purple}requirement{} by {C:purple}#1#{}%.',
 				}
 			},
 			["j_goob_Henry"] = {
 				["name"] = "Heroic Henry",
 				["text"] = {
 					"{C:red}#1#{} Mult during played hands of",
-					"{C:attention}Small{} and {C:attention}Big{} Blinds",
-					"Gain the total {C:mult}Mult{} lost during played hands of {C:attention}Boss Blinds{}",
+					"{C:attention}Small{} and {C:attention}Big{} Blinds.",
+					"Gain the total {C:mult}Mult{} lost during played hands of {C:attention}Boss Blinds{}.",
 					"{C:inactive}(Current Bonus:{}{C:mult} +#2#{}{C:inactive}){}"
 				}
 			},
@@ -196,35 +193,35 @@ return {
 				["text"] = {
 					"{C:chips}+#1#{} Chips,",
 					"{C:red}#2#{} Joker Slots,",
-					"{C:red}#3#{} Consumable Slots"
+					"{C:red}#3#{} Consumable Slots."
 				}
 			},
 			["j_goob_Astroheim"] = {
 				["name"] = "Astroheim",
 				["text"] = {
 					"On gain and after defeating a {C:attention}Boss Blind{},",
-					"{C:attention}Levels Up{} the most played poker hand {C:attention}#1#{} times",
-					"{C:mult}+X{} Mult, where {C:mult}X{} is the {C:attention}Level{} of the played hand"
+					"{C:attention}Levels Up{} the most played poker hand {C:attention}#1#{} times.",
+					"{C:mult}+X{} Mult, where {C:mult}X{} is the {C:attention}Level{} of the played hand."
 				}
 			},
 			["j_goob_MrFlowers"] = {
 				["unlock"] = {
-					"Have a deck that consists of only {C:attention}Flower Cards{}"
+					"Have a deck that consists of only {C:attention}Flower Cards{}."
 				},
 				["name"] = "Mr.Flowers",
 				["text"] = {
-					"When Blind is {C:attention}Skipped{}",
-					"Adds {C:attention}#1#{} {C:inactive}(identical){} {C:attention}Flower Cards{} to deck",
+					"When Blind is {C:attention}Skipped{},",
+					"adds {C:attention}#1#{} {C:inactive}(identical){} {C:attention}Flower Cards{} to deck.",
 					"Played {C:attention}Flower Cards{} give",
-					"{C:money}$#3#{} when scored"
+					"{C:money}$#3#{} when scored."
 				}
 			},
 			["j_goob_Clarence"] = {
 				["name"] = "Cheating Clarence",
 				["text"] = {
-					"During {C:attention}First Hand{} of {C:attention}Boss Blinds{}",
+					"During {C:attention}First Hand{} of {C:attention}Boss Blinds{},",
 					"all {C:attention}listed{} {C:green,E:1,S:1.1}probabilities{}",
-					"are {C:green,E:1,S:1.1}guaranteed{}",
+					"are {C:green,E:1,S:1.1}guaranteed{}.",
 					"{C:inactive}(ex: {C:green}1 in 3{C:inactive} -> {C:green}3 in 3{C:inactive})",
 				}
 			},
@@ -232,48 +229,48 @@ return {
 				["name"] = "Nobingles",
 				["text"] = {
 					"Earn {C:money}$#1#{} at",
-					"end of round",
-					"{C:red}decrease{} this bonus by {X:red,C:white}X#2#{} if you score",
-					"a card with an {C:dark_edition}improvement{} during the round"
+					"end of round.",
+					"{C:red}Decrease{} this bonus by {X:red,C:white}X#2#{} if you score",
+					"a card with an {C:dark_edition}improvement{} during the round."
 				}
 			},
 			["j_goob_broBingles"] = {
 				["name"] = "Brobingles",
 				["text"] = {
-					"Can not be {C:attention}debuffed{}",
+					"Can not be {C:attention}debuffed{}.",
 					"When a {C:attention}playing card{} is added to your deck,",
-					"it gains {C:dark_edition}Wondrous Seal{}",
+					"it gains {C:dark_edition}Wondrous Seal{}.",
 					"{C:inactive}({C:attention}overrides{} {C:inactive}other seals){}",
-					"Increases potency of {C:dark_edition}Wondrous Seal{} effects"
+					"Increases potency of {C:dark_edition}Wondrous Seal{} effects."
 				}
 			},
 			["j_goob_Kabi"] = {
 				["unlock"] = {
-					"Beat ante {C:attention}9{}",
+					"Beat ante {C:attention}9{}.",
 				},
 				["name"] = "Kabi",
 				["text"] = {
-					"{X:mult,C:white}X#1#{} Mult",
+					"{X:mult,C:white}X#1#{} Mult.",
 					"The first time you gain {X:mult,C:white}Mult{} this way,",
-					"{C:attention}+#2#{} {C:red,E:2}Ante{} required to win",
+					"{C:attention}+#2#{} {C:red,E:2}Ante{} required to win.",
 					"{C:inactive}(even if this joker is removed){}"
 				}
 			},
 			["j_goob_Seaglass"] = {
 				["name"] = "Seaglass the Valuable but Friendly",
 				["text"] = {
-					"Earn {C:gold}$#1#{} at end of round",
-					"Valuable, but if removed {C:mult}lose{} your {E:1}soul{}",
+					"Earn {C:gold}$#1#{} at end of round.",
+					"Valuable, but if removed {C:mult}lose{} your {E:1}soul{}.",
 					"{C:inactive}(Son Of A--){}"
 				}
 			},
 			["j_goob_Dupla"] = {
 				["unlock"] = {
-					"Redeem both {C:attention}Magic Trick{} and {C:attention}Illusion{}",
+					"Redeem both {C:attention}Magic Trick{} and {C:attention}Illusion{}.",
 				},
 				["name"] = "Dupla",
 				["text"] = {
-					"{C:attention}Playing Cards{} and Playing Card {C:attention}boosters{} in the",
+					"{C:attention}Playing Cards{}, and Playing Card {C:attention}boosters{} in the",
 					"shop are {C:attention}free{}. When a",
 					"{C:attention}playing card{} is created, it comes with {C:attention}#1#{} additional copy.",
 					"{C:inactive}(the additional copy goes to your deck){}"
@@ -282,46 +279,47 @@ return {
 			["j_goob_Presto"] = {
 				["name"] = "Presto",
 				["text"] = {
-					"When gained, creates a {C:dark_edition}Vortex{} Spectral Card",
+					"When gained, creates a {C:dark_edition}Vortex{} Spectral Card.",
 					"{C:inactive}(must have room, has zero sell value){}",
 					"Cards with a {C:dark_edition}Wondrous Seal{}",
-					'are played {C:attention}#1#{} additional time',
+					'are played {C:attention}#1#{} additional time.',
 				}
 			},
 			["j_goob_Kai"] = {
 				["name"] = "Kai Master Wizard Of The Wonder Arts",
 				["text"] = {
 					"Creates a {C:dark_edition}Negative Vortex{} Spectral card",
-					"at the end of the {C:attention}shop{}",
+					"at the end of the {C:attention}shop{}.",
 					"{C:inactive}(has zero sell value){}",
-					"{C:dark_edition}Wondrous{} effects are more likely to be {C:dark_edition}Extra Wondrous{}"
+					"{C:dark_edition}Wondrous{} effects are more likely to be {C:dark_edition}Extra Wondrous{}."
 				}
 			},
 			["j_goob_Crownos"] = {
 				["unlock"] = {
-					"Beat ante {C:attention}-1{}",
+					"Beat ante {C:attention}-1{}.",
 				},
 				["name"] = "Crownos",
 				["text"] = {
-					"When {C:attention}Sold{}:",
-					"{C:attention}-#1#{} ante and {C:dark_edition}+#2#{} Joker Slot",
+					"When you would die,",
+					"prevents it. {C:attention}-#1#{} Ante, and {C:dark_edition}+#2#{} Joker Slot afterwards.",
+					"{C:red,E:2}self-destructs{}."
 				},
 			},
 			["j_goob_King"] = {
 				["unlock"] = {
-					"Have only {C:attention}Kings{} in your deck",
+					"Have only {C:attention}Kings{} in your deck.",
 				},
 				["name"] = "The King",
 				["text"] = {
-					"When a card is scored,",
-					"{C:attention}increases{} its rank, up to {C:attention}King{}",
-					"Gains {C:gold}$#1#{} for each {C:attention}King{} in deck",
+					"When a card is scored",
+					"{C:attention}increases{} its rank, up to {C:attention}King{}.",
+					"Gains {C:gold}$#1#{} for each {C:attention}King{} in deck.",
 					"{C:inactive}(Currently: {}{C:gold}$#2#{}{C:inactive}){}",
 				},
 			},
 			["j_goob_Yokomo"] = {
 				["unlock"] = {
-					"Have only {C:attention}Enhanced{} cards in your deck",
+					"Have only {C:attention}Enhanced{} cards in your deck.",
 				},
 				["name"] = "Yokomo",
 				["text"] = {
@@ -333,28 +331,28 @@ return {
 			["j_goob_Scaler"] = {
 				["name"] = "Scaler",
 				["text"] = {
-					"{C:mult}+#1#{} Mult",
-					"Gains {C:mult}+#2#{} Mult after every {C:attention}Boss Blind{}",
+					"{C:mult}+#1#{} Mult.",
+					"Gains {C:mult}+#2#{} Mult after every {C:attention}Boss Blind{}.",
 				},
 			},
 			["j_goob_Gondo"] = {
 				["name"] = "Gondo",
 				["text"] = {
 					"{C:attention}+#1#{} card slot",
-					"available in shop",
+					"available in shop.",
 					"{C:inactive}(Also refreshes the shop on gain){}"
 				},
 			},
 			["j_goob_Thomas"] = {
 				["unlock"] = {
 					"Discard a",
-					"{E:1,C:attention}Flush Five",
+					"{E:1,C:attention}Flush Five{}.",
 				},
 				["name"] = "Thomas",
 				["text"] = {
 					"Every discarded {C:attention}card{}",
 					"permanently gains",
-					"{C:chips}+#1#{} Chips when scored",
+					"{C:chips}+#1#{} Chips when scored.",
 				},
 			},
 			["j_goob_Kerry"] = {
@@ -362,7 +360,7 @@ return {
 				["text"] = {
 					"{C:mult}+#1#{} Mult",
 					"When debuffed or destroyed,",
-					"becomes {C:attention}enraged{} instead",
+					"becomes {C:attention}enraged{} instead.",
 					"{C:inactive}({}{C:attention}Stickers{} {C:inactive}will be removed){}",
 				},
 			},
@@ -371,113 +369,113 @@ return {
 				["text"] = {
 					"Adds #1# card",
 					"with an {X:grey,C:edition}edition{} to deck when",
-					"{C:attention}Blind{} is selected",
+					"{C:attention}Blind{} is selected.",
 					"Last card added: {C:attention}#4#{} of {C:attention}#5#{}",
 					"played cards with an {X:grey,C:edition}edition{} each give",
-					"{X:mult,C:white}X#3#{} Mult when scored",
+					"{X:mult,C:white}X#3#{} Mult when scored.",
 				},
 			},
 			["j_goob_Kerry_rage"] = {
 				["name"] = "Enraged Kerry",
 				["text"] = {
 					"{X:mult,C:white}X#1#{} Mult",
-					"Can't be {C:attention}debuffed{} or {C:attention}destroyed{}",
+					"Can't be {C:attention}debuffed{} or {C:attention}destroyed{}.",
 					"{C:inactive}(Will still trigger on destroy effects as if it was destroyed){}",
 				},
 			},
 			["j_goob_Gelbon"] = {
 				["unlock"] = {
-					"Win a run with a {C:attention}Straight{}",
+					"Win a run with a {C:attention}Straight{}.",
 				},
 				["name"] = "Gelbon The Nerd",
 				["text"] = {
 					"Gains {C:mult}+#2#{} Mult",
 					"if played hand",
-					"contains a {C:attention}Straight{}",
+					"contains a {C:attention}Straight{}.",
 					"{C:inactive}(Currently {C:mult}+#1#{C:inactive} Mult)",
 				},
 			},
 			["j_goob_Mancomb"] = {
 				["unlock"] = {
-					"Redeem both {C:attention}reroll surplus{} and {C:attention}reroll glut{}",
+					"Redeem both {C:attention}reroll surplus{} and {C:attention}reroll glut{}.",
 				},
 				["name"] = "Mancomb",
 				["text"] = {
 					"This Joker gains {C:chips}+#1#{} Chips",
-					"per {C:attention}reroll{} in the shop",
+					"per {C:attention}reroll{} in the shop.",
 					"{C:inactive}(Currently {C:chips}+#2#{C:inactive} Chips)",
 				},
 			},
 			["j_goob_Skull"] = {
 				["unlock"] = {
-					"Sell a total of {C:attention}30{} Joker cards",
+					"Sell a total of {C:attention}30{} Joker cards.",
 					"{C:inactive}(#1#)",
 				},
 				["name"] = "Menacing Skull",
 				["text"] = {
-					"This Joker gains {C:mult}+#2#{} Mult when a Joker is {C:attention}sold{}",
+					"This Joker gains {C:mult}+#2#{} Mult when a Joker is {C:attention}sold{}.",
 					"{C:inactive}(Currently{} {C:mult}+#1#{} {C:inactive}Mult)",
 				},
 			},
 			["j_goob_StarAce"] = {
 				["unlock"] = {
-					"Unlocked with {C:attention}Luck{}",
+					"Unlocked with {C:green}Luck{}.",
 					"{C:inactive}(1 in 12 chance to unlock when you win a blind){}",
 				},
 				["name"] = "Star Ace",
 				["text"] = {
-					"{C:mult}+#1#d#2#{} Mult",
-					"When any G.O.O.B die is rolled, it is rolled with {C:attention}advantage{}",
+					"{C:mult}+#1#d#2#{} Mult.",
+					"When any G.O.O.B die is rolled, it is rolled with {C:attention}advantage{}.",
 				},
 			},
 			["j_goob_Greg"] = {
 				["name"] = "Greg",
 				["text"] = {
-					"{C:attention}+#1#{} hand size",
+					"{C:attention}+#1#{} hand size.",
 				},
 			},
 			["j_goob_Gold_Bot"] = {
 				["name"] = "Gold Bot",
 				["text"] = {
-					"When {C:attention}Blind{} is skipped",
-					"Gain {C:gold}$#1#d#2#{} Gold",
+					"When {C:attention}Blind{} is skipped,",
+					"gain {C:gold}$#1#d#2#{} Gold.",
 				},
 			},
 			["j_goob_Sunny"] = {
 				["unlock"] = {
-					"Lose {C:attention}1{} run",
+					"Lose {C:attention}1{} run.",
 				},
 				["name"] = "Loyal Guardian Sunny",
 				["text"] = {
 					"When this Joker, or an adjacent Joker would be debuffed",
-					"{C:green}prevents it{}. Adjacent Jokers give {X:mult,C:white}X#1#{} Mult",
-					"G.O.O.B Jokers give {X:mult,C:white}X#2#{} Mult instead",
+					"{C:green}prevents it{}. Adjacent Jokers give {X:mult,C:white}X#1#{} Mult.",
+					"G.O.O.B Jokers give {X:mult,C:white}X#2#{} Mult instead.",
 				},
 			},
 			["j_goob_Sgt"] = {
 				["name"] = "Sgt",
 				["text"] = {
-					"{X:grey,C:edition}Negative{} Jokers are {C:attention}#1#X{} more likely to show up",
-					"Other {X:grey,C:edition}Negative{} Jokers gives {X:mult,C:white}X#2#{} Mult",
+					"{X:grey,C:edition}Negative{} Jokers are {C:attention}#1#X{} more likely to show up.",
+					"Other {X:grey,C:edition}Negative{} Jokers gives {X:mult,C:white}X#2#{} Mult.",
 				},
 			},
 			["j_goob_Ally"] = {
 				["name"] = "Gamblin' Sage",
 				["text"] = {
-					"When {C:attention}Blind{} is selected",
-					"Rolls {C:attention}#1#d#2#{}",
-					"On a #2#, gains {C:gold}#3#{} Gold",
-					"and disables the current or next {C:attention}Boss Blind{}",
+					"When {C:attention}Blind{} is selected,",
+					"Rolls {C:attention}#1#d#2#{}.",
+					"On a #2#, gains {C:gold}#3#{} Gold,",
+					"and disables the current or next {C:attention}Boss Blind{}.",
 					"{C:inactive}(Increases the{} {C:attention}minimum roll{} {C:inactive}on failure until success){}",
 				},
 			},
 			["j_goob_Petyr"] = {
 				["name"] = "Yapping Petyr",
 				["text"] = {
-					"{E:1}Talks a lot{}",
-					"When {C:attention}Blind{} is selected {C:red}lose{} {C:chips}1{} hand",
+					"{E:1}Talks a lot{}.",
+					"When {C:attention}Blind{} is selected {C:red}lose{} {C:chips}1{} hand.",
 					"Sell this joker during a {C:attention}Blind{} to get all lost hands back",
-					"with an additional {C:chips}#1#{}",
+					"with an additional {C:chips}#1#{}.",
 					"{C:inactive}(Currently would grant {C:chips}#2#{}{C:inactive} hands){}",
 				},
 			},
@@ -485,120 +483,120 @@ return {
 				["unlock"] = {
 					"Win a run with",
 					"{C:attention}Erratic Deck{}",
-					"on any difficulty",
+					"on any difficulty.",
 				},
 				["name"] = "Inversi",
 				["text"] = {
-					"spihC {C:chips}#2#d#1#+{}",
+					".spihC {C:chips}#2#d#1#+{}",
 				},
 			},
 			["j_goob_Boblin"] = {
 				["name"] = "Boblin",
 				["text"] = {
 					"When {C:attention}Small Blind{} is skipped, cause a {C:green}Goblin Party!{}",
-					"All your Jokers are considered {X:black,C:edition,E:1}Mercenaries{}",
+					"All your Jokers are considered {X:black,C:edition,E:1}Mercenaries{}.",
 				},
 			},
 			["j_goob_Deathkill"] = {
 				["unlock"] = {
-					"Win a run with {C:attention}0{} {C:gold}Gold{}",
+					"Win a run with {C:attention}0{} {C:gold}Gold{}.",
 				},
 				["name"] = "Deathkill 4.0",
 				["text"] = {
-					"{X:mult,C:white}X#1#{} Mult",
+					"{X:mult,C:white}X#1#{} Mult.",
 					"When {C:attention}Blind{} is selected",
-					"{C:attention}Lose all {C:gold}Gold{}",
+					"{C:attention}Lose all {C:gold}Gold{}.",
 				},
 			},
 			["j_goob_Harmony"] = {
 				["name"] = "Harmony",
 				["text"] = {
-					"{C:attention}+#1#{} hand size",
-					"{C:green}#2# in #3#{} chance this card is destroyed at end of round",
+					"{C:attention}+#1#{} hand size.",
+					"{C:green}#2# in #3#{} chance this card is destroyed at end of round.",
 				},
 			},
 			["j_goob_Ante"] = {
 				["name"] = "Ante",
 				["text"] = {
-					"{X:mult,C:white}X#1#d#2#{} Mult",
+					"{X:mult,C:white}X#1#d#2#{} Mult.",
 				},
 			},
 			["j_goob_Blaze"] = {
 				["unlock"] = {
-					"Beat a {C:attention}Boss Blind{} with at most {C:attention}5{} cards in your deck",
+					"Beat a {C:attention}Boss Blind{} with at most {C:attention}5{} cards in your deck.",
 				},
 				["name"] = "Blaze",
 				["text"] = {
-					"{C:blue}+#1#{} hand per round",
+					"{C:blue}+#1#{} hand per round.",
 					"Every card you {C:attention}play{}",
-					"Will be {C:attention}shuffled back{} into your {C:attention}deck{}",
+					"Will be {C:attention}shuffled back{} into your {C:attention}deck{}.",
 				},
 			},
 			["j_goob_Charles"] = {
 				["unlock"] = {
-					"Win a run with a {E:1,C:purple}Legendary{}",
+					"Win a run with a {E:1,C:purple}Legendary{}.",
 				},
 				["name"] = "Charles",
 				["text"] = {
-					"{E:1,C:purple}Legendaries{} appear in the shop",
-					"{E:1,C:purple}Legendaries{} get {C:attention}#1#%{} off",
+					"{E:1,C:purple}Legendaries{} appear in the shop.",
+					"{E:1,C:purple}Legendaries{} get {C:attention}#1#%{} off.",
 					"gain {C:gold}$#2#{} at the end of the round",
-					"for each {E:1,C:red}Rare{} and {E:1,C:purple}Legendary{} Joker owned",
+					"for each {E:1,C:red}Rare{} and {E:1,C:purple}Legendary{} Joker owned.",
 					"{C:inactive}(Including this one){}",
 				},
 			},
 			["j_goob_Digger"] = {
 				["unlock"] = {
-					"Have at least {C:gold}$200{}",
+					"Have at least {C:gold}$200{}.",
 				},
 				["name"] = "Digger Of The Golden Sands",
 				["text"] = {
-					"{C:mult}+#1#{} Mult",
+					"{C:mult}+#1#{} Mult.",
 					"Lose {C:gold}$#2#{} Gold at the end of the round",
-					"If you can not pay, {C:red,E:2}self destructs{}",
+					"If you can not pay, {C:red,E:2}self-destructs{}.",
 				},
 			},
 			["j_goob_Jobangles"] = {
 				["name"] = "Jobangles",
 				["text"] = {
-					"When {C:attention}Blind{} is selected a random card in deck",
-					"gets {C:attention}destroyed{} and this joker",
-					"gains Chips equal to {C:chips}X#2#{} the rank destroyed",
-					"extra Chips granted to the card are also given to this joker",
+					"When {C:attention}Blind{} is selected, a random card in deck",
+					"gets {C:attention}destroyed{}. This joker",
+					"gains Chips equal to {C:chips}X#2#{} the rank destroyed.",
+					"Extra Chips granted to the card are also given to this joker.",
 					"Last card destroyed: {C:attention}#3#{} of {C:attention}#4#{}",
 					"{C:inactive}(Current chip bonus:{C:chips} +#1#{}{C:inactive})",
 				},
 			},
 			["j_goob_LLEHNINRUB"] = {
 				["unlock"] = {
-					"Defeat {C:attention}Amber Acorn{}",
+					"Defeat {C:attention}Amber Acorn{}.",
 				},
 				["name"] = "LLEHNINRUB",
 				["text"] = {
-					"{X:mult,C:white}X#1#{} Mult",
 					"When {C:attention}Blind{} is selected",
-					"Flips and shuffles {C:attention}ALL{} Jokers",
+					"{X:mult,C:white}X#1#{} Mult,",
+					"and flips and shuffles {C:attention}ALL{} Jokers",
 				},
 			},
 			["j_goob_Fox"] = {
 				["unlock"] = {
-					"Win a run with only G.O.O.B Jokers",
+					"Win a run with only G.O.O.B Jokers.",
 				},
 				["name"] = "Blessed Fox",
 				["text"] = {
-					"When gained, creates a random {X:grey,C:edition}negative{} G.O.O.B Joker",
-					"Other G.O.O.B Jokers each give {X:mult,C:white}X#1#{} Mult",
+					"When gained, creates a random {X:grey,C:edition}negative{} G.O.O.B Joker.",
+					"Other G.O.O.B Jokers each give {X:mult,C:white}X#1#{} Mult.",
 				},
 			},
 			["j_goob_Wysguy"] = {
 				["unlock"] = {
 					"Win a run with any",
 					"deck on",
-					"{C:attention}Gold Stake{} difficulty",
+					"{C:attention}Gold Stake{} difficulty.",
 				},
 				["name"] = "Wysguy",
 				["text"] = {
-					"Has a {C:dark_edition}Unique{} effect for each deck",
+					"Has a {C:dark_edition}Unique{} effect for each deck.",
 					"{C:inactive}(Are you wise enough to figure it out?){}",
 				},
 			},

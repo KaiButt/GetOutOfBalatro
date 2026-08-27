@@ -14,7 +14,7 @@ SMODS.Joker {
     config = {
         extra = {
             diceToRoll = 1,
-            sidesOfDice = 12,
+            sidesOfDice = 18,
         },
     },
     rarity = 2,
