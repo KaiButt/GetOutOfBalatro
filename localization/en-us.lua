@@ -254,6 +254,7 @@ return {
 				["name"] = "Kabi",
 				["text"] = {
 					"{X:mult,C:white}X#1#{} Mult",
+					"The first time you gain {X:mult,C:white}Mult{} this way,",
 					"{C:attention}+#2#{} {C:red,E:2}Ante{} required to win",
 					"{C:inactive}(even if this joker is removed){}"
 				}
