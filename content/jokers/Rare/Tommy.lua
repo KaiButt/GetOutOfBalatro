@@ -42,8 +42,6 @@ SMODS.Joker {
                 card = card
             }
         end
-
-        --todo, this does not play nice if you have multiple big tommies or Maries, w/e ankh op
         if context.card_added and context.card.ability.name == "Marie" and not next(SMODS.find_card("j_goob_Marie")) then
             G.consumeables:change_size(-card.ability.extra.consume_slot)
             G.jokers:change_size(-card.ability.extra.joker_slot)
