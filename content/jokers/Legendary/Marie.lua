@@ -14,7 +14,7 @@ SMODS.Joker {
     config = {
         immutable = {
             diceToRoll = 1,
-            sidesOfDice = 6,
+            sidesOfDice = 8,
             reduction = 40,
             ritualPerformed = false,
             cooldownPeriod = 0,
