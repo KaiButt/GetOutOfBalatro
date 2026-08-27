@@ -23,7 +23,7 @@ SMODS.Joker {
     end,
     calculate = function(self, card, context)
         if context.setting_blind then
-            if G.GAME.dollars > 0 then
+            if G.GAME.dollars > 0 and not next(SMODS.find_card("j_goob_Marie")) then
                 return {
                     message = 'DEATHKILL ONLINE',
                     ease_dollars(-G.GAME.dollars, true),

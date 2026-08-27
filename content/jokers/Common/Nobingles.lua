@@ -14,8 +14,8 @@ SMODS.Joker {
     config = {
         extra = {
             enhancementScored = false,
-            moneyBase = 3,
-            noEnhanceBonus = 2,
+            moneyBase = 6,
+            enhancePenalty = 0.5,
         },
     },
     cost = 4,
@@ -24,7 +24,7 @@ SMODS.Joker {
     perishable_compat = true,
     loc_vars = function(self, info_queue, center)
         info_queue[#info_queue+1] = {set = "Other", key = "goob_improvements"}
-        return { vars = { center.ability.extra.moneyBase, center.ability.extra.noEnhanceBonus } }
+        return { vars = { center.ability.extra.moneyBase, center.ability.extra.enhancePenalty } }
     end,
     pools = { ["goob"] = true, ["goobNL"] = true},
     calculate = function(self, card, context)
@@ -38,10 +38,13 @@ SMODS.Joker {
         end
     end,
     calc_dollar_bonus = function(self, card)
+        if next(SMODS.find_card("j_goob_Marie")) then
+            card.ability.extra.enhancementScored = false
+        end
         if card.ability.extra.enhancementScored then
-            return card.ability.extra.moneyBase
+            return card.ability.extra.moneyBase*card.ability.extra.enhancePenalty
         else 
-            return card.ability.extra.moneyBase*card.ability.extra.noEnhanceBonus
+            return card.ability.extra.moneyBase
         end
     end
 }

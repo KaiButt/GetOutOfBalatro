@@ -16,18 +16,23 @@ SMODS.Joker {
     blueprint_compat = true,
     eternal_compat = true,
     perishable_compat = true,
-    display_size = {w = 71 * 1.4, h = 95 * 1.4},
+    display_size = { w = 71 * 1.4, h = 95 * 1.4 },
     pools = { ["Meme"] = true, ["goob"] = true, ["goobNL"] = true },
     loc_vars = function(self, info_queue, center)
-		return { vars = {center.ability.extra.chips, center.ability.extra.joker_slot, center.ability.extra.consume_slot} }
-	end,
+        return { vars = { center.ability.extra.chips, center.ability.extra.joker_slot, center.ability.extra.consume_slot } }
+    end,
     add_to_deck = function(self, card, from_debuff)
-        G.consumeables.config.card_limit = G.consumeables.config.card_limit + card.ability.extra.consume_slot
-        G.jokers.config.card_limit = G.jokers.config.card_limit + card.ability.extra.joker_slot
+
+        if not next(SMODS.find_card("j_goob_Marie")) then
+            G.consumeables.config.card_limit = G.consumeables.config.card_limit + card.ability.extra.consume_slot
+            G.jokers.config.card_limit = G.jokers.config.card_limit + card.ability.extra.joker_slot
+        end
     end,
     remove_from_deck = function(self, card, from_debuff)
-        G.consumeables.config.card_limit = G.consumeables.config.card_limit - card.ability.extra.consume_slot
-        G.jokers.config.card_limit = G.jokers.config.card_limit - card.ability.extra.joker_slot
+        if not next(SMODS.find_card("j_goob_Marie")) then
+            G.consumeables.config.card_limit = G.consumeables.config.card_limit - card.ability.extra.consume_slot
+            G.jokers.config.card_limit = G.jokers.config.card_limit - card.ability.extra.joker_slot
+        end
     end,
     calculate = function(self, card, context)
         if context.joker_main and context.cardarea == G.jokers and context.scoring_name then
@@ -36,6 +41,16 @@ SMODS.Joker {
                 colour = G.C.CHIPS,
                 card = card
             }
+        end
+
+        --todo, this does not play nice if you have multiple big tommies or Maries, w/e ankh op
+        if context.card_added and context.card.ability.name == "Marie" then
+            G.consumeables.config.card_limit = G.consumeables.config.card_limit - card.ability.extra.consume_slot
+            G.jokers.config.card_limit = G.jokers.config.card_limit - card.ability.extra.joker_slot
+        end
+        if context.selling_card and context.card.ability.name == "Marie" then
+            G.consumeables.config.card_limit = G.consumeables.config.card_limit + card.ability.extra.consume_slot
+            G.jokers.config.card_limit = G.jokers.config.card_limit + card.ability.extra.joker_slot
         end
     end
 }

@@ -15,7 +15,7 @@ SMODS.Joker {
 	config = { extra = { amountToBack = 1, phoenixBonus = 1} },
 	cost = 20,
 	in_pool = function() 
-        if G.GAME.crownos_used == false or G.GAME.crownos_used == nil or next(SMODS.find_card('j_vremade_ring_master')) then --showmen will let him reappear
+        if G.GAME.crownos_used == false or G.GAME.crownos_used == nil or next(SMODS.find_card('j_vremade_ring_master')) or next(SMODS.find_card('j_goob_Marie')) then --showmen and marie will let him reappear
             return true
         else
             return false
@@ -30,7 +30,9 @@ SMODS.Joker {
 	pools = { ["goob"] = true, ["goobL"] = true},
 	calculate = function(self, card, context)
 		if context.selling_self then
-			G.GAME.crownos_used = true
+			if not next(SMODS.find_card("j_goob_Marie")) then
+				G.GAME.crownos_used = true
+			end
             ease_ante(-card.ability.extra.amountToBack)
             G.GAME.round_resets.blind_ante = G.GAME.round_resets.blind_ante or G.GAME.round_resets.ante
             G.GAME.round_resets.blind_ante = G.GAME.round_resets.blind_ante - card.ability.extra.amountToBack

@@ -170,10 +170,22 @@ return {
 			},
 		},
 		["Joker"] = {
+			["j_goob_Marie"] = {
+				["name"] = "Marie",
+				["text"] = {
+					'{C:red,E:1}sometimes speaks French{}',
+					'{C:green,E:1}Removes{} {C:red}negative{} G.O.O.B Joker effects',
+					'{C:inactive}(For positive effects, they will still have been considered to have occurred)',
+					'When Blind is {C:attention}selected{} she performs a sacred ritual of Sol and Lua, reducing {C:attention}Blind{} {C:purple}requirement{} by {C:purple}#1#{}%',
+					'then enters a cooldown period of {C:attention}#2#d#3# Blinds{}',
+					'{C:inactive}(Cooldown: #4#){}',
+					'Prevents death once, then {C:red,E:2}self destructs{}'
+				}
+			},
 			["j_goob_Henry"] = {
 				["name"] = "Heroic Henry",
 				["text"] = {
-					"{C:mult}#1#{} Mult during played hands of",
+					"{C:red}#1#{} Mult during played hands of",
 					"{C:attention}Small{} and {C:attention}Big{} Blinds",
 					"Gain the total {C:mult}Mult{} lost during played hands of {C:attention}Boss Blinds{}",
 					"{C:inactive}(Current Bonus:{}{C:mult} +#2#{}{C:inactive}){}"
@@ -183,8 +195,8 @@ return {
 				["name"] = "Big Tommy",
 				["text"] = {
 					"{C:chips}+#1#{} Chips,",
-					"{C:attention}#2#{} Joker Slots,",
-					"{C:attention}#3#{} Consumable Slots"
+					"{C:red}#2#{} Joker Slots,",
+					"{C:red}#3#{} Consumable Slots"
 				}
 			},
 			["j_goob_Astroheim"] = {
@@ -221,7 +233,7 @@ return {
 				["text"] = {
 					"Earn {C:money}$#1#{} at",
 					"end of round",
-					"increase this bonus by {C:money}X#2#{} if you don't score",
+					"{C:red}decrease{} this bonus by {X:red,C:white}X#2#{} if you score",
 					"a card with an {C:dark_edition}improvement{} during the round"
 				}
 			},
@@ -250,7 +262,7 @@ return {
 				["name"] = "Seaglass the Valuable but Friendly",
 				["text"] = {
 					"Earn {C:gold}$#1#{} at end of round",
-					"Valuable, but if removed lose your {C:mult,E:1}soul{}",
+					"Valuable, but if removed {C:mult}lose{} your {E:1}soul{}",
 					"{C:inactive}(Son Of A--){}"
 				}
 			},
@@ -462,7 +474,7 @@ return {
 				["name"] = "Yapping Petyr",
 				["text"] = {
 					"{E:1}Talks a lot{}",
-					"When {C:attention}Blind{} is selected lose {C:chips}1{} hand",
+					"When {C:attention}Blind{} is selected {C:red}lose{} {C:chips}1{} hand",
 					"Sell this joker during a {C:attention}Blind{} to get all lost hands back",
 					"with an additional {C:chips}#1#{}",
 					"{C:inactive}(Currently would grant {C:chips}#2#{}{C:inactive} hands){}",

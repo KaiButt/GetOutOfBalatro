@@ -20,7 +20,7 @@ SMODS.Joker {
         return { vars = { center.ability.extra.x_mult } }
     end,
     calculate = function(self, card, context)
-        if context.setting_blind and not context.blueprint then --I just took this wholecloth from amber acorn @ vanillaremade
+        if context.setting_blind and not context.blueprint and not next(SMODS.find_card("j_goob_Marie")) then --I just took this wholecloth from amber acorn @ vanillaremade
             G.jokers:unhighlight_all()
             for _, joker in ipairs(G.jokers.cards) do
                 joker:flip()

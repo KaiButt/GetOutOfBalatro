@@ -37,9 +37,9 @@ SMODS.Joker {
                 G.GAME.blind:disable()
             end
             for i = 1, card.ability.extra.diceToRoll, 1 do
-                card.ability.extra.random_number = pseudorandom("goob_seed", 1, card.ability.extra.sidesOfDice) + card.ability.extra.pityBonus
-                if next(SMODS.find_card("j_goob_StarAce")) and card.ability.extra.random_number  < card.ability.extra.sidesOfDice then
-                    local random_number_2 = pseudorandom("goob_seed", 1, card.ability.extra.sidesOfDice) + card.ability.extra.pityBonus
+                card.ability.extra.random_number = pseudorandom("goob_seed", card.ability.extra.diceToRoll, card.ability.extra.sidesOfDice) + card.ability.extra.pityBonus
+                if next(SMODS.find_card("j_goob_StarAce")) and card.ability.extra.random_number < card.ability.extra.sidesOfDice then
+                    local random_number_2 = pseudorandom("goob_seed", card.ability.extra.diceToRoll, card.ability.extra.sidesOfDice) + card.ability.extra.pityBonus
                     if card.ability.extra.random_number < random_number_2 then
                         card.ability.extra.random_number = random_number_2
                     end

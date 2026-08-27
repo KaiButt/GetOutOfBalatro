@@ -27,8 +27,13 @@ SMODS.Joker {
         end
     end,
     calculate = function(self, card, context)
-		if context.selling_self then
+		if context.selling_self and not next(SMODS.find_card("j_goob_Marie")) then
 			G.GAME.soulless = true
+            return {
+                message = '-1 Soul',
+                delay = 1.8,
+                colour = G.C.RED
+            }
         end
 	end,
     calc_dollar_bonus = function(self, card)

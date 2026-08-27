@@ -35,6 +35,7 @@ SMODS.Joker {
             }
         end
         if context.end_of_round and context.main_eval and context.game_over == false and not context.blueprint then
+            if not next(SMODS.find_card("j_goob_Marie")) then
             if G.GAME.dollars < card.ability.extra.costOfBusiness then
                 return {
                     message = "Contract Voided",
@@ -51,6 +52,7 @@ SMODS.Joker {
                 card = card,
             }
         end
+    end
         end
     end,
     check_for_unlock = function(self, args)                  

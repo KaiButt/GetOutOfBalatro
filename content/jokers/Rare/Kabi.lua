@@ -25,7 +25,7 @@ SMODS.Joker {
         return not G.GAME.won
     end,
     add_to_deck = function(self, card, from_debuff)
-        if not from_debuff then
+        if not from_debuff and not next(SMODS.find_card("j_goob_Marie")) then
             G.GAME.win_ante = G.GAME.win_ante + card.ability.extra.anteUp
             card_eval_status_text(card, "extra", nil, nil, nil, {
                 message = "Ante Up!",
@@ -34,6 +34,13 @@ SMODS.Joker {
             })
             return {
                 play_sound('goob_clockTick', 1, 1.2)
+            }
+        end
+        if not from_debuff and next(SMODS.find_card("j_goob_Marie")) then
+            return {
+                message = "Pretty Lady!",
+                delay = 1.2,
+                colour = G.C.GREEN
             }
         end
     end,

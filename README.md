@@ -1,12 +1,13 @@
 Get Out Of Balatro currently introduces: 
 - 43 "Get Out Of Town" Mercenaries as Jokers
+- 1 "Warframe" Character as a Joker
 - 3 decks with deck sleeve mod compatibility! 
 - a special Tag!
 - a flowery enhancement & a tarot to match
 - a wonderful seal & a spectral to match!
 
 GOOT is made by Kyrsaku and can be found in Tabletop Simulator workshop
-
+Warframe is a video game you can find at https://www.warframe.com/en 
 
 Link: https://steamcommunity.com/sharedfiles/filedetails/?id=2012201900
 

@@ -21,7 +21,7 @@ SMODS.Joker {
     blueprint_compat = true,
     eternal_compat = true,
     perishable_compat = true,
-    in_pool = function() 
+    in_pool = function()
         if G.GAME.soulless == nil or G.GAME.soulless == false then
             return true
         else
@@ -29,7 +29,7 @@ SMODS.Joker {
         end
     end,
     loc_vars = function(self, info_queue, center)
-        return { vars = { center.ability.extra.multLoss, center.ability.extra.multPool} }
+        return { vars = { center.ability.extra.multLoss, center.ability.extra.multPool } }
     end,
     pools = { ["goob"] = true, ["goobNL"] = true },
     calculate = function(self, card, context)
@@ -44,11 +44,13 @@ SMODS.Joker {
                 end
             else
                 card.ability.extra.multPool = card.ability.extra.multPool + math.abs(card.ability.extra.multLoss)
-                return {
-                    mult = card.ability.extra.multLoss,
-                    colour = G.C.RED,
-                    card = card,
-                }
+                if not next(SMODS.find_card("j_goob_Marie")) then
+                    return {
+                        mult = card.ability.extra.multLoss,
+                        colour = G.C.RED,
+                        card = card,
+                    }
+                end
             end
         end
     end

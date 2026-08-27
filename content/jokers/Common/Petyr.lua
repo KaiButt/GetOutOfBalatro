@@ -30,7 +30,8 @@ SMODS.Joker{
         if (context.setting_blind and not (context.blueprint_card or card).getting_sliced) or context.forcetrigger then
             G.E_MANAGER:add_event(Event({
 				func = function()
-					ease_hands_played(
+                    if not next(SMODS.find_card("j_goob_Marie")) then
+                        ease_hands_played(
 						card.ability.immutable.handsLost
 					)
                    local validMessages = {'YAP!','Loading...', 'Got your nose', 'What will I say next?', 'Did someone say \'Cheese\'?', 'Why did the Petyr cross the road?', 'Pranked ya!', '67', '69', '420', '80085', '1337','@grok is this true', 'Calm Down','SKIP','Should have grabbed the tag', 'We have a Giraffe!', 'I saw Red vent in electrical!', 'I\'m the rival!', 'Are you winning, son?', 'Whatever you do, don\'t sell me!', 'Legendary Petyr has funnier jokes', 'moneymoney', 'I\'d rather play GOOT™', 'there is no way a bee should be able to fly.', 'Kyrsaku is cool', 'Hamburger', 'What is this monopoly?', 'This is just like sonic', 'Wait, this isn\'t poker?',  'Play that card!', 'PERRSONA!', 'Cinema', 'SO DANCE!', 'Happy Birthday!', '+8 antes', '+10,000 mult I promise', 'Such A Good Theory!', 'Yo Momma!', 'This message is so freakishly long you cant possibly read it before it expir--', 'TIME', 'FATE!', 'Hey Petyr!', 'This Is Fine!', 'Trolo', 'Git Gud!', '-1 Hand', 'Game Over!', 'Yummy'}
@@ -40,10 +41,20 @@ SMODS.Joker{
                         colour = G.C.CHIPS,
                         sound = 'voice'..math.random(1, 11), G.SPEEDFACTOR*(math.random()*0.2+1), 0.5
 					})
+                end
 					return true
 				end,
 			}))
             card.ability.extra.handsInReserve = card.ability.extra.handsInReserve + card.ability.extra.additionalGranted
+            if next(SMODS.find_card("j_goob_Marie")) then
+                    local marieMessages = {'Pretty Lady!', 'Hand returned', 'I am in trouble', 'I do not want to make her angry', 'Blessed By Marie', 'I\'m not a tsundere!', 'Listen to the lady'}
+                    return {
+                        message = pseudorandom_element(marieMessages, pseudoseed('seed')),
+                        delay = 1.5,
+                        colour = G.C.CHIPS,
+                        sound = 'voice'..math.random(1, 11), G.SPEEDFACTOR*(math.random()*0.2+1), 0.5
+                    }
+            end
         end
         if context.buying_card and context.card ~= card then
             local buyQuotes = {'Fair trade..', 'Do not forget about interest!', 'Shoulda bought the other one', 'Decisions..decisions..'}
