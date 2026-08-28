@@ -259,7 +259,7 @@ return {
 				}
 			},
 			["j_goob_Seaglass"] = {
-				["name"] = "Seaglass the Valuable but Friendly",
+				["name"] = "Seaglass",
 				["text"] = {
 					"Earn {C:gold}$#1#{} at end of round.",
 					"Valuable, but if removed {C:mult}lose{} your {E:1}soul{}.",
@@ -285,7 +285,7 @@ return {
 				}
 			},
 			["j_goob_Kai"] = {
-				["name"] = "Kai The Wonderful Mage",
+				["name"] = "Kai",
 				["text"] = {
 					"{C:dark_edition}Wondrous{} effects are {C:green,E:1,S:1.1}guaranteed{} to be {C:dark_edition}Extra Wondrous{}."
 				}
