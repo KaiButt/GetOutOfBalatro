@@ -67,6 +67,14 @@ return {
 					'{C:dark_edition}Enhancement{}, {C:dark_edition}Seal{} and {C:dark_edition}Edition{}.',
 				}
 			},
+			["goob_upgrade"] = {
+				["name"] = '{E:2,C:dark_edition}Upgrade{}',
+				["text"] = {
+					'Edition becomes {E:2,C:dark_edition}Negative{}.',
+					'{X:mult,C:white}+X#1#{} Mult when scored,',
+					'{X:mult,C:white}+X#2#{} Mult when held.'
+				}
+			}
 		},
 		["Back"] = {
 			["b_goob_sohikosa"] = {
@@ -353,12 +361,10 @@ return {
 			["j_goob_Jobingles"] = {
 				["name"] = "Jobingles",
 				["text"] = {
-					"Adds #1# card",
-					"with an {X:grey,C:edition}edition{} to deck when",
-					"{C:attention}Blind{} is selected.",
-					"Last card added: {C:attention}#4#{} of {C:attention}#5#{}",
-					"played cards with an {X:grey,C:edition}edition{} each give",
-					"{X:mult,C:white}X#3#{} Mult when scored.",
+					"The next time you play a singular card",
+					"{E:2,C:dark_edition}Upgrades it{}. It will",
+					"{C:attention}return{} to your hand after scoring.",
+					"{C:inactive}(and if destroyed, will be regained){}"
 				},
 			},
 			["j_goob_Kerry_rage"] = {

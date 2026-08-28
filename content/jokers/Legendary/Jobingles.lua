@@ -10,58 +10,93 @@ SMODS.Joker {
 	name = 'Jobingles',
 	atlas = 'Jobingles',
 	pos = { x = 0, y = 0 },
-	config = { 
+	config = {
 		extra = {
-			amount = 1,
-			x_mult = 3,
-			kai_gift = true,
-			last_rank = 'King',
-			last_suit = 'Peach',
-		},
-		immutable = {
-			cacap = 40,
+			xmultAddition = 1,
+			xmultHandAddition = 1,
+			performedMagic = false
 		},
 	},
 	rarity = 4,
 	cost = 20,
-	blueprint_compat = true,
+	blueprint_compat = false,
 	eternal_compat = true,
 	perishable_compat = true,
-	pools = { ["goob"] = true, ["goobL"] = true},
+	pools = { ["goob"] = true, ["goobL"] = true },
 	loc_vars = function(self, info_queue, center)
-		return { vars = { center.ability.extra.amount, center.ability.immutable.cacap, center.ability.extra.x_mult, center.ability.extra.last_rank, center.ability.extra.last_suit } }
+		info_queue[#info_queue + 1] = { set = "Other", key = "goob_upgrade", vars = { center.ability.extra.xmultAddition, center.ability.extra.xmultHandAddition } }
+	end,
+	remove_from_deck = function(self, card, from_debuff)
+		if G.GAME.balloonAnimal ~= nil and not next(SMODS.find_card("j_goob_Jobingles")) then G.GAME.balloonAnimal = nil end
 	end,
 	calculate = function(self, card, context)
-		-- when blind is selected, add a random card with an edition to deck
-		if context.setting_blind then
-			if card.ability.extra.amount > card.ability.immutable.cacap then card.ability.extra.amount = card.ability
-				.immutable.cacap end
-			for i = 1, card.ability.extra.amount, 1 do -- loop card generation
-				if card.ability.extra.kai_gift == true then
-					local _card = SMODS.add_card { set = "Playing Card", key_append = "goob_append", edition = 'e_negative', area = G.deck, enhanced_poll = 1 }
-					card.ability.extra.kai_gift = false
-					card:juice_up()
-					card.ability.extra.last_rank = _card.base.value
-					card.ability.extra.last_suit = _card.base.suit
-					SMODS.calculate_context({ playing_card_added = true, cards = { _card } })
-					G.deck:shuffle("goob_bingles")
-				else
-					local random_edition = SMODS.poll_edition { key = "goob_seed", guaranteed = true, no_negative = true }
-					local _card = SMODS.add_card { set = "Playing Card", key_append = "goob_append", edition = random_edition, area = G.deck, enhanced_poll = 1 }
-					card:juice_up()
-					card.ability.extra.last_rank = _card.base.value
-					card.ability.extra.last_suit = _card.base.suit
-					SMODS.calculate_context({ playing_card_added = true, cards = { _card } })
-					G.deck:shuffle("goob_bingles")
+		if context.before and #context.full_hand == 1 and G.GAME.balloonAnimal == nil then
+			context.full_hand[1].ability.perma_x_mult = (context.full_hand[1].ability.perma_x_mult or 0) +
+				card.ability.extra.xmultAddition
+			context.full_hand[1].ability.perma_h_x_mult = (context.full_hand[1].ability.perma_h_x_mult or 0) +
+				card.ability.extra.xmultHandAddition
+			context.full_hand[1]:set_edition("e_negative")
+			G.GAME.balloonAnimal = context.full_hand[1]
+			card.ability.extra.balloonAnimal = context.full_hand[1]
+			card.ability.extra.performedMagic = true
+			return {
+				message = 'For my next trick..',
+				delay = 1.3,
+				sound = 'voice' .. math.random(1, 11),
+				G.SPEEDFACTOR * (math.random() * 0.2 + 1),
+				0.5,
+			}
+		end
+		if context.before and card.ability.extra.performedMagic == false and G.GAME.balloonAnimal ~= nil then
+			for _, scored_card in ipairs(context.scoring_hand) do
+				if scored_card == G.GAME.balloonAnimal then
+					scored_card.ability.perma_x_mult = (scored_card.ability.perma_x_mult or 0) +
+						card.ability.extra.xmultAddition
+					scored_card.ability.perma_h_x_mult = (scored_card.ability.perma_h_x_mult or 0) +
+						card.ability.extra.xmultHandAddition
+					card.ability.extra.performedMagic = true
+					return {
+						message = 'Wow, look at that magic!',
+						delay = 1.3,
+						sound = 'voice' .. math.random(1, 11),
+						G.SPEEDFACTOR * (math.random() * 0.2 + 1),
+						0.5,
+					}
 				end
 			end
 		end
-		if context.individual and context.cardarea == G.play then -- when you play a edition'd card, x2 mult
-			if context.other_card.edition then
+		if context.remove_playing_cards then
+			for _, remove_card in ipairs(context.removed) do
+				if remove_card == G.GAME.balloonAnimal then
+					local newAnimal = SMODS.copy_card(remove_card)
+					G.GAME.balloonAnimal = newAnimal
+				end
+			end
+			return {
+				message = 'Watch that card, reappear!',
+				delay = 1.3,
+				sound = 'voice' .. math.random(1, 11),
+				G.SPEEDFACTOR * (math.random() * 0.2 + 1),
+				0.5,
+			}
+		end
+		if context.stay_flipped and context.from_area == G.play and context.other_card == G.GAME.balloonAnimal then
+			if context.other_card.debuff == true then
 				return {
-					x_mult = card.ability.extra.x_mult,
-					colour = G.C.RED,
-					card = card,
+					message = 'Whoops I slipped!',
+					delay = 1.2,
+					sound = 'voice' .. math.random(1, 11),
+					G.SPEEDFACTOR * (math.random() * 0.2 + 1),
+					0.5,
+				}
+			else
+				return {
+					message = 'Watch Me Juggle!',
+					delay = 1.2,
+					sound = 'voice' .. math.random(1, 11),
+					G.SPEEDFACTOR * (math.random() * 0.2 + 1),
+					0.5,
+					modify = { to_area = G.hand },
 				}
 			end
 		end
