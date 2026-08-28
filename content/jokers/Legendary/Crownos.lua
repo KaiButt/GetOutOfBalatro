@@ -30,12 +30,12 @@ SMODS.Joker {
 	pools = { ["goob"] = true, ["goobL"] = true },
 	calculate = function(self, card, context)
 		if context.end_of_round and context.game_over and context.main_eval and (not next(SMODS.find_card("j_mr_bones")) or G.GAME.chips / G.GAME.blind.chips < 0.25) then
+			G.jokers:change_size(card.ability.extra.phoenixBonus)
+			G.GAME.round_resets.blind_ante = G.GAME.round_resets.blind_ante or G.GAME.round_resets.ante
+			G.GAME.round_resets.blind_ante = G.GAME.round_resets.blind_ante - card.ability.extra.amountToBack
+			ease_ante(-card.ability.extra.amountToBack)
 			G.E_MANAGER:add_event(Event({
 				func = function()
-					G.jokers:change_size(card.ability.extra.phoenixBonus)
-					G.GAME.round_resets.blind_ante = G.GAME.round_resets.blind_ante or G.GAME.round_resets.ante
-					G.GAME.round_resets.blind_ante = G.GAME.round_resets.blind_ante - card.ability.extra.amountToBack
-					ease_ante(-card.ability.extra.amountToBack)
 					play_sound('tarot1')
 					SMODS.destroy_cards(card, nil, true)
 					return true

@@ -297,7 +297,7 @@ return {
 				["name"] = "Crownos",
 				["text"] = {
 					"When you would die,",
-					"prevents it. {C:attention}-#1#{} Ante, and {C:dark_edition}+#2#{} Joker Slot afterwards.",
+					"{C:attention}-#1#{} Ante, {C:dark_edition}+#2#{} Joker Slots, and prevents it.",
 					"{C:red,E:2}self-destructs{}."
 				},
 			},
