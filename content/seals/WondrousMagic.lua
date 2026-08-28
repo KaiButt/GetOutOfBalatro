@@ -37,9 +37,7 @@ end
 function perform_wondrous_magic(card, hand)
     local num = pseudorandom("goob_WonderousMagic_seal", 1, 13)
     if next(SMODS.find_card("j_goob_Kai")) then
-        local num2 = pseudorandom("goob_WonderousMagic_seal", 1, 13)
-        local num3 = pseudorandom("goob_WonderousMagic_seal", 1, 13)
-        num = math.max(num, num2, num3)
+        num = 13
     end
     if num == 1 then
         return {
@@ -277,8 +275,8 @@ function perform_wondrous_magic(card, hand)
                     colour = G.C.GREEN
                 }
             elseif num3 == 10 then
-                local winner = pseudorandom("goob_WonderousMagic_seal", 1, 10)
-                if winner < 11 - 1 or G.GAME.won then
+                local winner = pseudorandom("goob_WonderousMagic_seal", 1, 15)
+                if winner < 15 or G.GAME.won then
                     G.E_MANAGER:add_event(Event({
                         blocking = false,
                         func = function()

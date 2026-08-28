@@ -287,7 +287,7 @@ return {
 			["j_goob_Kai"] = {
 				["name"] = "Kai The Wonderful Mage",
 				["text"] = {
-					"{C:dark_edition}Wondrous{} effects are {C:attention}much more{} likely to be {C:dark_edition}Extra Wondrous{}."
+					"{C:dark_edition}Wondrous{} effects are {C:green,E:1,S:1.1}guaranteed{} to be {C:dark_edition}Extra Wondrous{}."
 				}
 			},
 			["j_goob_Crownos"] = {
