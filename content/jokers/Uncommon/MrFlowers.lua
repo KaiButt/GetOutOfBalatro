@@ -13,7 +13,7 @@ SMODS.Joker {
     pos = { x = 0, y = 0 },
     rarity = 2,
     cost = 7,
-    config = { extra = { moneyPerPlay = 3, amountToDeck = 2 }, immutable = { maxAmountToDeck = 40 } },
+    config = { extra = { amountToDeck = 2 }, immutable = { maxAmountToDeck = 40 } },
     blueprint_compat = false,
     eternal_compat = true,
     perishable_compat = true,
