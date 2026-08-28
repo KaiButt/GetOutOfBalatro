@@ -15,8 +15,11 @@ SMODS.Joker {
         extra = {
             enhancementScored = false,
             moneyBase = 6,
-            enhancePenalty = 0.5,
+            
         },
+        immutable = {
+            enhancePenalty = 0.5,
+        }
     },
     cost = 4,
     blueprint_compat = false,
@@ -24,7 +27,7 @@ SMODS.Joker {
     perishable_compat = true,
     loc_vars = function(self, info_queue, center)
         info_queue[#info_queue+1] = {set = "Other", key = "goob_improvements"}
-        return { vars = { center.ability.extra.moneyBase, center.ability.extra.enhancePenalty } }
+        return { vars = { center.ability.extra.moneyBase, center.ability.immutable.enhancePenalty } }
     end,
     pools = { ["goob"] = true, ["goobNL"] = true},
     calculate = function(self, card, context)
@@ -42,7 +45,7 @@ SMODS.Joker {
             card.ability.extra.enhancementScored = false
         end
         if card.ability.extra.enhancementScored then
-            return card.ability.extra.moneyBase*card.ability.extra.enhancePenalty
+            return card.ability.extra.moneyBase*card.ability.immutable.enhancePenalty
         else 
             return card.ability.extra.moneyBase
         end
