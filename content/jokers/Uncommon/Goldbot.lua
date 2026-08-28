@@ -14,7 +14,6 @@ SMODS.Joker{
         extra = {
             diceToRoll = 1,
             sidesOfDice = 8,
-            moneyEarned = 0
         }
     },
     rarity = 2,
@@ -28,21 +27,11 @@ SMODS.Joker{
     end,
     calculate = function(self,card,context)
         if context.skip_blind then
-            card.ability.moneyEarned = 0
-            for i = 1, card.ability.extra.diceToRoll, 1 do
-                local random_number = pseudorandom("goob_seed", 1, card.ability.extra.sidesOfDice)
-                if next(SMODS.find_card("j_goob_StarAce")) and random_number < card.ability.extra.sidesOfDice then
-                    local random_number_2 = pseudorandom("goob_seed", 1, card.ability.extra.sidesOfDice) -- if you have oops all 6's rolls with advantage
-                    if random_number_2 > random_number then
-                        random_number = random_number_2
-                    end
-                end
-                card.ability.moneyEarned = random_number
-            end
+            local sum = roll_die(card.ability.extra.diceToRoll, card.ability.extra.sidesOfDice)
             card:juice_up()
             return {
-                message = localize('$')..card.ability.moneyEarned,
-                ease_dollars(card.ability.moneyEarned),
+                message = localize('$')..sum,
+                ease_dollars(sum),
                 colour = G.C.MONEY,
                 delay = 1.2,
             }

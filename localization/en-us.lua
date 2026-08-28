@@ -518,7 +518,9 @@ return {
 			["j_goob_Ante"] = {
 				["name"] = "Ante",
 				["text"] = {
-					"{X:mult,C:white}X#1#d#2#{} Mult.",
+					"Gains {X:mult,C:white}+X#1#{} Mult,",
+					"when any G.O.O.B dice is {C:attention}rolled{}.",
+					"{C:inactive}(Currently: {}{X:mult,C:white}X#2#{} {C:inactive}Mult{}).",
 				},
 			},
 			["j_goob_Blaze"] = {

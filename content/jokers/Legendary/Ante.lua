@@ -12,8 +12,8 @@ SMODS.Joker {
     pos = { x = 0, y = 0 },
     config = {
         extra = {
-            diceToRoll = 3,
-            sidesOfDice = 3,
+            xmult = 1,
+            xmult_gain = 0.25
         },
     },
     rarity = 4,
@@ -21,25 +21,20 @@ SMODS.Joker {
     blueprint_compat = true,
     pools = { ["goob"] = true, ["goobL"] = true},
     loc_vars = function(self, info_queue, center)
-        return { vars = { center.ability.extra.diceToRoll, center.ability.extra.sidesOfDice } }
+        return { vars = { center.ability.extra.xmult_gain, center.ability.extra.xmult } }
     end,
     calculate = function(self, card, context)
-       if context.joker_main and context.cardarea == G.jokers and context.scoring_name then
-        local multGain = 0
-        for i = 1, card.ability.extra.diceToRoll, 1 do
-            local random_number = pseudorandom("goob_seed", 1, card.ability.extra.sidesOfDice)
-            if next(SMODS.find_card("j_goob_StarAce")) and random_number < card.ability.extra.sidesOfDice then
-                local random_number_2 = pseudorandom("goob_seed", 1, card.ability.extra.sidesOfDice)
-                if random_number < random_number_2 then
-                    random_number = random_number_2
-                end
-            end
-            multGain = multGain + random_number
-        end
+        if context.goob_dice_rolled then
+            card.ability.extra.xmult = card.ability.extra.xmult + card.ability.extra.xmult_gain
             return {
-                x_mult = multGain,
+                 message = localize { type = 'variable', key = 'a_xmult', vars = { card.ability.extra.xmult } }
+            }
+        end
+        if context.joker_main and context.cardarea == G.jokers and context.scoring_name then
+            return {
+                x_mult = card.ability.extra.xmult,
                 colour = G.C.RED,
-                card = card,
+                card = card
             }
         end
     end

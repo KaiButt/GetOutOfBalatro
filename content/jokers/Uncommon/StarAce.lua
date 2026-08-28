@@ -25,20 +25,9 @@ SMODS.Joker {
         return { vars = { center.ability.extra.diceToRoll, center.ability.extra.sidesOfDice } }
     end,
     calculate = function(self, card, context)
-       if context.joker_main and context.cardarea == G.jokers and context.scoring_name then
-        local multGain = 0
-        for i = 1, card.ability.extra.diceToRoll, 1 do
-            local random_number = pseudorandom("goob_seed", 1, card.ability.extra.sidesOfDice)
-            if random_number < card.ability.extra.sidesOfDice then
-                local random_number_2 = pseudorandom("goob_seed", 1, card.ability.extra.sidesOfDice)
-                if random_number < random_number_2 then
-                    random_number = random_number_2
-                end
-            end
-            multGain = multGain + random_number
-        end
+        if context.joker_main and context.cardarea == G.jokers and context.scoring_name then
             return {
-                mult = multGain,
+                mult = roll_die(card.ability.extra.diceToRoll, card.ability.extra.sidesOfDice),
                 colour = G.C.RED,
                 card = card,
             }
