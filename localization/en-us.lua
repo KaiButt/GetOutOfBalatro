@@ -137,8 +137,7 @@ return {
 				},
 				["text"] = {
 					"also removes the lowest",
-					"{C:attention}fourth{} rank. Start the run",
-					"with a {C:dark_edition}negative{} {C:attention}pareidolia{} Joker."
+					"{C:attention}fourth{} rank.",
 				}
 			},
 			["sleeve_goob_chronoSleeve"] = {
