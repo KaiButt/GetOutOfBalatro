@@ -215,7 +215,7 @@ return {
 				},
 				["name"] = "Mr.Flowers",
 				["text"] = {
-					"When Blind is {C:attention}Skipped{},",
+					"When {C:attention}Blind{} is Skipped,",
 					"adds {C:attention}#1#{} {C:inactive}(identical){} {C:attention}Flower Cards{} to deck.",
 				}
 			},
