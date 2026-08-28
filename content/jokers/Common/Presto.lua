@@ -23,16 +23,9 @@ SMODS.Joker {
     loc_vars = function(self, info_queue, center)
         return { vars = { center.ability.extra.repetitions } }
     end,
-    add_to_deck = function(self, card, from_debuff)
-        if G.consumeables.config.card_limit > #G.consumeables.cards then
-            local _card = SMODS.add_card { key = "c_goob_Vortex" }
-            _card.cost = 0
-            _card.sell_cost = 0
-        end
-    end,
     pools = { ["goob"] = true, ["goobNL"] = true },
     calculate = function(self, card, context)
-        if context.repetition and context.cardarea == G.play and context.other_card:get_seal() == "goob_WondrousMagic" then
+        if context.repetition and context.cardarea == G.play and context.other_card:get_seal() ~= nil then
             return {
                 repetitions = card.ability.extra.repetitions
             }

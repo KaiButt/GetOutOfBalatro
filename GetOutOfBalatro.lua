@@ -84,18 +84,19 @@ function roll_die(_amountToRoll, _sidesOfDice)
 	local amountToRoll = _amountToRoll or 1
 	local advantage = next(SMODS.find_card("j_goob_StarAce"))
 	local sidesOfDice = _sidesOfDice or 6
+	SMODS.calculate_context{goob_dice_rolled = true, amountToRoll = amountToRoll, sidesOfDice = sidesOfDice}
 	local accum = 0
 	for i = 1, amountToRoll, 1 do 
-		local smallResult = pseudorandom("goob_seed", amountToRoll, sidesOfDice ) 
+		local smallResult = pseudorandom("goob_seed", 1, sidesOfDice ) 
 		accum = accum + smallResult
 		end
 	if accum<sidesOfDice and advantage then
 		local accum2 = 0 
-		for i = 1, amountToRoll, 1 do accum2 = accum2 + pseudorandom("goob_seed", amountToRoll, sidesOfDice ) end
+		for i = 1, amountToRoll, 1 do accum2 = accum2 + pseudorandom("goob_seed", 1, sidesOfDice ) end
 		if accum<accum2 then
 			accum = accum2
 		end
 	end
-	SMODS.calculate_context{goob_dice_rolled = true}
+	
 	return accum
 end

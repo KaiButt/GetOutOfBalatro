@@ -57,13 +57,6 @@ SMODS.Joker {
         end
         end
     end,
-    calc_dollar_bonus = function(self, card)
-        local kings_crowned = 0
-        for _, playing_card in ipairs(G.playing_cards) do
-            if playing_card:get_id() == 13 then kings_crowned = kings_crowned + 1 end
-        end
-        return kings_crowned > 0 and card.ability.extra.dollar * kings_crowned or nil
-    end,
     check_for_unlock = function(self, args)
         if args.type == 'modify_deck' then
             local kingMe

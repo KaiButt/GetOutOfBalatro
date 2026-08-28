@@ -192,16 +192,14 @@ return {
 				["name"] = "Big Tommy",
 				["text"] = {
 					"{C:chips}+#1#{} Chips,",
-					"{C:red}#2#{} Joker Slots,",
-					"{C:red}#3#{} Consumable Slots."
+					"{C:red}#2#{} Joker Slots.",
 				}
 			},
 			["j_goob_Astroheim"] = {
 				["name"] = "Astroheim",
 				["text"] = {
-					"On gain and after defeating a {C:attention}Boss Blind{},",
+					"After defeating a {C:attention}Boss Blind{},",
 					"{C:attention}Levels Up{} the most played poker hand {C:attention}#1#{} times.",
-					"{C:mult}+X{} Mult, where {C:mult}X{} is the {C:attention}Level{} of the played hand."
 				}
 			},
 			["j_goob_MrFlowers"] = {
@@ -212,8 +210,6 @@ return {
 				["text"] = {
 					"When Blind is {C:attention}Skipped{},",
 					"adds {C:attention}#1#{} {C:inactive}(identical){} {C:attention}Flower Cards{} to deck.",
-					"Played {C:attention}Flower Cards{} give",
-					"{C:money}$#3#{} when scored."
 				}
 			},
 			["j_goob_Clarence"] = {
@@ -241,7 +237,6 @@ return {
 					"When a {C:attention}playing card{} is added to your deck,",
 					"it gains {C:dark_edition}Wondrous Seal{}.",
 					"{C:inactive}({C:attention}overrides{} {C:inactive}other seals){}",
-					"Increases potency of {C:dark_edition}Wondrous Seal{} effects."
 				}
 			},
 			["j_goob_Kabi"] = {
@@ -270,28 +265,22 @@ return {
 				},
 				["name"] = "Dupla",
 				["text"] = {
-					"{C:attention}Playing Cards{}, and Playing Card {C:attention}boosters{} in the",
-					"shop are {C:attention}free{}. When a",
-					"{C:attention}playing card{} is created, it comes with {C:attention}#1#{} additional copy.",
+					"When a {C:attention}playing card{} is created,",
+					"it comes with {C:attention}#1#{} additional copy.",
 					"{C:inactive}(the additional copy goes to your deck){}"
 				},
 			},
 			["j_goob_Presto"] = {
 				["name"] = "Presto",
 				["text"] = {
-					"When gained, creates a {C:dark_edition}Vortex{} Spectral Card.",
-					"{C:inactive}(must have room, has zero sell value){}",
-					"Cards with a {C:dark_edition}Wondrous Seal{}",
+					"Cards with a {C:dark_edition}Seal{}",
 					'are played {C:attention}#1#{} additional time.',
 				}
 			},
 			["j_goob_Kai"] = {
 				["name"] = "Kai Master Wizard Of The Wonder Arts",
 				["text"] = {
-					"Creates a {C:dark_edition}Negative Vortex{} Spectral card",
-					"at the end of the {C:attention}shop{}.",
-					"{C:inactive}(has zero sell value){}",
-					"{C:dark_edition}Wondrous{} effects are more likely to be {C:dark_edition}Extra Wondrous{}."
+					"{C:dark_edition}Wondrous{} effects are {C:attention}much more{} likely to be {C:dark_edition}Extra Wondrous{}."
 				}
 			},
 			["j_goob_Crownos"] = {
@@ -313,8 +302,6 @@ return {
 				["text"] = {
 					"When a card is scored",
 					"{C:attention}increases{} its rank, up to {C:attention}King{}.",
-					"Gains {C:gold}$#1#{} for each {C:attention}King{} in deck.",
-					"{C:inactive}(Currently: {}{C:gold}$#2#{}{C:inactive}){}",
 				},
 			},
 			["j_goob_Yokomo"] = {
@@ -432,6 +419,7 @@ return {
 				["name"] = "Greg",
 				["text"] = {
 					"{C:attention}+#1#{} hand size.",
+					"{C:inactive}(Rolls {C:attention}1d5{}{C:inactive} at end of round.){}",
 				},
 			},
 			["j_goob_Gold_Bot"] = {
@@ -447,16 +435,14 @@ return {
 				},
 				["name"] = "Loyal Guardian Sunny",
 				["text"] = {
-					"When this Joker, or an adjacent Joker would be debuffed",
-					"{C:green}prevents it{}. Adjacent Jokers give {X:mult,C:white}X#1#{} Mult.",
+					"Adjacent Jokers give {X:mult,C:white}X#1#{} Mult.",
 					"G.O.O.B Jokers give {X:mult,C:white}X#2#{} Mult instead.",
 				},
 			},
 			["j_goob_Sgt"] = {
 				["name"] = "Sgt",
 				["text"] = {
-					"{X:grey,C:edition}Negative{} Jokers are {C:attention}#1#X{} more likely to show up.",
-					"Other {X:grey,C:edition}Negative{} Jokers gives {X:mult,C:white}X#2#{} Mult.",
+					"{X:grey,C:edition}Negative{} Jokers are {C:attention}#1#X{} more likely to appear.",
 				},
 			},
 			["j_goob_Ally"] = {
@@ -465,7 +451,6 @@ return {
 					"When {C:attention}Blind{} is selected,",
 					"Rolls {C:attention}#1#d#2#{}.",
 					"On a #2#, gains {C:gold}#3#{} Gold,",
-					"and disables the current or next {C:attention}Boss Blind{}.",
 					"{C:inactive}(Increases the{} {C:attention}minimum roll{} {C:inactive}on failure until success){}",
 				},
 			},
@@ -512,7 +497,7 @@ return {
 				["name"] = "Harmony",
 				["text"] = {
 					"{C:attention}+#1#{} hand size.",
-					"{C:green}#2# in #3#{} chance this card is destroyed at end of round.",
+					"Rolls {C:attention}#2#d#3#{} at end of round. On a {C:attention}#3#{} is destroyed.",
 				},
 			},
 			["j_goob_Ante"] = {
@@ -520,7 +505,7 @@ return {
 				["text"] = {
 					"Gains {X:mult,C:white}+X#1#{} Mult,",
 					"when any G.O.O.B dice is {C:attention}rolled{}.",
-					"{C:inactive}(Currently: {}{X:mult,C:white}X#2#{} {C:inactive}Mult{}).",
+					"{C:inactive}(Currently: {}{X:mult,C:white}X#2#{} {C:inactive}Mult{}{C:inactive}){}",
 				},
 			},
 			["j_goob_Blaze"] = {
@@ -542,9 +527,6 @@ return {
 				["text"] = {
 					"{E:1,C:purple}Legendaries{} appear in the shop.",
 					"{E:1,C:purple}Legendaries{} get {C:attention}#1#%{} off.",
-					"gain {C:gold}$#2#{} at the end of the round",
-					"for each {E:1,C:red}Rare{} and {E:1,C:purple}Legendary{} Joker owned.",
-					"{C:inactive}(Including this one){}",
 				},
 			},
 			["j_goob_Digger"] = {
@@ -562,9 +544,8 @@ return {
 				["name"] = "Jobangles",
 				["text"] = {
 					"When {C:attention}Blind{} is selected, a random card in deck",
-					"gets {C:attention}destroyed{}. This joker",
-					"gains Chips equal to {C:chips}X#2#{} the rank destroyed.",
-					"Extra Chips granted to the card are also given to this joker.",
+					"gets {C:attention}destroyed{}. This Joker",
+					"gains Chips equal to {C:chips}X#2#{} the unenhanced rank destroyed.",
 					"Last card destroyed: {C:attention}#3#{} of {C:attention}#4#{}",
 					"{C:inactive}(Current chip bonus:{C:chips} +#1#{}{C:inactive})",
 				},
@@ -576,8 +557,8 @@ return {
 				["name"] = "LLEHNINRUB",
 				["text"] = {
 					"When {C:attention}Blind{} is selected",
-					"{X:mult,C:white}X#1#{} Mult,",
-					"and flips and shuffles {C:attention}ALL{} Jokers",
+					"{X:mult,C:white}X#1#{} Mult, and",
+					"{C:red}flips and shuffles{} ALL Jokers",
 				},
 			},
 			["j_goob_Fox"] = {

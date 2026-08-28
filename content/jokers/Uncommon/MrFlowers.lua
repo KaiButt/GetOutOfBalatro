@@ -11,7 +11,7 @@ SMODS.Joker {
     atlas = 'MrFlowers',
     unlocked = false,
     pos = { x = 0, y = 0 },
-    rarity = 3,
+    rarity = 2,
     cost = 7,
     config = { extra = { moneyPerPlay = 3, amountToDeck = 2 }, immutable = { maxAmountToDeck = 40 } },
     blueprint_compat = false,
@@ -41,20 +41,6 @@ SMODS.Joker {
             end
             return {
                 message = "Flower Cards!"
-            }
-        end
-        if context.individual and context.cardarea == G.play and SMODS.has_enhancement(context.other_card, 'm_goob_flower') then
-            G.GAME.dollar_buffer = (G.GAME.dollar_buffer or 0) + card.ability.extra.moneyPerPlay
-            return {
-                dollars = card.ability.extra.moneyPerPlay,
-                func = function()
-                    G.E_MANAGER:add_event(Event({
-                        func = function()
-                            G.GAME.dollar_buffer = 0
-                            return true
-                        end
-                    }))
-                end
             }
         end
     end,

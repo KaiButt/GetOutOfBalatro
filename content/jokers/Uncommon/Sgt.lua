@@ -10,11 +10,8 @@ SMODS.Joker {
     atlas = 'Sgt',
     pos = { x = 0, y = 0 },
     config = {
-        extra = {
-            x_mult = 1.5
-        },
         immutable = {
-            negative_rate = 2.5
+            negative_rate = 5
         },
     },
     rarity = 2,
@@ -23,7 +20,7 @@ SMODS.Joker {
     eternal_compat = true,
     perishable_compat = true,
     loc_vars = function(self, info_queue, center)
-        return { vars = { center.ability.immutable.negative_rate, center.ability.extra.x_mult } }
+        return { vars = { center.ability.immutable.negative_rate} }
     end,
     pools = { ["goob"] = true, ["goobNL"] = true },
     add_to_deck = function(self, card, from_debuff)
@@ -51,14 +48,5 @@ SMODS.Joker {
                 return weight
             end
         }, true)
-    end,
-    calculate = function(self, card, context)
-        if context.other_joker and context.other_joker.edition and card ~= context.other_joker and context.other_joker.edition.negative then
-            return {
-                x_mult = card.ability.extra.x_mult,
-                colour = G.C.RED,
-                card = card
-            }
-        end
     end,
 }

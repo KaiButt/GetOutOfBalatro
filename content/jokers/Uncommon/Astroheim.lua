@@ -19,20 +19,7 @@ SMODS.Joker {
     loc_vars = function(self, info_queue, center)
         return { vars = { center.ability.extra.amountToLevel } }
     end,
-    add_to_deck = function(self, card, from_debuff)
-        if not from_debuff then
-           SMODS.upgrade_poker_hands({hands = GET_mostplayed_hand(), level_up = card.ability.extra.amountToLevel, from = card})
-        end
-    end,
     calculate = function(self, card, context)
-        
-        if context.joker_main and context.cardarea == G.jokers and context.scoring_name then
-            return {
-                mult = G.GAME.hands[context.scoring_name].level,
-                colour = G.C.RED,
-                card = card,
-            }
-        end
         if context.end_of_round and context.main_eval and context.game_over == false and context.beat_boss then
             SMODS.upgrade_poker_hands({hands = GET_mostplayed_hand(), level_up = card.ability.extra.amountToLevel, from = card})
             card:juice_up()

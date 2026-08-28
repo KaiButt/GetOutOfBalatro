@@ -71,11 +71,3 @@ SMODS.Joker {
         end
     end
 }
-local card_set_cost_value_ref = Card.set_cost_value
-function Card:set_cost_value(...)
-    local ret = card_set_cost_value_ref(self, ...)
-    if next(SMODS.find_card("j_goob_Dupla")) then
-        if ((self.ability.set == 'Default' or self.ability.set == 'Enhanced') or (self.ability.set == 'Booster' and self.config.center.kind == 'Standard')) then self.cost = 0 end
-    end
-    return ret
-end

@@ -29,4 +29,12 @@ SMODS.Joker {
     remove_from_deck = function(self, card, from_debuff)
         G.hand:change_size(-card.ability.extra.handSize)
     end,
+    calculate = function(self,card,context)
+        if context.end_of_round and context.main_eval and context.game_over == false then
+            local sum = roll_dice(1,5)
+            return {
+                message = sum
+            }
+        end
+    end
 }

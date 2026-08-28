@@ -16,10 +16,9 @@ SMODS.Joker {
     config = {
         extra = {
             discount = 30,
-            moneyGenerated = 2,
         },
         immutable = {
-            appearanceRate = 0.08 -- 8 percent chance, same odds as rares
+            appearanceRate = 0.1
         }
     },
     loc_vars = function(self, info_queue, center)
@@ -39,14 +38,6 @@ SMODS.Joker {
                 G.GAME.discount_percent = G.GAME.discount_back_percent -- necessary to prevent things from getting globally cheaper
             end
         end
-    end,
-    calc_dollar_bonus = function(self, card) -- money payout
-        local ownedCheck = 0
-        for i = 1, #G.jokers.cards do
-            if G.jokers.cards[i]:is_rarity("Rare") or G.jokers.cards[i]:is_rarity("Legendary") then
-                ownedCheck = ownedCheck + 1 end
-        end
-        return card.ability.extra.moneyGenerated * ownedCheck
     end,
     check_for_unlock = function(self, args)
         return args.type == 'win' and legendaryCheck()

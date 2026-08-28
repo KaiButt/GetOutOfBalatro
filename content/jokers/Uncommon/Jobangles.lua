@@ -34,20 +34,7 @@ SMODS.Joker{
             if chosenCard.base.id ~= nil then
             card.ability.extra.destroyed_rank = chosenCard.base.value
             card.ability.extra.destroyed_suit = chosenCard.base.suit
-            if chosenCard.ability.name ~= 'Stone Card' then --stone cards don't have ranks
-                card.ability.extra.chipAmount = card.ability.extra.chipAmount + (chosenCard.base.id*card.ability.extra.chipBonus) + chosenCard.ability.perma_bonus
-            end
-            if chosenCard.ability.name == 'Bonus' then -- bonus cards +30 chips
-                card.ability.extra.chipAmount = card.ability.extra.chipAmount + 30
-            end
-            if chosenCard.ability.name == 'Stone Card' then -- stone cards + 50 chips
-                card.ability.extra.chipAmount = card.ability.extra.chipAmount + 50 + chosenCard.ability.perma_bonus
-            end
-            if chosenCard.edition ~= nil then
-            if chosenCard.edition.type == 'foil' then -- foil cards + 50 chips
-                card.ability.extra.chipAmount = card.ability.extra.chipAmount + 50
-            end
-        end
+            card.ability.extra.chipAmount = card.ability.extra.chipAmount + (chosenCard.base.id*card.ability.extra.chipBonus)
             if chosenCard.ability.name == 'Gold Card' then --Easter egg gag clause, get 2 dollars if it destroys a gold card
                 card:juice_up()
                 return {

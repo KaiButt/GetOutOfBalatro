@@ -35,44 +35,42 @@ function Card:set_debuff(background)
 end
 
 function perform_wondrous_magic(card, hand)
-    local bonus = next(SMODS.find_card("j_goob_broBingles")) and 2 or 1
     local num = pseudorandom("goob_WonderousMagic_seal", 1, 13)
     if next(SMODS.find_card("j_goob_Kai")) then
-        local num2Bro = pseudorandom("goob_WonderousMagic_seal", 1, 13)
-        if num2Bro > num then
-            num = num2Bro
-        end
+        local num2 = pseudorandom("goob_WonderousMagic_seal", 1, 13)
+        local num3 = pseudorandom("goob_WonderousMagic_seal", 1, 13)
+        num = math.max(num, num2, num3)
     end
     if num == 1 then
         return {
-            chips = 31 * bonus
+            chips = 31
         }
     elseif num == 2 then
         return {
-            mult = 4 * bonus
+            mult = 4
         }
     elseif num == 3 then
-        card.ability.perma_bonus = (card.ability.perma_bonus or 0) + 5 * bonus
+        card.ability.perma_bonus = (card.ability.perma_bonus or 0) + 5
         return {
             message = localize('k_upgrade_ex'),
             colour = G.C.CHIPS
         }
     elseif num == 4 then
-        card.ability.perma_mult = (card.ability.perma_mult or 0) + 2 * bonus
+        card.ability.perma_mult = (card.ability.perma_mult or 0) + 2
         return {
             message = localize('k_upgrade_ex'),
             colour = G.C.RED
         }
     elseif num == 5 then
-        card.ability.perma_p_dollars = (card.ability.perma_p_dollars or 0) + bonus
+        card.ability.perma_p_dollars = (card.ability.perma_p_dollars or 0)
         return {
             message = localize('k_upgrade_ex'),
             colour = G.C.GOLD
         }
     elseif num == 6 then
-        G.GAME.dollar_buffer = (G.GAME.dollar_buffer or 0) + 3 * bonus
+        G.GAME.dollar_buffer = (G.GAME.dollar_buffer or 0) + 3
         return {
-            dollars = 3 * bonus,
+            dollars = 3,
             func = function()
                 G.E_MANAGER:add_event(Event({
                     func = function()
@@ -84,7 +82,7 @@ function perform_wondrous_magic(card, hand)
         }
     elseif num == 7 then
         return {
-            x_mult = 2 * bonus,
+            x_mult = 2,
             colour = G.C.RED
         }
     elseif num == 8 then
@@ -98,7 +96,7 @@ function perform_wondrous_magic(card, hand)
         }
     elseif num == 9 then
         if not card.edition then
-            local random_edition = SMODS.poll_edition { key = "goob_WonderousMagic", guarenteed = true }
+            local random_edition = SMODS.poll_edition { key = "goob_WonderousMagic", guaranteed = true, no_negative = true }
             card:set_edition(random_edition)
         end
         return {
@@ -106,15 +104,15 @@ function perform_wondrous_magic(card, hand)
             colour = G.C.PURPLE
         }
     elseif num == 10 then
-        ease_discard(bonus)
+        ease_discard(1)
     elseif num == 11 then
-        ease_hands_played(bonus)
+        ease_hands_played(1)
     elseif num == 12 then
-        SMODS.upgrade_poker_hands({ hands = { hand }, level_up = bonus, from = card })
+        SMODS.upgrade_poker_hands({ hands = { hand }, level_up = 1, from = card })
     else
         local num2 = pseudorandom("goob_WonderousMagic_seal", 1, 15)
         if num2 == 1 then
-            for i = 1, bonus, 1 do
+            for i = 1, 1, 1 do
                 local card_copied = copy_card(card, nil, nil, G.playing_card)
                 card_copied:add_to_deck()
                 G.deck.config.card_limit = G.deck.config.card_limit + 1
@@ -131,19 +129,19 @@ function perform_wondrous_magic(card, hand)
                 SMODS.calculate_context({ playing_card_added = true, cards = { card_copied } })
             end
         elseif num2 == 2 then
-            G.jokers.config.card_limit = G.jokers.config.card_limit + bonus
+            G.jokers:change_size(1)
             return {
                 message = 'More Jokers!',
                 colour = G.C.GREEN
             }
         elseif num2 == 3 then
-            G.consumeables.config.card_limit = G.consumeables.config.card_limit + bonus
+            G.consumeables:change_size(1)
             return {
                 message = 'Consume!',
                 colour = G.C.GREEN
             }
         elseif num2 == 4 then
-            for i = 1, bonus, 1 do
+            for i = 1, 1, 1 do
                 local hand = GET_mostplayed_hand()
                 local planet
                 for _, center in pairs(G.P_CENTER_POOLS.Planet) do
@@ -157,97 +155,87 @@ function perform_wondrous_magic(card, hand)
                 }
             end
         elseif num2 == 5 then
-            for i = 1, bonus, 1 do
-                SMODS.add_card {
-                    set = "Tarot",
-                    edition = 'e_negative'
-                }
-            end
+            SMODS.add_card {
+                set = "Tarot",
+                edition = 'e_negative'
+            }
         elseif num2 == 6 then
-            for i = 1, bonus, 1 do
-                SMODS.add_card {
-                    set = "Spectral",
-                    edition = 'e_negative'
-                }
-            end
+            SMODS.add_card {
+                set = "Spectral",
+                edition = 'e_negative'
+            }
         elseif num2 == 7 then
-            for i = 1, bonus * 2, 1 do
-                local tag_pool = get_current_pool('Tag')
-                local selected_tag = pseudorandom_element(tag_pool, 'goob_WonderousMagic')
-                local it = 1
-                while selected_tag == 'UNAVAILABLE' do
-                    it = it + 1
-                    selected_tag = pseudorandom_element(tag_pool, 'goob_WonderousMagic_resample' .. it)
-                end
-                add_tag(Tag(selected_tag, false, 'Small'))
+            local tag_pool = get_current_pool('Tag')
+            local selected_tag = pseudorandom_element(tag_pool, 'goob_WonderousMagic')
+            local it = 1
+            while selected_tag == 'UNAVAILABLE' do
+                it = it + 1
+                selected_tag = pseudorandom_element(tag_pool, 'goob_WonderousMagic_resample' .. it)
             end
+            add_tag(Tag(selected_tag, false, 'Small'))
         elseif num2 == 8 then
-            for i = 1, bonus, 1 do
-                local voucher_pool = get_current_pool('Voucher')
-                local selected_voucher = pseudorandom_element(voucher_pool, 'goob_WonderousMagic"')
-                local it = 1
-                while selected_voucher == 'UNAVAILABLE' do
-                    it = it + 1
-                    selected_voucher = pseudorandom_element(voucher_pool, 'goob_WonderousMagic"' .. it)
-                end
-                local voucher_card = SMODS.create_card({ area = G.play, key = selected_voucher })
-                local prev_state = G.STATE
-                voucher_card:start_materialize()
-                voucher_card.cost = 0
-                G.play:emplace(voucher_card)
-                delay(0.8)
-                G.FUNCS.use_card({ config = { ref_table = voucher_card } })
+            local voucher_pool = get_current_pool('Voucher')
+            local selected_voucher = pseudorandom_element(voucher_pool, 'goob_WonderousMagic"')
+            local it = 1
+            while selected_voucher == 'UNAVAILABLE' do
+                it = it + 1
+                selected_voucher = pseudorandom_element(voucher_pool, 'goob_WonderousMagic"' .. it)
+            end
+            local voucher_card = SMODS.create_card({ area = G.play, key = selected_voucher })
+            local prev_state = G.STATE
+            voucher_card:start_materialize()
+            voucher_card.cost = 0
+            G.play:emplace(voucher_card)
+            delay(0.8)
+            G.FUNCS.use_card({ config = { ref_table = voucher_card } })
 
-                G.E_MANAGER:add_event(Event({
-                    trigger = 'after',
-                    delay = 0.6,
-                    func = function()
-                        voucher_card:start_dissolve()
-                        return true
-                    end
-                }))
-            end
+            G.E_MANAGER:add_event(Event({
+                trigger = 'after',
+                delay = 0.6,
+                func = function()
+                    voucher_card:start_dissolve()
+                    return true
+                end
+            }))
         elseif num2 == 9 then
-            for i = 1, bonus, 1 do
-                SMODS.add_card {
-                    set = "Joker",
-                    rarity = "Legendary",
-                    edition = "e_negative",
-                    key_append = "goob_WonderousMagic_seal",
-                    area = G.jokers
-                }
-            end
+            SMODS.add_card {
+                set = "Joker",
+                rarity = "Legendary",
+                edition = "e_negative",
+                key_append = "goob_WonderousMagic_seal",
+                area = G.jokers
+            }
         elseif num2 == 10 then
-            G.GAME.round_resets.discards = G.GAME.round_resets.discards + bonus
-            ease_discard(bonus)
+            G.GAME.round_resets.discards = G.GAME.round_resets.discards + 1
+            ease_discard(1)
             return {
                 message = 'Discard Up!',
                 colour = G.C.GREEN
             }
         elseif num2 == 11 then
-            G.GAME.round_resets.hands = G.GAME.round_resets.hands + bonus
-            ease_hands_played(bonus)
+            G.GAME.round_resets.hands = G.GAME.round_resets.hands + 1
+            ease_hands_played(1)
             return {
                 message = 'Hand Up!',
                 colour = G.C.GREEN
             }
         elseif num2 == 12 then
-            G.hand:change_size(bonus)
+            G.hand:change_size(1)
             return {
                 message = 'Hand Size Up!',
                 colour = G.C.GREEN
             }
         elseif num2 == 13 then
-            card.ability.perma_repetitions = (card.ability.perma_repetitions or 0) + bonus
-            card.ability.perma_p_dollars = (card.ability.perma_p_dollars or 0) + bonus
-            card.ability.perma_mult = (card.ability.perma_mult or 0) + 2 * bonus
-            card.ability.perma_bonus = (card.ability.perma_bonus or 0) + 5 * bonus
+            card.ability.perma_repetitions = (card.ability.perma_repetitions or 0) 
+            card.ability.perma_p_dollars = (card.ability.perma_p_dollars or 0)
+            card.ability.perma_mult = (card.ability.perma_mult or 0) + 2
+            card.ability.perma_bonus = (card.ability.perma_bonus or 0) + 5
             return {
                 message = 'Ultima Card!',
                 colour = G.C.GREEN
             }
         elseif num2 == 14 then
-            SMODS.upgrade_poker_hands({ level_up = bonus, instant = true })
+            SMODS.upgrade_poker_hands({ level_up = 1, instant = true })
         else
             local num3 = pseudorandom("goob_WonderousMagic_seal", 1, 10)
             if num3 == 1 then
@@ -265,27 +253,24 @@ function perform_wondrous_magic(card, hand)
                     SMODS.destroy_cards(playing_card)
                 end
                 local wonderful = true
-                local wonderful_bonus = (bonus == 2) and true or false
                 for i = 1, G.GAME.starting_deck_size, 1 do
-                    if wonderful or wonderful_bonus then
-                        if not wonderful and wonderful_bonus then
-                            wonderful_bonus = false
-                        else
-                            wonderful = false
-                        end
+                    if wonderful then
+                        wonderful = false
                         local _card = SMODS.add_card { set = "Enhanced", area = G.deck }
                         _card:set_seal("goob_WondrousMagic")
+                        _card.ability.perma_mult = 2
                     else
-                        SMODS.add_card { set = "Enhanced", area = G.deck }
+                        local _card = SMODS.add_card { set = "Enhanced", area = G.deck }
+                        _card.ability.perma_mult = 2
                     end
                     SMODS.calculate_context({ playing_card_added = true, cards = { _card } })
                 end
             elseif num3 == 4 then
                 for _, playing_card in ipairs(G.playing_cards) do
-                    playing_card.ability.perma_repetitions = (playing_card.ability.perma_repetitions or 0) + bonus
-                    playing_card.ability.perma_p_dollars = (playing_card.ability.perma_p_dollars or 0) + bonus
-                    playing_card.ability.perma_mult = (playing_card.ability.perma_mult or 0) + 2 * bonus
-                    playing_card.ability.perma_bonus = (playing_card.ability.perma_bonus or 0) + 5 * bonus
+                    playing_card.ability.perma_repetitions = (playing_card.ability.perma_repetitions or 0)
+                    playing_card.ability.perma_p_dollars = (playing_card.ability.perma_p_dollars or 0)
+                    playing_card.ability.perma_mult = (playing_card.ability.perma_mult or 0) + 2
+                    playing_card.ability.perma_bonus = (playing_card.ability.perma_bonus or 0) + 5
                 end
                 return {
                     message = 'Ultima Deck!',
@@ -293,7 +278,7 @@ function perform_wondrous_magic(card, hand)
                 }
             elseif num3 == 10 then
                 local winner = pseudorandom("goob_WonderousMagic_seal", 1, 10)
-                if winner < 11 - bonus or G.GAME.won then
+                if winner < 11 - 1 or G.GAME.won then
                     G.E_MANAGER:add_event(Event({
                         blocking = false,
                         func = function()
