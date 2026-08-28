@@ -561,8 +561,8 @@ return {
 				},
 				["name"] = "LLEHNINRUB",
 				["text"] = {
+					"{X:mult,C:white}X#1#{} Mult",
 					"When {C:attention}Blind{} is selected",
-					"{X:mult,C:white}X#1#{} Mult, and",
 					"{C:red}flips and shuffles{} ALL Jokers",
 				},
 			},
