@@ -32,7 +32,7 @@ SMODS.Joker {
     end,
     calculate = function(self, card, context)
         if context.end_of_round and context.main_eval and context.game_over == false then 
-            if roll_die(card.ability.extra.diceToRoll, card.ability.sidesOfDice) == card.ability.sidesOfDice then
+            if roll_die(card.ability.extra.diceToRoll, card.ability.extra.sidesOfDice) == card.ability.extra.sidesOfDice then
                 G.GAME.pool_flags.goob_harmony_dead = true
                 return {
                     message = 'Goodbye!',
