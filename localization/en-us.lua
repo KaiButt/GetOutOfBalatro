@@ -507,7 +507,7 @@ return {
 				["name"] = "Ante",
 				["text"] = {
 					"Gains {X:mult,C:white}+X#1#{} Mult,",
-					"when any G.O.O.B dice is {C:attention}rolled{}.",
+					"when any G.O.O.B die is {C:attention}rolled{}.",
 					"{C:inactive}(Currently: {}{X:mult,C:white}X#2#{} {C:inactive}Mult{}{C:inactive}){}",
 				},
 			},
