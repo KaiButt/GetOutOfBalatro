@@ -30,9 +30,8 @@ SMODS.Joker {
             sum = roll_die(card.ability.extra.scalingMultDieToRoll, card.ability.extra.scalingMultSidesOfDie)
             card.ability.extra.multGain = card.ability.extra.multGain + sum
             return {
-                message = 'Skull Appeased '..'+'..sum,
+                message = '+'..sum,
                 colour = G.C.RED,
-                delay = 1.2
             }
         end
         if context.joker_main and context.cardarea == G.jokers and context.scoring_name then
