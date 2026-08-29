@@ -14,7 +14,8 @@ SMODS.Joker {
     config = {
         extra = {
             multGain = 0,
-            scalingMult = 2,
+            scalingMultDieToRoll = 1,
+            scalingMultSidesOfDie = 3
         },
     },
     rarity = 2,
@@ -22,15 +23,16 @@ SMODS.Joker {
     blueprint_compat = true,
     pools = { ["goob"] = true, ["goobNL"] = true},
     loc_vars = function(self, info_queue, center)
-        return { vars = { center.ability.extra.multGain, center.ability.extra.scalingMult } }
+        return { vars = { center.ability.extra.multGain, center.ability.extra.scalingMultDieToRoll, center.ability.extra.scalingMultSidesOfDie  } }
     end,
     calculate = function(self, card, context)
         if context.selling_card and not context.selling_self and context.card.ability.set == "Joker" and not context.blueprint then
-            card.ability.extra.multGain = card.ability.extra.multGain + card.ability.extra.scalingMult
+            sum = roll_die(card.ability.extra.scalingMultDieToRoll, card.ability.extra.scalingMultSidesOfDie)
+            card.ability.extra.multGain = card.ability.extra.multGain + sum
             return {
-                message = 'Skull Appeased',
+                message = 'Skull Appeased '..'+'..sum,
                 colour = G.C.RED,
-                delay = 1
+                delay = 1.2
             }
         end
         if context.joker_main and context.cardarea == G.jokers and context.scoring_name then

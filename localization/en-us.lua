@@ -405,7 +405,7 @@ return {
 				},
 				["name"] = "Menacing Skull",
 				["text"] = {
-					"This Joker gains {C:mult}+#2#{} Mult when a Joker is {C:attention}sold{}.",
+					"This Joker gains {C:mult}+#2#d#3#{} Mult when a Joker is {C:attention}sold{}.",
 					"{C:inactive}(Currently{} {C:mult}+#1#{} {C:inactive}Mult)",
 				},
 			},
@@ -431,7 +431,7 @@ return {
 				["name"] = "Gold Bot",
 				["text"] = {
 					"When {C:attention}Blind{} is skipped,",
-					"gain {C:gold}$#1#d#2#{} Gold.",
+					"gain {C:gold}$#1#d#2#{}.",
 				},
 			},
 			["j_goob_Sunny"] = {
@@ -453,10 +453,8 @@ return {
 			["j_goob_Ally"] = {
 				["name"] = "Gamblin' Sage",
 				["text"] = {
-					"When {C:attention}Blind{} is selected,",
-					"Rolls {C:attention}#1#d#2#{}.",
-					"On a #2#, gains {C:gold}#3#{} Gold,",
-					"{C:inactive}(Increases the{} {C:attention}minimum roll{} {C:inactive}on failure until success){}",
+					"When a G.O.O.B die is {C:attention}rolled{},",
+					"Gain {C:gold}$#1#{}.",
 				},
 			},
 			["j_goob_Petyr"] = {
@@ -489,7 +487,7 @@ return {
 			},
 			["j_goob_Deathkill"] = {
 				["unlock"] = {
-					"Win a run with {C:attention}0{} {C:gold}Gold{}.",
+					"Win a run with {C:attention}$0{}.",
 				},
 				["name"] = "Deathkill 4.0",
 				["text"] = {
@@ -541,7 +539,7 @@ return {
 				["name"] = "Digger Of The Golden Sands",
 				["text"] = {
 					"{C:mult}+#1#{} Mult.",
-					"Lose {C:gold}$#2#{} Gold at the end of the round",
+					"Lose {C:gold}$#2#{} at the end of the round",
 					"If you can not pay, {C:red,E:2}self-destructs{}.",
 				},
 			},
