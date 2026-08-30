@@ -474,8 +474,8 @@ return {
 				["name"] = "Yapping Petyr",
 				["text"] = {
 					"{E:1}Talks a lot{}.",
-					"When {C:attention}Blind{} is selected {C:red}lose{} {C:chips}1{} hand.",
-					"Sell this joker during a {C:attention}Blind{} to get all lost hands back",
+					"{C:red}-1{} hand per round.",
+					"Sell this Joker during a {C:attention}Blind{} to get all lost hands back",
 					"with an additional {C:chips}#1#{}.",
 					"{C:inactive}(Currently would grant {C:chips}#2#{}{C:inactive} hands){}",
 				},
