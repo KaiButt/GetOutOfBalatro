@@ -287,8 +287,7 @@ return {
 				["name"] = "Dupla",
 				["text"] = {
 					"When a {C:attention}playing card{} is created,",
-					"it comes with {C:attention}#1#{} additional copy.",
-					"{C:inactive}(the additional copy goes to your deck){}"
+					"gain {C:attention}#1#{} additional copy to deck.",
 				},
 			},
 			["j_goob_Presto"] = {
