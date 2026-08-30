@@ -7,6 +7,7 @@ Get Out Of Balatro currently introduces:
 - a wonderful seal & a spectral to match!
 
 GOOT is made by Kyrsaku and can be found in Tabletop Simulator workshop
+
 Warframe is a video game you can find at https://www.warframe.com/en 
 
 Link: https://steamcommunity.com/sharedfiles/filedetails/?id=2012201900
@@ -24,7 +25,7 @@ Clock sounds are from Limbus Company by Project Moon (specifically, Dante's "voi
 
 (Thank you!)
 
-Special thanks to the Balatro subreddit, the Cryptid mod for ideas/implementation, and the Lost mod for it's "improvements" window.
+Special thanks to the Balatro subreddit, the Cryptid mod for ideas/implementation,all in jest for Diamonds implementation, and the Lost mod for it's "improvements" window.
 
 Installation
 
