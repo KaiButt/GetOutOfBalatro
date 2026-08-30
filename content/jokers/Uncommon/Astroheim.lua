@@ -9,7 +9,7 @@ SMODS.Joker {
     name = 'Astroheim',
     atlas = 'Astroheim',
     pos = { x = 0, y = 0 },
-    config = {extra = { amountToLevel = 2 }},
+    config = {extra = { amountToLevel = 1 }},
     rarity = 2,
     cost = 7,
     blueprint_compat = false,

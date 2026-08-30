@@ -220,7 +220,7 @@ return {
 				["name"] = "Astroheim",
 				["text"] = {
 					"After defeating a {C:attention}Boss Blind{},",
-					"{C:attention}Levels Up{} the most played poker hand {C:attention}#1#{} times.",
+					"{C:attention}Levels Up{} the most played poker hand {C:attention}#1#{} time.",
 				}
 			},
 			["j_goob_MrFlowers"] = {
@@ -542,8 +542,8 @@ return {
 				},
 				["name"] = "Charles",
 				["text"] = {
-					"{E:1,C:purple}Legendaries{} appear in the shop.",
-					"{E:1,C:purple}Legendaries{} get {C:attention}#1#%{} off.",
+					"{E:1,C:purple}Legendaries{} appear in the shop,",
+					"and get {C:attention}#1#%{} off.",
 				},
 			},
 			["j_goob_Digger"] = {

@@ -11,7 +11,7 @@ SMODS.Joker {
     name = 'Sunny',
     atlas = 'Sunny',
     pos = { x = 0, y = 0 },
-    config = { extra = { x_mult_nongoob = 2, x_mult_goob = 2.5 } },
+    config = { extra = { x_mult_nongoob = 1.75, x_mult_goob = 2.25 } },
     rarity = 2,
     cost = 8,
     blueprint_compat = true,

@@ -18,7 +18,7 @@ SMODS.Joker {
             discount = 30,
         },
         immutable = {
-            appearanceRate = 0.1
+            appearanceRate = 0.12
         }
     },
     loc_vars = function(self, info_queue, center)
