@@ -13,7 +13,7 @@ SMODS.Joker {
     rarity = 4,
     config = {
         immutable = {
-            reduction = 60,
+            reduction = 50,
         },
     },
     cost = 20,
