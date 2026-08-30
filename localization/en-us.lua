@@ -177,6 +177,20 @@ return {
 			},
 		},
 		["Joker"] = {
+			["j_goob_Diamonds"] = {
+				["name"] = "Diamonds",
+				["text"] = {
+					'Cards with an {C:dark_edition}improvement{} are drawn first,',
+					'you may invert this effect at any time.',
+				}
+			},
+			["j_goob_Diamonds_alt"] = {
+				["name"] = "Inverted Diamonds",
+				["text"] = {
+					'Cards with an {C:dark_edition}improvement{} are drawn last,',
+					'you may revert this effect at any time.',
+				}
+			},
 			["j_goob_Marie"] = {
 				["name"] = "Marie",
 				["text"] = {

@@ -1,5 +1,5 @@
 Get Out Of Balatro currently introduces: 
-- 43 "Get Out Of Town" Mercenaries as Jokers
+- 44 "Get Out Of Town" Mercenaries as Jokers
 - 1 "Warframe" Character as a Joker
 - 3 decks with deck sleeve mod compatibility! 
 - a special Tag!
