@@ -45,7 +45,7 @@ if CardSleeves then
         unlock_condition = { deck = "b_goob_chronomancer", stake = "stake_red" },
         loc_vars = function(self)
             local key
-            if self.get_current_deck_key() == "b_goob_chronomancer" then
+            if GET_selected_deck() == "b_goob_chronomancer" then
                 key = self.key .. "_alt"
             else
                 key = self.key
@@ -53,7 +53,7 @@ if CardSleeves then
             return { key = key }
         end,
         calculate = function(self, back, context)
-            if self.get_current_deck_key() ~= 'b_goob_chronomancer' then
+            if GET_selected_deck() ~= 'b_goob_chronomancer' then
             if context.end_of_round and context.main_eval and context.beat_boss and context.game_over == false then
                 play_sound('goob_clockTick', 1, 1.2)
             elseif context.end_of_round and context.main_eval and context.game_over == true then
@@ -62,7 +62,7 @@ if CardSleeves then
         end
         end,
         apply = function(self, sleeve)
-            if self.get_current_deck_key() == "b_goob_chronomancer" then
+            if GET_selected_deck() == "b_goob_chronomancer" then
                 G.GAME.win_ante = G.GAME.win_ante + 1
                 G.GAME.starting_params.hand_size = G.GAME.starting_params.hand_size + 1
                 G.GAME.starting_params.discards = G.GAME.starting_params.discards + 1

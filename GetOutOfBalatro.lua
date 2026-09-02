@@ -100,3 +100,24 @@ function roll_die(_amountToRoll, _sidesOfDice)
 	
 	return accum
 end
+-- gets the selected deck
+function GET_selected_deck()
+    if G.STATE == G.STATES.MENU then
+        return
+    end
+    local ret = G.GAME.selected_back and G.GAME.selected_back.effect and G.GAME.selected_back.effect and
+        G.GAME.selected_back.effect.center.key
+    return ret
+end
+
+-- gets the most played hand
+function GET_mostplayed_hand()
+    local _handname, _played = 'High Card', -1
+    for hand_key, hand in pairs(G.GAME.hands) do
+        if hand.played > _played then
+            _played = hand.played
+            _handname = hand_key
+        end
+    end
+    return _handname
+end

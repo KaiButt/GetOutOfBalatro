@@ -34,7 +34,7 @@ if CardSleeves then
         config = { joker_slot = 1 },
         loc_vars = function(self)
             local key
-            if self.get_current_deck_key() == "b_goob_MainDeck" then
+            if GET_selected_deck() == "b_goob_MainDeck" then
                 key = self.key .. "_alt"
             else
                 key = self.key
@@ -42,7 +42,7 @@ if CardSleeves then
             return { key = key }
         end,
         apply = function(self, sleeve)
-            if self.get_current_deck_key() == "b_goob_MainDeck" then
+            if GET_selected_deck() == "b_goob_MainDeck" then
                 G.GAME.starting_params.joker_slots = G.GAME.starting_params.joker_slots + self.config.joker_slot
                 CardSleeves.Sleeve.apply(self, sleeve)
             else

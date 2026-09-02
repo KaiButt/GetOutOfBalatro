@@ -15,6 +15,7 @@ SMODS.Back {
     atlas = 'Sohikosa',
     unlocked = false,
     apply = function(self, back)
+        print(CardSleeves.name)
         G.E_MANAGER:add_event(Event({
             func = function()
                 for _, playing_card in ipairs(G.playing_cards) do
@@ -152,7 +153,7 @@ if CardSleeves then
         pos = { x = 0, y = 0 },
         loc_vars = function(self)
             local key
-            if self.get_current_deck_key() == "b_goob_sohikosa" then
+            if GET_selected_deck() == "b_goob_sohikosa" then
                 key = self.key .. "_alt"
             else
                 key = self.key
@@ -160,7 +161,7 @@ if CardSleeves then
             return { key = key }
         end,
         apply = function(self, sleeve)
-            if self.get_current_deck_key() == "b_goob_sohikosa" then
+            if GET_selected_deck() == "b_goob_sohikosa" then
                 G.E_MANAGER:add_event(Event({
                     func = function()
                         for _, playing_card in ipairs(G.playing_cards) do
@@ -182,6 +183,7 @@ if CardSleeves then
                             end
                         end
                         if (G.GAME.starting_params.no_faces ~= true) then
+                            if GET_selected_deck() ~= "b_checkered" then
                             SMODS.add_card {
                                 set = "Playing Card",
                                 area = G.deck,
@@ -191,24 +193,7 @@ if CardSleeves then
                                 rank = "J",
                                 suit = "Clubs"
                             }
-                            SMODS.add_card {
-                                set = "Playing Card",
-                                area = G.deck,
-                                skip_materialize = true,
-                                key_append = "sohi_append",
-                                enhanced_poll = 1,
-                                rank = "J",
-                                suit = "Hearts"
-                            }
-                            SMODS.add_card {
-                                set = "Playing Card",
-                                area = G.deck,
-                                skip_materialize = true,
-                                key_append = "sohi_append",
-                                enhanced_poll = 1,
-                                rank = "J",
-                                suit = "Diamonds"
-                            }
+                        else
                             SMODS.add_card {
                                 set = "Playing Card",
                                 area = G.deck,
@@ -218,33 +203,47 @@ if CardSleeves then
                                 rank = "J",
                                 suit = "Spades"
                             }
+                        end
                             SMODS.add_card {
                                 set = "Playing Card",
                                 area = G.deck,
                                 skip_materialize = true,
                                 key_append = "sohi_append",
                                 enhanced_poll = 1,
-                                rank = "Q",
-                                suit = "Clubs"
-                            }
-                            SMODS.add_card {
-                                set = "Playing Card",
-                                area = G.deck,
-                                skip_materialize = true,
-                                key_append = "sohi_append",
-                                enhanced_poll = 1,
-                                rank = "Q",
+                                rank = "J",
                                 suit = "Hearts"
                             }
+                            if GET_selected_deck() ~= "b_checkered" then
                             SMODS.add_card {
                                 set = "Playing Card",
                                 area = G.deck,
                                 skip_materialize = true,
                                 key_append = "sohi_append",
                                 enhanced_poll = 1,
-                                rank = "Q",
+                                rank = "J",
                                 suit = "Diamonds"
                             }
+                        else
+                            SMODS.add_card {
+                                set = "Playing Card",
+                                area = G.deck,
+                                skip_materialize = true,
+                                key_append = "sohi_append",
+                                enhanced_poll = 1,
+                                rank = "J",
+                                suit = "Hearts"
+                            }
+                        end
+                            SMODS.add_card {
+                                set = "Playing Card",
+                                area = G.deck,
+                                skip_materialize = true,
+                                key_append = "sohi_append",
+                                enhanced_poll = 1,
+                                rank = "J",
+                                suit = "Spades"
+                            }
+                            if GET_selected_deck() ~= "b_checkered" then
                             SMODS.add_card {
                                 set = "Playing Card",
                                 area = G.deck,
@@ -254,6 +253,57 @@ if CardSleeves then
                                 rank = "Q",
                                 suit = "Spades"
                             }
+                        else
+                            SMODS.add_card {
+                                set = "Playing Card",
+                                area = G.deck,
+                                skip_materialize = true,
+                                key_append = "sohi_append",
+                                enhanced_poll = 1,
+                                rank = "Q",
+                                suit = "Hearts"
+                            }
+                        end
+                            SMODS.add_card {
+                                set = "Playing Card",
+                                area = G.deck,
+                                skip_materialize = true,
+                                key_append = "sohi_append",
+                                enhanced_poll = 1,
+                                rank = "Q",
+                                suit = "Hearts"
+                            }
+                            if GET_selected_deck() ~= "b_checkered" then
+                            SMODS.add_card {
+                                set = "Playing Card",
+                                area = G.deck,
+                                skip_materialize = true,
+                                key_append = "sohi_append",
+                                enhanced_poll = 1,
+                                rank = "Q",
+                                suit = "Diamonds"
+                            }
+                        else
+                            SMODS.add_card {
+                                set = "Playing Card",
+                                area = G.deck,
+                                skip_materialize = true,
+                                key_append = "sohi_append",
+                                enhanced_poll = 1,
+                                rank = "Q",
+                                suit = "Spades"
+                            }
+                        end
+                            SMODS.add_card {
+                                set = "Playing Card",
+                                area = G.deck,
+                                skip_materialize = true,
+                                key_append = "sohi_append",
+                                enhanced_poll = 1,
+                                rank = "Q",
+                                suit = "Spades"
+                            }
+                            if GET_selected_deck() ~= "b_checkered" then
                             SMODS.add_card {
                                 set = "Playing Card",
                                 area = G.deck,
@@ -263,6 +313,17 @@ if CardSleeves then
                                 rank = "K",
                                 suit = "Clubs"
                             }
+                        else
+                            SMODS.add_card {
+                                set = "Playing Card",
+                                area = G.deck,
+                                skip_materialize = true,
+                                key_append = "sohi_append",
+                                enhanced_poll = 1,
+                                rank = "K",
+                                suit = "Spades"
+                            }
+                        end
                             SMODS.add_card {
                                 set = "Playing Card",
                                 area = G.deck,
@@ -272,6 +333,7 @@ if CardSleeves then
                                 rank = "K",
                                 suit = "Hearts"
                             }
+                            if GET_selected_deck() ~= "b_checkered" then
                             SMODS.add_card {
                                 set = "Playing Card",
                                 area = G.deck,
@@ -281,6 +343,17 @@ if CardSleeves then
                                 rank = "K",
                                 suit = "Diamonds"
                             }
+                        else
+                            SMODS.add_card {
+                                set = "Playing Card",
+                                area = G.deck,
+                                skip_materialize = true,
+                                key_append = "sohi_append",
+                                enhanced_poll = 1,
+                                rank = "K",
+                                suit = "Hearts"
+                            }
+                        end
                             SMODS.add_card {
                                 set = "Playing Card",
                                 area = G.deck,

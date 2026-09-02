@@ -44,7 +44,7 @@ function CardArea:shuffle(_seed)
         end
 
         for _, card in ipairs(improved_cards) do
-            if not G.GAME.diamondsFlipped then
+            if not G.GAME.diamondsFlipped or G.GAME.diamondsFlipped == nil then
                 table.insert(self.cards, card)
             else
                 table.insert(self.cards, 1, card)
@@ -116,11 +116,9 @@ G.FUNCS.goob_diamonds_click = function(e)
     if G.GAME.diamondsFlipped == nil or G.GAME.diamondsFlipped == false then
         G.GAME.diamondsFlipped = true
         text = "last!"
-        G.deck:shuffle("goob_Diamonds")
     else
         G.GAME.diamondsFlipped = false
         text = "first!"
-        G.deck:shuffle("goob_Diamonds")
     end
     SMODS.calculate_effect({ message = text }, card)
 end
