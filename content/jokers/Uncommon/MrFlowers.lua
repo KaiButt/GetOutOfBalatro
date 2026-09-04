@@ -35,8 +35,8 @@ SMODS.Joker {
                 flower = SMODS.add_card { set = "Base", enhancement = "m_goob_flower", area = G.deck }
                 SMODS.calculate_context({ playing_card_added = true, cards = { flower } })
                 else 
-                SMODS.copy_card(flower)
-                SMODS.calculate_context({ playing_card_added = true, cards = { flower } })
+                local flower2 = SMODS.copy_card(flower)
+                SMODS.calculate_context({ playing_card_added = true, cards = { flower2 } })
                 end
             end
             return {
