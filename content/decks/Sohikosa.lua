@@ -153,7 +153,7 @@ if CardSleeves then
         pos = { x = 0, y = 0 },
         loc_vars = function(self)
             local key
-            if GET_selected_deck() == "b_goob_sohikosa" then
+            if self.get_current_deck_key() == "b_goob_sohikosa" then
                 key = self.key .. "_alt"
             else
                 key = self.key
@@ -161,7 +161,7 @@ if CardSleeves then
             return { key = key }
         end,
         apply = function(self, sleeve)
-            if GET_selected_deck() == "b_goob_sohikosa" then
+            if self.get_current_deck_key() == "b_goob_sohikosa" then
                 G.E_MANAGER:add_event(Event({
                     func = function()
                         for _, playing_card in ipairs(G.playing_cards) do
@@ -183,7 +183,7 @@ if CardSleeves then
                             end
                         end
                         if (G.GAME.starting_params.no_faces ~= true) then
-                            if GET_selected_deck() ~= "b_checkered" then
+                            if self.get_current_deck_key() ~= "b_checkered" then
                             SMODS.add_card {
                                 set = "Playing Card",
                                 area = G.deck,
@@ -213,7 +213,7 @@ if CardSleeves then
                                 rank = "J",
                                 suit = "Hearts"
                             }
-                            if GET_selected_deck() ~= "b_checkered" then
+                            if self.get_current_deck_key() ~= "b_checkered" then
                             SMODS.add_card {
                                 set = "Playing Card",
                                 area = G.deck,
@@ -243,7 +243,7 @@ if CardSleeves then
                                 rank = "J",
                                 suit = "Spades"
                             }
-                            if GET_selected_deck() ~= "b_checkered" then
+                            if self.get_current_deck_key() ~= "b_checkered" then
                             SMODS.add_card {
                                 set = "Playing Card",
                                 area = G.deck,
@@ -273,7 +273,7 @@ if CardSleeves then
                                 rank = "Q",
                                 suit = "Hearts"
                             }
-                            if GET_selected_deck() ~= "b_checkered" then
+                            if self.get_current_deck_key() ~= "b_checkered" then
                             SMODS.add_card {
                                 set = "Playing Card",
                                 area = G.deck,
@@ -303,7 +303,7 @@ if CardSleeves then
                                 rank = "Q",
                                 suit = "Spades"
                             }
-                            if GET_selected_deck() ~= "b_checkered" then
+                            if self.get_current_deck_key() ~= "b_checkered" then
                             SMODS.add_card {
                                 set = "Playing Card",
                                 area = G.deck,
@@ -333,7 +333,7 @@ if CardSleeves then
                                 rank = "K",
                                 suit = "Hearts"
                             }
-                            if GET_selected_deck() ~= "b_checkered" then
+                            if self.get_current_deck_key() ~= "b_checkered" then
                             SMODS.add_card {
                                 set = "Playing Card",
                                 area = G.deck,
