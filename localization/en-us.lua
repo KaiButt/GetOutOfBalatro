@@ -177,6 +177,14 @@ return {
 			},
 		},
 		["Joker"] = {
+			["j_goob_PowerCore"] = {
+				["name"] = "Power Core",
+				["text"] = {
+					"{X:mult,C:white}X#1#{} Mult.",
+					"Hands that have less then {C:attention}4{} Scored Cards",
+					"{C:red}Won't Score{}."
+				}
+			},
 			["j_goob_Diamonds"] = {
 				["name"] = "Diamonds",
 				["text"] = {
