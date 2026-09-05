@@ -59,7 +59,7 @@ SMODS.Joker {
                             '420', '80085', '1337', '@grok is this true', 'Calm Down', 'SKIP',
                             'Should have grabbed the tag', 'We have a Giraffe!', 'I saw Red vent in electrical!',
                             'I\'m the rival!', 'Are you winning, son?', 'Whatever you do, don\'t sell me!',
-                            'Legendary Petyr has funnier jokes', 'moneymoney', 'I\'d rather play GOOT™',
+                            'Legendary Petyr has funnier jokes', 'moneymoney', 'This game is like Dark Souls', 'I\'d rather play GOOT™',
                             'there is no way a bee should be able to fly.', 'Kyrsaku is cool', 'Hamburger',
                             'What is this monopoly?', 'This is just like sonic', 'Wait, this isn\'t poker?',
                             'Play that card!', 'PERRSONA!', 'Cinema', 'SO DANCE!', 'Happy Birthday!', '+8 antes',
