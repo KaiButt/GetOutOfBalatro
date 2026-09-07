@@ -15,7 +15,6 @@ SMODS.Back {
     atlas = 'Sohikosa',
     unlocked = false,
     apply = function(self, back)
-        print(CardSleeves.name)
         G.E_MANAGER:add_event(Event({
             func = function()
                 for _, playing_card in ipairs(G.playing_cards) do

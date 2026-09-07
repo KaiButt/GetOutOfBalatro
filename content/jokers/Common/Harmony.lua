@@ -10,7 +10,7 @@ SMODS.Joker {
     name = 'Harmony',
     atlas = 'Harmony',
     pos = { x = 0, y = 0 },
-    config = { extra = { handSize = 1, diceToRoll = 1, sidesOfDice = 5 } },
+    config = { extra = { handSize = 1}, immutable =  {diceToRoll = 1, sidesOfDice = 5}  },
     rarity = 1,
     cost = 4,
     blueprint_compat = false,
@@ -18,7 +18,7 @@ SMODS.Joker {
     perishable_compat = true,
     loc_vars = function(self, info_queue, center)
         G.GAME.harmony_destroyed = false
-        return { vars = { center.ability.extra.handSize, center.ability.extra.diceToRoll, center.ability.extra.sidesOfDice} }
+        return { vars = { center.ability.extra.handSize, center.ability.immutable.diceToRoll, center.ability.immutable.sidesOfDice} }
     end,
     in_pool = function()
         return not G.GAME.pool_flags.goob_harmony_dead
@@ -32,7 +32,7 @@ SMODS.Joker {
     end,
     calculate = function(self, card, context)
         if context.end_of_round and context.main_eval and context.game_over == false then 
-            if roll_die(card.ability.extra.diceToRoll, card.ability.extra.sidesOfDice) == card.ability.extra.sidesOfDice then
+            if roll_die(card.ability.immutable.diceToRoll, card.ability.immutable.sidesOfDice) == card.ability.extra.sidesOfDice then
                 G.GAME.pool_flags.goob_harmony_dead = true
                 return {
                     message = 'Goodbye!',

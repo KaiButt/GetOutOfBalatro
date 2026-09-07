@@ -1,14 +1,19 @@
 SMODS.Atlas {
-	key = 'Jobingles',
-	path = 'Jobingles.png',
-	px = 71,
-	py = 95
+    key = 'BingleCard',
+    path = 'BingleCard.png',
+    px = 71,
+    py = 95
 }
-
+SMODS.Atlas {
+    key = 'BingleFace',
+    path = 'BingleFace.png',
+    px = 71,
+    py = 95
+}
 SMODS.Joker {
 	key = 'Jobingles',
 	name = 'Jobingles',
-	atlas = 'Jobingles',
+	atlas = 'BingleCard',
 	pos = { x = 0, y = 0 },
 	config = {
 		extra = {
@@ -17,6 +22,8 @@ SMODS.Joker {
 			performedMagic = false
 		},
 	},
+	soul_atlas = 'BingleFace',
+    soul_pos = { x = 0, y = 0 },
 	rarity = 4,
 	cost = 20,
 	blueprint_compat = false,

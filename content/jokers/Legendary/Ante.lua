@@ -1,6 +1,12 @@
 SMODS.Atlas {
-    key = 'Ante',
-    path = 'Ante.png',
+	key = 'AnteCard',
+	path = 'AnteCard.png',
+	px = 71,
+	py = 95
+}
+SMODS.Atlas {
+    key = 'AnteFace',
+    path = 'AnteFace.png',
     px = 71,
     py = 95
 }
@@ -8,8 +14,10 @@ SMODS.Atlas {
 SMODS.Joker {
     key = 'Ante',
     name = "Ante",
-    atlas = "Ante",
+    atlas = "AnteCard",
     pos = { x = 0, y = 0 },
+    soul_atlas = 'AnteFace',
+    soul_pos = { x = 0, y = 0 },
     config = {
         extra = {
             xmult = 1,

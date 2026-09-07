@@ -1,16 +1,24 @@
 SMODS.Atlas {
-	key = 'Crownos',
-	path = 'Crownos.png',
+	key = 'CrownosCard',
+	path = 'CrownosCard.png',
 	px = 71,
 	py = 95
+}
+SMODS.Atlas {
+    key = 'CrownosFace',
+    path = 'CrownosFace.png',
+    px = 71,
+    py = 95
 }
 
 SMODS.Joker {
 	key = 'Crownos',
 	unlocked = false,
 	name = 'Crownos',
-	atlas = 'Crownos',
+	atlas = 'CrownosCard',
 	pos = { x = 0, y = 0 },
+	soul_atlas = 'CrownosFace',
+    soul_pos = { x = 0, y = 0 },
 	rarity = 4,
 	config = { extra = { amountToBack = 1, phoenixBonus = 1 } },
 	cost = 20,

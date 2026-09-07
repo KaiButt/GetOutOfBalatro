@@ -1,14 +1,21 @@
 SMODS.Atlas {
-    key = 'Marie',
-    path = 'Marie.png',
+    key = 'MarieCard',
+    path = 'MarieCard.png',
+    px = 71,
+    py = 95
+}
+SMODS.Atlas {
+    key = 'MarieFace',
+    path = 'MarieFace.png',
     px = 71,
     py = 95
 }
 
+
 SMODS.Joker {
     key = 'Marie',
     name = 'Marie',
-    atlas = 'Marie',
+    atlas = 'MarieCard',
     pos = { x = 0, y = 0 },
     rarity = 4,
     config = {
@@ -16,6 +23,8 @@ SMODS.Joker {
             reduction = 50,
         },
     },
+    soul_atlas = 'MarieFace',
+    soul_pos = { x = 0, y = 0 },
     cost = 20,
     blueprint_compat = false,
     eternal_compat = false,
