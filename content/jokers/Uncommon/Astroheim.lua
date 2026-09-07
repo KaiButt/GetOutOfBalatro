@@ -16,6 +16,7 @@ SMODS.Joker {
     eternal_compat = true,
     perishable_compat = true,
     pools = {  ["goob"] = true, ["goobNL"] = true},
+    attributes = {"hand_level", "hand_type", "boss_blind"},
     loc_vars = function(self, info_queue, center)
         return { vars = { center.ability.extra.amountToLevel } }
     end,

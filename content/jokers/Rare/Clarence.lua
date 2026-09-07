@@ -14,6 +14,7 @@ SMODS.Joker {
     cost = 8,
     blueprint_compat = false,
     pools = { ["goob"] = true, ["goobNL"] = true},
+    attributes = {"passive", "mod_chance"},
     calculate = function(self, card, context)
         if context.first_hand_drawn and G.GAME.blind.boss then
             local eval = function() return G.GAME.current_round.hands_played == 0 and not G.RESET_JIGGLES end

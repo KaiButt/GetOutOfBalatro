@@ -33,6 +33,7 @@ SMODS.Joker {
             }
         end
     end,
+    attributes = { "chips" },
     check_for_unlock = function(self, args)
         return args.type == 'win_deck' and GET_selected_deck() == 'b_erratic'
     end

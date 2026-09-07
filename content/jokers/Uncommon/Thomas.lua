@@ -21,6 +21,7 @@ SMODS.Joker {
         return { vars = { card.ability.extra.chips } }
     end,
     pools = { ["goob"] = true, ["goobNL"] = true},
+    attributes = {"perma_bonus", "discard"},
     calculate = function(self, card, context)
         if context.discard then
             context.other_card.ability.perma_bonus = (context.other_card.ability.perma_bonus or 0) +

@@ -21,6 +21,7 @@ SMODS.Joker {
     blueprint_compat = true,
     eternal_compat = true,
     perishable_compat = false,
+    attributes = {"xmult"},
     calculate = function(self, card, context)
         if context.debuff_card and context.debuff_card == card and not context.blueprint then
             if card.ability.extra_value < 3 then

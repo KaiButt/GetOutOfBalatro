@@ -16,6 +16,7 @@ SMODS.Joker {
     cost = 6,
     blueprint_compat = true,
     pools = { ["Meme"] = true, ["goob"] = true, ["goobNL"] = true},
+    attributes = {'xmult'},
     loc_vars = function(self, info_queue, center)
         return { vars = { center.ability.extra.x_mult } }
     end,

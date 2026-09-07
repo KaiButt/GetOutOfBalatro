@@ -48,6 +48,7 @@ SMODS.Joker {
             G.GAME.marieAmount = nil
         end
     end,
+    attributes = {"xblindsize"},
     pools = { ["goob"] = true, ["goobL"] = true },
     calculate = function(self, card, context)
         if context.setting_blind then

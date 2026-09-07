@@ -23,4 +23,5 @@ SMODS.Joker {
     eternal_compat = true,
     perishable_compat = true,
     pools = { ["goob"] = true, ["goobL"] = true},
+    attributes = { "passive" },
 }

@@ -21,6 +21,7 @@ SMODS.Joker {
     cost = 5,
     blueprint_compat = true,
     pools = { ["goob"] = true, ["goobNL"] = true},
+    attributes = {"passive", "mult"},
     loc_vars = function(self, info_queue, center)
         return { vars = { center.ability.extra.diceToRoll, center.ability.extra.sidesOfDice } }
     end,

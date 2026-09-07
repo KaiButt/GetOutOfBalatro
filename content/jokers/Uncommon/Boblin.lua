@@ -16,6 +16,7 @@ SMODS.Joker {
     eternal_compat = true,
     perishable_compat = true,
     pools = { ["Meme"] = true, ["goob"] = true, ["goobNL"] = true},
+    attributes = {"generation", "tag"},
     calculate = function(self, card, context)
         if context.skip_blind and G.GAME.blind_on_deck == "Big" then
             local tag = Tag("tag_goob_goblinParty")

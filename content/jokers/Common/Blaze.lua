@@ -18,6 +18,7 @@ SMODS.Joker {
     pos = { x = 0, y = 0 },
     rarity = 1,
     cost = 5,
+    attributes = { "hands", "passive" },
     loc_vars = function(self, info_queue, center)
         return { vars = { center.ability.extra.handPerRound} }
     end,

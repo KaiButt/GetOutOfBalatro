@@ -24,6 +24,7 @@ SMODS.Joker {
     eternal_compat = true, -- still debating on these stickers
     perishable_compat = true,
     pools = { ["goob"] = true, ["goobNL"] = true},
+    attributes = { "mult" },
     calculate = function(self, card, context)
         if (context.joker_type_destroyed and context.card == card) and not context.blueprint then
             local editionType = nil

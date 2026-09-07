@@ -27,6 +27,7 @@ SMODS.Joker{
     loc_vars = function(self, info_queue, center)
 		return { vars = {center.ability.extra.chipAmount, center.ability.extra.chipBonus, center.ability.extra.destroyed_rank, center.ability.extra.destroyed_suit} }
 	end,
+    attributes = {"chips", "destroy_card", "scaling"},
     calculate = function(self,card,context)
         if context.setting_blind then --destroy card
             if not context.blueprint then --blueprint doesn't destroy one

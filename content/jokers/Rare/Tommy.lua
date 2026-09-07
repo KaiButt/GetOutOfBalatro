@@ -21,6 +21,7 @@ SMODS.Joker {
     loc_vars = function(self, info_queue, center)
         return { vars = { center.ability.extra.chips, center.ability.extra.joker_slot} }
     end,
+    attributes = {"chips", "joker_slot"},
     add_to_deck = function(self, card, from_debuff)
 
         if not next(SMODS.find_card("j_goob_Marie"))then

@@ -28,6 +28,7 @@ SMODS.Joker {
     cost = 20,
     blueprint_compat = true,
     pools = { ["goob"] = true, ["goobL"] = true},
+    attributes = { "xmult", "scaling" },
     loc_vars = function(self, info_queue, center)
         return { vars = { center.ability.extra.xmult_gain, center.ability.extra.xmult } }
     end,

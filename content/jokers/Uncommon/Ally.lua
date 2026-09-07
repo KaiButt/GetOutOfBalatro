@@ -22,6 +22,7 @@ SMODS.Joker {
     loc_vars = function(self, info_queue, center)
         return { vars = { center.ability.extra.Gold } }
     end,
+    attributes = {"economy"},
     calculate = function(self, card, context)
         if context.goob_dice_rolled then
            return {

@@ -22,6 +22,7 @@ SMODS.Joker {
     cost = 5,
     blueprint_compat = true,
     pools = { ["goob"] = true, ["goobNL"] = true},
+    attributes = {"mult", "scaling"},
     loc_vars = function(self, info_queue, center)
         return { vars = { center.ability.extra.multGain, center.ability.extra.scalingMultDieToRoll, center.ability.extra.scalingMultSidesOfDie  } }
     end,

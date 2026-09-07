@@ -25,6 +25,7 @@ SMODS.Joker {
     blueprint_compat = false,
     eternal_compat = true,
     perishable_compat = true,
+    attributes = {"economy"},
     loc_vars = function(self, info_queue, center)
         info_queue[#info_queue+1] = {set = "Other", key = "goob_improvements"}
         return { vars = { center.ability.extra.moneyBase, center.ability.immutable.enhancePenalty } }

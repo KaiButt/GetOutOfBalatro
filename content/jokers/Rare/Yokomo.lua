@@ -23,6 +23,7 @@ SMODS.Joker {
     eternal_compat = true,
     perishable_compat = true,
     pools = { ["goob"] = true, ["goobNL"] = true },
+    attributes = {"chance", "enhancements"},
     calculate = function(self, card, context)
         if context.before then
             for _, scored_card in ipairs(context.scoring_hand) do

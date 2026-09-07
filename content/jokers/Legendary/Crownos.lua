@@ -36,6 +36,7 @@ SMODS.Joker {
 	eternal_compat = false,
 	perishable_compat = true,
 	pools = { ["goob"] = true, ["goobL"] = true },
+	attributes = { "prevents_death" },
 	calculate = function(self, card, context)
 		if context.end_of_round and context.game_over and context.main_eval and (not next(SMODS.find_card("j_mr_bones")) or G.GAME.chips / G.GAME.blind.chips < 0.25) then
 			G.jokers:change_size(card.ability.extra.phoenixBonus)

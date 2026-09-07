@@ -25,6 +25,7 @@ SMODS.Joker {
     loc_vars = function(self, info_queue, center)
 		return { vars = { center.ability.extra.dup } }
 	end,
+    attributes = {"generation"},
     add_to_deck = function(self, card, from_debuff)
         G.E_MANAGER:add_event(Event({
             func = function()

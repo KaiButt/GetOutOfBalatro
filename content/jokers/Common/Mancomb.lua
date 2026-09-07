@@ -23,6 +23,7 @@ SMODS.Joker {
     eternal_compat = true,
     perishable_compat = true,
     pools = { ["goob"] = true, ["goobNL"] = true},
+    attributes = { "chips", "scaling" },
     loc_vars = function(self, info_queue, center)
         return { vars = { center.ability.extra.rerollBonus, center.ability.extra.totalChips } }
     end,

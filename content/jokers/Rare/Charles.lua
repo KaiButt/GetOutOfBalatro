@@ -29,6 +29,7 @@ SMODS.Joker {
     eternal_compat = true,
     perishable_compat = true,
     pools = { ["goob"] = true, ["goobNL"] = true},
+    attributes = {"passive"},
     calculate = function(self, card, context)
         if context.modify_shop_card then
             if context.card:is_rarity("Legendary") then -- discount setting, only for legendaries and stacks with vouchers

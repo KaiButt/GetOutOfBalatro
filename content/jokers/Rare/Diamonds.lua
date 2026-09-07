@@ -16,6 +16,7 @@ SMODS.Joker {
     eternal_compat = true,
     perishable_compat = true,
     pools = { ["goob"] = true, ["goobNL"] = true },
+    attributes = {"passive"},
     loc_vars = function(self, info_queue, center)
         info_queue[#info_queue + 1] = { set = "Other", key = "goob_improvements" }
         local key

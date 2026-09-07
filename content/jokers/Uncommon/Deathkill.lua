@@ -21,6 +21,7 @@ SMODS.Joker {
     loc_vars = function(self, info_queue, center)
         return { vars = { center.ability.extra.x_mult } }
     end,
+    attributes = {"xmult", "lose_economy"},
     calculate = function(self, card, context)
         if context.setting_blind then
             if G.GAME.dollars > 0 and not next(SMODS.find_card("j_goob_Marie")) then

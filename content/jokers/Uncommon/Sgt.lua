@@ -11,7 +11,7 @@ SMODS.Joker {
     pos = { x = 0, y = 0 },
     config = {
         immutable = {
-            negative_rate = 5
+            negative_rate = 7.5
         },
     },
     rarity = 2,
@@ -19,6 +19,7 @@ SMODS.Joker {
     blueprint_compat = true,
     eternal_compat = true,
     perishable_compat = true,
+    attributes = {"passive"},
     loc_vars = function(self, info_queue, center)
         return { vars = { center.ability.immutable.negative_rate} }
     end,

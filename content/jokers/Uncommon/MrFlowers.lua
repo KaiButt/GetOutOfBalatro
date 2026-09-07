@@ -18,6 +18,7 @@ SMODS.Joker {
     eternal_compat = true,
     perishable_compat = true,
     pools = { ["goob"] = true, ["goobNL"] = true },
+    attributes = {"generation", "enhancement"},
     loc_vars = function(self, info_queue, center)
         if center.ability.extra.amountToDeck > center.ability.immutable.maxAmountToDeck then
             center.ability.extra.amountToDeck = center.ability.immutable.maxAmountToDeck

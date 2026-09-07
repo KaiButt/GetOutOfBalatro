@@ -17,6 +17,7 @@ SMODS.Joker {
     eternal_compat = true,
     perishable_compat = true,
     pools = { ["goob"] = true, ["goobNL"] = true },
+    attributes = {"xmult"},
     loc_vars = function(self, info_queue, center)
         return { vars = { center.ability.extra.x_mult, center.ability.immutable.cardsToPlay } }
     end,

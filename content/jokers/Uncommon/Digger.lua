@@ -26,6 +26,7 @@ SMODS.Joker {
     eternal_compat = false,
     perishable_compat = true,
     pools = { ["goob"] = true, ["goobNL"] = true},
+    attributes = {"mult", "lose_economy"},
     calculate = function(self, card, context)
         if context.joker_main and context.cardarea == G.jokers and context.scoring_name then
             return {

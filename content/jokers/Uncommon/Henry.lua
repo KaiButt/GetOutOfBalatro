@@ -32,6 +32,7 @@ SMODS.Joker {
         return { vars = { center.ability.extra.multLoss, center.ability.extra.multPool } }
     end,
     pools = { ["goob"] = true, ["goobNL"] = true },
+    attributes = {"mult", "boss_blind", "scaling"},
     calculate = function(self, card, context)
         if context.joker_main and context.cardarea == G.jokers then
             if G.GAME.blind:get_type() == 'Boss' then

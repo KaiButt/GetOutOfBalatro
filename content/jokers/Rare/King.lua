@@ -21,6 +21,7 @@ SMODS.Joker {
     cost = 8,
     blueprint_compat = false,
     pools = { ["goob"] = true, ["goobNL"] = true },
+    attributes = {"ace", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten", "jack", "queen"},
     loc_vars = function(self, info_queue, center)
         local kings_crowned = 0
         if G.playing_cards then

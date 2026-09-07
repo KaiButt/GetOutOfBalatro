@@ -25,6 +25,7 @@ SMODS.Joker{
     loc_vars = function(self, info_queue, center)
         return { vars = {center.ability.extra.diceToRoll, center.ability.extra.sidesOfDice} }
     end,
+    attributes = {"economy", "skip"},
     calculate = function(self,card,context)
         if context.skip_blind then
             local sum = roll_die(card.ability.extra.diceToRoll, card.ability.extra.sidesOfDice)

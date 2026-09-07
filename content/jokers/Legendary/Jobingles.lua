@@ -36,6 +36,7 @@ SMODS.Joker {
 	remove_from_deck = function(self, card, from_debuff)
 		if G.GAME.balloonAnimal ~= nil and not next(SMODS.find_card("j_goob_Jobingles")) then G.GAME.balloonAnimal = nil end
 	end,
+	attributes = { "passive", "perma_bonus" },
 	calculate = function(self, card, context)
 		if context.before and #context.full_hand == 1 and G.GAME.balloonAnimal == nil then
 			context.full_hand[1].ability.perma_x_mult = (context.full_hand[1].ability.perma_x_mult or 0) +

@@ -16,6 +16,7 @@ SMODS.Joker {
     eternal_compat = true,
     perishable_compat = false,
     pools = { ["Meme"] = true, ["goob"] = true, ["goobNL"] = true},
+    attributes = {"seals", "generation"},
     calculate = function(self, card, context)
         if context.debuff_card and context.debuff_card == card then
             return { prevent_debuff = true }
