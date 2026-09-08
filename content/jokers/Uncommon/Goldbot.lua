@@ -28,10 +28,9 @@ SMODS.Joker{
     attributes = {"economy", "skip"},
     calculate = function(self,card,context)
         if context.skip_blind then
-            local sum = roll_die(card.ability.extra.diceToRoll, card.ability.extra.sidesOfDice)
             card:juice_up()
             return {
-                message = localize('$')..sum,
+                message = localize('$')..tostring(roll_die(card.ability.extra.diceToRoll, card.ability.extra.sidesOfDice)),
                 ease_dollars(sum),
                 colour = G.C.MONEY,
                 delay = 1.2,

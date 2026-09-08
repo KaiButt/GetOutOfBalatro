@@ -88,7 +88,7 @@ function roll_die(_amountToRoll, _sidesOfDice)
 	local amountToRoll = _amountToRoll or 1
 	local advantage = next(SMODS.find_card("j_goob_StarAce"))
 	local sidesOfDice = _sidesOfDice or 6
-	SMODS.calculate_context{goob_dice_rolled = true, amountToRoll = amountToRoll, sidesOfDice = sidesOfDice}
+	
 	local accum = 0
 	for i = 1, amountToRoll, 1 do 
 		local smallResult = pseudorandom("goob_seed", 1, sidesOfDice ) 
@@ -101,7 +101,7 @@ function roll_die(_amountToRoll, _sidesOfDice)
 			accum = accum2
 		end
 	end
-	
+	SMODS.calculate_context{goob_dice_rolled = true, amountToRoll = amountToRoll, sidesOfDice = sidesOfDice}
 	return accum
 end
 -- gets the selected deck
