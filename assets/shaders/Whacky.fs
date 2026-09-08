@@ -36,16 +36,26 @@ vec3 hueToRgb(float hue) {
     float b = 2.3 - abs(hue * 6.0 - 4.0);
     return clamp(vec3(r, g, b), 0.0, 1.0);
 }
+
 vec4 effect( vec4 colour, Image texture, vec2 texture_coords, vec2 screen_coords )
 {
     vec4 tex = Texel(texture, texture_coords);     
     vec2 uv = (((texture_coords)*(image_details)) - texture_details.xy*texture_details.ba)/texture_details.ba;
-    float hue = texture_coords.x + texture_coords.y + (Whacky.x * 0.1); 
-    hue = mod(hue, 1.0); 
+    
+    vec2 p = texture_coords * 6.0 - 3.0;
+    float n = 0.0;
+    float scale = 1.0;
+    
+    for (int i = 0; i < 4; i++) {
+        p = abs(p) / dot(p, p) - 0.75 + (Whacky.x * 0.02);
+        n += length(p) * scale;
+        scale *= 0.6;
+    }
+    
+    float hue = mod(n + (Whacky.x * 0.1), 1.0); 
     vec3 rainbowColor = hueToRgb(hue);
     float luminance = dot(tex.rgb, vec3(0.299, 0.587, 0.114));
     tex.rgb = rainbowColor * luminance;
-    
     
     // required
     return dissolve_mask(tex*colour, texture_coords, uv);
