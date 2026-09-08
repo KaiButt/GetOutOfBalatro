@@ -45,6 +45,10 @@ SMODS.Sound({
 	key = "clockOut",
 	path = "clockOut.wav"
 })
+SMODS.Sound({
+	key = "clownish",
+	path = "clownish.wav"
+})
 for _, file in ipairs(seal_src) do
 	assert(SMODS.load_file("content/seals/" .. file))()
 end

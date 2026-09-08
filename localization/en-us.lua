@@ -18,8 +18,10 @@ return {
 			["e_goob_Whacky"] = {
 				["name"] = "Whacky",
 				["text"] = {
-					"Card will {C:attention}return to{}",
-					"your hand after scoring."
+					"If not destroyed, card will",
+					"{C:attention}juggle{} back to your hand",
+					"after scoring.",
+					"{C:inactive}(Rolls {C:attention}1d20{}{C:inactive}, because it is funny.){}"
 				}
 			},
 		},
