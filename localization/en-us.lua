@@ -329,7 +329,7 @@ return {
 			["j_goob_Presto"] = {
 				["name"] = "Presto",
 				["text"] = {
-					"Cards with a {C:attention}seal{}",
+					"Cards with a {C:dark_edition}Improvement{}",
 					'are played {C:attention}#1#{} additional time.',
 				}
 			},
