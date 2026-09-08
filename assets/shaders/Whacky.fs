@@ -30,28 +30,32 @@ extern PRECISION vec4 burn_colour_2;
 vec4 dissolve_mask(vec4 tex, vec2 texture_coords, vec2 uv);
 
 // This is what actually changes the look of card
-vec3 hueToRgb(float hue) {
-    float r = abs(hue * 6.0 - 3.0) - 1.0;
-    float g = 2.0 - abs(hue * 6.0 - 2.0);
-    float b = 2.0 - abs(hue * 6.0 - 4.0);
-    return clamp(vec3(r, g, b), 0.0, 1.0);
+
+float noise(vec2 co) {
+    return fract(sin(dot(co, vec2(12.9898, 78.233))) * 43758.5453);
 }
 
-vec4 effect( vec4 colour, Image texture, vec2 texture_coords, vec2 screen_coords ) {     
-    vec4 tex = Texel(texture, texture_coords);          
-    vec2 uv = (((texture_coords)*(image_details)) - texture_details.xy*texture_details.ba)/texture_details.ba;          
-    
-    vec2 centerDist = uv - vec2(0.5);
-    
-    float angle = atan(centerDist.y, centerDist.x); 
-    
-    float hue = mod((angle / 6.28318) + 0.5 + (Whacky.x * 0.05), 1.0); 
+vec4 effect(vec4 colour, Image texture, vec2 texture_coords, vec2 screen_coords) {
+    // 1. Read texture normally with zero movement jitter
+    vec4 tex = Texel(texture, texture_coords);
+    vec2 uv = (((texture_coords) * (image_details)) - texture_details.xy * texture_details.ba) / texture_details.ba;
 
-    vec3 rainbowColor = hueToRgb(hue);     
-    float luminance = dot(tex.rgb, vec3(0.299, 0.587, 0.114));     
-    tex.rgb = rainbowColor * luminance;          
-   
-    return dissolve_mask(tex*colour, texture_coords, uv); 
+    // 2. Vintage Grayscale / Sepia Base
+    float luminance = dot(tex.rgb, vec3(0.299, 0.587, 0.114));
+    vec3 paperTint = vec3(0.92, 0.85, 0.72);  // Creamy old paper color
+    vec3 inkColor  = vec3(0.18, 0.15, 0.12);  // Aged charcoal ink
+    vec3 vintageColor = mix(inkColor, paperTint, luminance);
+
+    // 3. Step the time down for a cinematic 12fps film grain update rate
+    float steppedTimeX = floor(Whacky.x * 12.0) / 12.0;
+    float steppedTimeY = floor(Whacky.y * 12.0) / 12.0;
+
+    // 4. Muted Projector Film Grain
+    float grain = noise(screen_coords + vec2(steppedTimeX * 13.0, steppedTimeY * 37.0));
+    vintageColor -= vec3(grain * 0.08); 
+
+    vec4 finalTex = vec4(vintageColor, tex.a);
+    return dissolve_mask(finalTex * colour, texture_coords, uv);
 }
 
 vec4 dissolve_mask(vec4 tex, vec2 texture_coords, vec2 uv)

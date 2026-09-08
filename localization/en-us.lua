@@ -16,7 +16,7 @@ return {
 	["descriptions"] = {
 		["Edition"] = {
 			["e_goob_Whacky"] = {
-				["name"] = "Whacky",
+				["name"] = "{E:2,C:dark_edition}Whacky{}",
 				["text"] = {
 					"If not destroyed, card will",
 					"{C:attention}juggle{} back to your hand",
@@ -58,6 +58,15 @@ return {
 			},
 		},
 		["Other"] = {
+			["BingleWhacky"] = {
+				["name"] = "{E:2,C:dark_edition}Whacky{}",
+				["text"] = {
+					"If not destroyed, card will",
+					"{C:attention}juggle{} back to your hand",
+					"after scoring.",
+					"{C:inactive}(Rolls {C:attention}1d20{}{C:inactive}, because it is funny.){}"
+				}
+			},
 			["goob_wondrousmagic_seal"] = {
 				["label"] = {
 					"Wondrous Seal",

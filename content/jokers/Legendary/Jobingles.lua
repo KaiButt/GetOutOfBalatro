@@ -31,6 +31,7 @@ SMODS.Joker {
 	pools = { ["goob"] = true, ["goobL"] = true },
 	loc_vars = function(self, info_queue, center)
 		info_queue[#info_queue + 1] = { set = "Other", key = "goob_upgrade", vars = { center.ability.extra.xmultAddition, center.ability.extra.xmultHandAddition } }
+		info_queue[#info_queue + 1] = { set = "Other", key = "BingleWhacky"}
 	end,
 	attributes = { "hands", "perma_bonus" },
 	calculate = function(self, card, context)
@@ -43,7 +44,9 @@ SMODS.Joker {
 				card.ability.extra.xmultAddition
 			context.full_hand[1].ability.perma_h_x_mult = (context.full_hand[1].ability.perma_h_x_mult or 0) +
 				card.ability.extra.xmultHandAddition
-			context.full_hand[1]:set_edition("e_goob_Whacky")
+				if context.full_hand[1].edition.key ~= "e_goob_Whacky" then
+					context.full_hand[1]:set_edition("e_goob_Whacky")
+				end
 		end
 	end
 }

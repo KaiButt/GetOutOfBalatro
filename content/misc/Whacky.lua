@@ -22,7 +22,6 @@ SMODS.Edition {
             return {
                 message = tostring(roll_die(1,20)),
                 card = card,
-                sound = play_sound('goob_clownish', 1.3, 0.3),
             }
         end
     end
