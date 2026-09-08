@@ -405,7 +405,7 @@ return {
 				["text"] = {
 					"If {C:attention}First Hand{} of round",
 					"has only {C:attention}1{} card,",
-					"{E:2,C:dark_edition}Upgrades it{}."
+					"upgrades it {C:attention}permanently{}."
 				},
 			},
 			["j_goob_Kerry_rage"] = {
@@ -587,7 +587,7 @@ return {
 			["j_goob_Jobangles"] = {
 				["name"] = "Jobangles",
 				["text"] = {
-					"When {C:attention}Blind{} is selected, a random card in deck",
+					"When {C:attention}Blind{} is selected, a random non-Whacky card in deck",
 					"gets {C:attention}destroyed{}. This Joker",
 					"gains Chips equal to {C:chips}X#2#{} the unenhanced rank destroyed.",
 					"Last card destroyed: {C:attention}#3#{} of {C:attention}#4#{}",

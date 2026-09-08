@@ -44,7 +44,7 @@ SMODS.Joker {
 				card.ability.extra.xmultAddition
 			context.full_hand[1].ability.perma_h_x_mult = (context.full_hand[1].ability.perma_h_x_mult or 0) +
 				card.ability.extra.xmultHandAddition
-				if context.full_hand[1].edition.key ~= "e_goob_Whacky" then
+				if context.full_hand[1].edition == nil or context.full_hand[1].edition.key ~= "e_goob_Whacky" then
 					context.full_hand[1]:set_edition("e_goob_Whacky")
 				end
 		end

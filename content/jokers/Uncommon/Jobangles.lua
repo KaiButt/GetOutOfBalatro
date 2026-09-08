@@ -1,15 +1,15 @@
 SMODS.Atlas {
-	key = 'Jobangles',
-	path = 'Jobangles.png',
-	px = 71,
-	py = 95
+    key = 'Jobangles',
+    path = 'Jobangles.png',
+    px = 71,
+    py = 95
 }
 
-SMODS.Joker{
+SMODS.Joker {
     key = 'Jobangles',
     name = 'Jobangles',
     atlas = 'Jobangles',
-	pos = { x = 0, y = 0 },
+    pos = { x = 0, y = 0 },
     config = {
         extra = {
             chipAmount = 0,
@@ -23,41 +23,48 @@ SMODS.Joker{
     blueprint_compat = true,
     eternal_compat = false,
     perishable_compat = true,
-    pools = { ["goob"] = true, ["goobNL"] = true},
+    pools = { ["goob"] = true, ["goobNL"] = true },
     loc_vars = function(self, info_queue, center)
-		return { vars = {center.ability.extra.chipAmount, center.ability.extra.chipBonus, center.ability.extra.destroyed_rank, center.ability.extra.destroyed_suit} }
-	end,
-    attributes = {"chips", "destroy_card", "scaling"},
-    calculate = function(self,card,context)
-        if context.setting_blind then --destroy card
+        return { vars = { center.ability.extra.chipAmount, center.ability.extra.chipBonus, center.ability.extra.destroyed_rank, center.ability.extra.destroyed_suit } }
+    end,
+    attributes = { "chips", "destroy_card", "scaling" },
+    calculate = function(self, card, context)
+        if context.setting_blind then     --destroy card
             if not context.blueprint then --blueprint doesn't destroy one
-            local chosenCard = pseudorandom_element(G.playing_cards, pseudoseed('seed'))
-            if chosenCard.base.id ~= nil then
-            card.ability.extra.destroyed_rank = chosenCard.base.value
-            card.ability.extra.destroyed_suit = chosenCard.base.suit
-            card.ability.extra.chipAmount = card.ability.extra.chipAmount + (chosenCard.base.id*card.ability.extra.chipBonus)
-            if chosenCard.ability.name == 'Gold Card' then --Easter egg gag clause, get 2 dollars if it destroys a gold card
-                card:juice_up()
-                return {
-                    message = localize('$')..2,
-                    ease_dollars(2),
-                    colour = G.C.MONEY,
-                    delay = 0.45, 
-                    SMODS.destroy_cards(chosenCard)
-                }
+            local validCards = {};
+            for _, playing_card in ipairs(G.playing_cards) do 
+                if not playing_card.edition or (playing_card.edition and playing_card.edition.key ~= "e_goob_Whacky") then
+                    table.insert(validCards, playing_card)
+                end
             end
-            SMODS.destroy_cards(chosenCard)
-            card:juice_up()
-            return true
+                local chosenCard = pseudorandom_element(validCards, pseudoseed('seed'))
+                if chosenCard and chosenCard.base.id ~= nil then
+                    card.ability.extra.destroyed_rank = chosenCard.base.value
+                    card.ability.extra.destroyed_suit = chosenCard.base.suit
+                    card.ability.extra.chipAmount = card.ability.extra.chipAmount +
+                    (chosenCard.base.id * card.ability.extra.chipBonus)
+                    if chosenCard.ability.name == 'Gold Card' then --Easter egg gag clause, get 2 dollars if it destroys a gold card
+                        card:juice_up()
+                        return {
+                            message = localize('$') .. 2,
+                            ease_dollars(2),
+                            colour = G.C.MONEY,
+                            delay = 0.45,
+                            SMODS.destroy_cards(chosenCard)
+                        }
+                    end
+                    SMODS.destroy_cards(chosenCard)
+                    card:juice_up()
+                    return true
+                end
+            end
         end
-    end
-    end
         if context.joker_main and context.cardarea == G.jokers and context.scoring_name then
             return {
                 chips = card.ability.extra.chipAmount,
                 colour = G.C.CHIPS,
                 card = card
             }
+        end
     end
-end
 }
