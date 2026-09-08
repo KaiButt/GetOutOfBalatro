@@ -34,7 +34,7 @@ SMODS.Joker {
     pools = { ["goob"] = true, ["goobNL"] = true},
 
     calculate = function(self, card, context)
-        if context.stay_flipped and context.from_area == G.play then
+        if context.stay_flipped and context.from_area == G.play and (not context.other_card.edition or (context.other_card.edition and context.other_card.edition.key ~= "e_goob_Whacky")) then
             return {
                 modify = {to_area = G.deck},
                 G.deck:shuffle("goob_blaze")
