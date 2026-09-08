@@ -329,7 +329,7 @@ return {
 			["j_goob_Presto"] = {
 				["name"] = "Presto",
 				["text"] = {
-					"Cards with a {C:dark_edition}Improvement{}",
+					"Cards with an {C:dark_edition}improvement{}",
 					'are played {C:attention}#1#{} additional time.',
 				}
 			},
@@ -567,7 +567,7 @@ return {
 				["text"] = {
 					"{C:blue}+#1#{} hand per round.",
 					"Every card you {C:attention}play{}",
-					"Will be {C:attention}shuffled back{} into your {C:attention}deck{}.",
+					"will be {C:attention}shuffled back{} into your {C:attention}deck{}.",
 				},
 			},
 			["j_goob_Charles"] = {
