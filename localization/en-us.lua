@@ -80,7 +80,7 @@ return {
 			["goob_upgrade"] = {
 				["name"] = '{E:2,C:dark_edition}Upgrade{}',
 				["text"] = {
-					'Edition becomes {E:2,C:dark_edition}Negative{}.',
+					'Edition becomes {E:2,C:dark_edition}Whacky{}.',
 					'{X:mult,C:white}+X#1#{} Mult when scored,',
 					'{X:mult,C:white}+X#2#{} Mult when held.'
 				}
