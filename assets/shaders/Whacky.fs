@@ -4,53 +4,44 @@
     #define PRECISION mediump
 #endif
 
-// !! change this variable name to your Shader's name
-// YOU MUST USE THIS VARIABLE IN THE vec4 effect AT LEAST ONCE
 
-// Values of this variable:
-// self.ARGS.send_to_shader[1] = math.min(self.VT.r*3, 1) + (math.sin(G.TIMERS.REAL/28) + 1) + (self.juice and self.juice.r*20 or 0) + self.tilt_var.amt
-// self.ARGS.send_to_shader[2] = G.TIMERS.REAL
 extern PRECISION vec2 Whacky;
 
 extern PRECISION number dissolve;
 extern PRECISION number time;
-// [Note] sprite_pos_x _y is not a pixel position!
-//        To get pixel position, you need to multiply  
-//        it by sprite_width _height (look flipped.fs)
-// (sprite_pos_x, sprite_pos_y, sprite_width, sprite_height) [not normalized]
+
 extern PRECISION vec4 texture_details;
-// (width, height) for atlas texture [not normalized]
+
 extern PRECISION vec2 image_details;
 extern bool shadow;
 extern PRECISION vec4 burn_colour_1;
 extern PRECISION vec4 burn_colour_2;
 
-// [Required] 
-// Apply dissolve effect (when card is being "burnt", e.g. when consumable is used)
+
 vec4 dissolve_mask(vec4 tex, vec2 texture_coords, vec2 uv);
 
-// This is what actually changes the look of card
+
 
 float noise(vec2 co) {
     return fract(sin(dot(co, vec2(12.9898, 78.233))) * 43758.5453);
 }
 
 vec4 effect(vec4 colour, Image texture, vec2 texture_coords, vec2 screen_coords) {
-    // 1. Read texture normally with zero movement jitter
+    
     vec4 tex = Texel(texture, texture_coords);
     vec2 uv = (((texture_coords) * (image_details)) - texture_details.xy * texture_details.ba) / texture_details.ba;
 
-    // 2. Vintage Grayscale / Sepia Base
+   
     float luminance = dot(tex.rgb, vec3(0.299, 0.587, 0.114));
-    vec3 paperTint = vec3(0.92, 0.85, 0.72);  // Creamy old paper color
-    vec3 inkColor  = vec3(0.18, 0.15, 0.12);  // Aged charcoal ink
+    vec3 paperTint = vec3(0.92, 0.85, 0.72);  
+    vec3 inkColor  = vec3(0.18, 0.15, 0.12);  
     vec3 vintageColor = mix(inkColor, paperTint, luminance);
 
-    // 3. Step the time down for a cinematic 12fps film grain update rate
+   
     float steppedTimeX = floor(Whacky.x * 12.0) / 12.0;
     float steppedTimeY = floor(Whacky.y * 12.0) / 12.0;
 
-    // 4. Muted Projector Film Grain
+    
     float grain = noise(screen_coords + vec2(steppedTimeX * 13.0, steppedTimeY * 37.0));
     vintageColor -= vec3(grain * 0.08); 
 
@@ -64,7 +55,7 @@ vec4 dissolve_mask(vec4 tex, vec2 texture_coords, vec2 uv)
         return vec4(shadow ? vec3(0.,0.,0.) : tex.xyz, shadow ? tex.a*0.3: tex.a);
     }
 
-    float adjusted_dissolve = (dissolve*dissolve*(3.-2.*dissolve))*1.02 - 0.01; //Adjusting 0.0-1.0 to fall to -0.1 - 1.1 scale so the mask does not pause at extreme values
+    float adjusted_dissolve = (dissolve*dissolve*(3.-2.*dissolve))*1.02 - 0.01; 
 
 	float t = time * 10.0 + 2003.;
 	vec2 floored_uv = (floor((uv*texture_details.ba)))/max(texture_details.b, texture_details.a);
@@ -96,7 +87,7 @@ vec4 dissolve_mask(vec4 tex, vec2 texture_coords, vec2 uv)
     return vec4(shadow ? vec3(0.,0.,0.) : tex.xyz, res > adjusted_dissolve ? (shadow ? tex.a*0.3: tex.a) : .0);
 }
 
-// for transforming the card while your mouse is on it
+
 extern PRECISION vec2 mouse_screen_pos;
 extern PRECISION float hovering;
 extern PRECISION float screen_scale;
