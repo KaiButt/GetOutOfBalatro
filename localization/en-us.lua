@@ -10,9 +10,19 @@ return {
 			["goob_wondrousmagic_seal"] = {
 				"Wondrous Seal",
 			},
+			["goob_Whacky"] = { "Whacky" }
 		}
 	},
 	["descriptions"] = {
+		["Edition"] = {
+			["e_goob_Whacky"] = {
+				["name"] = "Whacky",
+				["text"] = {
+					"Card will {C:attention}return to{}",
+					"your hand after scoring."
+				}
+			},
+		},
 		["Tarot"] = {
 			["c_goob_wands"] = {
 				["label"] = "4 Of Wands",
@@ -30,8 +40,8 @@ return {
 				["name"] = "Vortex",
 				["text"] = {
 					"Add a {C:dark_edition}Wondrous Seal{}",
-                    "to {C:attention}#1#{} selected",
-                    "card in your hand.",
+					"to {C:attention}#1#{} selected",
+					"card in your hand.",
 					"{C:inactive}(this will un-debuff the card immediately){}"
 				}
 			}

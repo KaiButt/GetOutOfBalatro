@@ -43,7 +43,7 @@ SMODS.Joker {
 				card.ability.extra.xmultAddition
 			context.full_hand[1].ability.perma_h_x_mult = (context.full_hand[1].ability.perma_h_x_mult or 0) +
 				card.ability.extra.xmultHandAddition
-			context.full_hand[1]:set_edition("e_negative")
+			context.full_hand[1]:set_edition("e_goob_Whacky")
 		end
 	end
 }
