@@ -382,10 +382,9 @@ return {
 			["j_goob_Jobingles"] = {
 				["name"] = "Jobingles",
 				["text"] = {
-					"The next time you play a singular card",
-					"{E:2,C:dark_edition}Upgrades it{}. It will",
-					"{C:attention}return{} to your hand after scoring.",
-					"{C:inactive}(and if destroyed, will be regained){}"
+					"If {C:attention}First Hand{} of round",
+					"has only {C:attention}1{} card,",
+					"{E:2,C:dark_edition}Upgrades it{}."
 				},
 			},
 			["j_goob_Kerry_rage"] = {
