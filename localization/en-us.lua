@@ -11,7 +11,13 @@ return {
 				"Wondrous Seal",
 			},
 			["goob_Whacky"] = { "Whacky" }
-		}
+		},
+		["challenge_names"] = {
+			["c_goob_Whacky_Challenge"] = "Whacky"
+		},
+		["v_text"] = {
+			["ch_c_Whacky"] = {"Starting deck is {E:2,C:dark_edition}Whacky{}.",}
+		},
 	},
 	["descriptions"] = {
 		["Edition"] = {
@@ -58,6 +64,7 @@ return {
 			},
 		},
 		["Other"] = {
+
 			["BingleWhacky"] = {
 				["name"] = "{E:2,C:dark_edition}Whacky{}",
 				["text"] = {
