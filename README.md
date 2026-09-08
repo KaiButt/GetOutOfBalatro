@@ -5,6 +5,7 @@ Get Out Of Balatro currently introduces:
 - a special Tag!
 - a flowery enhancement & a tarot to match
 - a wonderful seal & a spectral to match!
+- a whacky edition
 
 GOOT is made by Kyrsaku and can be found in Tabletop Simulator workshop
 
@@ -20,6 +21,11 @@ https://game-icons.net/
 Seal Icon for wild seal:
 
 https://freesvg.org/36-circle-swirl-12-color
+
+
+honk noise for Whacky edition:
+
+https://www.myinstants.com/en/instant/clown-horn/
 
 Clock sounds are from Limbus Company by Project Moon (specifically, Dante's "voicelines")
 
