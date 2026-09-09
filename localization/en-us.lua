@@ -597,7 +597,7 @@ return {
 			["j_goob_Jobangles"] = {
 				["name"] = "Jobangles",
 				["text"] = {
-					"When {C:attention}Blind{} is selected, a random non-Whacky card in deck",
+					"When {C:attention}Blind{} is selected, a random non-{E:2,C:dark_edition}Whacky{} card in deck",
 					"gets {C:attention}destroyed{}. This Joker",
 					"gains Chips equal to {C:chips}X#2#{} the unenhanced rank destroyed.",
 					"Last card destroyed: {C:attention}#3#{} of {C:attention}#4#{}",
