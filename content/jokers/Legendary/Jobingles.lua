@@ -25,6 +25,7 @@ SMODS.Joker {
     soul_pos = { x = 0, y = 0 },
 	rarity = 4,
 	cost = 20,
+	unlocked = false,
 	blueprint_compat = false,
 	eternal_compat = true,
 	perishable_compat = true,
@@ -48,5 +49,10 @@ SMODS.Joker {
 					context.full_hand[1]:set_edition("e_goob_Whacky")
 				end
 		end
+	end,
+	check_for_unlock = function(self, args)
+		if args.type == 'win_challenge' and G.GAME.challenge == 'c_goob_Whacky_Challenge' then
+            return true
+        end
 	end
 }

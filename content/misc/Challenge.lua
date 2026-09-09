@@ -11,7 +11,9 @@ SMODS.Challenge {
     },
     restrictions = {
         banned_cards = {
-             { id = 'j_goob_Nobingles' }
+             { id = 'j_goob_Nobingles' },
+             { id = 'j_goob_Presto'},
+             { id = 'j_goob_Diamonds'}
         }
     }
 }

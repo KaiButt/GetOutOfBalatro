@@ -2,9 +2,11 @@ return {
 	["misc"] = {
 		["achievement_names"] = {
 			["ach_goob_jobros"] = "Clown Show",
+			["ach_goob_WhackWin"] = "Whacky Mastery"
 		},
 		["achievement_descriptions"] = {
 			["ach_goob_jobros"] = "Win a run with both Jobangles and Jobingles.",
+			["ach_goob_WhackWin"] = "Beat the Whacky challenge"
 		},
 		["labels"] = {
 			["goob_wondrousmagic_seal"] = {
@@ -408,6 +410,9 @@ return {
 				},
 			},
 			["j_goob_Jobingles"] = {
+				["unlock"] = {
+					"Beat the {C:attention}Whacky{} Challenge"
+				},
 				["name"] = "Jobingles",
 				["text"] = {
 					"If {C:attention}First Hand{} of round",
