@@ -52,6 +52,7 @@ SMODS.Joker {
 	end,
 	check_for_unlock = function(self, args)
 		if args.type == 'win_challenge' and G.GAME.challenge == 'c_goob_Whacky_Challenge' then
+			self.challenge_bypass = true
             return true
         end
 	end

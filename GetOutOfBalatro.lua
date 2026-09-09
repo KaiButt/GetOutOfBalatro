@@ -125,3 +125,31 @@ function GET_mostplayed_hand()
     end
     return _handname
 end
+
+local check = check_for_unlock
+function check_for_unlock(args, ...)
+    local ret
+    if args and args.bypass_seeded then
+        local seeded = G.GAME.seeded
+        G.GAME.seeded = nil
+        ret = check(args, ...)
+        G.GAME.seeded = seeded
+    else
+        ret = check(args, ...)
+    end
+    return ret
+end
+-- challenge bypass for jobingles
+local check = check_for_unlock
+function check_for_unlock(args, ...)
+    local ret
+    if args and args.challenge_bypass then
+        local challenge = G.GAME.challenge
+        G.GAME.challenge = nil
+        ret = check(args, ...)
+        G.GAME.challenge = challenge
+    else
+        ret = check(args, ...)
+    end
+    return ret
+end
