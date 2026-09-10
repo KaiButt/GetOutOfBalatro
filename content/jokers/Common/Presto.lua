@@ -16,7 +16,7 @@ SMODS.Joker {
             repetitions = 1,
         },
     },
-    cost = 6,
+    cost = 5,
     blueprint_compat = true,
     eternal_compat = true,
     perishable_compat = true,
@@ -27,7 +27,7 @@ SMODS.Joker {
     end,
     pools = { ["goob"] = true, ["goobNL"] = true },
     calculate = function(self, card, context)
-        if context.repetition and context.cardarea == G.play and (context.other_card.edition or context.other_card.seal or next(SMODS.get_enhancements(context.other_card))) then
+        if context.repetition and context.cardarea == G.play and (context.other_card:get_seal() == "goob_WondrousMagic" or next(SMODS.get_enhancements(context.other_card))) then
             return {
                 repetitions = card.ability.extra.repetitions
             }
