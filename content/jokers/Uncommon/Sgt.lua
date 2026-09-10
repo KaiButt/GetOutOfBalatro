@@ -11,12 +11,12 @@ SMODS.Joker {
     pos = { x = 0, y = 0 },
     config = {
         immutable = {
-            negative_rate = 7.5
+            negative_rate = 8
         },
     },
     rarity = 2,
     cost = 5,
-    blueprint_compat = true,
+    blueprint_compat = false,
     eternal_compat = true,
     perishable_compat = true,
     attributes = {"passive"},
