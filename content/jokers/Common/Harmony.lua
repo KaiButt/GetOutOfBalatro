@@ -32,8 +32,9 @@ SMODS.Joker {
     end,
     attributes = { "hand_size" },
     calculate = function(self, card, context)
-        if context.end_of_round and context.main_eval and context.game_over == false then 
-            if roll_die(card.ability.immutable.diceToRoll, card.ability.immutable.sidesOfDice) == card.ability.extra.sidesOfDice then
+        if context.end_of_round and context.main_eval and context.game_over == false then
+            local result = roll_die(card.ability.immutable.diceToRoll, card.ability.immutable.sidesOfDice)
+            if result == card.ability.extra.sidesOfDice then
                 G.GAME.pool_flags.goob_harmony_dead = true
                 return {
                     message = 'Goodbye!',
@@ -42,7 +43,7 @@ SMODS.Joker {
                 }
             else
                 return {
-                    message = 'Stayin\' Alive!',
+                    message = 'Stayin\' Alive with a '..tostring(result)..'!',
                     delay = 1.2
                 }
             end
