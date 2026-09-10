@@ -205,6 +205,16 @@ return {
 			},
 		},
 		["Joker"] = {
+			["j_goob_Willy"] = {
+				["name"] = "Willy Gatcher",
+				["text"] = {
+					"After {C:attention}#1#{} rounds,",
+					"sell this card to",
+					"obtain your {C:attention}M.V.J{}",
+					"{C:inactive}(Currently {C:attention}#2#{C:inactive}/#1#)",
+					"{C:inactive}({}{C:attention}M.V.J{}{C:inactive} is: #3#){}"
+				}
+			},
 			["j_goob_PowerCore"] = {
 				["name"] = "Power Core",
 				["text"] = {
