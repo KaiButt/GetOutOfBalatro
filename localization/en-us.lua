@@ -205,6 +205,14 @@ return {
 			},
 		},
 		["Joker"] = {
+			["j_goob_Barry"] = {
+				["name"] = "Barry The Collector",
+				["text"] = {
+					"This Joker gains {C:mult}+#2#{} Mult at end of round if your {C:attention}Joker{} or {C:attention}consumable{} slots are full.",
+					"Gain an additional {C:mult}+#3#{} Mult if {C:attention}both{} are full.",
+					"{C:inactive}(Currently {}{C:mult}+#1#{}{C:inactive} Mult){}"
+				}
+			},
 			["j_goob_Willy"] = {
 				["name"] = "Willy Gatcher",
 				["text"] = {
@@ -384,8 +392,8 @@ return {
 			["j_goob_Scaler"] = {
 				["name"] = "Scaler",
 				["text"] = {
-					"{C:mult}+#1#{} Mult.",
-					"Gains {C:mult}+#2#{} Mult after every {C:attention}Boss Blind{}.",
+					"This Joker gains {C:mult}+#2#{} Mult after every {C:attention}Boss Blind{}.",
+					"{C:inactive}(Currently {}{C:mult}+#1#{}{C:inactive} Mult){}"
 				},
 			},
 			["j_goob_Gondo"] = {

@@ -37,6 +37,7 @@ SMODS.Joker {
             return {
                 message = "Scaled Up!",
                 colour = G.C.RED,
+                delay = 1.10,
                 card = card,
             }
         end

@@ -22,7 +22,6 @@ SMODS.Joker {
     perishable_compat = true,
     attributes = {"retrigger"},
     loc_vars = function(self, info_queue, center)
-        info_queue[#info_queue+1] = {set = "Other", key = "goob_improvements"}
         return { vars = { center.ability.extra.repetitions } }
     end,
     pools = { ["goob"] = true, ["goobNL"] = true },
