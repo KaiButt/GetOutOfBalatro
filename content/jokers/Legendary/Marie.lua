@@ -32,13 +32,6 @@ SMODS.Joker {
     loc_vars = function(self, info_queue, center)
         return { vars = { center.ability.immutable.reduction, center.ability.immutable.diceToRoll, center.ability.immutable.sidesOfDice, center.ability.immutable.cooldownPeriod } }
     end,
-    in_pool = function()
-        if G.GAME.marieDead == nil or G.GAME.marieDead == false or next(SMODS.find_card('j_vremade_ring_master')) then
-            return true
-        else
-            return false
-        end
-    end,
     add_to_deck = function(self, card, from_debuff)
         G.GAME.marieAmount = (G.GAME.marieAmount or -1) + 1
     end,
@@ -52,12 +45,6 @@ SMODS.Joker {
     pools = { ["goob"] = true, ["goobL"] = true },
     calculate = function(self, card, context)
         if context.setting_blind then
-            if G.GAME.soulless == true then
-                G.GAME.soulless = false
-            end
-            if G.GAME.marieDead == true or G.GAME.marieDead == nil then
-                G.GAME.marieDead = false
-            end
             local trueReduction = card.ability.immutable.reduction / 100
             local battleLines = { 'C\'est fini.', 'One with the beyond.', 'It is the will.', 'I cleanse thee, now!',
                 'While I breathe, Heresy suffocates!', 'Shhh, shhh..', 'May Lua and Sol guide you.',

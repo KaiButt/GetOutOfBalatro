@@ -23,11 +23,7 @@ SMODS.Joker {
 	config = { extra = { amountToBack = 1, phoenixBonus = 1 } },
 	cost = 20,
 	in_pool = function()
-		if G.GAME.crownos_used == false or G.GAME.crownos_used == nil or next(SMODS.find_card('j_vremade_ring_master')) or next(SMODS.find_card('j_goob_Marie')) then --showmen and marie will let him reappear
-			return true
-		else
-			return false
-		end
+		return (G.GAME.pool_flags.crownos_used == nil or G.GAME.pool_flags.crownos_used == false or next(SMODS.find_card('j_vremade_ring_master')) or next(SMODS.find_card('j_goob_Marie')))
 	end,
 	loc_vars = function(self, info_queue, center)
 		return { vars = { center.ability.extra.amountToBack, center.ability.extra.phoenixBonus } }
@@ -51,7 +47,7 @@ SMODS.Joker {
 				end
 			}))
 			if not next(SMODS.find_card("j_goob_Marie")) then
-				G.GAME.crownos_used = true
+				G.GAME.pool_flags.crownos_used = true
 			end
 			return {
 				message = 'Saved!',

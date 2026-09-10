@@ -21,7 +21,7 @@ SMODS.Joker {
         return { vars = { center.ability.extra.handSize, center.ability.immutable.diceToRoll, center.ability.immutable.sidesOfDice} }
     end,
     in_pool = function()
-        return not G.GAME.pool_flags.goob_harmony_dead
+        return (not G.GAME.pool_flags.goob_harmony_dead or next(SMODS.find_card('j_vremade_ring_master')) or next(SMODS.find_card('j_goob_Marie')))
     end,
     pools = { ["goob"] = true, ["goobNL"] = true},
     add_to_deck = function(self, card, from_debuff)
@@ -33,18 +33,17 @@ SMODS.Joker {
     attributes = { "hand_size" },
     calculate = function(self, card, context)
         if context.end_of_round and context.main_eval and context.game_over == false then
-            local result = roll_die(card.ability.immutable.diceToRoll, card.ability.immutable.sidesOfDice)
-            if result == card.ability.extra.sidesOfDice then
+            if roll_die(card.ability.immutable.diceToRoll, card.ability.immutable.sidesOfDice) == card.ability.immutable.sidesOfDice then
                 G.GAME.pool_flags.goob_harmony_dead = true
                 return {
                     message = 'Goodbye!',
-                    delay = 1.2,
+                    delay = 1.3,
                     SMODS.destroy_cards(card)
                 }
             else
                 return {
-                    message = 'Stayin\' Alive with a '..tostring(result)..'!',
-                    delay = 1.4
+                    message = 'Stayin\' Alive!',
+                    delay = 1.3
                 }
             end
         end

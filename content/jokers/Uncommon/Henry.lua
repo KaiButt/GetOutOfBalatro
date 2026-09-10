@@ -22,7 +22,7 @@ SMODS.Joker {
     eternal_compat = true,
     perishable_compat = true,
     in_pool = function()
-        if G.GAME.soulless == nil or G.GAME.soulless == false then
+        if (G.GAME.soulless == nil or G.GAME.soulless == false) or next(SMODS.find_card('j_goob_Marie')) then
             return true
         else
             return false
