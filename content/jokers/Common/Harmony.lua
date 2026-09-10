@@ -44,7 +44,7 @@ SMODS.Joker {
             else
                 return {
                     message = 'Stayin\' Alive with a '..tostring(result)..'!',
-                    delay = 1.2
+                    delay = 1.4
                 }
             end
         end
