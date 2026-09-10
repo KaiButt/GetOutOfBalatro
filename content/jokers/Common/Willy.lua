@@ -46,6 +46,9 @@ SMODS.Joker {
     cost = 5,
     blueprint_compat = false,
     eternal_compat = false,
+    in_pool = function(self, args)
+        if G.GAME.challenge then return false else return true end
+    end,
     pools = { ["goob"] = true, ["goobNL"] = true },
     attributes = { "generation" },
     loc_vars = function(self, info_queue, center)
