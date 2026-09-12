@@ -205,6 +205,13 @@ return {
 			},
 		},
 		["Joker"] = {
+			["j_goob_Ian"] = {
+				["name"] = "Ian The Accountant",
+				["text"] = {
+					"You can select {C:attention}3{} additional cards",
+					"on your {C:attention}first discard{} each round.",
+				}
+			},
 			["j_goob_Barry"] = {
 				["name"] = "Barry The Collector",
 				["text"] = {
