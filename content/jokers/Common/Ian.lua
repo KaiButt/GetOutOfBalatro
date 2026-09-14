@@ -29,10 +29,8 @@ SMODS.Joker {
                 SMODS.change_discard_limit(card.ability.extra.extraCards)
             end
         end
-        if context.hand_drawn and not context.first_hand_drawn then
-            if G.GAME.current_round.discards_used == 1 then
-                SMODS.change_discard_limit(-card.ability.extra.extraCards)
-            end
+        if context.pre_discard and not context.hook and G.GAME.current_round.discards_used == 0 then
+            SMODS.change_discard_limit(-card.ability.extra.extraCards)
         end
     end
 }
