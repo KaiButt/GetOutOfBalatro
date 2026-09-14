@@ -205,6 +205,12 @@ return {
 			},
 		},
 		["Joker"] = {
+			["j_goob_Jash"] = {
+				["name"] = "Jokin' Jash",
+				["text"] = {
+					"G.O.O.B die values will only be either their {C:red}minimum{} or {C:green}maximum{} result."
+				}
+			},
 			["j_goob_Ian"] = {
 				["name"] = "Ian The Accountant",
 				["text"] = {

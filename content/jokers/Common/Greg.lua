@@ -32,9 +32,9 @@ SMODS.Joker {
     attributes = { "hand_size" },
     calculate = function(self,card,context)
         if context.end_of_round and context.main_eval and context.game_over == false then
-            local sum = roll_dice(1,5)
+            local sum = roll_die(1,5)
             return {
-                message = sum
+                message = tostring(sum)
             }
         end
     end

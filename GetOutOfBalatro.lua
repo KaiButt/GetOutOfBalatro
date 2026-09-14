@@ -88,68 +88,84 @@ function roll_die(_amountToRoll, _sidesOfDice)
 	local amountToRoll = _amountToRoll or 1
 	local advantage = next(SMODS.find_card("j_goob_StarAce"))
 	local sidesOfDice = _sidesOfDice or 6
-	
 	local accum = 0
-	for i = 1, amountToRoll, 1 do 
-		local smallResult = pseudorandom("goob_seed", 1, sidesOfDice ) 
-		accum = accum + smallResult
+	if not next(SMODS.find_card("j_goob_Jash")) then
+		for i = 1, amountToRoll, 1 do
+			local smallResult = pseudorandom("goob_seed", 1, sidesOfDice)
+			accum = accum + smallResult
 		end
-	if accum<sidesOfDice and advantage then
-		local accum2 = 0 
-		for i = 1, amountToRoll, 1 do accum2 = accum2 + pseudorandom("goob_seed", 1, sidesOfDice ) end
-		if accum<accum2 then
-			accum = accum2
+		if accum < sidesOfDice and advantage then
+			local accum2 = 0
+			for i = 1, amountToRoll, 1 do accum2 = accum2 + pseudorandom("goob_seed", 1, sidesOfDice) end
+			if accum < accum2 then
+				accum = accum2
+			end
 		end
+	else
+		local min = amountToRoll
+		local max = amountToRoll * sidesOfDice
+		local possibilities = { min, max }
+		local resultCalc = math.random(#possibilities)
+		local result = possibilities[resultCalc]
+		if next(SMODS.find_card("j_goob_Marie")) and result ~= max then
+			result = max
+		elseif advantage and result ~= max then
+			resultCalc = math.random(#possibilities)
+			result = possibilities[resultCalc]
+		end
+		accum = result
 	end
-	SMODS.calculate_context{goob_dice_rolled = true, amountToRoll = amountToRoll, sidesOfDice = sidesOfDice}
+	SMODS.calculate_context { goob_dice_rolled = true, amountToRoll = amountToRoll, sidesOfDice = sidesOfDice }
 	return accum
 end
+
 -- gets the selected deck
 function GET_selected_deck()
-    if G.STATE == G.STATES.MENU then
-        return
-    end
-    local ret = G.GAME.selected_back and G.GAME.selected_back.effect and G.GAME.selected_back.effect and
-        G.GAME.selected_back.effect.center.key
-    return ret
+	if G.STATE == G.STATES.MENU then
+		return
+	end
+	local ret = G.GAME.selected_back and G.GAME.selected_back.effect and G.GAME.selected_back.effect and
+		G.GAME.selected_back.effect.center.key
+	return ret
 end
 
 -- gets the most played hand
 function GET_mostplayed_hand()
-    local _handname, _played = 'High Card', -1
-    for hand_key, hand in pairs(G.GAME.hands) do
-        if hand.played > _played then
-            _played = hand.played
-            _handname = hand_key
-        end
-    end
-    return _handname
+	local _handname, _played = 'High Card', -1
+	for hand_key, hand in pairs(G.GAME.hands) do
+		if hand.played > _played then
+			_played = hand.played
+			_handname = hand_key
+		end
+	end
+	return _handname
 end
 
 local check = check_for_unlock
 function check_for_unlock(args, ...)
-    local ret
-    if args and args.bypass_seeded then
-        local seeded = G.GAME.seeded
-        G.GAME.seeded = nil
-        ret = check(args, ...)
-        G.GAME.seeded = seeded
-    else
-        ret = check(args, ...)
-    end
-    return ret
+	local ret
+	if args and args.bypass_seeded then
+		local seeded = G.GAME.seeded
+		G.GAME.seeded = nil
+		ret = check(args, ...)
+		G.GAME.seeded = seeded
+	else
+		ret = check(args, ...)
+	end
+	return ret
 end
+
 -- challenge bypass for jobingles
 local check = check_for_unlock
 function check_for_unlock(args, ...)
-    local ret
-    if args and args.challenge_bypass then
-        local challenge = G.GAME.challenge
-        G.GAME.challenge = nil
-        ret = check(args, ...)
-        G.GAME.challenge = challenge
-    else
-        ret = check(args, ...)
-    end
-    return ret
+	local ret
+	if args and args.challenge_bypass then
+		local challenge = G.GAME.challenge
+		G.GAME.challenge = nil
+		ret = check(args, ...)
+		G.GAME.challenge = challenge
+	else
+		ret = check(args, ...)
+	end
+	return ret
 end
