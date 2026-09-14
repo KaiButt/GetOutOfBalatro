@@ -208,8 +208,8 @@ return {
 			["j_goob_Ian"] = {
 				["name"] = "Ian The Accountant",
 				["text"] = {
-					"You can select {C:attention}3{} additional cards",
-					"on your {C:attention}first discard{} each round.",
+					"You can select {C:attention}#1#{} additional cards",
+					"to {C:attention}discard{}.",
 				}
 			},
 			["j_goob_Barry"] = {
