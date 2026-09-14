@@ -33,7 +33,7 @@ SMODS.Joker {
                 card = card,
             }
         end
-        if context.end_of_round and context.main_eval and context.game_over == false and (#G.jokers.cards == G.jokers.config.card_limit or #G.consumeables.cards == G.consumeables.config.card_limit) and not context.blueprint then
+        if context.end_of_round and context.main_eval and context.game_over == false and (#G.jokers.cards >= G.jokers.config.card_limit or #G.consumeables.cards >= G.consumeables.config.card_limit) and not context.blueprint then
             if (#G.consumeables.cards < G.consumeables.config.card_limit) or (#G.jokers.cards < G.jokers.config.card_limit) then
                 card.ability.extra.Mult = card.ability.extra.Mult + card.ability.extra.scalingMult
                 return {
