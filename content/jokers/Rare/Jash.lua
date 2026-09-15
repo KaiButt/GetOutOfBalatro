@@ -14,6 +14,6 @@ SMODS.Joker {
     blueprint_compat = false,
     eternal_compat = true,
     perishable_compat = true,
-    pools = { ["goob"] = true, ["goobL"] = true},
+    pools = { ["goob"] = true, ["goobNL"] = true},
     attributes = { "passive" },
 }
