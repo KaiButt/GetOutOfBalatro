@@ -10,7 +10,7 @@ SMODS.Consumable {
     set = "Tarot",
     atlas = "wands",
     pos = { x = 0, y = 0 },
-    config = { max = 2, conv = "m_goob_flower" },
+    config = { max = 1, conv = "m_goob_flower" },
     loc_vars = function(self, info_queue, card)
         info_queue[#info_queue + 1] = G.P_CENTERS[card.ability.conv]
         return { vars = { card.ability.max } }

@@ -12,7 +12,7 @@ SMODS.Joker {
     unlocked = false,
     pos = { x = 0, y = 0 },
     rarity = 2,
-    cost = 7,
+    cost = 8,
     config = { extra = { amountToDeck = 2 }, immutable = { maxAmountToDeck = 40 } },
     blueprint_compat = false,
     eternal_compat = true,
