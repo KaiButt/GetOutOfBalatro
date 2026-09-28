@@ -9,8 +9,15 @@ SMODS.Enhancement {
     key = 'flower',
     atlas = "flower",
     pos = { x = 0, y = 0 },
-    config = {bonus = 15, mult = 2},
+    config = {repetition = 1, mult = 1},
     loc_vars = function(self, info_queue, card)
-        return { vars = { card.ability.bonus, card.ability.mult } }
+        return { vars = { card.ability.repetition, card.ability.mult } }
     end,
+    calculate = function(self, card, context) 
+        if context.repetition and context.cardarea == G.play then
+            return {
+                repetitions = card.ability.repetition
+            }
+        end
+    end
 }
