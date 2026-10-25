@@ -31,7 +31,7 @@ Clock sounds are from Limbus Company by Project Moon (specifically, Dante's "voi
 
 (Thank you!)
 
-Special thanks to the Balatro subreddit, the Cryptid mod for ideas/implementation,all in jest for Diamonds implementation, and the Lost mod for it's "improvements" window.
+Special thanks to the Balatro subreddit, the Cryptid mod for ideas/implementation,all in jest for Diamonds implementation, the Lost mod for it's "improvements" window, seals on everything for modify values of jokers code ~172 onward in main lua
 
 Installation
 

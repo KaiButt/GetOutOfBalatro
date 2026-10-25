@@ -169,3 +169,95 @@ function check_for_unlock(args, ...)
 	end
 	return ret
 end
+
+function GOOB_perform_operations(old_value, operator, modifier)
+    if operator == '=' then
+        return modifier
+    elseif operator == '+' then
+        return old_value + modifier
+    elseif operator == '-' then
+        return old_value - modifier
+    elseif operator == '*' then
+        return old_value * modifier
+    elseif operator == '/' then
+        -- Prevent crashing if a mod tries to divide by zero
+        if modifier == 0 then return old_value end 
+        return old_value / modifier
+    elseif operator == '%' then
+        if modifier == 0 then return old_value end
+        return old_value % modifier
+    elseif operator == '^' then
+        return old_value ^ modifier
+    end
+    return old_value
+end
+
+-- excluded jokers. Big red button if CAPSLOCK cant work well with a Joker
+goob_excluded_Jokers = {
+	['j_chaos'] = true,
+	['j_goob_MASTERCAPSLOCK'] = true,
+	['j_goob_Jash'] = true,
+	['j_goob_Tommy'] = true,
+}
+
+-- excluded card values, prevents caps lock from changing default values on Jokers (so they dont randomly gain x mult mostly) 
+goob_card_value_exclusions = {
+    x_mult = 1,
+    x_chips = 1,
+    h_size = 0,
+    extra_value = true,
+    cry_prob = true,
+    d_size = 0,
+    card_limit = true,
+    extra_slots_used = true,
+    t_mult = 0,
+    t_chips = 0,
+    id = true,
+	suit_nominal = true,
+	base_nominal = true,
+	face_nominal = true,
+    suit_nominal_original = true,
+    times_played = true,
+    colour = true
+}
+
+-- thank you seals on everything modify card values code, I hope you dont mind me stapling it on here <3
+function GOOB_modify_card_values(card, modifytbl, ignoreimmutable, nodeckeffects)
+    if not card or not modifytbl or (card.config.center.immutable and not ignoreimmutable) then return end
+	local card_key = card.config.center.key
+    if card_key and goob_excluded_Jokers[card_key] then return end
+    local cardwasindeck = card.added_to_deck
+	if not nodeckeffects and cardwasindeck then card:remove_from_deck(true) end
+    local ops = {'=', '+', '-', '*', '/', '%', '^'}
+    local function modify_value(ref_table, ref_value)
+        local value = ref_table[ref_value]
+        if type(value) == 'table' and (ignoreimmutable or ref_value ~= 'immutable') then
+            for k in pairs(value) do
+                modify_value(value, k)
+            end
+        elseif type(value) == 'number' then
+			local exclusion_rule = goob_card_value_exclusions[ref_value]
+            if exclusion_rule == true then return end
+            if exclusion_rule == value then return end
+            for _, v in ipairs(ops) do
+                if modifytbl[v] then
+                    ref_table[ref_value] = GOOB_perform_operations(value, v, modifytbl[v])
+                end
+            end
+        end
+    end
+    if card.ability.consumeable then
+        card.ability.consumeable = copy_table(card.ability.consumeable)
+    end
+    for k in pairs(card.ability) do
+        modify_value(card.ability, k)
+    end
+    if card.base and card.base.id then
+        for k in pairs(card.base) do
+            modify_value(card.base, k)
+        end
+    end
+
+    if not nodeckeffects and cardwasindeck then card:add_to_deck(true) end
+end
+GOOB_modify_joker_values = GOOB_modify_card_values

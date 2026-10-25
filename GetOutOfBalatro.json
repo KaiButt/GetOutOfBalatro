@@ -10,5 +10,5 @@
   "badge_colour": "800080",
   "badge_text_colour": "",
   "version": "1.4.5",
-  "dependencies": ["Steamodded (>=1.0.0~BETA-0614a)", "Spectrallib"]
+  "dependencies": ["Steamodded (>=1.0.0~BETA-0614a)"]
 }

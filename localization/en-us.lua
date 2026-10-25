@@ -208,9 +208,10 @@ return {
 			["j_goob_MASTERCAPSLOCK"] = {
 				["name"] = "MASTER CAPSLOCK",
 				["text"] = {
-					"{E:1}ALL TEXT ON THIS JOKER IS CAPITALIZED!{}",
-					"AT THE END OF THE ROUND, INCREASE {C:green}COMPATIBLE{} VALUES",
-					"ON THE JOKER TO THE RIGHT BY {X:green,C:white}#1#{}"
+					"{E:1}ALL TEXT ON THIS JOKER IS CAPITALIZED.{}",
+					"AT THE END OF THE ROUND, INCREASE",
+					"VALUES ON THE JOKER TO THE RIGHT BY {X:green,C:white}#1#{}.",
+					"{C:inactive}(IF THE JOKER/VALUE IS{} {C:green}COMPATIBLE{}{C:inactive}){}"
 				}
 			},
 			["j_goob_Jash"] = {
