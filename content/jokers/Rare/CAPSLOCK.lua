@@ -34,7 +34,7 @@ SMODS.Joker {
                 end
             end
             Spectrallib.manipulate(other_Joker,
-                { value = card.ability.immutable.amountToModify, type = "+" })
+                {value = card.ability.immutable.amountToModify, type = "+"})
             if other_Joker ~= nil then
                 return {
                     message = 'CAPSLOCK ON',
