@@ -35,4 +35,5 @@ Special thanks to the Balatro subreddit, the Cryptid mod for ideas/implementatio
 
 Installation
 
+Install spectrallib at https://github.com/SpectralPack/Spectrallib/tree/main
 Throw GetOutOfBalatro folder in balatro Mods folder
