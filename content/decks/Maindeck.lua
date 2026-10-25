@@ -31,7 +31,7 @@ if CardSleeves then
         pos = { x = 0, y = 0 },
         unlocked = false,
         unlock_condition = { deck = "b_goob_MainDeck", stake = "stake_red" },
-        config = { joker_slot = 1 },
+        config = { extra = { joker_slot = 1} },
         loc_vars = function(self)
             local key
             if self.get_current_deck_key() == "b_goob_MainDeck" then
@@ -43,7 +43,7 @@ if CardSleeves then
         end,
         apply = function(self, sleeve)
             if self.get_current_deck_key() == "b_goob_MainDeck" then
-                G.GAME.starting_params.joker_slots = G.GAME.starting_params.joker_slots + self.config.joker_slot
+                G.GAME.starting_params.joker_slots = G.GAME.starting_params.joker_slots + self.config.extra.joker_slot
                 CardSleeves.Sleeve.apply(self, sleeve)
             else
                 for k, v in pairs(G.P_CENTERS) do
