@@ -252,7 +252,7 @@ goob_card_value_exclusions = {
 
 -- thank you seals on everything modify card values code, I hope you dont mind me stapling it on here <3
 function GOOB_modify_card_values(card, modifytbl, ignoreimmutable, nodeckeffects)
-    if not card or not modifytbl or (card.config.center.immutable and not ignoreimmutable) or (SEALS.has_edition(card, 'e_soe_frozen') and not card.config.center.soe_frozen_immune) then return end
+    if not card or not modifytbl or (card.config.center.immutable and not ignoreimmutable) then return end
 	local card_key = card.config.center.key
     if card_key and goob_excluded_Jokers[card_key] then return end
     local cardwasindeck = card.added_to_deck
