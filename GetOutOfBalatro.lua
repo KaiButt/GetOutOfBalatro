@@ -216,7 +216,7 @@ goob_excluded_Jokers = {
 	['j_chicot'] = true,
 	['j_goob_MASTERCAPSLOCK'] = true,
 	['j_goob_Jash'] = true,
-	['j_goob_MrFlowers'],
+	['j_goob_MrFlowers'] = true,
 	['j_goob_Tommy'] = true,
 	['j_goob_Diamonds'] = true,
 	['j_goob_Willy'] = true,
