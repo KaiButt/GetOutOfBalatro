@@ -5,7 +5,8 @@ Get Out Of Balatro currently introduces:
 - a special Tag!
 - a flowery enhancement & a tarot to match
 - a wonderful seal & a spectral to match!
-- a whacky edition & a challenge!
+- a whacky edition
+- 2 challenges!
 
 GOOT is made by Kyrsaku and can be found in Tabletop Simulator workshop
 

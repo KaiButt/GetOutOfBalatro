@@ -13,10 +13,12 @@ return {
 			["goob_Whacky"] = { "Whacky" }
 		},
 		["challenge_names"] = {
-			["c_goob_Whacky_Challenge"] = "Whacky"
+			["c_goob_Whacky_Challenge"] = "Whacky",
+			["c_goob_ALL_CAPS_CHALLENGE"] = "ALL CAPS"
 		},
 		["v_text"] = {
-			["ch_c_Whacky"] = {"Starting deck is {E:2,C:dark_edition}Whacky{}.",}
+			["ch_c_Whacky"] = {"Starting deck is {E:2,C:dark_edition}Whacky{}.",},
+			["ch_c_CAPS"] = {"THIS CHALLENGE IS IN ALL CAPS.",}
 		},
 	},
 	["descriptions"] = {
