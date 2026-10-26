@@ -23,7 +23,7 @@ SMODS.Joker {
                 if G.jokers.cards[i] == card then other_joker = G.jokers.cards[i + 1] end
             end
             local compatible = other_joker and other_joker ~= card and
-            not goob_excluded_Jokers[other_joker.config.center.key]
+                not goob_excluded_Jokers[other_joker.config.center.key]
             if compatible == nil then compatible = false end
             local main_end = {
                 {
@@ -65,7 +65,6 @@ SMODS.Joker {
     perishable_compat = true,
     pools = { ["goob"] = true, ["goobNL"] = true },
     calculate = function(self, card, context)
-        
         if context.end_of_round and context.main_eval and context.game_over == false then
             local other_Joker
             for i = 1, #G.jokers.cards do
@@ -77,7 +76,11 @@ SMODS.Joker {
             end
             local compatible = other_Joker and other_Joker ~= card and not goob_excluded_Jokers[other_Joker.config.center.key]
             if compatible then
-                GOOB_modify_card_values(other_Joker, { ['+'] = card.ability.immutable.amountToModify })
+                if not (SMODS.find_mod("SealsOnEverything")) then
+                    GOOB_modify_card_values(other_Joker, { ['+'] = card.ability.immutable.amountToModify })
+                else
+                    SEALS.modify_card_values(other_Joker, { ['+'] = card.ability.immutable.amountToModify })
+                end
                 return {
                     message = 'CAPSLOCK ON',
                     colour = G.C.GREEN,
