@@ -209,8 +209,8 @@ return {
 				["name"] = "MASTER CAPSLOCK",
 				["text"] = {
 					"{E:1}ALL TEXT ON THIS JOKER IS CAPITALIZED.{}",
-					"AT THE END OF THE ROUND, INCREASE",
-					"VALUES ON THE JOKER TO THE RIGHT BY {X:green,C:white}#1#{}.",
+					"AT THE END OF THE ROUND, INCREASE VALUES ON THE JOKER ",
+					"TO THE RIGHT BY {X:green,C:white}#1#{} PERMANENTLY.",
 					"{C:inactive}(IF THE JOKER/VALUE IS{} {C:green}COMPATIBLE{}{C:inactive}){}"
 				}
 			},
@@ -414,8 +414,8 @@ return {
 			["j_goob_Scaler"] = {
 				["name"] = "Scaler",
 				["text"] = {
+					"{C:mult}+#1#{} Mult.",
 					"This Joker gains {C:mult}+#2#{} Mult after every {C:attention}Boss Blind{}.",
-					"{C:inactive}(Currently {}{C:mult}+#1#{}{C:inactive} Mult){}"
 				},
 			},
 			["j_goob_Gondo"] = {

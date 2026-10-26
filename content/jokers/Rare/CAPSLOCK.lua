@@ -65,6 +65,7 @@ SMODS.Joker {
     perishable_compat = true,
     pools = { ["goob"] = true, ["goobNL"] = true },
     calculate = function(self, card, context)
+        
         if context.end_of_round and context.main_eval and context.game_over == false then
             local other_Joker
             for i = 1, #G.jokers.cards do
@@ -74,7 +75,8 @@ SMODS.Joker {
                     end
                 end
             end
-            if other_Joker ~= nil then
+            local compatible = other_Joker and other_Joker ~= card and not goob_excluded_Jokers[other_Joker.config.center.key]
+            if compatible then
                 GOOB_modify_card_values(other_Joker, { ['+'] = card.ability.immutable.amountToModify })
                 return {
                     message = 'CAPSLOCK ON',
