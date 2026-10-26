@@ -252,7 +252,7 @@ goob_card_value_exclusions = {
 
 -- thank you seals on everything modify card values code, I hope you dont mind me stapling it on here <3
 function GOOB_modify_card_values(card, modifytbl, ignoreimmutable, nodeckeffects)
-    if not card or not modifytbl or (card.config.center.immutable and not ignoreimmutable) then return end
+    if not card or not modifytbl or (card.config.center.immutable and not ignoreimmutable) or (SEALS.has_edition(card, 'e_soe_frozen') and not card.config.center.soe_frozen_immune) then return end
 	local card_key = card.config.center.key
     if card_key and goob_excluded_Jokers[card_key] then return end
     local cardwasindeck = card.added_to_deck
@@ -286,7 +286,21 @@ function GOOB_modify_card_values(card, modifytbl, ignoreimmutable, nodeckeffects
             modify_value(card.base, k)
         end
     end
-
+	if card.ability.soe_mergedcards and card.ability.soe_mergedcards[1] then
+        for _, v in ipairs(card.ability.soe_mergedcards) do
+            for k in pairs(v.ability) do
+                modify_value(v.ability, k)
+            end
+        end
+    end
+    local probmod = card.ability.soe_probability_modifier or {}
+    for _, v in ipairs(ops) do
+        if modifytbl[v] then
+            probmod[v] = probmod[v] or {}
+            probmod[v][#probmod[v]+1] = {value = modifytbl[v], denominator = true, numerator = true}
+        end
+    end
+	card.ability.soe_probability_modifier = probmod
     if not nodeckeffects and cardwasindeck then card:add_to_deck(true) end
 end
 GOOB_modify_joker_values = GOOB_modify_card_values
