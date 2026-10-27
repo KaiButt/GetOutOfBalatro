@@ -13,7 +13,7 @@ SMODS.Joker {
     cost = 7,
     config = {
         immutable = {
-            amountToModify = 1,
+            amountToModify = 2,
         },
     },
     loc_vars = function(self, info_queue, card)
@@ -65,7 +65,7 @@ SMODS.Joker {
     perishable_compat = true,
     pools = { ["goob"] = true, ["goobNL"] = true },
     calculate = function(self, card, context)
-        if context.end_of_round and context.main_eval and context.game_over == false then
+        if context.end_of_round and context.main_eval and context.game_over == false and context.beat_boss and not context.blueprint then
             local other_Joker
             for i = 1, #G.jokers.cards do
                 if G.jokers.cards[i] == card then

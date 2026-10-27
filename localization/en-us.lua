@@ -211,7 +211,7 @@ return {
 				["name"] = "MASTER CAPSLOCK",
 				["text"] = {
 					"{E:1}ALL TEXT ON THIS JOKER IS CAPITALIZED.{}",
-					"AT THE END OF THE ROUND, INCREASE VALUES ON THE JOKER ",
+					"AT THE END OF THE {C:attention}BOSS BLIND{}, INCREASE VALUES ON THE JOKER ",
 					"TO THE RIGHT BY {X:green,C:white}#1#{} PERMANENTLY.",
 					"{C:inactive}(IF THE JOKER/VALUE IS{} {C:green}COMPATIBLE{}{C:inactive}){}"
 				}
