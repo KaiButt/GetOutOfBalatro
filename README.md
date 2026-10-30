@@ -1,6 +1,7 @@
 Get Out Of Balatro currently introduces: 
 - 49 "Get Out Of Town" Mercenaries as Jokers
 - 1 "Warframe" Character as a Joker
+- 1 Trails Character as a Joker
 - 3 decks with deck sleeve mod compatibility! 
 - a special Tag!
 - a flowery enhancement & a tarot to match
@@ -13,6 +14,10 @@ GOOT is made by Kyrsaku and can be found in Tabletop Simulator workshop
 Warframe is a video game you can find at https://www.warframe.com/en 
 
 Link: https://steamcommunity.com/sharedfiles/filedetails/?id=2012201900
+
+Trails is a JRPG franchise that can be found in Steam or other retail stores. The specific character and their sprite can be found at:
+https://kiseki.fandom.com/wiki/Campanella
+(Warning: fandom wiki and also potential spoilers)
 
 Art for the Jokers can be found at
 

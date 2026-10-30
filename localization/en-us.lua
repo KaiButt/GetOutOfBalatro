@@ -207,6 +207,13 @@ return {
 			},
 		},
 		["Joker"] = {
+			["j_goob_Campy"] = {
+				["name"] = "Campanella The Fool",
+				["text"] = {
+					"Draw your {C:attention}entire deck{}",
+					"when you open a {C:attention}Booster Pack{}."
+			}
+			},
 			["j_goob_MASTERCAPSLOCK"] = {
 				["name"] = "MASTER CAPSLOCK",
 				["text"] = {
