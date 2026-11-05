@@ -9,14 +9,14 @@ SMODS.Enhancement {
     key = 'flower',
     atlas = "flower",
     pos = { x = 0, y = 0 },
-    config = {extra = {repetitionDieToRoll = 1, repetitionSidesOfDie = 3, mult = 1}},
+    config = {repetitionDieToRoll = 1, repetitionSidesOfDie = 3, mult = 1},
     loc_vars = function(self, info_queue, card)
-        return { vars = { card.ability.extra.repetitionDieToRoll, card.ability.extra.repetitionSidesOfDie, card.ability.extra.mult } }
+        return { vars = { card.ability.repetitionDieToRoll, card.ability.repetitionSidesOfDie, card.ability.mult } }
     end,
     calculate = function(self, card, context) 
         if context.repetition and context.cardarea == G.play then
             return {
-                repetitions = roll_die(card.ability.extra.repetitionDieToRoll, card.ability.extra.repetitionSidesOfDie )
+                repetitions = roll_die(card.ability.repetitionDieToRoll, card.ability.repetitionSidesOfDie )
             }
         end
     end

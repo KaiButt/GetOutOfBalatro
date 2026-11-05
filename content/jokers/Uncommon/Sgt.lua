@@ -78,7 +78,7 @@ local function create_my_button_ui(card)
             align = 'cl', 
             major = card,
             parent = card,
-            offset = { x = 0.2, y = 0 } 
+            offset = { x = 0.2, y = 0 }
         }
     }
 end
