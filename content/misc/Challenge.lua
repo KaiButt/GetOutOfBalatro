@@ -59,3 +59,25 @@ SMODS.Challenge {
         }
     }
 }
+
+SMODS.Challenge {
+    key = "Army_Recruitment",
+    rules = {
+        modifiers = {
+            {id = "joker_slots", value = 1},
+        },
+    },
+    jokers = {
+        {id = "j_goob_Sgt", edition = "negative", eternal = true},
+    },
+    restrictions = {
+        banned_cards = {
+            {id = 'c_wheel_of_fortune'},
+        },
+        banned_tags = {
+            { id = 'tag_holo' },
+            { id = 'tag_polychrome'},
+            { id = 'tag_foil'}
+        },
+    }
+}

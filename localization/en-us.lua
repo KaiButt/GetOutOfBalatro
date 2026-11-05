@@ -14,7 +14,8 @@ return {
 		},
 		["challenge_names"] = {
 			["c_goob_Whacky_Challenge"] = "Whacky",
-			["c_goob_ALL_CAPS_CHALLENGE"] = "ALL CAPS"
+			["c_goob_ALL_CAPS_CHALLENGE"] = "ALL CAPS",
+			["c_goob_Army_Recruitment"] = "Army Recruitment"
 		},
 		["v_text"] = {
 			["ch_c_Whacky"] = {"Starting deck is {E:2,C:dark_edition}Whacky{}.",},
