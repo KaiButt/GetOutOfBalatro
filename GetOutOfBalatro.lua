@@ -228,6 +228,7 @@ goob_excluded_Jokers = {
 	['j_goob_Crownos'] = true,
 	['j_goob_Kai'] = true,
 	['j_goob_Campy'] = true,
+	['j_goob_Sgt'] = true
 }
 
 -- excluded card values, prevents caps lock from changing default values on Jokers (so they dont randomly gain x mult mostly) 

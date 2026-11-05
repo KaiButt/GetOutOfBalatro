@@ -547,7 +547,10 @@ return {
 			["j_goob_Sgt"] = {
 				["name"] = "Sgt",
 				["text"] = {
-					"{X:grey,C:edition}Negative{} Jokers are {C:attention}#1#X{} more likely to appear.",
+					"You may spend {C:gold}$#1#{} to make this",
+					"or another {C:attention}Joker{} {C:dark_edition}negative{}.",
+					"Cost to do so increases by {C:attention}#2#{} each use.",
+					"{C:inactive}(Highlight this Joker, or this Joker and another, to perform these effects){}"
 				},
 			},
 			["j_goob_Ally"] = {
