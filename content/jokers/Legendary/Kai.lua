@@ -24,4 +24,12 @@ SMODS.Joker {
     perishable_compat = true,
     pools = { ["goob"] = true, ["goobL"] = true},
     attributes = { "passive" },
+    in_pool = function(self,args)
+        for _, playing_card in ipairs(G.playing_cards or {}) do
+            if playing_card:get_seal() == 'goob_WondrousMagic' then
+                return true
+            end
+        end
+        return false
+    end
 }

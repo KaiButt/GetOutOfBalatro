@@ -60,8 +60,8 @@ return {
 			["m_goob_flower"] = {
 				["name"] = "Flower Card",
 				["text"] = {
-					"{C:mult}+#2#{} Mult.",
-					"Retrigger this card {C:attention}#1#{} time."
+					"{C:mult}+#3#{} Mult.",
+					"Retrigger this card {C:attention}#1#d#2#{} times."
 				},
 			},
 		},
