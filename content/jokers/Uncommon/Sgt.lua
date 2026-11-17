@@ -93,7 +93,7 @@ G.FUNCS.goob_Sgt_click = function(e)
 end
 G.FUNCS.goob_Sgt_func = function(e)
     local card = e.config.ref_table
-    local can_use = #G.jokers.highlighted == 1 and not (card.edition and card.edition.key == "e_negative") and G.GAME.dollars >= card.ability.immutable.price or (next(SMODS.find_card("j_credit_card")) and G.GAME.dollars >= -20 + card.ability.immutable.price)
+    local can_use = #G.jokers.highlighted == 1 and (G.jokers.highlighted[1].edition==nil or (G.jokers.highlighted[1].edition.key~='e_negative')) and G.GAME.dollars >= card.ability.immutable.price or (next(SMODS.find_card("j_credit_card")) and G.GAME.dollars >= -20 + card.ability.immutable.price)
     e.config.button = not card.debuff and can_use and 'goob_Sgt_click' or nil
     e.config.colour = can_use and G.C.MULT or G.C.UI.BACKGROUND_INACTIVE
 end
