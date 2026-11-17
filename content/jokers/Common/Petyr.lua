@@ -109,7 +109,7 @@ SMODS.Joker {
             ease_hands_played(card.ability.extra.handsInReserve)
             local deathQuotes = { 'Tell My Wife, I Had Another Wife', 'That\'s it, give me the controller',
                 'Co-Op Balatro coming soon!', 'Tag me in coach!', 'Time to show you how its done!', 'My turn',
-                'Needle this!', 'Rescue order recieved from Petyr', 'You phoned a friend',
+                'Needle this!', 'Let me back seat!', 'Woke mods, good stream though', 'Rescue order recieved from Petyr', 'You phoned a friend',
                 'I\'m only doing this once, pal', 'The blind does NOT pass go, it does NOT collect 200 dollars',
                 'You used a pac-a-punch!', 'Aw, man!', 'GET DOWN MR.PRESIDENT!', 'Protection is here!',
                 'Is This Your Card?', '#@!$', '****', 'Nah, I\'d win', 'TO WAR!!', 'I didn\'t hear no bell',
