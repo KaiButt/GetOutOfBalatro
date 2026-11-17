@@ -20,15 +20,15 @@ SMODS.Joker {
     blueprint_compat = false,
     eternal_compat = true,
     perishable_compat = true,
-    attributes = {"passive"},
+    attributes = { "passive" },
     loc_vars = function(self, info_queue, center)
-        return { vars = { center.ability.immutable.price, center.ability.immutable.increment} }
+        return { vars = { center.ability.immutable.price, center.ability.immutable.increment } }
     end,
     pools = { ["goob"] = true, ["goobNL"] = true },
 }
 local function create_my_button_ui(card)
     local text = "ten-hu!"
-    
+
     return UIBox {
         definition = {
             n = G.UIT.ROOT,
@@ -44,7 +44,7 @@ local function create_my_button_ui(card)
                         r = 0.08,
                         hover = true,
                         shadow = true,
-                        colour = G.C.GREEN, 
+                        colour = G.C.GREEN,
                         button = 'goob_Sgt_click',
                         func = 'goob_Sgt_func',
                         ref_table = card,
@@ -57,7 +57,7 @@ local function create_my_button_ui(card)
                                     n = G.UIT.T,
                                     config = {
                                         text = text,
-                                        colour = G.C.UI.TEXT_LIGHT, 
+                                        colour = G.C.UI.TEXT_LIGHT,
                                         scale = 0.4,
                                     }
                                 },
@@ -75,27 +75,17 @@ local function create_my_button_ui(card)
             }
         },
         config = {
-            align = 'cl', 
+            align = 'cl',
             major = card,
             parent = card,
-            offset = { x = 0.2, y = 0 }
+            offset = { x = 0.2, y = -0.3 }
         }
     }
 end
 G.FUNCS.goob_Sgt_click = function(e)
     local text = "Hoorah!"
     local card = e.config.ref_table
-    if #G.jokers.highlighted==1 then
     G.jokers.highlighted[1]:set_edition('e_negative')
-    else
-        for i = 1, #G.jokers.highlighted do
-            if G.jokers.highlighted[i].ability.name ~= 'Sgt' then
-                G.jokers.highlighted[i]:set_edition('e_negative')
-                break
-            end
-        end
-    
-    end
     G.jokers:unhighlight_all()
     ease_dollars(-card.ability.immutable.price)
     card.ability.immutable.price = card.ability.immutable.price + card.ability.immutable.increment
@@ -103,7 +93,7 @@ G.FUNCS.goob_Sgt_click = function(e)
 end
 G.FUNCS.goob_Sgt_func = function(e)
     local card = e.config.ref_table
-    local can_use = #G.jokers.highlighted <= 2 and G.GAME.dollars>card.ability.immutable.price or (next(SMODS.find_card("j_credit_card")) and G.GAME.dollars>=-20+card.ability.immutable.price)
+    local can_use = #G.jokers.highlighted == 1 and G.GAME.dollars > card.ability.immutable.price or (next(SMODS.find_card("j_credit_card")) and G.GAME.dollars >= -20 + card.ability.immutable.price)
     e.config.button = not card.debuff and can_use and 'goob_Sgt_click' or nil
     e.config.colour = can_use and G.C.MULT or G.C.UI.BACKGROUND_INACTIVE
 end
@@ -118,12 +108,14 @@ SMODS.DrawStep {
 }
 local highlight_ref = Card.highlight
 function Card.highlight(self, is_highlighted)
-    if self.ability.set == "Joker" and is_highlighted and self.area == G.jokers and self.ability.name == "Sgt" and self.debuff==false then
-        self.children.goob_Sgt_click = create_my_button_ui(self)
-    elseif self.children.goob_Sgt_click then
-        self.children.goob_Sgt_click:remove()
-        self.children.goob_Sgt_click = nil
+    if self.ability.set == "Joker" and is_highlighted and self.area == G.jokers and self.ability.name == "Sgt" and self.debuff == false then
+        if self.children.goob_Sgt_click then
+            self.children.goob_Sgt_click:remove()
+            self.children.goob_Sgt_click = nil
+        else
+            self.children.goob_Sgt_click = create_my_button_ui(self)
+        end
+        
     end
-
     return highlight_ref(self, is_highlighted)
 end

@@ -551,7 +551,7 @@ return {
 					"You may spend {C:gold}$#1#{} to make this",
 					"or another {C:attention}Joker{} {C:dark_edition}negative{}.",
 					"Cost to do so increases by {C:attention}#2#{} each use.",
-					"{C:inactive}(Highlight this Joker, or this Joker and another, to perform these effects){}"
+					"{C:inactive}(Highlight this Joker to toggle the ability button, highlight the Joker and press the button to change edition){}"
 				},
 			},
 			["j_goob_Ally"] = {
