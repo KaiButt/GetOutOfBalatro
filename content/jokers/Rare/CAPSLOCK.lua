@@ -76,11 +76,7 @@ SMODS.Joker {
             end
             local compatible = other_Joker and other_Joker ~= card and not goob_excluded_Jokers[other_Joker.config.center.key]
             if compatible then
-                if not (SMODS.find_mod("SealsOnEverything")) then
-                    GOOB_modify_card_values(other_Joker, { ['+'] = card.ability.immutable.amountToModify })
-                else
-                    SEALS.modify_card_values(other_Joker, { ['+'] = card.ability.immutable.amountToModify })
-                end
+                GOOB_modify_card_values(other_Joker, { ['+'] = card.ability.immutable.amountToModify })
                 return {
                     message = 'CAPSLOCK ON',
                     colour = G.C.GREEN,
